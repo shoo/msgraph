@@ -1,0 +1,37 @@
+{
+	"authors": ["SHOO"],
+	"copyright": "Copyright © 2022, SHOO",
+	"description": "Microsoft Graph API.",
+	"license": "BSL-1.0",
+	"name": "msgraph",
+	"targetType": "library",
+	"buildTypes": {
+		"ddeps": {
+			"dflags": ["-deps=.dub/deps.txt"],
+			"buildOptions": ["syntaxOnly"],
+			"postBuildCommands": [
+				"dub run ddeps -- --focus=udon -i .dub/deps.txt -l .dub/deps.txt -o .dub/deps.dot --exclude=std --exclude=core",
+				"dot -Tsvg -odocs/deps.svg .dub/deps.dot"
+			]
+		},
+		"vscode-unittest": { "buildOptions": ["debugMode", "debugInfoC", "unittests"] },
+		"vscode-unittest-cov": { "buildOptions": ["debugMode", "debugInfoC", "unittests", "coverage"] },
+		"vscode-debug": { "buildOptions": ["debugMode", "debugInfoC"] },
+		"vscode-debug-cov": { "buildOptions": ["debugMode", "debugInfoC", "coverage"] }
+	},
+	"configurations": [
+		{
+			"name": "default",
+			"targetType": "library"
+		},
+		{
+			"name": "unittest",
+			"targetType": "executable",
+			"targetName": "msgraph-unittest",
+			"dflags": ["-main"],
+			"dependencies": {
+				"unit-threaded": "~>2.0.5"
+			}
+		}
+	]
+}

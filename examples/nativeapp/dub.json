@@ -1,0 +1,17 @@
+{
+	"authors": [
+		"SHOO"
+	],
+	"copyright": "Copyright © 2022, SHOO",
+	"description": "A minimal D application.",
+	"license": "public domain",
+	"name": "native_app",
+	"dependencies": {
+		"msgraph": {"path": "../.."}
+	},
+	"buildTypes": {
+		"vscode-debug": { "buildOptions": ["debugMode", "debugInfoC"] },
+		"vscode-debug-cov": { "buildOptions": ["debugMode", "debugInfoC", "coverage"] }
+	},
+	"targetType": "executable"
+}
