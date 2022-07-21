@@ -1,9 +1,12 @@
-name: master
+name: main
 
 on:
   push:
     branches:
       - master
+      - main
+      - test
+      - dev
 
 jobs:
   # 各テストのジョブは以下の表に従って作成しています。
