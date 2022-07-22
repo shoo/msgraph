@@ -1,10 +1,10 @@
 # Library of Microsoft Graph for D
 [![status](https://github.com/shoo/msgraph/workflows/status/badge.svg)](https://github.com/shoo/msgraph/actions?query=workflow%3Astatus)
-[![master](https://github.com/shoo/msgraph/workflows/master/badge.svg)](https://github.com/shoo/msgraph/actions?query=workflow%3Amaster)
+[![main](https://github.com/shoo/msgraph/workflows/main/badge.svg)](https://github.com/shoo/msgraph/actions?query=workflow%3Amain)
 [![dub](https://img.shields.io/dub/v/msgraph.svg?cacheSeconds=3600)](https://code.dlang.org/packages/msgraph)
 [![downloads](https://img.shields.io/dub/dt/msgraph.svg?cacheSeconds=3600)](https://code.dlang.org/packages/msgraph)
 [![BSL-1.0](http://img.shields.io/badge/license-BSL--1.0-blue.svg?style=flat)](./LICENSE)
-[![codecov](https://codecov.io/gh/shoo/msgraph/branch/master/graph/badge.svg)](https://codecov.io/gh/shoo/msgraph)
+[![codecov](https://codecov.io/gh/shoo/msgraph/branch/main/graph/badge.svg)](https://codecov.io/gh/shoo/msgraph)
 
 This project provides a library to retrieve and manipulate information associated with Office 365 and other accounts through Microsoft Graph.
 
