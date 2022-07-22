@@ -37,6 +37,21 @@ body > .container
     position: relative;
 }
 
+.pill
+{
+    color: #f0f0f0;
+    background-color: #B03931;
+    padding: 0.4em 0.6em;
+    border-radius: 10rem;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    display: inline-block;
+}
+
 /* TC: Formats D_CODE */
 .d_code
 {

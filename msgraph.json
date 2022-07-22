@@ -60,7 +60,7 @@
     "name" : "AuthInfo",
     "kind" : "struct",
     "protection" : "public",
-    "comment" : "\n\n for user application:\n     https://docs.microsoft.com/ja-jp/graph/auth-v2-user\n for service application:\n     https://docs.microsoft.com/ja-jp/graph/auth-v2-service\n",
+    "comment" : " Auth infomations\n\n - for user application:\n     https://docs.microsoft.com/ja-jp/graph/auth-v2-user\n - for service application:\n     https://docs.microsoft.com/ja-jp/graph/auth-v2-service\n",
     "line" : 15,
     "char" : 1,
     "members" : [
@@ -68,7 +68,7 @@
       "name" : "tenantId",
       "kind" : "variable",
       "protection" : "public",
-      "comment" : "\n",
+      "comment" : "Tenant ID\n",
       "line" : 18,
       "char" : 9,
       "deco" : "Aya",
@@ -78,39 +78,39 @@
       "name" : "clientId",
       "kind" : "variable",
       "protection" : "public",
-      "comment" : "\n",
+      "comment" : "Client ID\n",
       "line" : 20,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 16
      },
      {
-      "name" : "requireScope",
-      "kind" : "variable",
-      "protection" : "public",
-      "comment" : "\n",
-      "line" : 22,
-      "char" : 11,
-      "deco" : "AAya",
-      "init" : "[\"offline_access\", \"user.read\"]",
-      "offset" : 32
-     },
-     {
       "name" : "clientSecret",
       "kind" : "variable",
       "protection" : "public",
-      "comment" : "\n",
-      "line" : 24,
+      "comment" : "$(MARK service app only) Client secret\n",
+      "line" : 22,
       "char" : 9,
       "deco" : "Aya",
       "init" : "null",
+      "offset" : 32
+     },
+     {
+      "name" : "requireScope",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "$(MARK native app only)\n",
+      "line" : 24,
+      "char" : 11,
+      "deco" : "AAya",
+      "init" : "[\"offline_access\", \"user.read\"]",
       "offset" : 48
      },
      {
       "name" : "redirectUri",
       "kind" : "variable",
       "protection" : "public",
-      "comment" : "\n",
+      "comment" : "$(MARK native app only)\n",
       "line" : 26,
       "char" : 9,
       "deco" : "Aya",
@@ -121,7 +121,7 @@
       "name" : "responseMode",
       "kind" : "variable",
       "protection" : "public",
-      "comment" : "\n",
+      "comment" : "$(MARK native app only)\n",
       "line" : 28,
       "char" : 9,
       "deco" : "Aya",
@@ -132,7 +132,7 @@
       "name" : "state",
       "kind" : "variable",
       "protection" : "public",
-      "comment" : "\n",
+      "comment" : "$(MARK native app only)\n",
       "line" : 30,
       "char" : 9,
       "deco" : "Aya",
@@ -143,7 +143,7 @@
       "name" : "accessToken",
       "kind" : "variable",
       "protection" : "public",
-      "comment" : "\n",
+      "comment" : "$(MARK native app only)\n",
       "line" : 32,
       "char" : 9,
       "deco" : "Aya",
@@ -154,7 +154,7 @@
       "name" : "refreshToken",
       "kind" : "variable",
       "protection" : "public",
-      "comment" : "\n",
+      "comment" : "$(MARK native app only)\n",
       "line" : 34,
       "char" : 9,
       "deco" : "Aya",
@@ -165,7 +165,7 @@
       "name" : "onAuthCodeRequired",
       "kind" : "variable",
       "protection" : "public",
-      "comment" : "\n",
+      "comment" : "$(MARK native app only)\n",
       "line" : 36,
       "char" : 28,
       "deco" : "DFAyaZv",
@@ -178,7 +178,7 @@
     "name" : "InstanceAuthServer",
     "kind" : "struct",
     "protection" : "public",
-    "comment" : "\n",
+    "comment" : " $(MARK native app only)\n",
     "line" : 42,
     "char" : 1,
     "members" : [
@@ -1048,7 +1048,7 @@
       "name" : "authorize",
       "kind" : "function",
       "protection" : "public",
-      "comment" : "\n",
+      "comment" : " $(MARK native app only)\n",
       "line" : 200,
       "char" : 7,
       "deco" : "FAyaZv",
@@ -1109,7 +1109,7 @@
       "name" : "refreshToken",
       "kind" : "function",
       "protection" : "public",
-      "comment" : "\n",
+      "comment" : " $(MARK native app only)\n",
       "line" : 264,
       "char" : 9,
       "deco" : "xFZAya",
@@ -1879,7 +1879,7 @@
     "name" : "setupWithInstanceServer",
     "kind" : "function",
     "protection" : "public",
-    "comment" : "\n",
+    "comment" : " $(MARK native app only)\n",
     "line" : 500,
     "char" : 6,
     "deco" : "FKS7msgraph5graphQg5GraphSQxQr4auth8AuthInfoZb",
@@ -1905,14 +1905,14 @@
   "name" : "msgraph.graph.httphelper",
   "kind" : "module",
   "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/graph/httphelper.d",
-  "comment" : " HTTP helpers\n",
+  "comment" : " HTTP helpers\n\n $(INTERNAL_MODULE)\n",
   "members" : [
    {
     "name" : "createQueryParam",
     "kind" : "function",
     "protection" : "package",
-    "comment" : "\n",
-    "line" : 12,
+    "comment" : " $(INTERNAL)\n",
+    "line" : 14,
     "char" : 8,
     "deco" : "FHAyaQdZQg",
     "parameters" : [
@@ -1921,15 +1921,15 @@
       "deco" : "HAyaQd"
      }
     ],
-    "endline" : 26,
+    "endline" : 28,
     "endchar" : 1
    },
    {
     "name" : "parseQueryParam",
     "kind" : "function",
     "protection" : "package",
-    "comment" : "\n",
-    "line" : 31,
+    "comment" : " $(INTERNAL)\n",
+    "line" : 33,
     "char" : 16,
     "deco" : "FAyaZHQfQh",
     "parameters" : [
@@ -1938,15 +1938,15 @@
       "deco" : "Aya"
      }
     ],
-    "endline" : 43,
+    "endline" : 45,
     "endchar" : 1
    },
    {
     "name" : "getRandomString",
     "kind" : "function",
     "protection" : "package",
-    "comment" : "\n",
-    "line" : 48,
+    "comment" : " $(INTERNAL)\n",
+    "line" : 50,
     "char" : 8,
     "deco" : "FkZAya",
     "originalType" : "string(uint length = 0)",
@@ -1957,7 +1957,7 @@
       "default" : "0u"
      }
     ],
-    "endline" : 58,
+    "endline" : 60,
     "endchar" : 1
    }
   ]
@@ -4820,18 +4820,20 @@
   "name" : "msgraph.httpd",
   "kind" : "module",
   "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/httpd/package.d",
-  "comment" : " Simple HTTP daemon for auth\n",
+  "comment" : " Simple HTTP daemon for auth\n\n $(INTERNAL_MODULE)\n",
   "members" : [
    {
     "name" : "msgraph.httpd.types",
     "kind" : "import",
-    "line" : 8,
+    "comment" : "\n",
+    "line" : 10,
     "char" : 15
    },
    {
     "name" : "msgraph.httpd.daemon",
     "kind" : "import",
-    "line" : 9,
+    "comment" : "\n",
+    "line" : 12,
     "char" : 15
    }
   ]
@@ -4840,19 +4842,19 @@
   "name" : "msgraph.httpd.daemon",
   "kind" : "module",
   "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/httpd/daemon.d",
-  "comment" : " Simple HTTP daemon\n",
+  "comment" : " Simple HTTP daemon\n\n $(INTERNAL_MODULE)\n",
   "members" : [
    {
     "name" : "msgraph.httpd.sockhelper",
     "kind" : "import",
-    "line" : 8,
+    "line" : 10,
     "char" : 8,
     "protection" : "package"
    },
    {
     "name" : "msgraph.httpd.parse",
     "kind" : "import",
-    "line" : 9,
+    "line" : 11,
     "char" : 8,
     "protection" : "package"
    },
@@ -4860,21 +4862,21 @@
     "name" : "Httpd",
     "kind" : "struct",
     "protection" : "package",
-    "comment" : "\n",
-    "line" : 14,
+    "comment" : " $(INTERNAL) HTTP daemon\n",
+    "line" : 16,
     "char" : 1,
     "members" : [
      {
       "name" : "std.socket",
       "kind" : "import",
-      "line" : 17,
+      "line" : 19,
       "char" : 9,
       "protection" : "private"
      },
      {
       "name" : "std.exception",
       "kind" : "import",
-      "line" : 18,
+      "line" : 20,
       "char" : 9,
       "protection" : "private"
      },
@@ -4882,7 +4884,7 @@
       "name" : "_listener",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 19,
+      "line" : 21,
       "char" : 9,
       "deco" : "C3std6socket6Socket",
       "originalType" : "Socket",
@@ -4892,7 +4894,7 @@
       "name" : "_connection",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 20,
+      "line" : 22,
       "char" : 9,
       "deco" : "C3std6socket6Socket",
       "originalType" : "Socket",
@@ -4903,7 +4905,7 @@
       "kind" : "constructor",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 26,
+      "line" : 28,
       "char" : 2,
       "deco" : "FNcNfAyatZS7msgraph5httpd6daemon5Httpd",
       "originalType" : "ref @safe (string bindaddr, ushort port = 0)",
@@ -4918,7 +4920,7 @@
         "default" : "cast(ushort)0u"
        }
       ],
-      "endline" : 29,
+      "endline" : 31,
       "endchar" : 2
      },
      {
@@ -4926,7 +4928,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 34,
+      "line" : 36,
       "char" : 7,
       "deco" : "FNeAyatZv",
       "originalType" : "@trusted void(string bindaddr = \"localhost\", ushort port = 0)",
@@ -4942,7 +4944,7 @@
         "default" : "cast(ushort)0u"
        }
       ],
-      "endline" : 40,
+      "endline" : 42,
       "endchar" : 2
      },
      {
@@ -4950,10 +4952,10 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 45,
+      "line" : 47,
       "char" : 9,
       "deco" : "xFNeZt",
-      "endline" : 50,
+      "endline" : 52,
       "endchar" : 2
      },
      {
@@ -4961,10 +4963,10 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 55,
+      "line" : 57,
       "char" : 7,
       "deco" : "FNeZv",
-      "endline" : 62,
+      "endline" : 64,
       "endchar" : 2
      },
      {
@@ -4972,10 +4974,10 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 67,
+      "line" : 69,
       "char" : 7,
       "deco" : "FNeZv",
-      "endline" : 74,
+      "endline" : 76,
       "endchar" : 2
      },
      {
@@ -4983,7 +4985,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 79,
+      "line" : 81,
       "char" : 7,
       "deco" : "FNfJS7msgraph5httpd5types7RequestkZb",
       "originalType" : "@safe bool(out Request req, uint msecs = (uint).max)",
@@ -5001,7 +5003,7 @@
         "default" : "4294967295u"
        }
       ],
-      "endline" : 188,
+      "endline" : 190,
       "endchar" : 2
      },
      {
@@ -5009,7 +5011,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 193,
+      "line" : 195,
       "char" : 7,
       "deco" : "FNfS7msgraph5httpd5types8ResponsekZb",
       "originalType" : "@safe bool(Response res, uint msecs = 1000)",
@@ -5024,7 +5026,7 @@
         "default" : "1000u"
        }
       ],
-      "endline" : 258,
+      "endline" : 260,
       "endchar" : 2
      },
      {
@@ -5032,20 +5034,20 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 263,
+      "line" : 265,
       "char" : 7,
       "deco" : "FNfZv",
-      "endline" : 267,
+      "endline" : 269,
       "endchar" : 2
      },
      {
       "name" : "~this",
       "kind" : "destructor",
       "protection" : "public",
-      "line" : 269,
+      "line" : 271,
       "char" : 2,
       "deco" : "FNfZv",
-      "endline" : 272,
+      "endline" : 274,
       "endchar" : 2
      },
      {
@@ -5057,7 +5059,7 @@
       "name" : "opAssign",
       "kind" : "generated function",
       "protection" : "public",
-      "line" : 14,
+      "line" : 16,
       "char" : 1,
       "deco" : "FNcNjNeS7msgraph5httpd6daemon5HttpdZQBd",
       "parameters" : [
@@ -5070,28 +5072,28 @@
     ]
    },
    {
-    "name" : "__unittest_L276_C7",
+    "name" : "__unittest_L278_C7",
     "kind" : "function",
     "protection" : "package",
-    "comment" : "ditto\n",
-    "line" : 276,
+    "comment" : "\n",
+    "line" : 278,
     "char" : 7,
     "storageClass" : [
      "@safe"
     ],
-    "endline" : 311,
+    "endline" : 313,
     "endchar" : 1
    },
    {
-    "name" : "__unittest_L311_C7",
+    "name" : "__unittest_L313_C7",
     "kind" : "function",
     "protection" : "package",
-    "line" : 311,
+    "line" : 313,
     "char" : 7,
     "storageClass" : [
      "@safe"
     ],
-    "endline" : 373,
+    "endline" : 375,
     "endchar" : 1
    }
   ]
@@ -5100,12 +5102,12 @@
   "name" : "msgraph.httpd.parse",
   "kind" : "module",
   "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/httpd/parse.d",
-  "comment" : " HTTP request parser\n",
+  "comment" : " HTTP request parser\n\n $(INTERNAL_MODULE)\n",
   "members" : [
    {
     "name" : "msgraph.httpd.types",
     "kind" : "import",
-    "line" : 7,
+    "line" : 9,
     "char" : 8,
     "protection" : "package"
    },
@@ -5113,8 +5115,8 @@
     "name" : "parseRequestLine",
     "kind" : "function",
     "protection" : "package",
-    "comment" : "\n",
-    "line" : 12,
+    "comment" : " $(INTERNAL)\n",
+    "line" : 14,
     "char" : 6,
     "deco" : "FNeKS7msgraph5httpd5types7RequestIAaZb",
     "parameters" : [
@@ -5133,15 +5135,15 @@
       ]
      }
     ],
-    "endline" : 25,
+    "endline" : 27,
     "endchar" : 1
    },
    {
     "name" : "parseHeaders",
     "kind" : "function",
     "protection" : "package",
-    "comment" : "\n",
-    "line" : 30,
+    "comment" : " $(INTERNAL)\n",
+    "line" : 32,
     "char" : 6,
     "deco" : "FNeKS7msgraph5httpd5types7RequestIAaZb",
     "parameters" : [
@@ -5160,15 +5162,15 @@
       ]
      }
     ],
-    "endline" : 44,
+    "endline" : 46,
     "endchar" : 1
    },
    {
     "name" : "parseBody",
     "kind" : "function",
     "protection" : "package",
-    "comment" : "\n",
-    "line" : 49,
+    "comment" : " $(INTERNAL)\n",
+    "line" : 51,
     "char" : 6,
     "deco" : "FNeKS7msgraph5httpd5types7RequestIAaZb",
     "parameters" : [
@@ -5187,7 +5189,7 @@
       ]
      }
     ],
-    "endline" : 54,
+    "endline" : 56,
     "endchar" : 1
    }
   ]
@@ -5196,12 +5198,12 @@
   "name" : "msgraph.httpd.sockhelper",
   "kind" : "module",
   "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/httpd/sockhelper.d",
-  "comment" : " Socket helper functions\n",
+  "comment" : " Socket helper functions\n\n $(INTERNAL_MODULE)\n",
   "members" : [
    {
     "name" : "std.socket",
     "kind" : "import",
-    "line" : 9,
+    "line" : 11,
     "char" : 8,
     "protection" : "package"
    },
@@ -5209,8 +5211,8 @@
     "name" : "select",
     "kind" : "function",
     "protection" : "package",
-    "comment" : "\n",
-    "line" : 14,
+    "comment" : " $(INTERNAL)\n",
+    "line" : 16,
     "char" : 6,
     "deco" : "FNbNeC3std6socket6SocketMPbMQdMQgIkZb",
     "parameters" : [
@@ -5247,14 +5249,15 @@
       ]
      }
     ],
-    "endline" : 68,
+    "endline" : 70,
     "endchar" : 1
    },
    {
     "name" : "select",
     "kind" : "function",
     "protection" : "package",
-    "line" : 69,
+    "comment" : "$(INTERNAL)\n",
+    "line" : 73,
     "char" : 6,
     "deco" : "FNbNeC3std6socket6SocketMDFNbNiNfZvMQlMQoIkZv",
     "originalType" : "nothrow @trusted void(Socket sock, scope void delegate() nothrow @nogc @safe onReadable, scope void delegate() nothrow @nogc @safe onWritable, scope void delegate() nothrow @nogc @safe onError, in uint msecs = 0)",
@@ -5293,14 +5296,15 @@
       "default" : "0u"
      }
     ],
-    "endline" : 93,
+    "endline" : 97,
     "endchar" : 1
    },
    {
     "name" : "waitReadable",
     "kind" : "function",
     "protection" : "package",
-    "line" : 94,
+    "comment" : "$(INTERNAL)\n",
+    "line" : 100,
     "char" : 6,
     "deco" : "FNbNeC3std6socket6SocketkZb",
     "parameters" : [
@@ -5313,14 +5317,15 @@
       "deco" : "k"
      }
     ],
-    "endline" : 98,
+    "endline" : 104,
     "endchar" : 1
    },
    {
     "name" : "waitWritable",
     "kind" : "function",
     "protection" : "package",
-    "line" : 99,
+    "comment" : "$(INTERNAL)\n",
+    "line" : 107,
     "char" : 6,
     "deco" : "FNbNeC3std6socket6SocketkZb",
     "parameters" : [
@@ -5333,14 +5338,15 @@
       "deco" : "k"
      }
     ],
-    "endline" : 103,
+    "endline" : 111,
     "endchar" : 1
    },
    {
     "name" : "setRecvTimeout",
     "kind" : "function",
     "protection" : "package",
-    "line" : 104,
+    "comment" : "$(INTERNAL)\n",
+    "line" : 114,
     "char" : 6,
     "deco" : "FNbNeC3std6socket6SocketkZv",
     "parameters" : [
@@ -5353,14 +5359,15 @@
       "deco" : "k"
      }
     ],
-    "endline" : 114,
+    "endline" : 124,
     "endchar" : 1
    },
    {
     "name" : "setSendTimeout",
     "kind" : "function",
     "protection" : "package",
-    "line" : 115,
+    "comment" : "$(INTERNAL)\n",
+    "line" : 127,
     "char" : 6,
     "deco" : "FNbNeC3std6socket6SocketkZv",
     "parameters" : [
@@ -5373,7 +5380,7 @@
       "deco" : "k"
      }
     ],
-    "endline" : 125,
+    "endline" : 137,
     "endchar" : 1
    }
   ]
@@ -5382,14 +5389,14 @@
   "name" : "msgraph.httpd.types",
   "kind" : "module",
   "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/httpd/types.d",
-  "comment" : " HTTP related types\n",
+  "comment" : " HTTP related types\n\n $(INTERNAL_MODULE)\n",
   "members" : [
    {
     "name" : "Request",
     "kind" : "struct",
     "protection" : "package",
-    "comment" : "\n",
-    "line" : 12,
+    "comment" : " $(INTERNAL)\n",
+    "line" : 14,
     "char" : 1,
     "members" : [
      {
@@ -5397,7 +5404,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 15,
+      "line" : 17,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 0
@@ -5407,7 +5414,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 17,
+      "line" : 19,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 16
@@ -5417,7 +5424,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 19,
+      "line" : 21,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 32
@@ -5427,7 +5434,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 21,
+      "line" : 23,
       "char" : 17,
       "deco" : "HAyaQd",
       "offset" : 48
@@ -5437,7 +5444,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 23,
+      "line" : 25,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 56
@@ -5448,8 +5455,8 @@
     "name" : "Response",
     "kind" : "struct",
     "protection" : "package",
-    "comment" : "\n",
-    "line" : 29,
+    "comment" : " $(INTERNAL)\n",
+    "line" : 31,
     "char" : 1,
     "members" : [
      {
@@ -5457,7 +5464,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 32,
+      "line" : 34,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 0
@@ -5467,7 +5474,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 34,
+      "line" : 36,
       "char" : 17,
       "deco" : "HAyaQd",
       "offset" : 16
@@ -5477,7 +5484,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 36,
+      "line" : 38,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 24
