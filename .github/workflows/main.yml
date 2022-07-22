@@ -376,9 +376,9 @@ jobs:
     needs: upload-codecov
     runs-on: ubuntu-latest
     steps:
-      #- uses: actions/checkout@v3
-      #  with:
-      #    ref: gh-pages
+      - uses: actions/checkout@v3
+        with:
+          ref: gh-pages
       - name: Cleanup
         run: ls -1 | grep -v -E '^v(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$' | xargs rm -rf
       - name: Download generated pages
