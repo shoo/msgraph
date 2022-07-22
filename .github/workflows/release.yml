@@ -21,7 +21,7 @@ jobs:
       - name: Generate document
         run: |
           rdmd ./scripts/runner.d -a=x86_64 --mode=generate-document
-          dub build -b=ddeps
+        #  dub build -b=ddeps
       - name: Upload generated pages
         uses: actions/upload-artifact@v2
         with:

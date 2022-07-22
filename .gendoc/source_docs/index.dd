@@ -1,6 +1,6 @@
 Ddoc
 
-<img src="./deps.svg" />
+$(COMMENT <img src="./deps.svg" />)
 
 $(MODULE_INDEX)
 
