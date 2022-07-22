@@ -1,5 +1,7 @@
 /*******************************************************************************
  * HTTP request parser
+ * 
+ * $(INTERNAL_MODULE)
  */
 module msgraph.httpd.parse;
 
@@ -7,7 +9,7 @@ package(msgraph.httpd):
 import msgraph.httpd.types;
 
 /*******************************************************************************
- * 
+ * $(INTERNAL)
  */
 bool parseRequestLine(ref Request req, in char[] buf) @trusted
 {
@@ -25,7 +27,7 @@ bool parseRequestLine(ref Request req, in char[] buf) @trusted
 }
 
 /*******************************************************************************
- * 
+ * $(INTERNAL)
  */
 bool parseHeaders(ref Request req, in char[] buf) @trusted
 {
@@ -44,7 +46,7 @@ bool parseHeaders(ref Request req, in char[] buf) @trusted
 }
 
 /*******************************************************************************
- * 
+ * $(INTERNAL)
  */
 bool parseBody(ref Request req, in char[] buf) @trusted
 {

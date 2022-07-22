@@ -19,7 +19,9 @@ jobs:
       - name: Build bianry
         run: dub build -a=x86_64 -b=release -c=default
       - name: Generate document
-        run: rdmd ./scripts/runner.d -a=x86_64 --mode=generate-document
+        run:
+          - rdmd ./scripts/runner.d -a=x86_64 --mode=generate-document
+          - dub build -b=ddeps
       - name: Upload generated pages
         uses: actions/upload-artifact@v2
         with:

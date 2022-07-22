@@ -13,6 +13,8 @@ docs/
 !/testcases/*/source
 !/testcases/*/.no_*
 !/testcases/*/.*_opts
+*.bat
+*.sh
 *.exe
 *.o
 *.obj

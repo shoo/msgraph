@@ -5,39 +5,39 @@ module msgraph.graph.auth;
 
 
 /*******************************************************************************
+ * Auth infomations
  * 
- * 
- * for user application:
+ * - for user application:
  *     https://docs.microsoft.com/ja-jp/graph/auth-v2-user
- * for service application:
+ * - for service application:
  *     https://docs.microsoft.com/ja-jp/graph/auth-v2-service
  */
 struct AuthInfo
 {
-	///
+	/// Tenant ID
 	string tenantId;
-	///
+	/// Client ID
 	string clientId;
-	///
-	string[] requireScope = ["offline_access", "user.read"];
-	///
+	/// $(MARK service app only) Client secret
 	string clientSecret   = null;
-	///
+	/// $(MARK native app only)
+	string[] requireScope = ["offline_access", "user.read"];
+	/// $(MARK native app only)
 	string redirectUri    = "https://login.microsoftonline.com/common/oauth2/nativeclient";
-	///
+	/// $(MARK native app only)
 	string responseMode   = "query";
-	///
+	/// $(MARK native app only)
 	string state          = "12345";
-	///
+	/// $(MARK native app only)
 	string accessToken    = null;
-	///
+	/// $(MARK native app only)
 	string refreshToken   = null;
-	///
+	/// $(MARK native app only)
 	void delegate(string url) onAuthCodeRequired = null;
 }
 
 /*******************************************************************************
- * 
+ * $(MARK native app only)
  */
 struct InstanceAuthServer
 {

@@ -1,5 +1,7 @@
 /*******************************************************************************
  * Simple HTTP daemon
+ * 
+ * $(INTERNAL_MODULE)
  */
 module msgraph.httpd.daemon;
 
@@ -9,7 +11,7 @@ import msgraph.httpd.sockhelper;
 import msgraph.httpd.parse;
 
 /*******************************************************************************
- * 
+ * $(INTERNAL) HTTP daemon
  */
 struct Httpd
 {
@@ -272,7 +274,7 @@ public:
 	}
 }
 
-/// ditto
+///
 @safe unittest
 {
 	import std.socket;

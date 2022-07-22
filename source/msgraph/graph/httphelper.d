@@ -1,5 +1,7 @@
 /*******************************************************************************
  * HTTP helpers
+ * 
+ * $(INTERNAL_MODULE)
  */
 module msgraph.graph.httphelper;
 
@@ -7,7 +9,7 @@ package(msgraph):
 
 
 /*******************************************************************************
- * 
+ * $(INTERNAL)
  */
 string createQueryParam(string[string] params)
 {
@@ -26,7 +28,7 @@ string createQueryParam(string[string] params)
 }
 
 /*******************************************************************************
- * 
+ * $(INTERNAL)
  */
 string[string] parseQueryParam(string params)
 {
@@ -43,7 +45,7 @@ string[string] parseQueryParam(string params)
 }
 
 /*******************************************************************************
- * 
+ * $(INTERNAL)
  */
 string getRandomString(uint length = 0)
 {

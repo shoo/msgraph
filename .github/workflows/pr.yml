@@ -58,7 +58,9 @@ jobs:
   #      run: dub build -a=${ARCH} -b=release -c=default
   #    # DOC:ドキュメント生成をする場合は以下を実行
   #    - name: Generate document tests
-  #      run: rdmd ./scripts/runner.d -a=${ARCH} --mode=generate-document
+  #      run:
+  #        - rdmd ./scripts/runner.d -a=${ARCH} --mode=generate-document
+  #        - dub build -b=ddeps
   #    # DOC:ドキュメントを記録する場合は以下を実行(Artifactに6か月保管されます)
   #    - name: Upload generated pages
   #      uses: actions/upload-artifact@v2
@@ -147,7 +149,9 @@ jobs:
       - name: Build tests
         run: dub build -a=x86_64 -b=release -c=default
       - name: Generate document tests
-        run: rdmd ./scripts/runner.d -a=x86_64 --mode=generate-document
+        run:
+          - rdmd ./scripts/runner.d -a=x86_64 --mode=generate-document
+          - dub build -b=ddeps
 
   # No. OS      ARCH    COMPILER   UT  TT  BLD DOC COV
   #  7. Windows x86_64  dmd-master x   x   x   x   x
@@ -220,7 +224,9 @@ jobs:
       - name: Build tests
         run: dub build -a=x86_64 -b=release -c=default
       - name: Generate document tests
-        run: rdmd ./scripts/runner.d -a=x86_64 --mode=generate-document
+        run:
+          - rdmd ./scripts/runner.d -a=x86_64 --mode=generate-document
+          - dub build -b=ddeps
       - name: Upload generated pages
         uses: actions/upload-artifact@v2
         with:
@@ -324,7 +330,9 @@ jobs:
       - name: Build tests
         run: dub build -a=x86_64 -b=release -c=default
       - name: Generate document tests
-        run: rdmd ./scripts/runner.d -a=x86_64 --mode=generate-document
+        run:
+          - rdmd ./scripts/runner.d -a=x86_64 --mode=generate-document
+          - dub build -b=ddeps
 
   # No. OS      ARCH    COMPILER   UT  TT  BLD DOC COV
   # 23. macOS   x86_64  dmd-master x   x   x   x   x

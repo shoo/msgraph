@@ -195,7 +195,7 @@ public:
 	}
 	
 	/***************************************************************************
-	 * 
+	 * $(MARK native app only)
 	 */
 	void authorize(string code)
 	{
@@ -259,7 +259,7 @@ public:
 	}
 	
 	/***************************************************************************
-	 * 
+	 * $(MARK native app only)
 	 */
 	string refreshToken() const
 	{
@@ -495,7 +495,7 @@ public:
 }
 
 /*******************************************************************************
- * 
+ * $(MARK native app only)
  */
 bool setupWithInstanceServer(ref Graph g, AuthInfo authInfo)
 {

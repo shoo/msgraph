@@ -1,5 +1,7 @@
 /*******************************************************************************
  * Socket helper functions
+ * 
+ * $(INTERNAL_MODULE)
  */
 module msgraph.httpd.sockhelper;
 
@@ -9,7 +11,7 @@ package(msgraph.httpd):
 import std.socket;
 
 /*******************************************************************************
- * 
+ * $(INTERNAL)
  */
 bool select(Socket sock, scope bool* readable, scope bool* writable, scope bool* err, in uint msecs) nothrow @trusted
 {
@@ -66,6 +68,8 @@ bool select(Socket sock, scope bool* readable, scope bool* writable, scope bool*
 		*err      = FD_ISSET(sock, &errfds)   != 0;
 	return true;
 }
+
+/// $(INTERNAL)
 void select(
 	Socket sock,
 	scope void delegate() nothrow @safe @nogc onReadable,
@@ -91,16 +95,22 @@ void select(
 			onError();
 	}
 }
+
+/// $(INTERNAL)
 bool waitReadable(Socket sock, uint msecs) nothrow @trusted
 {
 	bool rd, er;
 	return select(sock, &rd, null, &er, msecs) && rd && !er;
 }
+
+/// $(INTERNAL)
 bool waitWritable(Socket sock, uint msecs) nothrow @trusted
 {
 	bool wt, er;
 	return select(sock, null, &wt, &er, msecs) && wt && !er;
 }
+
+/// $(INTERNAL)
 void setRecvTimeout(Socket sock, uint msecs) nothrow @trusted
 {
 	import std.exception;
@@ -112,6 +122,8 @@ void setRecvTimeout(Socket sock, uint msecs) nothrow @trusted
 	TimeVal[1] dat = [TimeVal(msecs / 1000, (msecs % 1000) * 1000)];
 	sock.setOption(SocketOptionLevel.SOCKET, SocketOption.RCVTIMEO, dat[]).collectException();
 }
+
+/// $(INTERNAL)
 void setSendTimeout(Socket sock, uint msecs) nothrow @trusted
 {
 	import std.exception;

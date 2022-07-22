@@ -1,5 +1,7 @@
 /*******************************************************************************
  * HTTP related types
+ * 
+ * $(INTERNAL_MODULE)
  */
 module msgraph.httpd.types;
 
@@ -7,7 +9,7 @@ module msgraph.httpd.types;
 package(msgraph):
 
 /*******************************************************************************
- * 
+ * $(INTERNAL)
  */
 struct Request
 {
@@ -24,7 +26,7 @@ struct Request
 }
 
 /*******************************************************************************
- * 
+ * $(INTERNAL)
  */
 struct Response
 {

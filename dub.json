@@ -10,7 +10,7 @@
 			"dflags": ["-deps=.dub/deps.txt"],
 			"buildOptions": ["syntaxOnly"],
 			"postBuildCommands": [
-				"dub run ddeps -- --focus=udon -i .dub/deps.txt -l .dub/deps.txt -o .dub/deps.dot --exclude=std --exclude=core",
+				"$DUB run ddeps -- --focus=msgraph -i .dub/deps.txt -l .dub/deps.txt -o .dub/deps.dot --exclude=std --exclude=core --exclude=etc",
 				"dot -Tsvg -odocs/deps.svg .dub/deps.dot"
 			]
 		},
