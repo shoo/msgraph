@@ -45,9 +45,9 @@ jobs:
   #  name: test-${OS}-${ARCH}-${COMPILER}
   #  runs-on: ${OS}
   #  steps:
-  #    - uses: actions/checkout@v2
+  #    - uses: actions/checkout@v3
   #      with:
-  #        ref: master
+  #        ref: main
   #    - name: Install D compiler
   #      uses: dlang-community/setup-dlang@v1
   #      with:
@@ -83,9 +83,9 @@ jobs:
     name: test-windows-x86-dmd-latest
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
-          ref: master
+          ref: main
       - name: Install D compiler
         uses: dlang-community/setup-dlang@v1
         with:
@@ -99,9 +99,9 @@ jobs:
     name: test-windows-x86-ldc-latest
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
-          ref: master
+          ref: main
       - name: Install D compiler
         uses: dlang-community/setup-dlang@v1
         with:
@@ -125,9 +125,9 @@ jobs:
     name: test-windows-x86_64-dmd-latest
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
-          ref: master
+          ref: main
       - name: Install D compiler
         uses: dlang-community/setup-dlang@v1
         with:
@@ -148,9 +148,9 @@ jobs:
     name: test-windows-x86_64-ldc-latest
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
-          ref: master
+          ref: main
       - name: Install D compiler
         uses: dlang-community/setup-dlang@v1
         with:
@@ -172,9 +172,9 @@ jobs:
     name: test-windows-x86_64-ldc-master
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
-          ref: master
+          ref: main
       - name: Install D compiler
         uses: dlang-community/setup-dlang@v1
         with:
@@ -197,9 +197,9 @@ jobs:
     name: test-linux-x86-ldc-latest
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
-          ref: master
+          ref: main
       - name: Install D compiler
         uses: dlang-community/setup-dlang@v1
         with:
@@ -227,9 +227,9 @@ jobs:
     name: test-linux-x86_64-dmd-latest
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
-          ref: master
+          ref: main
       - name: Install D compiler
         uses: dlang-community/setup-dlang@v1
         with:
@@ -252,9 +252,9 @@ jobs:
     name: test-linux-x86_64-ldc-latest
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
-          ref: master
+          ref: main
       - name: Install D compiler
         uses: dlang-community/setup-dlang@v1
         with:
@@ -275,9 +275,9 @@ jobs:
     name: test-linux-x86_64-dmd-master
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
-          ref: master
+          ref: main
       - name: Install D compiler
         uses: dlang-community/setup-dlang@v1
         with:
@@ -315,9 +315,9 @@ jobs:
     name: test-osx-x86_64-dmd-latest
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
-          ref: master
+          ref: main
       - name: Install D compiler
         uses: dlang-community/setup-dlang@v1
         with:
@@ -339,9 +339,9 @@ jobs:
     name: test-osx-x86_64-ldc-latest
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
-          ref: master
+          ref: main
       - name: Install D compiler
         uses: dlang-community/setup-dlang@v1
         with:
@@ -360,24 +360,3 @@ jobs:
   # No. OS      ARCH    COMPILER   UT  TT  BLD DOC COV
   # 24. macOS   x86_64  ldc-master x   x   x   x   x
   # do-nothing
-
-  # Deploy Pages
-  deproy-pages:
-    name: deploy-pages
-    needs: [test-windows-x86-dmd-latest, test-windows-x86-ldc-latest, test-windows-x86_64-dmd-latest, test-windows-x86_64-ldc-latest, test-windows-x86_64-ldc-master, test-linux-x86-ldc-latest, test-linux-x86_64-dmd-latest, test-linux-x86_64-ldc-latest, test-linux-x86_64-dmd-master, test-osx-x86_64-dmd-latest, test-osx-x86_64-ldc-latest]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download generated pages
-        uses: actions/download-artifact@v2
-        with:
-          name: docs
-          path: docs
-      - name: Deploy pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          allow_empty_commit: false
-          publish_dir: docs
-          publish_branch: gh-pages
-          user_name: GitHub Actions Bot
-          user_email: <>
