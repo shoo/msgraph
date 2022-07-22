@@ -90,7 +90,7 @@ jobs:
         with:
           compiler: dmd-latest
       - name: Run unit tests
-        run: rdmd ./scripts/runner.d -a=x86 --mode=unit-test --exdubopts=--build-mode=singleFile --exdubopts=--combined
+        run: rdmd ./scripts/runner.d -a=x86 --mode=unit-test
 
   # No. OS      ARCH    COMPILER   UT  TT  BLD DOC COV
   #  2. Windows x86     ldc        x   o   o   x   x
@@ -195,8 +195,9 @@ jobs:
           compiler: ldc-latest
       - name: Install gcc-multilib
         run: |
-          sudo apt update
-          sudo apt install gcc-multilib
+          sudo dpkg --add-architecture i386
+          sudo apt-get update
+          sudo apt-get install -y gcc-multilib libcurl4-openssl-dev:i386
       - name: Run unit tests
         run: rdmd ./scripts/runner.d -a=x86 --mode=unit-test
       - name: Build tests

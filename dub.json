@@ -26,12 +26,8 @@
 		},
 		{
 			"name": "unittest",
-			"targetType": "executable",
-			"targetName": "msgraph-unittest",
-			"dflags": ["-main"],
-			"dependencies": {
-				"unit-threaded": "~>2.0.5"
-			}
+			"targetType": "library",
+			"targetName": "msgraph-unittest"
 		}
 	]
 }
