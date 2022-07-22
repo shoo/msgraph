@@ -1,0 +1,15 @@
+_=Macros for customizing the output for a particular project
+
+PILL=$(SPANC pill, $1)
+
+MARK=$(SCRIPT (function() {
+	$(DOLLAR)(document.currentScript).closest('dd').prev('dt').find('.quickindex').after('$(PILL $0) ')
+})())
+
+INTERNAL=$(MARK internal)
+
+INTERNAL_MODULE=$(SCRIPT (function() {
+	$(DOLLAR)('H1:first').prepend('<span class="pill">internal</span> ');
+})())
+
+_=
