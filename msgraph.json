@@ -1,0 +1,5682 @@
+[
+ {
+  "name" : "msgraph",
+  "kind" : "module",
+  "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/package.d",
+  "comment" : " Library of Microsoft Graph for D\n",
+  "members" : [
+   {
+    "name" : "msgraph.graph",
+    "kind" : "import",
+    "comment" : "\n",
+    "line" : 8,
+    "char" : 15
+   },
+   {
+    "name" : "msgraph.user",
+    "kind" : "import",
+    "comment" : "\n",
+    "line" : 10,
+    "char" : 15
+   }
+  ]
+ },
+ {
+  "name" : "msgraph.graph",
+  "kind" : "module",
+  "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/graph/package.d",
+  "comment" : " Microsoft Graph public imported packages\n",
+  "members" : [
+   {
+    "name" : "msgraph.graph.graph",
+    "kind" : "import",
+    "comment" : "\n",
+    "line" : 7,
+    "char" : 15
+   },
+   {
+    "name" : "msgraph.graph.auth",
+    "kind" : "import",
+    "comment" : "\n",
+    "line" : 9,
+    "char" : 15
+   },
+   {
+    "name" : "msgraph.graph.exception",
+    "kind" : "import",
+    "comment" : "\n",
+    "line" : 11,
+    "char" : 15
+   }
+  ]
+ },
+ {
+  "name" : "msgraph.graph.auth",
+  "kind" : "module",
+  "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/graph/auth.d",
+  "comment" : " Authenticate/Authorize helpers\n",
+  "members" : [
+   {
+    "name" : "AuthInfo",
+    "kind" : "struct",
+    "protection" : "public",
+    "comment" : "\n\n for user application:\n     https://docs.microsoft.com/ja-jp/graph/auth-v2-user\n for service application:\n     https://docs.microsoft.com/ja-jp/graph/auth-v2-service\n",
+    "line" : 15,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "tenantId",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 18,
+      "char" : 9,
+      "deco" : "Aya",
+      "offset" : 0
+     },
+     {
+      "name" : "clientId",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 20,
+      "char" : 9,
+      "deco" : "Aya",
+      "offset" : 16
+     },
+     {
+      "name" : "requireScope",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 22,
+      "char" : 11,
+      "deco" : "AAya",
+      "init" : "[\"offline_access\", \"user.read\"]",
+      "offset" : 32
+     },
+     {
+      "name" : "clientSecret",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 24,
+      "char" : 9,
+      "deco" : "Aya",
+      "init" : "null",
+      "offset" : 48
+     },
+     {
+      "name" : "redirectUri",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 26,
+      "char" : 9,
+      "deco" : "Aya",
+      "init" : "\"https://login.microsoftonline.com/common/oauth2/nativeclient\"",
+      "offset" : 64
+     },
+     {
+      "name" : "responseMode",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 28,
+      "char" : 9,
+      "deco" : "Aya",
+      "init" : "\"query\"",
+      "offset" : 80
+     },
+     {
+      "name" : "state",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 30,
+      "char" : 9,
+      "deco" : "Aya",
+      "init" : "\"12345\"",
+      "offset" : 96
+     },
+     {
+      "name" : "accessToken",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 32,
+      "char" : 9,
+      "deco" : "Aya",
+      "init" : "null",
+      "offset" : 112
+     },
+     {
+      "name" : "refreshToken",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 34,
+      "char" : 9,
+      "deco" : "Aya",
+      "init" : "null",
+      "offset" : 128
+     },
+     {
+      "name" : "onAuthCodeRequired",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 36,
+      "char" : 28,
+      "deco" : "DFAyaZv",
+      "init" : "null",
+      "offset" : 144
+     }
+    ]
+   },
+   {
+    "name" : "InstanceAuthServer",
+    "kind" : "struct",
+    "protection" : "public",
+    "comment" : "\n",
+    "line" : 42,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "msgraph.httpd",
+      "kind" : "import",
+      "line" : 45,
+      "char" : 9,
+      "protection" : "private"
+     },
+     {
+      "name" : "_httpd",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 46,
+      "char" : 8,
+      "deco" : "S7msgraph5httpd6daemon5Httpd",
+      "offset" : 0
+     },
+     {
+      "name" : "_code",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 47,
+      "char" : 9,
+      "deco" : "Aya",
+      "offset" : 16
+     },
+     {
+      "name" : "_state",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 48,
+      "char" : 9,
+      "deco" : "Aya",
+      "offset" : 32
+     },
+     {
+      "name" : "onAuthCodeAcquired",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 54,
+      "char" : 29,
+      "deco" : "DFAyaZv",
+      "init" : "null",
+      "offset" : 48
+     },
+     {
+      "name" : "listen",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 59,
+      "char" : 7,
+      "deco" : "FZv",
+      "endline" : 62,
+      "endchar" : 2
+     },
+     {
+      "name" : "endpointUri",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 67,
+      "char" : 9,
+      "deco" : "xFZAya",
+      "endline" : 71,
+      "endchar" : 2
+     },
+     {
+      "name" : "authCode",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 76,
+      "char" : 9,
+      "deco" : "xFZAya",
+      "endline" : 79,
+      "endchar" : 2
+     },
+     {
+      "name" : "acceptCode",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 84,
+      "char" : 7,
+      "deco" : "FAyaZb",
+      "parameters" : [
+       {
+        "name" : "state",
+        "deco" : "Aya"
+       }
+      ],
+      "endline" : 117,
+      "endchar" : 2
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "protection" : "public",
+      "line" : 42,
+      "char" : 1,
+      "deco" : "FNeZv"
+     },
+     {
+      "name" : "__xdtor",
+      "kind" : "alias",
+      "protection" : "public"
+     },
+     {
+      "name" : "opAssign",
+      "kind" : "generated function",
+      "protection" : "public",
+      "line" : 42,
+      "char" : 1,
+      "deco" : "FNcNjNeS7msgraph5graph4auth18InstanceAuthServerZQBp",
+      "parameters" : [
+       {
+        "name" : "p",
+        "deco" : "S7msgraph5graph4auth18InstanceAuthServer"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name" : "msgraph.graph.exception",
+  "kind" : "module",
+  "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/graph/exception.d",
+  "comment" : " Exception type definitions\n",
+  "members" : [
+   {
+    "name" : "std.exception",
+    "kind" : "import",
+    "line" : 6,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.json",
+    "kind" : "import",
+    "line" : 7,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "kind" : "template",
+    "protection" : "public",
+    "comment" : "\n",
+    "line" : 12,
+    "char" : 7,
+    "name" : "basicGraphExceptionCtors",
+    "parameters" : [],
+    "members" : [
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "comment" : "\n",
+      "line" : 17,
+      "char" : 2,
+      "type" : "pure nothrow @nogc @safe (string msg, string file = __FILE__, size_t line = __LINE__, Throwable next = null)",
+      "parameters" : [
+       {
+        "name" : "msg",
+        "type" : "string"
+       },
+       {
+        "name" : "file",
+        "type" : "string",
+        "default" : "__FILE__"
+       },
+       {
+        "name" : "line",
+        "type" : "size_t",
+        "default" : "__LINE__"
+       },
+       {
+        "name" : "next",
+        "type" : "Throwable",
+        "default" : "null"
+       }
+      ],
+      "endline" : 21,
+      "endchar" : 2
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "comment" : "ditto\n",
+      "line" : 24,
+      "char" : 2,
+      "type" : "pure nothrow @nogc @safe (string msg, Throwable next, string file = __FILE__, size_t line = __LINE__)",
+      "parameters" : [
+       {
+        "name" : "msg",
+        "type" : "string"
+       },
+       {
+        "name" : "next",
+        "type" : "Throwable"
+       },
+       {
+        "name" : "file",
+        "type" : "string",
+        "default" : "__FILE__"
+       },
+       {
+        "name" : "line",
+        "type" : "size_t",
+        "default" : "__LINE__"
+       }
+      ],
+      "endline" : 28,
+      "endchar" : 2
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "comment" : "ditto\n",
+      "line" : 31,
+      "char" : 2,
+      "type" : "pure nothrow @nogc @safe (string msg, JSONValue detail, string file = __FILE__, size_t line = __LINE__, Throwable next = null)",
+      "parameters" : [
+       {
+        "name" : "msg",
+        "type" : "string"
+       },
+       {
+        "name" : "detail",
+        "type" : "JSONValue"
+       },
+       {
+        "name" : "file",
+        "type" : "string",
+        "default" : "__FILE__"
+       },
+       {
+        "name" : "line",
+        "type" : "size_t",
+        "default" : "__LINE__"
+       },
+       {
+        "name" : "next",
+        "type" : "Throwable",
+        "default" : "null"
+       }
+      ],
+      "endline" : 36,
+      "endchar" : 2
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "comment" : "ditto\n",
+      "line" : 39,
+      "char" : 2,
+      "type" : "pure nothrow @nogc @safe (string msg, JSONValue detail, Throwable next, string file = __FILE__, size_t line = __LINE__)",
+      "parameters" : [
+       {
+        "name" : "msg",
+        "type" : "string"
+       },
+       {
+        "name" : "detail",
+        "type" : "JSONValue"
+       },
+       {
+        "name" : "next",
+        "type" : "Throwable"
+       },
+       {
+        "name" : "file",
+        "type" : "string",
+        "default" : "__FILE__"
+       },
+       {
+        "name" : "line",
+        "type" : "size_t",
+        "default" : "__LINE__"
+       }
+      ],
+      "endline" : 44,
+      "endchar" : 2
+     }
+    ]
+   },
+   {
+    "name" : "GraphException",
+    "kind" : "class",
+    "protection" : "public",
+    "comment" : "\n",
+    "line" : 50,
+    "char" : 1,
+    "base" : "object.Exception",
+    "members" : [
+     {
+      "name" : "_detail",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 53,
+      "char" : 12,
+      "deco" : "S3std4json9JSONValue",
+      "offset" : 80
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "protection" : "public",
+      "comment" : " Params:\n      msg    = The message for the exception.\n      next   = The previous exception in the chain of exceptions.\n      file   = The file where the exception occurred.\n      line   = The line number where the exception occurred.\n      detail = The detail information with JSON\n",
+      "line" : 63,
+      "char" : 2,
+      "deco" : "FNaNbNiNfAyaQdmC6object9ThrowableZC7msgraph5graph9exception14GraphException",
+      "originalType" : "pure nothrow @nogc @safe (string msg, string file = __FILE__, size_t line = __LINE__, Throwable next = null)",
+      "parameters" : [
+       {
+        "name" : "msg",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "file",
+        "deco" : "Aya",
+        "default" : "__FILE__"
+       },
+       {
+        "name" : "line",
+        "deco" : "m",
+        "default" : "cast(ulong)__LINE__"
+       },
+       {
+        "name" : "next",
+        "deco" : "C6object9Throwable",
+        "default" : "null"
+       }
+      ],
+      "endline" : 66,
+      "endchar" : 2
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "protection" : "public",
+      "comment" : "ditto\n",
+      "line" : 69,
+      "char" : 2,
+      "deco" : "FNaNbNiNfAyaC6object9ThrowableQvmZC7msgraph5graph9exception14GraphException",
+      "originalType" : "pure nothrow @nogc @safe (string msg, Throwable next, string file = __FILE__, size_t line = __LINE__)",
+      "parameters" : [
+       {
+        "name" : "msg",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "next",
+        "deco" : "C6object9Throwable"
+       },
+       {
+        "name" : "file",
+        "deco" : "Aya",
+        "default" : "__FILE__"
+       },
+       {
+        "name" : "line",
+        "deco" : "m",
+        "default" : "cast(ulong)__LINE__"
+       }
+      ],
+      "endline" : 72,
+      "endchar" : 2
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "protection" : "public",
+      "comment" : "ditto\n",
+      "line" : 75,
+      "char" : 2,
+      "deco" : "FNaNbNiNfAyaS3std4json9JSONValueQxmC6object9ThrowableZC7msgraph5graph9exception14GraphException",
+      "originalType" : "pure nothrow @nogc @safe (string msg, JSONValue detail, string file = __FILE__, size_t line = __LINE__, Throwable next = null)",
+      "parameters" : [
+       {
+        "name" : "msg",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "detail",
+        "deco" : "S3std4json9JSONValue"
+       },
+       {
+        "name" : "file",
+        "deco" : "Aya",
+        "default" : "__FILE__"
+       },
+       {
+        "name" : "line",
+        "deco" : "m",
+        "default" : "cast(ulong)__LINE__"
+       },
+       {
+        "name" : "next",
+        "deco" : "C6object9Throwable",
+        "default" : "null"
+       }
+      ],
+      "endline" : 80,
+      "endchar" : 2
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "protection" : "public",
+      "comment" : "ditto\n",
+      "line" : 83,
+      "char" : 2,
+      "deco" : "FNaNbNiNfAyaS3std4json9JSONValueC6object9ThrowableQBpmZC7msgraph5graph9exception14GraphException",
+      "originalType" : "pure nothrow @nogc @safe (string msg, JSONValue detail, Throwable next, string file = __FILE__, size_t line = __LINE__)",
+      "parameters" : [
+       {
+        "name" : "msg",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "detail",
+        "deco" : "S3std4json9JSONValue"
+       },
+       {
+        "name" : "next",
+        "deco" : "C6object9Throwable"
+       },
+       {
+        "name" : "file",
+        "deco" : "Aya",
+        "default" : "__FILE__"
+       },
+       {
+        "name" : "line",
+        "deco" : "m",
+        "default" : "cast(ulong)__LINE__"
+       }
+      ],
+      "endline" : 88,
+      "endchar" : 2
+     },
+     {
+      "name" : "detail",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 93,
+      "char" : 19,
+      "deco" : "xFNaNbNiZxS3std4json9JSONValue",
+      "endline" : 96,
+      "endchar" : 2
+     }
+    ]
+   },
+   {
+    "name" : "AuthorizeException",
+    "kind" : "class",
+    "protection" : "public",
+    "comment" : "\n",
+    "line" : 104,
+    "char" : 1,
+    "base" : "msgraph.graph.exception.GraphException",
+    "members" : [
+     {
+      "name" : "basicGraphExceptionCtors!()",
+      "kind" : "mixin",
+      "protection" : "public",
+      "line" : 106,
+      "char" : 2
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name" : "msgraph.graph.graph",
+  "kind" : "module",
+  "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/graph/graph.d",
+  "comment" : " Microsoft Graph object\n",
+  "members" : [
+   {
+    "name" : "msgraph.graph.auth",
+    "kind" : "import",
+    "line" : 6,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "msgraph.graph.httphelper",
+    "kind" : "import",
+    "line" : 7,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "msgraph.graph.exception",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "Graph",
+    "kind" : "struct",
+    "protection" : "public",
+    "comment" : "\n",
+    "line" : 13,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "etc.c.curl",
+      "kind" : "import",
+      "line" : 16,
+      "char" : 9,
+      "protection" : "private",
+      "selective" : [
+       "CurlAuth",
+       "CurlOption",
+       "CurlProxy"
+      ]
+     },
+     {
+      "name" : "std.net.curl",
+      "kind" : "import",
+      "line" : 17,
+      "char" : 9,
+      "protection" : "private"
+     },
+     {
+      "name" : "std.array",
+      "kind" : "import",
+      "line" : 18,
+      "char" : 9,
+      "protection" : "private"
+     },
+     {
+      "name" : "std.datetime",
+      "kind" : "import",
+      "line" : 19,
+      "char" : 9,
+      "protection" : "private"
+     },
+     {
+      "name" : "std.json",
+      "kind" : "import",
+      "line" : 20,
+      "char" : 9,
+      "protection" : "private"
+     },
+     {
+      "name" : "std.string",
+      "kind" : "import",
+      "line" : 21,
+      "char" : 9,
+      "protection" : "private"
+     },
+     {
+      "name" : "std.exception",
+      "kind" : "import",
+      "line" : 22,
+      "char" : 9,
+      "protection" : "private"
+     },
+     {
+      "name" : "_client",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 24,
+      "char" : 9,
+      "deco" : "S3std3net4curl4HTTP",
+      "offset" : 0
+     },
+     {
+      "name" : "_clientId",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 25,
+      "char" : 9,
+      "deco" : "Aya",
+      "offset" : 8
+     },
+     {
+      "name" : "_tenantId",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 26,
+      "char" : 9,
+      "deco" : "Aya",
+      "offset" : 24
+     },
+     {
+      "name" : "_accessToken",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 27,
+      "char" : 9,
+      "deco" : "Aya",
+      "offset" : 40
+     },
+     {
+      "name" : "_accessTokenExpires",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 28,
+      "char" : 10,
+      "deco" : "S3std8datetime7systime7SysTime",
+      "offset" : 56
+     },
+     {
+      "name" : "_refreshToken",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 29,
+      "char" : 9,
+      "deco" : "Aya",
+      "offset" : 72
+     },
+     {
+      "name" : "_clientSecret",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 30,
+      "char" : 9,
+      "deco" : "Aya",
+      "offset" : 88
+     },
+     {
+      "name" : "_redirectUri",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 31,
+      "char" : 9,
+      "deco" : "Aya",
+      "offset" : 104
+     },
+     {
+      "name" : "_requireScope",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 32,
+      "char" : 11,
+      "deco" : "AAya",
+      "offset" : 120
+     },
+     {
+      "name" : "_contentBuffer",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 33,
+      "char" : 21,
+      "deco" : "S3std5array__T8AppenderTAhZQn",
+      "offset" : 136
+     },
+     {
+      "name" : "_resetClient",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 35,
+      "char" : 7,
+      "deco" : "FIAaE3std3net4curl4HTTP6MethodZv",
+      "originalType" : "void(in char[] url, HTTP.Method method)",
+      "parameters" : [
+       {
+        "name" : "url",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "method",
+        "deco" : "E3std3net4curl4HTTP6Method"
+       }
+      ],
+      "endline" : 44,
+      "endchar" : 2
+     },
+     {
+      "name" : "_updateTokensForService",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 46,
+      "char" : 7,
+      "deco" : "FZv",
+      "endline" : 62,
+      "endchar" : 2
+     },
+     {
+      "name" : "_updateTokensForUserApp",
+      "kind" : "function",
+      "protection" : "private",
+      "line" : 64,
+      "char" : 7,
+      "deco" : "FZv",
+      "endline" : 85,
+      "endchar" : 2
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "protection" : "public",
+      "comment" : " Setup Microsoft Graph\n\n Params:\n      clientId     = Client ID (from Asure Active Directory)\n      tenantId     = Tenant ID (from Asure Active Directory)\n      clientSecret = Client secret (from Asure Active Directory, provisioned client secret).\n                     This is set only for server application.\n      authInfo     = Detail information for authrization.\n",
+      "line" : 102,
+      "char" : 2,
+      "deco" : "FNcAyaQdAQgQiZS7msgraph5graphQg5Graph",
+      "originalType" : "ref (string tenantId, string clientId, string[] requireScope, string clientSecret = null)",
+      "parameters" : [
+       {
+        "name" : "tenantId",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "clientId",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "requireScope",
+        "deco" : "AAya"
+       },
+       {
+        "name" : "clientSecret",
+        "deco" : "Aya",
+        "default" : "null"
+       }
+      ],
+      "endline" : 105,
+      "endchar" : 2
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "protection" : "public",
+      "comment" : "ditto\n",
+      "line" : 107,
+      "char" : 2,
+      "deco" : "FNcAyaQdQfQhAQkZS7msgraph5graphQg5Graph",
+      "originalType" : "ref (string tenantId, string clientId, string accessToken, string refreshToken, string[] requireScope)",
+      "parameters" : [
+       {
+        "name" : "tenantId",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "clientId",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "accessToken",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "refreshToken",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "requireScope",
+        "deco" : "AAya"
+       }
+      ],
+      "endline" : 110,
+      "endchar" : 2
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "protection" : "public",
+      "comment" : "ditto\n",
+      "line" : 112,
+      "char" : 2,
+      "deco" : "FNcS7msgraph5graph4auth8AuthInfoZSQBeQzQBb5Graph",
+      "originalType" : "ref (AuthInfo authInfo)",
+      "parameters" : [
+       {
+        "name" : "authInfo",
+        "deco" : "S7msgraph5graph4auth8AuthInfo"
+       }
+      ],
+      "endline" : 115,
+      "endchar" : 2
+     },
+     {
+      "name" : "setup",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "ditto\n",
+      "line" : 118,
+      "char" : 7,
+      "deco" : "FAyaQdAQgQiZv",
+      "parameters" : [
+       {
+        "name" : "tenantId",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "clientId",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "requireScope",
+        "deco" : "AAya"
+       },
+       {
+        "name" : "clientSecret",
+        "deco" : "Aya",
+        "default" : "null"
+       }
+      ],
+      "endline" : 126,
+      "endchar" : 2
+     },
+     {
+      "name" : "setup",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "ditto\n",
+      "line" : 129,
+      "char" : 7,
+      "deco" : "FAyaQdQfQhAQkZv",
+      "parameters" : [
+       {
+        "name" : "tenantId",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "clientId",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "accessToken",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "refreshToken",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "requireScope",
+        "deco" : "AAya"
+       }
+      ],
+      "endline" : 138,
+      "endchar" : 2
+     },
+     {
+      "name" : "setup",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "ditto\n",
+      "line" : 142,
+      "char" : 7,
+      "deco" : "FS7msgraph5graph4auth8AuthInfoZv",
+      "parameters" : [
+       {
+        "name" : "info",
+        "deco" : "S7msgraph5graph4auth8AuthInfo"
+       }
+      ],
+      "endline" : 195,
+      "endchar" : 2
+     },
+     {
+      "name" : "authorize",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 200,
+      "char" : 7,
+      "deco" : "FAyaZv",
+      "parameters" : [
+       {
+        "name" : "code",
+        "deco" : "Aya"
+       }
+      ],
+      "endline" : 220,
+      "endchar" : 2
+     },
+     {
+      "name" : "updateTokens",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 225,
+      "char" : 7,
+      "deco" : "FZv",
+      "endline" : 235,
+      "endchar" : 2
+     },
+     {
+      "name" : "accessToken",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 240,
+      "char" : 9,
+      "deco" : "xFZAya",
+      "endline" : 243,
+      "endchar" : 2
+     },
+     {
+      "name" : "accessTokenExpires",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 248,
+      "char" : 10,
+      "deco" : "xFZS3std8datetime7systime7SysTime",
+      "endline" : 251,
+      "endchar" : 2
+     },
+     {
+      "name" : "isAccessTokenExpired",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 256,
+      "char" : 7,
+      "deco" : "xFZb",
+      "endline" : 259,
+      "endchar" : 2
+     },
+     {
+      "name" : "refreshToken",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 264,
+      "char" : 9,
+      "deco" : "xFZAya",
+      "endline" : 267,
+      "endchar" : 2
+     },
+     {
+      "name" : "Method",
+      "kind" : "alias",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 272,
+      "char" : 2,
+      "deco" : "E3std3net4curl4HTTP6Method",
+      "originalType" : "HTTP.Method"
+     },
+     {
+      "name" : "Endpoint",
+      "kind" : "enum",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 277,
+      "char" : 2,
+      "baseDeco" : "Aya",
+      "members" : [
+       {
+        "name" : "v1_0",
+        "kind" : "enum member",
+        "protection" : "public",
+        "value" : "\"https://graph.microsoft.com/v1.0\"",
+        "comment" : "\n",
+        "line" : 280,
+        "char" : 3
+       },
+       {
+        "name" : "v1",
+        "kind" : "enum member",
+        "protection" : "public",
+        "value" : "\"https://graph.microsoft.com/v1.0\"",
+        "comment" : "ditto\n",
+        "line" : 282,
+        "char" : 3
+       },
+       {
+        "name" : "beta",
+        "kind" : "enum member",
+        "protection" : "public",
+        "value" : "\"https://graph.microsoft.com/beta\"",
+        "comment" : "\n",
+        "line" : 284,
+        "char" : 3
+       }
+      ]
+     },
+     {
+      "name" : "HttpResult",
+      "kind" : "struct",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 290,
+      "char" : 2,
+      "members" : [
+       {
+        "name" : "statusLine",
+        "kind" : "variable",
+        "protection" : "public",
+        "comment" : "\n",
+        "line" : 293,
+        "char" : 19,
+        "deco" : "S3std3net4curl4HTTP10StatusLine",
+        "originalType" : "HTTP.StatusLine",
+        "offset" : 0
+       },
+       {
+        "name" : "responseHeaders",
+        "kind" : "variable",
+        "protection" : "public",
+        "comment" : "\n",
+        "line" : 295,
+        "char" : 18,
+        "deco" : "HAyaQd",
+        "offset" : 24
+       },
+       {
+        "name" : "responseBody",
+        "kind" : "variable",
+        "protection" : "public",
+        "comment" : "\n",
+        "line" : 297,
+        "char" : 22,
+        "deco" : "Ayh",
+        "offset" : 32
+       }
+      ]
+     },
+     {
+      "name" : "handle",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 303,
+      "char" : 18,
+      "deco" : "NgFNcNjZNgS3std3net4curl4HTTP",
+      "endline" : 306,
+      "endchar" : 2
+     },
+     {
+      "name" : "setProxy",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : " Set proxy settings\n\n Params:\n      proxy     = Hostname or URL\n      port      = Port number\n      proxyType = Type of proxy\n      authUser  = User name for proxy\n      authPass  = Password for proxy\n      authType  = Auth type of proxy\n",
+      "line" : 319,
+      "char" : 7,
+      "deco" : "FAyaZv",
+      "parameters" : [
+       {
+        "name" : "proxy",
+        "deco" : "Aya"
+       }
+      ],
+      "endline" : 322,
+      "endchar" : 2
+     },
+     {
+      "name" : "setProxy",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "ditto\n",
+      "line" : 325,
+      "char" : 7,
+      "deco" : "FAyatE3etc1c4curl9CurlProxyZv",
+      "parameters" : [
+       {
+        "name" : "proxy",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "port",
+        "deco" : "t"
+       },
+       {
+        "name" : "proxyType",
+        "deco" : "E3etc1c4curl9CurlProxy",
+        "default" : "CurlProxy.http"
+       }
+      ],
+      "endline" : 330,
+      "endchar" : 2
+     },
+     {
+      "name" : "setProxy",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "ditto\n",
+      "line" : 333,
+      "char" : 7,
+      "deco" : "FAyaQdQfE3etc1c4curl8CurlAuthZv",
+      "parameters" : [
+       {
+        "name" : "proxy",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "authUser",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "authPass",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "authType",
+        "deco" : "E3etc1c4curl8CurlAuth",
+        "default" : "CurlAuth.basic"
+       }
+      ],
+      "endline" : 338,
+      "endchar" : 2
+     },
+     {
+      "name" : "setProxy",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "ditto\n",
+      "line" : 341,
+      "char" : 7,
+      "deco" : "FAyatQeQgE3etc1c4curl9CurlProxyEQwQuQu8CurlAuthZv",
+      "parameters" : [
+       {
+        "name" : "proxy",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "port",
+        "deco" : "t"
+       },
+       {
+        "name" : "authUser",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "authPass",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "proxyType",
+        "deco" : "E3etc1c4curl9CurlProxy",
+        "default" : "CurlProxy.http"
+       },
+       {
+        "name" : "authType",
+        "deco" : "E3etc1c4curl8CurlAuth",
+        "default" : "CurlAuth.basic"
+       }
+      ],
+      "endline" : 350,
+      "endchar" : 2
+     },
+     {
+      "name" : "setCert",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : " Certification settings\n\n Params:\n      cafile             = PEM file of trusted CA.\n      clientCertFile     = PEM file of client cert file if required.\n      privateKeyFile     = PEM file of client private key file if required.\n      privateKeyPassword = Password of private key file if required.\n",
+      "line" : 361,
+      "char" : 7,
+      "deco" : "FIAaIQdIQgIQjZv",
+      "parameters" : [
+       {
+        "name" : "cafile",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "clientCertFile",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ],
+        "default" : "null"
+       },
+       {
+        "name" : "privateKeyFile",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ],
+        "default" : "null"
+       },
+       {
+        "name" : "privateKeyPassword",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ],
+        "default" : "null"
+       }
+      ],
+      "endline" : 377,
+      "endchar" : 2
+     },
+     {
+      "name" : "request",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : " HTTP Request for Microsoft Graph API call\n",
+      "line" : 382,
+      "char" : 13,
+      "deco" : "FE3std3net4curl4HTTP6MethodE7msgraph5graphQg5Graph8EndpointIAaIQdIAhAyaZSQBtQBoQBrQBm10HttpResult",
+      "parameters" : [
+       {
+        "name" : "method",
+        "deco" : "E3std3net4curl4HTTP6Method"
+       },
+       {
+        "name" : "endpoint",
+        "deco" : "E7msgraph5graphQg5Graph8Endpoint"
+       },
+       {
+        "name" : "resource",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "query",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "contents",
+        "deco" : "xAh",
+        "storageClass" : [
+         "in"
+        ],
+        "default" : "null"
+       },
+       {
+        "name" : "contentType",
+        "deco" : "Aya",
+        "default" : "null"
+       }
+      ],
+      "endline" : 399,
+      "endchar" : 2
+     },
+     {
+      "name" : "get",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : " GET Request\n",
+      "line" : 404,
+      "char" : 13,
+      "deco" : "FIAaIQdZS7msgraph5graphQg5Graph10HttpResult",
+      "parameters" : [
+       {
+        "name" : "resource",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "query",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       }
+      ],
+      "endline" : 407,
+      "endchar" : 2
+     },
+     {
+      "name" : "get",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "ditto\n",
+      "line" : 409,
+      "char" : 13,
+      "deco" : "FAyaHQeQgZS7msgraph5graphQg5Graph10HttpResult",
+      "parameters" : [
+       {
+        "name" : "resource",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "query",
+        "deco" : "HAyaQd"
+       }
+      ],
+      "endline" : 412,
+      "endchar" : 2
+     },
+     {
+      "name" : "get",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "ditto\n",
+      "line" : 414,
+      "char" : 13,
+      "deco" : "FAyaZS7msgraph5graphQg5Graph10HttpResult",
+      "parameters" : [
+       {
+        "name" : "resource",
+        "deco" : "Aya"
+       }
+      ],
+      "endline" : 417,
+      "endchar" : 2
+     },
+     {
+      "name" : "post",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : " POST Request\n",
+      "line" : 422,
+      "char" : 13,
+      "deco" : "FIAaIAhAyaZS7msgraph5graphQg5Graph10HttpResult",
+      "parameters" : [
+       {
+        "name" : "resource",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "contents",
+        "deco" : "xAh",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "contentType",
+        "deco" : "Aya",
+        "default" : "\"application/octet-stream\""
+       }
+      ],
+      "endline" : 425,
+      "endchar" : 2
+     },
+     {
+      "name" : "post",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "ditto\n",
+      "line" : 427,
+      "char" : 13,
+      "deco" : "FIAaIQdAyaZS7msgraph5graphQg5Graph10HttpResult",
+      "parameters" : [
+       {
+        "name" : "resource",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "contents",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "contentType",
+        "deco" : "Aya",
+        "default" : "\"application/x-www-form-urlencoded\""
+       }
+      ],
+      "endline" : 430,
+      "endchar" : 2
+     },
+     {
+      "name" : "post",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "ditto\n",
+      "line" : 432,
+      "char" : 13,
+      "deco" : "FIAaS3std4json9JSONValueZS7msgraph5graphQg5Graph10HttpResult",
+      "parameters" : [
+       {
+        "name" : "resource",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "params",
+        "deco" : "S3std4json9JSONValue"
+       }
+      ],
+      "endline" : 435,
+      "endchar" : 2
+     },
+     {
+      "name" : "post",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "ditto\n",
+      "line" : 437,
+      "char" : 13,
+      "deco" : "FIAaHAyaQdZS7msgraph5graphQg5Graph10HttpResult",
+      "parameters" : [
+       {
+        "name" : "resource",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "params",
+        "deco" : "HAyaQd"
+       }
+      ],
+      "endline" : 440,
+      "endchar" : 2
+     },
+     {
+      "name" : "put",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : " PUT Request\n",
+      "line" : 445,
+      "char" : 13,
+      "deco" : "FIAaIAhAyaZS7msgraph5graphQg5Graph10HttpResult",
+      "parameters" : [
+       {
+        "name" : "resource",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "contents",
+        "deco" : "xAh",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "contentType",
+        "deco" : "Aya",
+        "default" : "\"application/octet-stream\""
+       }
+      ],
+      "endline" : 448,
+      "endchar" : 2
+     },
+     {
+      "name" : "put",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "ditto\n",
+      "line" : 450,
+      "char" : 13,
+      "deco" : "FIAaIQdAyaZS7msgraph5graphQg5Graph10HttpResult",
+      "parameters" : [
+       {
+        "name" : "resource",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "contents",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "contentType",
+        "deco" : "Aya",
+        "default" : "\"application/x-www-form-urlencoded\""
+       }
+      ],
+      "endline" : 453,
+      "endchar" : 2
+     },
+     {
+      "name" : "put",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "ditto\n",
+      "line" : 455,
+      "char" : 13,
+      "deco" : "FIAaS3std4json9JSONValueZS7msgraph5graphQg5Graph10HttpResult",
+      "parameters" : [
+       {
+        "name" : "resource",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "params",
+        "deco" : "S3std4json9JSONValue"
+       }
+      ],
+      "endline" : 458,
+      "endchar" : 2
+     },
+     {
+      "name" : "put",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "ditto\n",
+      "line" : 460,
+      "char" : 13,
+      "deco" : "FIAaHAyaQdZS7msgraph5graphQg5Graph10HttpResult",
+      "parameters" : [
+       {
+        "name" : "resource",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "params",
+        "deco" : "HAyaQd"
+       }
+      ],
+      "endline" : 463,
+      "endchar" : 2
+     },
+     {
+      "name" : "patch",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : " PATCH Request\n",
+      "line" : 468,
+      "char" : 13,
+      "deco" : "FIAaIAhAyaZS7msgraph5graphQg5Graph10HttpResult",
+      "parameters" : [
+       {
+        "name" : "resource",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "contents",
+        "deco" : "xAh",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "contentType",
+        "deco" : "Aya",
+        "default" : "\"application/octet-stream\""
+       }
+      ],
+      "endline" : 471,
+      "endchar" : 2
+     },
+     {
+      "name" : "patch",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "ditto\n",
+      "line" : 473,
+      "char" : 13,
+      "deco" : "FIAaIQdAyaZS7msgraph5graphQg5Graph10HttpResult",
+      "parameters" : [
+       {
+        "name" : "resource",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "contents",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "contentType",
+        "deco" : "Aya",
+        "default" : "\"application/x-www-form-urlencoded\""
+       }
+      ],
+      "endline" : 476,
+      "endchar" : 2
+     },
+     {
+      "name" : "patch",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "ditto\n",
+      "line" : 478,
+      "char" : 13,
+      "deco" : "FIAaS3std4json9JSONValueZS7msgraph5graphQg5Graph10HttpResult",
+      "parameters" : [
+       {
+        "name" : "resource",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "params",
+        "deco" : "S3std4json9JSONValue"
+       }
+      ],
+      "endline" : 481,
+      "endchar" : 2
+     },
+     {
+      "name" : "patch",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "ditto\n",
+      "line" : 483,
+      "char" : 13,
+      "deco" : "FIAaHAyaQdZS7msgraph5graphQg5Graph10HttpResult",
+      "parameters" : [
+       {
+        "name" : "resource",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "params",
+        "deco" : "HAyaQd"
+       }
+      ],
+      "endline" : 486,
+      "endchar" : 2
+     },
+     {
+      "name" : "del",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : " DELETE Request\n",
+      "line" : 491,
+      "char" : 13,
+      "deco" : "FIAaZS7msgraph5graphQg5Graph10HttpResult",
+      "parameters" : [
+       {
+        "name" : "resource",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       }
+      ],
+      "endline" : 494,
+      "endchar" : 2
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "protection" : "public",
+      "line" : 13,
+      "char" : 1,
+      "deco" : "FZv"
+     },
+     {
+      "name" : "__xdtor",
+      "kind" : "alias",
+      "protection" : "public"
+     },
+     {
+      "name" : "__xpostblit",
+      "kind" : "alias",
+      "protection" : "public"
+     },
+     {
+      "name" : "opAssign",
+      "kind" : "generated function",
+      "protection" : "public",
+      "line" : 13,
+      "char" : 1,
+      "deco" : "FNcNjS7msgraph5graphQg5GraphZQy",
+      "parameters" : [
+       {
+        "name" : "p",
+        "deco" : "S7msgraph5graphQg5Graph"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "setupWithInstanceServer",
+    "kind" : "function",
+    "protection" : "public",
+    "comment" : "\n",
+    "line" : 500,
+    "char" : 6,
+    "deco" : "FKS7msgraph5graphQg5GraphSQxQr4auth8AuthInfoZb",
+    "parameters" : [
+     {
+      "name" : "g",
+      "deco" : "S7msgraph5graphQg5Graph",
+      "storageClass" : [
+       "ref"
+      ]
+     },
+     {
+      "name" : "authInfo",
+      "deco" : "S7msgraph5graph4auth8AuthInfo"
+     }
+    ],
+    "endline" : 518,
+    "endchar" : 1
+   }
+  ]
+ },
+ {
+  "name" : "msgraph.graph.httphelper",
+  "kind" : "module",
+  "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/graph/httphelper.d",
+  "comment" : " HTTP helpers\n",
+  "members" : [
+   {
+    "name" : "createQueryParam",
+    "kind" : "function",
+    "protection" : "package",
+    "comment" : "\n",
+    "line" : 12,
+    "char" : 8,
+    "deco" : "FHAyaQdZQg",
+    "parameters" : [
+     {
+      "name" : "params",
+      "deco" : "HAyaQd"
+     }
+    ],
+    "endline" : 26,
+    "endchar" : 1
+   },
+   {
+    "name" : "parseQueryParam",
+    "kind" : "function",
+    "protection" : "package",
+    "comment" : "\n",
+    "line" : 31,
+    "char" : 16,
+    "deco" : "FAyaZHQfQh",
+    "parameters" : [
+     {
+      "name" : "params",
+      "deco" : "Aya"
+     }
+    ],
+    "endline" : 43,
+    "endchar" : 1
+   },
+   {
+    "name" : "getRandomString",
+    "kind" : "function",
+    "protection" : "package",
+    "comment" : "\n",
+    "line" : 48,
+    "char" : 8,
+    "deco" : "FkZAya",
+    "originalType" : "string(uint length = 0)",
+    "parameters" : [
+     {
+      "name" : "length",
+      "deco" : "k",
+      "default" : "0u"
+     }
+    ],
+    "endline" : 58,
+    "endchar" : 1
+   }
+  ]
+ },
+ {
+  "name" : "msgraph.graph.jsonhelper",
+  "kind" : "module",
+  "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/graph/jsonhelper.d",
+  "comment" : " JSON Helpers\n",
+  "members" : [
+   {
+    "name" : "std.traits",
+    "kind" : "import",
+    "line" : 25,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.meta",
+    "kind" : "import",
+    "line" : 26,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : "\n",
+    "line" : 36,
+    "char" : 10,
+    "name" : "assumeAttr",
+    "parameters" : [
+     {
+      "name" : "fn",
+      "kind" : "alias"
+     },
+     {
+      "name" : "attrs",
+      "kind" : "alias"
+     },
+     {
+      "name" : "Args",
+      "kind" : "tuple"
+     }
+    ],
+    "constraint" : "isFunction!fn",
+    "members" : [
+     {
+      "name" : "assumeAttr",
+      "kind" : "function",
+      "line" : 36,
+      "char" : 10,
+      "storageClass" : [
+       "auto"
+      ],
+      "type" : "ref (auto ref Args args)",
+      "parameters" : [
+       {
+        "name" : "args",
+        "type" : "Args",
+        "storageClass" : [
+         "auto",
+         "ref"
+        ]
+       }
+      ],
+      "endline" : 41,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : "ditto\n",
+    "line" : 44,
+    "char" : 10,
+    "name" : "assumeAttr",
+    "parameters" : [
+     {
+      "name" : "fn",
+      "kind" : "alias"
+     },
+     {
+      "name" : "attrs",
+      "kind" : "alias"
+     },
+     {
+      "name" : "Args",
+      "kind" : "tuple"
+     }
+    ],
+    "constraint" : "__traits(isTemplate, fn) && isCallable!(fn!Args)",
+    "members" : [
+     {
+      "name" : "assumeAttr",
+      "kind" : "function",
+      "line" : 44,
+      "char" : 10,
+      "storageClass" : [
+       "auto"
+      ],
+      "type" : "ref (auto ref Args args)",
+      "parameters" : [
+       {
+        "name" : "args",
+        "type" : "Args",
+        "storageClass" : [
+         "auto",
+         "ref"
+        ]
+       }
+      ],
+      "endline" : 48,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : "ditto\n",
+    "line" : 51,
+    "char" : 6,
+    "name" : "assumeAttr",
+    "parameters" : [
+     {
+      "name" : "attrs",
+      "kind" : "alias"
+     },
+     {
+      "name" : "Fn",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isFunctionPointer!Fn || isDelegate!Fn",
+    "members" : [
+     {
+      "name" : "assumeAttr",
+      "kind" : "function",
+      "line" : 51,
+      "char" : 6,
+      "storageClass" : [
+       "auto"
+      ],
+      "type" : "(Fn t)",
+      "parameters" : [
+       {
+        "name" : "t",
+        "type" : "Fn"
+       }
+      ],
+      "endline" : 55,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : "\n",
+    "line" : 60,
+    "char" : 1,
+    "name" : "getFunctionAttributes",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "tuple"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "fn",
+      "kind" : "alias",
+      "line" : 62,
+      "char" : 2,
+      "type" : "T[0]"
+     },
+     {
+      "name" : "getFunctionAttributes",
+      "kind" : "variable",
+      "line" : 65,
+      "char" : 8,
+      "storageClass" : [
+       "enum"
+      ],
+      "init" : "functionAttributes!fn"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : "\n",
+    "line" : 80,
+    "char" : 10,
+    "name" : "assumePure",
+    "parameters" : [
+     {
+      "name" : "fn",
+      "kind" : "alias"
+     },
+     {
+      "name" : "Args",
+      "kind" : "tuple"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "assumePure",
+      "kind" : "function",
+      "line" : 80,
+      "char" : 10,
+      "storageClass" : [
+       "auto"
+      ],
+      "type" : "ref (auto ref Args args)",
+      "parameters" : [
+       {
+        "name" : "args",
+        "type" : "Args",
+        "storageClass" : [
+         "auto",
+         "ref"
+        ]
+       }
+      ],
+      "endline" : 83,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : "ditto\n",
+    "line" : 86,
+    "char" : 6,
+    "name" : "assumePure",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isFunctionPointer!T || isDelegate!T",
+    "members" : [
+     {
+      "name" : "assumePure",
+      "kind" : "function",
+      "line" : 86,
+      "char" : 6,
+      "storageClass" : [
+       "auto"
+      ],
+      "type" : "(T t)",
+      "parameters" : [
+       {
+        "name" : "t",
+        "type" : "T"
+       }
+      ],
+      "endline" : 90,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "line" : 97,
+    "char" : 1,
+    "name" : "isDesiredUDA",
+    "parameters" : [
+     {
+      "name" : "attribute",
+      "kind" : "alias"
+     }
+    ],
+    "members" : [
+     {
+      "kind" : "template",
+      "line" : 99,
+      "char" : 2,
+      "name" : "isDesiredUDA",
+      "parameters" : [
+       {
+        "name" : "toCheck",
+        "kind" : "alias"
+       }
+      ],
+      "members" : [
+       {
+        "name" : "isDesiredUDA",
+        "kind" : "variable",
+        "line" : 104,
+        "char" : 10,
+        "storageClass" : [
+         "enum"
+        ],
+        "init" : "toCheck == attribute"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : " 関数のパラメータに付与されたUDAを取り出す。\n\n Params:\n      Func = 関数\n      i    = 引数の番号(最初の引数は0番目)\n      attr = UDAの種類を指定できます(指定しないとすべて返します)\n Returns:\n      UDAのタプルが返ります\n",
+    "line" : 132,
+    "char" : 1,
+    "name" : "getParameterUDAs",
+    "parameters" : [
+     {
+      "name" : "Func",
+      "kind" : "alias"
+     },
+     {
+      "name" : "i",
+      "kind" : "value",
+      "deco" : "m"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "getParameterUDAs",
+      "kind" : "alias",
+      "line" : 136,
+      "char" : 3,
+      "type" : "__traits(getAttributes, Parameters!Func[i])"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : "ditto\n",
+    "line" : 148,
+    "char" : 1,
+    "name" : "getParameterUDAs",
+    "parameters" : [
+     {
+      "name" : "Func",
+      "kind" : "alias"
+     },
+     {
+      "name" : "i",
+      "kind" : "value",
+      "deco" : "m"
+     },
+     {
+      "name" : "attr",
+      "kind" : "alias"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "getParameterUDAs",
+      "kind" : "alias",
+      "line" : 148,
+      "char" : 1,
+      "type" : "Filter!(isDesiredUDA!attr, getParameterUDAs!(Func, i))"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : " 関数のパラメータに付与されたUDAのうち、型についたUDAを取り出す。\n\n Params:\n      Func = 関数\n      i    = 引数の番号(最初の引数は0番目)\n      attr = UDAの種類を指定できます(指定しないとすべて返します)\n Returns:\n      UDAのタプルが返ります\n",
+    "line" : 160,
+    "char" : 1,
+    "name" : "getParameterTypeUDAs",
+    "parameters" : [
+     {
+      "name" : "Func",
+      "kind" : "alias"
+     },
+     {
+      "name" : "i",
+      "kind" : "value",
+      "deco" : "m"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "getParameterTypeUDAs",
+      "kind" : "alias",
+      "line" : 164,
+      "char" : 3,
+      "type" : "__traits(getAttributes, Parameters!Func[i])"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : "ditto\n",
+    "line" : 172,
+    "char" : 1,
+    "name" : "getParameterTypeUDAs",
+    "parameters" : [
+     {
+      "name" : "Func",
+      "kind" : "alias"
+     },
+     {
+      "name" : "i",
+      "kind" : "value",
+      "deco" : "m"
+     },
+     {
+      "name" : "attr",
+      "kind" : "alias"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "getParameterTypeUDAs",
+      "kind" : "alias",
+      "line" : 172,
+      "char" : 1,
+      "type" : "Filter!(isDesiredUDA!attr, getParameterTypeUDAs!(Func, i))"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : " 関数のパラメータに付与されたUDAのうち、引数についたUDAを取り出す。\n\n Params:\n      Func = 関数\n      i    = 引数の番号(最初の引数は0番目)\n      attr = UDAの種類を指定できます(指定しないとすべて返します)\n Returns:\n      UDAのタプルが返ります\n",
+    "line" : 186,
+    "char" : 1,
+    "name" : "getParameterArgUDAs",
+    "parameters" : [
+     {
+      "name" : "Func",
+      "kind" : "alias"
+     },
+     {
+      "name" : "i",
+      "kind" : "value",
+      "deco" : "m"
+     }
+    ],
+    "members" : [
+     {
+      "kind" : "template",
+      "line" : 188,
+      "char" : 12,
+      "name" : "notFoundInType",
+      "parameters" : [
+       {
+        "name" : "val",
+        "kind" : "alias"
+       }
+      ],
+      "members" : [
+       {
+        "name" : "notFoundInType",
+        "kind" : "variable",
+        "line" : 188,
+        "char" : 12,
+        "storageClass" : [
+         "enum"
+        ],
+        "deco" : "b",
+        "init" : "staticIndexOf!(val, getParameterTypeUDAs!(Func, i)) == -1"
+       }
+      ]
+     },
+     {
+      "name" : "getParameterArgUDAs",
+      "kind" : "alias",
+      "line" : 189,
+      "char" : 2,
+      "type" : "Filter!(notFoundInType, getParameterUDAs!(Func, i))"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : "ditto\n",
+    "line" : 192,
+    "char" : 1,
+    "name" : "getParameterArgUDAs",
+    "parameters" : [
+     {
+      "name" : "Func",
+      "kind" : "alias"
+     },
+     {
+      "name" : "i",
+      "kind" : "value",
+      "deco" : "m"
+     },
+     {
+      "name" : "attr",
+      "kind" : "alias"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "getParameterArgUDAs",
+      "kind" : "alias",
+      "line" : 192,
+      "char" : 1,
+      "type" : "Filter!(isDesiredUDA!attr, getParameterArgUDAs!(Func, i))"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : " 関数のパラメータにUDAが付与されているか確認します\n\n Params:\n      Func = 関数\n      i    = 引数の番号(最初の引数は0番目)\n      attr = チェックするUDA\n Returns:\n      UDAがあったらtrue\n",
+    "line" : 206,
+    "char" : 11,
+    "name" : "hasParameterUDA",
+    "parameters" : [
+     {
+      "name" : "Func",
+      "kind" : "alias"
+     },
+     {
+      "name" : "i",
+      "kind" : "value",
+      "deco" : "m"
+     },
+     {
+      "name" : "attr",
+      "kind" : "alias"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "hasParameterUDA",
+      "kind" : "variable",
+      "line" : 206,
+      "char" : 11,
+      "storageClass" : [
+       "enum"
+      ],
+      "deco" : "b",
+      "init" : "getParameterUDAs!(Func, i, attr).length != 0"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : " 関数のパラメータに付与されたUDAのうち、型にUDAがついているか確認します\n\n Params:\n      Func = 関数\n      i    = 引数の番号(最初の引数は0番目)\n      attr = チェックするUDA\n Returns:\n      UDAがあったらtrue\n",
+    "line" : 219,
+    "char" : 11,
+    "name" : "hasParameterTypeUDA",
+    "parameters" : [
+     {
+      "name" : "Func",
+      "kind" : "alias"
+     },
+     {
+      "name" : "i",
+      "kind" : "value",
+      "deco" : "m"
+     },
+     {
+      "name" : "attr",
+      "kind" : "alias"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "hasParameterTypeUDA",
+      "kind" : "variable",
+      "line" : 219,
+      "char" : 11,
+      "storageClass" : [
+       "enum"
+      ],
+      "deco" : "b",
+      "init" : "getParameterTypeUDAs!(Func, i, attr).length != 0"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : " 関数のパラメータに付与されたUDAのうち、引数にUDAがついているか確認します\n\n Params:\n      Func = 関数\n      i    = 引数の番号(最初の引数は0番目)\n      attr = チェックするUDA\n Returns:\n      UDAがあったらtrue\n",
+    "line" : 232,
+    "char" : 11,
+    "name" : "hasParameterArgUDA",
+    "parameters" : [
+     {
+      "name" : "Func",
+      "kind" : "alias"
+     },
+     {
+      "name" : "i",
+      "kind" : "value",
+      "deco" : "m"
+     },
+     {
+      "name" : "attr",
+      "kind" : "alias"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "hasParameterArgUDA",
+      "kind" : "variable",
+      "line" : 232,
+      "char" : 11,
+      "storageClass" : [
+       "enum"
+      ],
+      "deco" : "b",
+      "init" : "getParameterArgUDAs!(Func, i, attr).length != 0"
+     }
+    ]
+   },
+   {
+    "name" : "Ignore",
+    "kind" : "enum",
+    "protection" : "private",
+    "line" : 234,
+    "char" : 1,
+    "baseDeco" : "i",
+    "members" : [
+     {
+      "name" : "init",
+      "kind" : "enum member",
+      "protection" : "public",
+      "value" : "0",
+      "line" : 234,
+      "char" : 14
+     }
+    ]
+   },
+   {
+    "name" : "ignore",
+    "kind" : "variable",
+    "protection" : "public",
+    "comment" : " Attribute marking ignore data\n",
+    "line" : 239,
+    "char" : 20,
+    "storageClass" : [
+     "enum"
+    ],
+    "deco" : "E7msgraph5graph10jsonhelper6Ignore",
+    "init" : "Ignore.init"
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : "\n",
+    "line" : 242,
+    "char" : 11,
+    "name" : "hasIgnore",
+    "parameters" : [
+     {
+      "name" : "value",
+      "kind" : "alias"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "hasIgnore",
+      "kind" : "variable",
+      "line" : 242,
+      "char" : 11,
+      "storageClass" : [
+       "enum"
+      ],
+      "deco" : "b",
+      "init" : "hasUDA!(value, Ignore)"
+     }
+    ]
+   },
+   {
+    "name" : "Essential",
+    "kind" : "enum",
+    "protection" : "private",
+    "line" : 244,
+    "char" : 1,
+    "baseDeco" : "i",
+    "members" : [
+     {
+      "name" : "init",
+      "kind" : "enum member",
+      "protection" : "public",
+      "value" : "0",
+      "line" : 244,
+      "char" : 17
+     }
+    ]
+   },
+   {
+    "name" : "essential",
+    "kind" : "variable",
+    "protection" : "public",
+    "comment" : " Attribute marking essential field\n",
+    "line" : 249,
+    "char" : 23,
+    "storageClass" : [
+     "enum"
+    ],
+    "deco" : "E7msgraph5graph10jsonhelper9Essential",
+    "init" : "Essential.init"
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : "\n",
+    "line" : 252,
+    "char" : 11,
+    "name" : "hasEssential",
+    "parameters" : [
+     {
+      "name" : "value",
+      "kind" : "alias"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "hasEssential",
+      "kind" : "variable",
+      "line" : 252,
+      "char" : 11,
+      "storageClass" : [
+       "enum"
+      ],
+      "deco" : "b",
+      "init" : "hasUDA!(value, Essential)"
+     }
+    ]
+   },
+   {
+    "name" : "Name",
+    "kind" : "struct",
+    "protection" : "private",
+    "line" : 255,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "name",
+      "kind" : "variable",
+      "protection" : "public",
+      "line" : 257,
+      "char" : 9,
+      "deco" : "Aya",
+      "offset" : 0
+     }
+    ]
+   },
+   {
+    "name" : "name",
+    "kind" : "function",
+    "protection" : "public",
+    "comment" : " Attribute forcing field name\n",
+    "line" : 263,
+    "char" : 13,
+    "deco" : "FNaNbNiNfAyaZS7msgraph5graph10jsonhelper4Name",
+    "parameters" : [
+     {
+      "name" : "name",
+      "deco" : "Aya"
+     }
+    ],
+    "endline" : 266,
+    "endchar" : 1
+   },
+   {
+    "kind" : "template",
+    "protection" : "public",
+    "comment" : "ditto\n",
+    "line" : 268,
+    "char" : 18,
+    "name" : "name",
+    "parameters" : [
+     {
+      "name" : "n",
+      "kind" : "value",
+      "deco" : "Aya"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "name",
+      "kind" : "variable",
+      "line" : 268,
+      "char" : 18,
+      "storageClass" : [
+       "enum"
+      ],
+      "type" : "Name",
+      "init" : "Name(n)"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : "\n",
+    "line" : 271,
+    "char" : 11,
+    "name" : "hasName",
+    "parameters" : [
+     {
+      "name" : "value",
+      "kind" : "alias"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "hasName",
+      "kind" : "variable",
+      "line" : 271,
+      "char" : 11,
+      "storageClass" : [
+       "enum"
+      ],
+      "deco" : "b",
+      "init" : "hasUDA!(value, Name)"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : "\n",
+    "line" : 274,
+    "char" : 1,
+    "name" : "getName",
+    "parameters" : [
+     {
+      "name" : "value",
+      "kind" : "alias"
+     }
+    ],
+    "constraint" : "hasName!value",
+    "members" : [
+     {
+      "name" : "getName",
+      "kind" : "variable",
+      "line" : 277,
+      "char" : 14,
+      "storageClass" : [
+       "enum"
+      ],
+      "type" : "string",
+      "init" : "getUDAs!(value, Name)[0].name"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : "\n",
+    "line" : 281,
+    "char" : 1,
+    "name" : "ConvBy",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "alias"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "ConvBy",
+      "kind" : "struct",
+      "protection" : "public",
+      "line" : 281,
+      "char" : 1,
+      "members" : []
+     }
+    ]
+   },
+   {
+    "name" : "convBy",
+    "kind" : "alias",
+    "protection" : "public",
+    "comment" : "\n",
+    "line" : 284,
+    "char" : 8,
+    "originalType" : "ConvBy"
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : "\n",
+    "line" : 287,
+    "char" : 1,
+    "name" : "isConvByAttr",
+    "parameters" : [
+     {
+      "name" : "Attr",
+      "kind" : "alias"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "isConvByAttr",
+      "kind" : "variable",
+      "line" : 291,
+      "char" : 13,
+      "storageClass" : [
+       "enum"
+      ],
+      "deco" : "b",
+      "init" : "true"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : "\n",
+    "line" : 304,
+    "char" : 1,
+    "name" : "getConvByAttr",
+    "parameters" : [
+     {
+      "name" : "Attr",
+      "kind" : "alias"
+     }
+    ],
+    "constraint" : "isConvByAttr!Attr",
+    "members" : [
+     {
+      "name" : "getConvByAttr",
+      "kind" : "alias",
+      "line" : 309,
+      "char" : 3,
+      "type" : "TemplateArgsOf!Attr[0]"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : "\n",
+    "line" : 320,
+    "char" : 1,
+    "name" : "ProxyList",
+    "parameters" : [
+     {
+      "name" : "value",
+      "kind" : "alias"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "ProxyList",
+      "kind" : "alias",
+      "line" : 320,
+      "char" : 1,
+      "type" : "staticMap!(getConvByAttr, Filter!(isConvByAttr, __traits(getAttributes, value)))"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : "\n",
+    "line" : 323,
+    "char" : 1,
+    "name" : "getConvBy",
+    "parameters" : [
+     {
+      "name" : "value",
+      "kind" : "alias"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "_list",
+      "kind" : "alias",
+      "line" : 325,
+      "char" : 10,
+      "type" : "ProxyList!value"
+     },
+     {
+      "name" : "getConvBy",
+      "kind" : "alias",
+      "line" : 327,
+      "char" : 2,
+      "type" : "_list[0]"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : "\n",
+    "line" : 331,
+    "char" : 1,
+    "name" : "hasConvBy",
+    "parameters" : [
+     {
+      "name" : "value",
+      "kind" : "alias"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "_listLength",
+      "kind" : "variable",
+      "line" : 333,
+      "char" : 15,
+      "storageClass" : [
+       "enum"
+      ],
+      "init" : "ProxyList!value.length"
+     },
+     {
+      "name" : "hasConvBy",
+      "kind" : "variable",
+      "line" : 335,
+      "char" : 12,
+      "storageClass" : [
+       "enum"
+      ],
+      "deco" : "b",
+      "init" : "_listLength == 1"
+     }
+    ]
+   },
+   {
+    "name" : "ConvStyle",
+    "kind" : "enum",
+    "protection" : "private",
+    "line" : 339,
+    "char" : 1,
+    "baseDeco" : "i",
+    "members" : [
+     {
+      "name" : "none",
+      "kind" : "enum member",
+      "protection" : "public",
+      "value" : "0",
+      "line" : 341,
+      "char" : 2
+     },
+     {
+      "name" : "type1",
+      "kind" : "enum member",
+      "protection" : "public",
+      "value" : "1",
+      "line" : 342,
+      "char" : 2
+     },
+     {
+      "name" : "type2",
+      "kind" : "enum member",
+      "protection" : "public",
+      "value" : "2",
+      "line" : 343,
+      "char" : 2
+     },
+     {
+      "name" : "type3",
+      "kind" : "enum member",
+      "protection" : "public",
+      "value" : "3",
+      "line" : 344,
+      "char" : 2
+     },
+     {
+      "name" : "type4",
+      "kind" : "enum member",
+      "protection" : "public",
+      "value" : "4",
+      "line" : 345,
+      "char" : 2
+     },
+     {
+      "name" : "type5",
+      "kind" : "enum member",
+      "protection" : "public",
+      "value" : "5",
+      "line" : 346,
+      "char" : 2
+     },
+     {
+      "name" : "type6",
+      "kind" : "enum member",
+      "protection" : "public",
+      "value" : "6",
+      "line" : 347,
+      "char" : 2
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "line" : 350,
+    "char" : 1,
+    "name" : "getConvToStyle",
+    "parameters" : [
+     {
+      "name" : "value",
+      "kind" : "alias"
+     },
+     {
+      "name" : "Ret",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "hasConvBy!value",
+    "members" : [
+     {
+      "name" : "proxy",
+      "kind" : "alias",
+      "line" : 353,
+      "char" : 2,
+      "type" : "getConvBy!value"
+     },
+     {
+      "name" : "Val",
+      "kind" : "alias",
+      "line" : 354,
+      "char" : 2,
+      "type" : "typeof(value)"
+     },
+     {
+      "name" : "getConvToStyle",
+      "kind" : "variable",
+      "line" : 358,
+      "char" : 8,
+      "storageClass" : [
+       "enum"
+      ],
+      "init" : "ConvStyle.type1"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : "\n",
+    "line" : 395,
+    "char" : 1,
+    "name" : "canConvTo",
+    "parameters" : [
+     {
+      "name" : "value",
+      "kind" : "alias"
+     },
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "canConvTo",
+      "kind" : "variable",
+      "line" : 399,
+      "char" : 13,
+      "storageClass" : [
+       "enum"
+      ],
+      "deco" : "b",
+      "init" : "getConvToStyle!(value, T) != ConvStyle.none"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : "\n",
+    "line" : 409,
+    "char" : 1,
+    "name" : "convTo",
+    "parameters" : [
+     {
+      "name" : "value",
+      "kind" : "alias"
+     },
+     {
+      "name" : "Dst",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "canConvTo!(value, Dst)",
+    "members" : [
+     {
+      "name" : "proxy",
+      "kind" : "alias",
+      "line" : 412,
+      "char" : 2,
+      "type" : "getConvBy!value"
+     },
+     {
+      "name" : "Val",
+      "kind" : "alias",
+      "line" : 413,
+      "char" : 2,
+      "type" : "typeof(value)"
+     },
+     {
+      "name" : "convToStyle",
+      "kind" : "variable",
+      "line" : 414,
+      "char" : 7,
+      "storageClass" : [
+       "enum"
+      ],
+      "init" : "getConvToStyle!(value, Dst)"
+     },
+     {
+      "kind" : "template",
+      "line" : 417,
+      "char" : 14,
+      "name" : "convTo",
+      "parameters" : [],
+      "members" : [
+       {
+        "name" : "convTo",
+        "kind" : "function",
+        "line" : 417,
+        "char" : 14,
+        "type" : "Dst(auto ref Val v)",
+        "parameters" : [
+         {
+          "name" : "v",
+          "type" : "Val",
+          "storageClass" : [
+           "auto",
+           "ref"
+          ]
+         }
+        ],
+        "endline" : 420,
+        "endchar" : 3
+       }
+      ]
+     },
+     {
+      "kind" : "template",
+      "line" : 421,
+      "char" : 14,
+      "name" : "convTo",
+      "parameters" : [],
+      "members" : [
+       {
+        "name" : "convTo",
+        "kind" : "function",
+        "line" : 421,
+        "char" : 14,
+        "type" : "Dst(auto in ref Val v)",
+        "parameters" : [
+         {
+          "name" : "v",
+          "type" : "Val",
+          "storageClass" : [
+           "auto",
+           "in",
+           "ref"
+          ]
+         }
+        ],
+        "endline" : 424,
+        "endchar" : 3
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : "\n",
+    "line" : 485,
+    "char" : 1,
+    "name" : "getConvFromStyle",
+    "parameters" : [
+     {
+      "name" : "value",
+      "kind" : "alias"
+     },
+     {
+      "name" : "Src",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "hasConvBy!value",
+    "members" : [
+     {
+      "name" : "proxy",
+      "kind" : "alias",
+      "line" : 488,
+      "char" : 2,
+      "type" : "getConvBy!value"
+     },
+     {
+      "name" : "Val",
+      "kind" : "alias",
+      "line" : 489,
+      "char" : 2,
+      "type" : "typeof(value)"
+     },
+     {
+      "name" : "getConvFromStyle",
+      "kind" : "variable",
+      "line" : 493,
+      "char" : 8,
+      "storageClass" : [
+       "enum"
+      ],
+      "init" : "ConvStyle.type1"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : "\n",
+    "line" : 530,
+    "char" : 1,
+    "name" : "canConvFrom",
+    "parameters" : [
+     {
+      "name" : "value",
+      "kind" : "alias"
+     },
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "canConvFrom",
+      "kind" : "variable",
+      "line" : 533,
+      "char" : 13,
+      "storageClass" : [
+       "enum"
+      ],
+      "deco" : "b",
+      "init" : "getConvFromStyle!(value, T) != ConvStyle.none"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : "\n",
+    "line" : 542,
+    "char" : 1,
+    "name" : "convFrom",
+    "parameters" : [
+     {
+      "name" : "value",
+      "kind" : "alias"
+     },
+     {
+      "name" : "Src",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "canConvFrom!(value, Src)",
+    "members" : [
+     {
+      "name" : "proxy",
+      "kind" : "alias",
+      "line" : 545,
+      "char" : 2,
+      "type" : "getConvBy!value"
+     },
+     {
+      "name" : "Val",
+      "kind" : "alias",
+      "line" : 546,
+      "char" : 2,
+      "type" : "typeof(value)"
+     },
+     {
+      "name" : "convFromStyle",
+      "kind" : "variable",
+      "line" : 547,
+      "char" : 7,
+      "storageClass" : [
+       "enum"
+      ],
+      "init" : "getConvFromStyle!(value, Src)"
+     },
+     {
+      "kind" : "template",
+      "line" : 550,
+      "char" : 14,
+      "name" : "convFrom",
+      "parameters" : [],
+      "members" : [
+       {
+        "name" : "convFrom",
+        "kind" : "function",
+        "line" : 550,
+        "char" : 14,
+        "type" : "Val(auto ref Src v)",
+        "parameters" : [
+         {
+          "name" : "v",
+          "type" : "Src",
+          "storageClass" : [
+           "auto",
+           "ref"
+          ]
+         }
+        ],
+        "endline" : 553,
+        "endchar" : 3
+       }
+      ]
+     },
+     {
+      "kind" : "template",
+      "line" : 554,
+      "char" : 14,
+      "name" : "convFrom",
+      "parameters" : [],
+      "members" : [
+       {
+        "name" : "convFrom",
+        "kind" : "function",
+        "line" : 554,
+        "char" : 14,
+        "type" : "Val(auto in ref Src v)",
+        "parameters" : [
+         {
+          "name" : "v",
+          "type" : "Src",
+          "storageClass" : [
+           "auto",
+           "in",
+           "ref"
+          ]
+         }
+        ],
+        "endline" : 557,
+        "endchar" : 3
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "public",
+    "comment" : "\n",
+    "line" : 622,
+    "char" : 8,
+    "name" : "convertTo",
+    "parameters" : [
+     {
+      "name" : "value",
+      "kind" : "alias"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "proxy",
+      "kind" : "alias",
+      "line" : 624,
+      "char" : 2,
+      "type" : "getConvBy!value"
+     },
+     {
+      "name" : "Val",
+      "kind" : "alias",
+      "line" : 625,
+      "char" : 2,
+      "type" : "typeof(value)"
+     },
+     {
+      "kind" : "template",
+      "line" : 626,
+      "char" : 14,
+      "name" : "convertTo",
+      "parameters" : [
+       {
+        "name" : "Dst",
+        "kind" : "type"
+       }
+      ],
+      "constraint" : "canConvTo!(value, Dst)",
+      "members" : [
+       {
+        "name" : "convertTo",
+        "kind" : "function",
+        "line" : 626,
+        "char" : 14,
+        "type" : "void(auto ref Val src, ref Dst dst)",
+        "parameters" : [
+         {
+          "name" : "src",
+          "type" : "Val",
+          "storageClass" : [
+           "auto",
+           "ref"
+          ]
+         },
+         {
+          "name" : "dst",
+          "type" : "Dst",
+          "storageClass" : [
+           "ref"
+          ]
+         }
+        ],
+        "endline" : 655,
+        "endchar" : 2
+       }
+      ]
+     },
+     {
+      "kind" : "template",
+      "line" : 656,
+      "char" : 14,
+      "name" : "convertTo",
+      "parameters" : [
+       {
+        "name" : "Dst",
+        "kind" : "type"
+       }
+      ],
+      "constraint" : "canConvTo!(value, Dst)",
+      "members" : [
+       {
+        "name" : "convertTo",
+        "kind" : "function",
+        "line" : 656,
+        "char" : 14,
+        "type" : "void(auto in ref Val src, ref Dst dst)",
+        "parameters" : [
+         {
+          "name" : "src",
+          "type" : "Val",
+          "storageClass" : [
+           "auto",
+           "in",
+           "ref"
+          ]
+         },
+         {
+          "name" : "dst",
+          "type" : "Dst",
+          "storageClass" : [
+           "ref"
+          ]
+         }
+        ],
+        "endline" : 685,
+        "endchar" : 2
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "public",
+    "comment" : "\n",
+    "line" : 689,
+    "char" : 8,
+    "name" : "convertFrom",
+    "parameters" : [
+     {
+      "name" : "value",
+      "kind" : "alias"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "proxy",
+      "kind" : "alias",
+      "line" : 691,
+      "char" : 2,
+      "type" : "getConvBy!value"
+     },
+     {
+      "name" : "Val",
+      "kind" : "alias",
+      "line" : 692,
+      "char" : 2,
+      "type" : "typeof(value)"
+     },
+     {
+      "kind" : "template",
+      "line" : 693,
+      "char" : 14,
+      "name" : "convertFrom",
+      "parameters" : [
+       {
+        "name" : "Src",
+        "kind" : "type"
+       }
+      ],
+      "constraint" : "canConvFrom!(value, Src)",
+      "members" : [
+       {
+        "name" : "convertFrom",
+        "kind" : "function",
+        "line" : 693,
+        "char" : 14,
+        "type" : "void(auto ref Src src, ref Val dst)",
+        "parameters" : [
+         {
+          "name" : "src",
+          "type" : "Src",
+          "storageClass" : [
+           "auto",
+           "ref"
+          ]
+         },
+         {
+          "name" : "dst",
+          "type" : "Val",
+          "storageClass" : [
+           "ref"
+          ]
+         }
+        ],
+        "endline" : 722,
+        "endchar" : 2
+       }
+      ]
+     },
+     {
+      "kind" : "template",
+      "line" : 723,
+      "char" : 14,
+      "name" : "convertFrom",
+      "parameters" : [
+       {
+        "name" : "Src",
+        "kind" : "type"
+       }
+      ],
+      "constraint" : "canConvFrom!(value, Src)",
+      "members" : [
+       {
+        "name" : "convertFrom",
+        "kind" : "function",
+        "line" : 723,
+        "char" : 14,
+        "type" : "void(auto in ref Src src, ref Val dst)",
+        "parameters" : [
+         {
+          "name" : "src",
+          "type" : "Src",
+          "storageClass" : [
+           "auto",
+           "in",
+           "ref"
+          ]
+         },
+         {
+          "name" : "dst",
+          "type" : "Val",
+          "storageClass" : [
+           "ref"
+          ]
+         }
+        ],
+        "endline" : 752,
+        "endchar" : 2
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "comment" : "\n",
+    "line" : 757,
+    "char" : 6,
+    "name" : "isConvertible",
+    "parameters" : [
+     {
+      "name" : "value",
+      "kind" : "alias"
+     },
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "isConvertible",
+      "kind" : "variable",
+      "line" : 757,
+      "char" : 6,
+      "storageClass" : [
+       "enum"
+      ],
+      "init" : "canConvTo!(value, T) && canConvFrom!(value, T)"
+     }
+    ]
+   },
+   {
+    "name" : "std.json",
+    "kind" : "import",
+    "line" : 765,
+    "char" : 8
+   },
+   {
+    "name" : "std.traits",
+    "kind" : "import",
+    "line" : 765,
+    "char" : 18
+   },
+   {
+    "name" : "std.meta",
+    "kind" : "import",
+    "line" : 765,
+    "char" : 30
+   },
+   {
+    "name" : "std.conv",
+    "kind" : "import",
+    "line" : 765,
+    "char" : 40
+   },
+   {
+    "name" : "std.array",
+    "kind" : "import",
+    "line" : 765,
+    "char" : 50
+   },
+   {
+    "kind" : "template",
+    "protection" : "public",
+    "comment" : " Get data from JSONValue\n",
+    "line" : 771,
+    "char" : 11,
+    "name" : "json",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isSomeString!(T[])",
+    "members" : [
+     {
+      "name" : "json",
+      "kind" : "function",
+      "line" : 771,
+      "char" : 11,
+      "type" : "@property JSONValue(auto const ref T[] x)",
+      "parameters" : [
+       {
+        "name" : "x",
+        "type" : "T[]",
+        "storageClass" : [
+         "auto",
+         "const",
+         "ref"
+        ]
+       }
+      ],
+      "endline" : 775,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "public",
+    "comment" : "ditto\n",
+    "line" : 778,
+    "char" : 11,
+    "name" : "json",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isIntegral!T && !is(T == enum) || isFloatingPoint!T || is(Unqual!T == bool)",
+    "members" : [
+     {
+      "name" : "json",
+      "kind" : "function",
+      "line" : 778,
+      "char" : 11,
+      "type" : "@property JSONValue(auto const ref T x)",
+      "parameters" : [
+       {
+        "name" : "x",
+        "type" : "T",
+        "storageClass" : [
+         "auto",
+         "const",
+         "ref"
+        ]
+       }
+      ],
+      "endline" : 784,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "public",
+    "comment" : "ditto\n",
+    "line" : 787,
+    "char" : 11,
+    "name" : "json",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "is(T == enum)",
+    "members" : [
+     {
+      "name" : "json",
+      "kind" : "function",
+      "line" : 787,
+      "char" : 11,
+      "type" : "@property JSONValue(auto const ref T x)",
+      "parameters" : [
+       {
+        "name" : "x",
+        "type" : "T",
+        "storageClass" : [
+         "auto",
+         "const",
+         "ref"
+        ]
+       }
+      ],
+      "endline" : 791,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "public",
+    "comment" : "ditto\n",
+    "line" : 794,
+    "char" : 11,
+    "name" : "json",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "!isSomeString!(T[]) && isArray!(T[])",
+    "members" : [
+     {
+      "name" : "json",
+      "kind" : "function",
+      "line" : 794,
+      "char" : 11,
+      "type" : "@property JSONValue(auto const ref T[] ary)",
+      "parameters" : [
+       {
+        "name" : "ary",
+        "type" : "T[]",
+        "storageClass" : [
+         "auto",
+         "const",
+         "ref"
+        ]
+       }
+      ],
+      "endline" : 805,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "public",
+    "comment" : "ditto\n",
+    "line" : 808,
+    "char" : 11,
+    "name" : "json",
+    "parameters" : [
+     {
+      "name" : "Value",
+      "kind" : "type"
+     },
+     {
+      "name" : "Key",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isSomeString!Key && is(typeof(()\n{\nauto v = Value.init.json;\n}\n))",
+    "members" : [
+     {
+      "name" : "json",
+      "kind" : "function",
+      "line" : 808,
+      "char" : 11,
+      "type" : "@property JSONValue(auto const ref Value[Key] aa)",
+      "parameters" : [
+       {
+        "name" : "aa",
+        "type" : "Value[Key]",
+        "storageClass" : [
+         "auto",
+         "const",
+         "ref"
+        ]
+       }
+      ],
+      "endline" : 823,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "public",
+    "comment" : "ditto\n",
+    "line" : 826,
+    "char" : 11,
+    "name" : "json",
+    "parameters" : [
+     {
+      "name" : "JV",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "is(JV : const(JSONValue))",
+    "members" : [
+     {
+      "name" : "json",
+      "kind" : "function",
+      "line" : 826,
+      "char" : 11,
+      "type" : "@property JSONValue(auto const ref JV v)",
+      "parameters" : [
+       {
+        "name" : "v",
+        "type" : "JV",
+        "storageClass" : [
+         "auto",
+         "const",
+         "ref"
+        ]
+       }
+      ],
+      "endline" : 830,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "line" : 833,
+    "char" : 14,
+    "name" : "_setValue",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "is(typeof(val.json))",
+    "members" : [
+     {
+      "name" : "_setValue",
+      "kind" : "function",
+      "line" : 833,
+      "char" : 14,
+      "type" : "void(ref JSONValue v, ref string name, ref T val)",
+      "parameters" : [
+       {
+        "name" : "v",
+        "type" : "JSONValue",
+        "storageClass" : [
+         "ref"
+        ]
+       },
+       {
+        "name" : "name",
+        "type" : "string",
+        "storageClass" : [
+         "ref"
+        ]
+       },
+       {
+        "name" : "val",
+        "type" : "T",
+        "storageClass" : [
+         "ref"
+        ]
+       }
+      ],
+      "endline" : 846,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "public",
+    "comment" : " Operation of JSONValue\n",
+    "line" : 852,
+    "char" : 6,
+    "name" : "setValue",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "setValue",
+      "kind" : "function",
+      "line" : 852,
+      "char" : 6,
+      "type" : "pure nothrow @trusted void(ref JSONValue v, string name, T val)",
+      "parameters" : [
+       {
+        "name" : "v",
+        "type" : "JSONValue",
+        "storageClass" : [
+         "ref"
+        ]
+       },
+       {
+        "name" : "name",
+        "type" : "string"
+       },
+       {
+        "name" : "val",
+        "type" : "T"
+       }
+      ],
+      "endline" : 861,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "public",
+    "comment" : "\n",
+    "line" : 865,
+    "char" : 6,
+    "name" : "fromJson",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isSomeString!T",
+    "members" : [
+     {
+      "name" : "fromJson",
+      "kind" : "function",
+      "line" : 865,
+      "char" : 6,
+      "type" : "bool(in ref JSONValue src, ref T dst)",
+      "parameters" : [
+       {
+        "name" : "src",
+        "type" : "JSONValue",
+        "storageClass" : [
+         "in",
+         "ref"
+        ]
+       },
+       {
+        "name" : "dst",
+        "type" : "T",
+        "storageClass" : [
+         "ref"
+        ]
+       }
+      ],
+      "endline" : 881,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "public",
+    "comment" : "ditto\n",
+    "line" : 885,
+    "char" : 6,
+    "name" : "fromJson",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isIntegral!T && !is(T == enum)",
+    "members" : [
+     {
+      "name" : "fromJson",
+      "kind" : "function",
+      "line" : 885,
+      "char" : 6,
+      "type" : "bool(in ref JSONValue src, ref T dst)",
+      "parameters" : [
+       {
+        "name" : "src",
+        "type" : "JSONValue",
+        "storageClass" : [
+         "in",
+         "ref"
+        ]
+       },
+       {
+        "name" : "dst",
+        "type" : "T",
+        "storageClass" : [
+         "ref"
+        ]
+       }
+      ],
+      "endline" : 899,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "public",
+    "comment" : "ditto\n",
+    "line" : 902,
+    "char" : 6,
+    "name" : "fromJson",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isFloatingPoint!T",
+    "members" : [
+     {
+      "name" : "fromJson",
+      "kind" : "function",
+      "line" : 902,
+      "char" : 6,
+      "type" : "bool(in ref JSONValue src, ref T dst)",
+      "parameters" : [
+       {
+        "name" : "src",
+        "type" : "JSONValue",
+        "storageClass" : [
+         "in",
+         "ref"
+        ]
+       },
+       {
+        "name" : "dst",
+        "type" : "T",
+        "storageClass" : [
+         "ref"
+        ]
+       }
+      ],
+      "endline" : 919,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "public",
+    "comment" : "ditto\n",
+    "line" : 922,
+    "char" : 6,
+    "name" : "fromJson",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "is(T == struct) && !is(Unqual!T : JSONValue)",
+    "members" : [
+     {
+      "name" : "fromJson",
+      "kind" : "function",
+      "line" : 922,
+      "char" : 6,
+      "type" : "bool(in ref JSONValue src, ref T dst)",
+      "parameters" : [
+       {
+        "name" : "src",
+        "type" : "JSONValue",
+        "storageClass" : [
+         "in",
+         "ref"
+        ]
+       },
+       {
+        "name" : "dst",
+        "type" : "T",
+        "storageClass" : [
+         "ref"
+        ]
+       }
+      ],
+      "endline" : 982,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "public",
+    "comment" : "ditto\n",
+    "line" : 985,
+    "char" : 6,
+    "name" : "fromJson",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "is(T == class)",
+    "members" : [
+     {
+      "name" : "fromJson",
+      "kind" : "function",
+      "line" : 985,
+      "char" : 6,
+      "type" : "bool(in ref JSONValue src, ref T dst)",
+      "parameters" : [
+       {
+        "name" : "src",
+        "type" : "JSONValue",
+        "storageClass" : [
+         "in",
+         "ref"
+        ]
+       },
+       {
+        "name" : "dst",
+        "type" : "T",
+        "storageClass" : [
+         "ref"
+        ]
+       }
+      ],
+      "endline" : 996,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "public",
+    "comment" : "ditto\n",
+    "line" : 999,
+    "char" : 6,
+    "name" : "fromJson",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "is(T == enum)",
+    "members" : [
+     {
+      "name" : "fromJson",
+      "kind" : "function",
+      "line" : 999,
+      "char" : 6,
+      "type" : "bool(in ref JSONValue src, ref T dst)",
+      "parameters" : [
+       {
+        "name" : "src",
+        "type" : "JSONValue",
+        "storageClass" : [
+         "in",
+         "ref"
+        ]
+       },
+       {
+        "name" : "dst",
+        "type" : "T",
+        "storageClass" : [
+         "ref"
+        ]
+       }
+      ],
+      "endline" : 1008,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "public",
+    "comment" : "ditto\n",
+    "line" : 1011,
+    "char" : 6,
+    "name" : "fromJson",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "is(T == bool)",
+    "members" : [
+     {
+      "name" : "fromJson",
+      "kind" : "function",
+      "line" : 1011,
+      "char" : 6,
+      "type" : "bool(in ref JSONValue src, ref T dst)",
+      "parameters" : [
+       {
+        "name" : "src",
+        "type" : "JSONValue",
+        "storageClass" : [
+         "in",
+         "ref"
+        ]
+       },
+       {
+        "name" : "dst",
+        "type" : "T",
+        "storageClass" : [
+         "ref"
+        ]
+       }
+      ],
+      "endline" : 1025,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "public",
+    "comment" : "ditto\n",
+    "line" : 1028,
+    "char" : 6,
+    "name" : "fromJson",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "!isSomeString!T && isDynamicArray!T",
+    "members" : [
+     {
+      "name" : "fromJson",
+      "kind" : "function",
+      "line" : 1028,
+      "char" : 6,
+      "type" : "bool(in ref JSONValue src, ref T dst)",
+      "parameters" : [
+       {
+        "name" : "src",
+        "type" : "JSONValue",
+        "storageClass" : [
+         "in",
+         "ref"
+        ]
+       },
+       {
+        "name" : "dst",
+        "type" : "T",
+        "storageClass" : [
+         "ref"
+        ]
+       }
+      ],
+      "endline" : 1043,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "public",
+    "comment" : "ditto\n",
+    "line" : 1046,
+    "char" : 6,
+    "name" : "fromJson",
+    "parameters" : [
+     {
+      "name" : "Value",
+      "kind" : "type"
+     },
+     {
+      "name" : "Key",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "isSomeString!Key && is(typeof(()\n{\nJSONValue val;\ncast(void)fromJson(val, dst[Key.init]);\n}\n))",
+    "members" : [
+     {
+      "name" : "fromJson",
+      "kind" : "function",
+      "line" : 1046,
+      "char" : 6,
+      "type" : "bool(in ref JSONValue src, ref Value[Key] dst)",
+      "parameters" : [
+       {
+        "name" : "src",
+        "type" : "JSONValue",
+        "storageClass" : [
+         "in",
+         "ref"
+        ]
+       },
+       {
+        "name" : "dst",
+        "type" : "Value[Key]",
+        "storageClass" : [
+         "ref"
+        ]
+       }
+      ],
+      "endline" : 1071,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "public",
+    "comment" : "ditto\n",
+    "line" : 1074,
+    "char" : 6,
+    "name" : "fromJson",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "constraint" : "is(Unqual!T == JSONValue)",
+    "members" : [
+     {
+      "name" : "fromJson",
+      "kind" : "function",
+      "line" : 1074,
+      "char" : 6,
+      "type" : "bool(in ref JSONValue src, ref T dst)",
+      "parameters" : [
+       {
+        "name" : "src",
+        "type" : "JSONValue",
+        "storageClass" : [
+         "in",
+         "ref"
+        ]
+       },
+       {
+        "name" : "dst",
+        "type" : "T",
+        "storageClass" : [
+         "ref"
+        ]
+       }
+      ],
+      "endline" : 1079,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "line" : 1082,
+    "char" : 11,
+    "name" : "_getValue",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "_getValue",
+      "kind" : "function",
+      "line" : 1082,
+      "char" : 11,
+      "type" : "T(in ref JSONValue v, string name, lazy scope T defaultVal = T.init)",
+      "parameters" : [
+       {
+        "name" : "v",
+        "type" : "JSONValue",
+        "storageClass" : [
+         "in",
+         "ref"
+        ]
+       },
+       {
+        "name" : "name",
+        "type" : "string"
+       },
+       {
+        "name" : "defaultVal",
+        "type" : "T",
+        "storageClass" : [
+         "scope",
+         "lazy"
+        ],
+        "default" : "T.init"
+       }
+      ],
+      "endline" : 1112,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "public",
+    "comment" : "\n",
+    "line" : 1115,
+    "char" : 3,
+    "name" : "getValue",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "getValue",
+      "kind" : "function",
+      "line" : 1115,
+      "char" : 3,
+      "type" : "pure nothrow @trusted T(in ref JSONValue v, string name, lazy scope T defaultVal = T.init)",
+      "parameters" : [
+       {
+        "name" : "v",
+        "type" : "JSONValue",
+        "storageClass" : [
+         "in",
+         "ref"
+        ]
+       },
+       {
+        "name" : "name",
+        "type" : "string"
+       },
+       {
+        "name" : "defaultVal",
+        "type" : "T",
+        "storageClass" : [
+         "scope",
+         "lazy"
+        ],
+        "default" : "T.init"
+       }
+      ],
+      "endline" : 1132,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "public",
+    "comment" : "\n",
+    "line" : 1135,
+    "char" : 1,
+    "name" : "AttrConverter",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "AttrConverter",
+      "kind" : "struct",
+      "protection" : "public",
+      "line" : 1135,
+      "char" : 1,
+      "members" : [
+       {
+        "name" : "from",
+        "kind" : "variable",
+        "comment" : "\n",
+        "line" : 1138,
+        "char" : 29,
+        "type" : "T function(in JSONValue v)"
+       },
+       {
+        "name" : "to",
+        "kind" : "variable",
+        "comment" : "\n",
+        "line" : 1140,
+        "char" : 29,
+        "type" : "JSONValue function(in T v)"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "public",
+    "comment" : " Attribute converting method\n",
+    "line" : 1146,
+    "char" : 17,
+    "name" : "converter",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "converter",
+      "kind" : "function",
+      "line" : 1146,
+      "char" : 17,
+      "type" : "AttrConverter!T(T function(in JSONValue) from, JSONValue function(in T) to)",
+      "parameters" : [
+       {
+        "name" : "from",
+        "type" : "T function(in JSONValue)"
+       },
+       {
+        "name" : "to",
+        "type" : "JSONValue function(in T)"
+       }
+      ],
+      "endline" : 1149,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "private",
+    "line" : 1152,
+    "char" : 14,
+    "name" : "isJSONizableRaw",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "isJSONizableRaw",
+      "kind" : "variable",
+      "line" : 1152,
+      "char" : 14,
+      "storageClass" : [
+       "enum"
+      ],
+      "init" : "is(typeof(()\n{\nT val;\nJSONValue jv = val.json;\ncast(void)fromJson(jv, val);\n}\n))"
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "public",
+    "comment" : " serialize data to JSON\n",
+    "line" : 1162,
+    "char" : 11,
+    "name" : "serializeToJson",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "serializeToJson",
+      "kind" : "function",
+      "line" : 1162,
+      "char" : 11,
+      "type" : "JSONValue(in T data)",
+      "parameters" : [
+       {
+        "name" : "data",
+        "type" : "T",
+        "storageClass" : [
+         "in"
+        ]
+       }
+      ],
+      "endline" : 1219,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "public",
+    "comment" : "ditto\n",
+    "line" : 1222,
+    "char" : 8,
+    "name" : "serializeToJsonString",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "serializeToJsonString",
+      "kind" : "function",
+      "line" : 1222,
+      "char" : 8,
+      "type" : "string(in T data, JSONOptions options = JSONOptions.none)",
+      "parameters" : [
+       {
+        "name" : "data",
+        "type" : "T",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "options",
+        "type" : "JSONOptions",
+        "default" : "JSONOptions.none"
+       }
+      ],
+      "endline" : 1225,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "public",
+    "comment" : " deserialize data from JSON\n",
+    "line" : 1231,
+    "char" : 6,
+    "name" : "deserializeFromJson",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "deserializeFromJson",
+      "kind" : "function",
+      "line" : 1231,
+      "char" : 6,
+      "type" : "void(ref T data, in JSONValue json)",
+      "parameters" : [
+       {
+        "name" : "data",
+        "type" : "T",
+        "storageClass" : [
+         "ref"
+        ]
+       },
+       {
+        "name" : "json",
+        "type" : "JSONValue",
+        "storageClass" : [
+         "in"
+        ]
+       }
+      ],
+      "endline" : 1335,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "kind" : "template",
+    "protection" : "public",
+    "comment" : "ditto\n",
+    "line" : 1338,
+    "char" : 6,
+    "name" : "deserializeFromJsonString",
+    "parameters" : [
+     {
+      "name" : "T",
+      "kind" : "type"
+     }
+    ],
+    "members" : [
+     {
+      "name" : "deserializeFromJsonString",
+      "kind" : "function",
+      "line" : 1338,
+      "char" : 6,
+      "type" : "void(ref T data, string jsonContents)",
+      "parameters" : [
+       {
+        "name" : "data",
+        "type" : "T",
+        "storageClass" : [
+         "ref"
+        ]
+       },
+       {
+        "name" : "jsonContents",
+        "type" : "string"
+       }
+      ],
+      "endline" : 1341,
+      "endchar" : 1
+     }
+    ]
+   },
+   {
+    "name" : "__unittest_L1343_C9",
+    "kind" : "function",
+    "protection" : "public",
+    "line" : 1343,
+    "char" : 9,
+    "storageClass" : [
+     "@system"
+    ],
+    "endline" : 1361,
+    "endchar" : 1
+   },
+   {
+    "name" : "__unittest_L1361_C9",
+    "kind" : "function",
+    "protection" : "public",
+    "line" : 1361,
+    "char" : 9,
+    "storageClass" : [
+     "@system"
+    ],
+    "endline" : 1377,
+    "endchar" : 1
+   }
+  ]
+ },
+ {
+  "name" : "msgraph.httpd",
+  "kind" : "module",
+  "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/httpd/package.d",
+  "comment" : " Simple HTTP daemon for auth\n",
+  "members" : [
+   {
+    "name" : "msgraph.httpd.types",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 15
+   },
+   {
+    "name" : "msgraph.httpd.daemon",
+    "kind" : "import",
+    "line" : 9,
+    "char" : 15
+   }
+  ]
+ },
+ {
+  "name" : "msgraph.httpd.daemon",
+  "kind" : "module",
+  "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/httpd/daemon.d",
+  "comment" : " Simple HTTP daemon\n",
+  "members" : [
+   {
+    "name" : "msgraph.httpd.sockhelper",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "package"
+   },
+   {
+    "name" : "msgraph.httpd.parse",
+    "kind" : "import",
+    "line" : 9,
+    "char" : 8,
+    "protection" : "package"
+   },
+   {
+    "name" : "Httpd",
+    "kind" : "struct",
+    "protection" : "package",
+    "comment" : "\n",
+    "line" : 14,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "std.socket",
+      "kind" : "import",
+      "line" : 17,
+      "char" : 9,
+      "protection" : "private"
+     },
+     {
+      "name" : "std.exception",
+      "kind" : "import",
+      "line" : 18,
+      "char" : 9,
+      "protection" : "private"
+     },
+     {
+      "name" : "_listener",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 19,
+      "char" : 9,
+      "deco" : "C3std6socket6Socket",
+      "originalType" : "Socket",
+      "offset" : 0
+     },
+     {
+      "name" : "_connection",
+      "kind" : "variable",
+      "protection" : "private",
+      "line" : 20,
+      "char" : 9,
+      "deco" : "C3std6socket6Socket",
+      "originalType" : "Socket",
+      "offset" : 8
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 26,
+      "char" : 2,
+      "deco" : "FNcNfAyatZS7msgraph5httpd6daemon5Httpd",
+      "originalType" : "ref @safe (string bindaddr, ushort port = 0)",
+      "parameters" : [
+       {
+        "name" : "bindaddr",
+        "deco" : "Aya"
+       },
+       {
+        "name" : "port",
+        "deco" : "t",
+        "default" : "cast(ushort)0u"
+       }
+      ],
+      "endline" : 29,
+      "endchar" : 2
+     },
+     {
+      "name" : "listen",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 34,
+      "char" : 7,
+      "deco" : "FNeAyatZv",
+      "originalType" : "@trusted void(string bindaddr = \"localhost\", ushort port = 0)",
+      "parameters" : [
+       {
+        "name" : "bindaddr",
+        "deco" : "Aya",
+        "default" : "\"localhost\""
+       },
+       {
+        "name" : "port",
+        "deco" : "t",
+        "default" : "cast(ushort)0u"
+       }
+      ],
+      "endline" : 40,
+      "endchar" : 2
+     },
+     {
+      "name" : "listeningPort",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 45,
+      "char" : 9,
+      "deco" : "xFNeZt",
+      "endline" : 50,
+      "endchar" : 2
+     },
+     {
+      "name" : "closeListener",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 55,
+      "char" : 7,
+      "deco" : "FNeZv",
+      "endline" : 62,
+      "endchar" : 2
+     },
+     {
+      "name" : "closeClient",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 67,
+      "char" : 7,
+      "deco" : "FNeZv",
+      "endline" : 74,
+      "endchar" : 2
+     },
+     {
+      "name" : "receive",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 79,
+      "char" : 7,
+      "deco" : "FNfJS7msgraph5httpd5types7RequestkZb",
+      "originalType" : "@safe bool(out Request req, uint msecs = (uint).max)",
+      "parameters" : [
+       {
+        "name" : "req",
+        "deco" : "S7msgraph5httpd5types7Request",
+        "storageClass" : [
+         "out"
+        ]
+       },
+       {
+        "name" : "msecs",
+        "deco" : "k",
+        "default" : "4294967295u"
+       }
+      ],
+      "endline" : 188,
+      "endchar" : 2
+     },
+     {
+      "name" : "send",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 193,
+      "char" : 7,
+      "deco" : "FNfS7msgraph5httpd5types8ResponsekZb",
+      "originalType" : "@safe bool(Response res, uint msecs = 1000)",
+      "parameters" : [
+       {
+        "name" : "res",
+        "deco" : "S7msgraph5httpd5types8Response"
+       },
+       {
+        "name" : "msecs",
+        "deco" : "k",
+        "default" : "1000u"
+       }
+      ],
+      "endline" : 258,
+      "endchar" : 2
+     },
+     {
+      "name" : "close",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 263,
+      "char" : 7,
+      "deco" : "FNfZv",
+      "endline" : 267,
+      "endchar" : 2
+     },
+     {
+      "name" : "~this",
+      "kind" : "destructor",
+      "protection" : "public",
+      "line" : 269,
+      "char" : 2,
+      "deco" : "FNfZv",
+      "endline" : 272,
+      "endchar" : 2
+     },
+     {
+      "name" : "__xdtor",
+      "kind" : "alias",
+      "protection" : "public"
+     },
+     {
+      "name" : "opAssign",
+      "kind" : "generated function",
+      "protection" : "public",
+      "line" : 14,
+      "char" : 1,
+      "deco" : "FNcNjNeS7msgraph5httpd6daemon5HttpdZQBd",
+      "parameters" : [
+       {
+        "name" : "p",
+        "deco" : "S7msgraph5httpd6daemon5Httpd"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name" : "__unittest_L276_C7",
+    "kind" : "function",
+    "protection" : "package",
+    "comment" : "ditto\n",
+    "line" : 276,
+    "char" : 7,
+    "storageClass" : [
+     "@safe"
+    ],
+    "endline" : 311,
+    "endchar" : 1
+   },
+   {
+    "name" : "__unittest_L311_C7",
+    "kind" : "function",
+    "protection" : "package",
+    "line" : 311,
+    "char" : 7,
+    "storageClass" : [
+     "@safe"
+    ],
+    "endline" : 373,
+    "endchar" : 1
+   }
+  ]
+ },
+ {
+  "name" : "msgraph.httpd.parse",
+  "kind" : "module",
+  "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/httpd/parse.d",
+  "comment" : " HTTP request parser\n",
+  "members" : [
+   {
+    "name" : "msgraph.httpd.types",
+    "kind" : "import",
+    "line" : 7,
+    "char" : 8,
+    "protection" : "package"
+   },
+   {
+    "name" : "parseRequestLine",
+    "kind" : "function",
+    "protection" : "package",
+    "comment" : "\n",
+    "line" : 12,
+    "char" : 6,
+    "deco" : "FNeKS7msgraph5httpd5types7RequestIAaZb",
+    "parameters" : [
+     {
+      "name" : "req",
+      "deco" : "S7msgraph5httpd5types7Request",
+      "storageClass" : [
+       "ref"
+      ]
+     },
+     {
+      "name" : "buf",
+      "deco" : "xAa",
+      "storageClass" : [
+       "in"
+      ]
+     }
+    ],
+    "endline" : 25,
+    "endchar" : 1
+   },
+   {
+    "name" : "parseHeaders",
+    "kind" : "function",
+    "protection" : "package",
+    "comment" : "\n",
+    "line" : 30,
+    "char" : 6,
+    "deco" : "FNeKS7msgraph5httpd5types7RequestIAaZb",
+    "parameters" : [
+     {
+      "name" : "req",
+      "deco" : "S7msgraph5httpd5types7Request",
+      "storageClass" : [
+       "ref"
+      ]
+     },
+     {
+      "name" : "buf",
+      "deco" : "xAa",
+      "storageClass" : [
+       "in"
+      ]
+     }
+    ],
+    "endline" : 44,
+    "endchar" : 1
+   },
+   {
+    "name" : "parseBody",
+    "kind" : "function",
+    "protection" : "package",
+    "comment" : "\n",
+    "line" : 49,
+    "char" : 6,
+    "deco" : "FNeKS7msgraph5httpd5types7RequestIAaZb",
+    "parameters" : [
+     {
+      "name" : "req",
+      "deco" : "S7msgraph5httpd5types7Request",
+      "storageClass" : [
+       "ref"
+      ]
+     },
+     {
+      "name" : "buf",
+      "deco" : "xAa",
+      "storageClass" : [
+       "in"
+      ]
+     }
+    ],
+    "endline" : 54,
+    "endchar" : 1
+   }
+  ]
+ },
+ {
+  "name" : "msgraph.httpd.sockhelper",
+  "kind" : "module",
+  "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/httpd/sockhelper.d",
+  "comment" : " Socket helper functions\n",
+  "members" : [
+   {
+    "name" : "std.socket",
+    "kind" : "import",
+    "line" : 9,
+    "char" : 8,
+    "protection" : "package"
+   },
+   {
+    "name" : "select",
+    "kind" : "function",
+    "protection" : "package",
+    "comment" : "\n",
+    "line" : 14,
+    "char" : 6,
+    "deco" : "FNbNeC3std6socket6SocketMPbMQdMQgIkZb",
+    "parameters" : [
+     {
+      "name" : "sock",
+      "deco" : "C3std6socket6Socket"
+     },
+     {
+      "name" : "readable",
+      "deco" : "Pb",
+      "storageClass" : [
+       "scope"
+      ]
+     },
+     {
+      "name" : "writable",
+      "deco" : "Pb",
+      "storageClass" : [
+       "scope"
+      ]
+     },
+     {
+      "name" : "err",
+      "deco" : "Pb",
+      "storageClass" : [
+       "scope"
+      ]
+     },
+     {
+      "name" : "msecs",
+      "deco" : "xk",
+      "storageClass" : [
+       "in"
+      ]
+     }
+    ],
+    "endline" : 68,
+    "endchar" : 1
+   },
+   {
+    "name" : "select",
+    "kind" : "function",
+    "protection" : "package",
+    "line" : 69,
+    "char" : 6,
+    "deco" : "FNbNeC3std6socket6SocketMDFNbNiNfZvMQlMQoIkZv",
+    "originalType" : "nothrow @trusted void(Socket sock, scope void delegate() nothrow @nogc @safe onReadable, scope void delegate() nothrow @nogc @safe onWritable, scope void delegate() nothrow @nogc @safe onError, in uint msecs = 0)",
+    "parameters" : [
+     {
+      "name" : "sock",
+      "deco" : "C3std6socket6Socket"
+     },
+     {
+      "name" : "onReadable",
+      "deco" : "DFNbNiNfZv",
+      "storageClass" : [
+       "scope"
+      ]
+     },
+     {
+      "name" : "onWritable",
+      "deco" : "DFNbNiNfZv",
+      "storageClass" : [
+       "scope"
+      ]
+     },
+     {
+      "name" : "onError",
+      "deco" : "DFNbNiNfZv",
+      "storageClass" : [
+       "scope"
+      ]
+     },
+     {
+      "name" : "msecs",
+      "deco" : "xk",
+      "storageClass" : [
+       "in"
+      ],
+      "default" : "0u"
+     }
+    ],
+    "endline" : 93,
+    "endchar" : 1
+   },
+   {
+    "name" : "waitReadable",
+    "kind" : "function",
+    "protection" : "package",
+    "line" : 94,
+    "char" : 6,
+    "deco" : "FNbNeC3std6socket6SocketkZb",
+    "parameters" : [
+     {
+      "name" : "sock",
+      "deco" : "C3std6socket6Socket"
+     },
+     {
+      "name" : "msecs",
+      "deco" : "k"
+     }
+    ],
+    "endline" : 98,
+    "endchar" : 1
+   },
+   {
+    "name" : "waitWritable",
+    "kind" : "function",
+    "protection" : "package",
+    "line" : 99,
+    "char" : 6,
+    "deco" : "FNbNeC3std6socket6SocketkZb",
+    "parameters" : [
+     {
+      "name" : "sock",
+      "deco" : "C3std6socket6Socket"
+     },
+     {
+      "name" : "msecs",
+      "deco" : "k"
+     }
+    ],
+    "endline" : 103,
+    "endchar" : 1
+   },
+   {
+    "name" : "setRecvTimeout",
+    "kind" : "function",
+    "protection" : "package",
+    "line" : 104,
+    "char" : 6,
+    "deco" : "FNbNeC3std6socket6SocketkZv",
+    "parameters" : [
+     {
+      "name" : "sock",
+      "deco" : "C3std6socket6Socket"
+     },
+     {
+      "name" : "msecs",
+      "deco" : "k"
+     }
+    ],
+    "endline" : 114,
+    "endchar" : 1
+   },
+   {
+    "name" : "setSendTimeout",
+    "kind" : "function",
+    "protection" : "package",
+    "line" : 115,
+    "char" : 6,
+    "deco" : "FNbNeC3std6socket6SocketkZv",
+    "parameters" : [
+     {
+      "name" : "sock",
+      "deco" : "C3std6socket6Socket"
+     },
+     {
+      "name" : "msecs",
+      "deco" : "k"
+     }
+    ],
+    "endline" : 125,
+    "endchar" : 1
+   }
+  ]
+ },
+ {
+  "name" : "msgraph.httpd.types",
+  "kind" : "module",
+  "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/httpd/types.d",
+  "comment" : " HTTP related types\n",
+  "members" : [
+   {
+    "name" : "Request",
+    "kind" : "struct",
+    "protection" : "package",
+    "comment" : "\n",
+    "line" : 12,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "method",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 15,
+      "char" : 9,
+      "deco" : "Aya",
+      "offset" : 0
+     },
+     {
+      "name" : "path",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 17,
+      "char" : 9,
+      "deco" : "Aya",
+      "offset" : 16
+     },
+     {
+      "name" : "protocolVersion",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 19,
+      "char" : 9,
+      "deco" : "Aya",
+      "offset" : 32
+     },
+     {
+      "name" : "header",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 21,
+      "char" : 17,
+      "deco" : "HAyaQd",
+      "offset" : 48
+     },
+     {
+      "name" : "content",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 23,
+      "char" : 9,
+      "deco" : "Aya",
+      "offset" : 56
+     }
+    ]
+   },
+   {
+    "name" : "Response",
+    "kind" : "struct",
+    "protection" : "package",
+    "comment" : "\n",
+    "line" : 29,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "status",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 32,
+      "char" : 9,
+      "deco" : "Aya",
+      "offset" : 0
+     },
+     {
+      "name" : "header",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 34,
+      "char" : 17,
+      "deco" : "HAyaQd",
+      "offset" : 16
+     },
+     {
+      "name" : "content",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 36,
+      "char" : 9,
+      "deco" : "Aya",
+      "offset" : 24
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name" : "msgraph.user",
+  "kind" : "module",
+  "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/user.d",
+  "comment" : " User informations\n",
+  "members" : [
+   {
+    "name" : "msgraph.graph",
+    "kind" : "import",
+    "line" : 6,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "msgraph.graph.jsonhelper",
+    "kind" : "import",
+    "line" : 7,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "std.json",
+    "kind" : "import",
+    "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "User",
+    "kind" : "struct",
+    "protection" : "public",
+    "comment" : " User\n\n https://docs.microsoft.com/ja-jp/graph/api/user-get?view=graph-rest-1.0&tabs=http\n",
+    "line" : 15,
+    "char" : 1,
+    "members" : [
+     {
+      "name" : "businessPhones",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 18,
+      "char" : 11,
+      "deco" : "AAya",
+      "offset" : 0
+     },
+     {
+      "name" : "displayName",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 20,
+      "char" : 9,
+      "deco" : "Aya",
+      "offset" : 16
+     },
+     {
+      "name" : "givenName",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 22,
+      "char" : 9,
+      "deco" : "Aya",
+      "offset" : 32
+     },
+     {
+      "name" : "jobTitle",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 24,
+      "char" : 9,
+      "deco" : "Aya",
+      "offset" : 48
+     },
+     {
+      "name" : "mail",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 26,
+      "char" : 9,
+      "deco" : "Aya",
+      "offset" : 64
+     },
+     {
+      "name" : "mobilePhone",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 28,
+      "char" : 9,
+      "deco" : "Aya",
+      "offset" : 80
+     },
+     {
+      "name" : "officeLocation",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 30,
+      "char" : 9,
+      "deco" : "Aya",
+      "offset" : 96
+     },
+     {
+      "name" : "preferredLanguage",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 32,
+      "char" : 9,
+      "deco" : "Aya",
+      "offset" : 112
+     },
+     {
+      "name" : "surname",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 34,
+      "char" : 9,
+      "deco" : "Aya",
+      "offset" : 128
+     },
+     {
+      "name" : "userPrincipalName",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 36,
+      "char" : 9,
+      "deco" : "Aya",
+      "offset" : 144
+     },
+     {
+      "name" : "id",
+      "kind" : "variable",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 38,
+      "char" : 9,
+      "deco" : "Aya",
+      "offset" : 160
+     }
+    ]
+   },
+   {
+    "name" : "me",
+    "kind" : "function",
+    "protection" : "public",
+    "comment" : "\n",
+    "line" : 44,
+    "char" : 6,
+    "deco" : "FKS7msgraph5graphQg5GraphZSQy4user4User",
+    "parameters" : [
+     {
+      "name" : "g",
+      "deco" : "S7msgraph5graphQg5Graph",
+      "storageClass" : [
+       "ref"
+      ]
+     }
+    ],
+    "endline" : 49,
+    "endchar" : 1
+   },
+   {
+    "name" : "users",
+    "kind" : "function",
+    "protection" : "public",
+    "comment" : "\n",
+    "line" : 55,
+    "char" : 6,
+    "deco" : "FKS7msgraph5graphQg5GraphAyaZSQBb4user4User",
+    "parameters" : [
+     {
+      "name" : "g",
+      "deco" : "S7msgraph5graphQg5Graph",
+      "storageClass" : [
+       "ref"
+      ]
+     },
+     {
+      "name" : "userId",
+      "deco" : "Aya"
+     }
+    ],
+    "endline" : 61,
+    "endchar" : 1
+   }
+  ]
+ }
+]

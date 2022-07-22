@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html>    <head>        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="css/proj_docs.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/sidebar.js"></script>
+        <script type="text/javascript" src="js/listanchors.js"></script>
+        <title>msgraph.httpd.types</title>
+        
+        
+    </head>
+    <body>        
+        <div class="container">            
+<div class="sidebar-underbar"></div>
+<div class="sidebar">    <div class="head">        <h2>msgraph</h2>
+        <p><span class="smallprint"><b>version:</b> ~main <span class="separator"><br></span>
+            </span>
+        </p>
+        <p><a href="index.html">overview</a></p>
+    </div>
+    
+    <ul>
+
+	
+	
+		<li class="expand-container open"><a title='Library of Microsoft Graph for D
+		' class='expand-toggle' href='#'><span >msgraph</span></a><ul><li><a title='Library of Microsoft Graph for D
+		' href="
+			msgraph--msgraph.html"><span >package</span></a></li>
+			
+	
+		<li class="expand-container open"><a title='Microsoft Graph public imported packages
+		' class='expand-toggle' href='#'><span >graph</span></a><ul><li><a title='Microsoft Graph public imported packages
+		' href="
+			msgraph--msgraph.graph.html"><span >package</span></a></li>
+			
+
+	<li><a title="Authenticate/Authorize helpers" href="msgraph--msgraph.graph.auth.html"><span >auth</span></a></li>
+
+
+
+	<li><a title="Exception type definitions" href="msgraph--msgraph.graph.exception.html"><span >exception</span></a></li>
+
+
+
+	<li><a title="Microsoft Graph object" href="msgraph--msgraph.graph.graph.html"><span >graph</span></a></li>
+
+
+
+	<li><a title="HTTP helpers" href="msgraph--msgraph.graph.httphelper.html"><span >httphelper</span></a></li>
+
+
+
+	<li><a title="JSON Helpers" href="msgraph--msgraph.graph.jsonhelper.html"><span >jsonhelper</span></a></li>
+
+</ul></li>
+	
+	
+
+
+
+
+	
+		<li class="expand-container open"><a title='Simple HTTP daemon for auth
+		' class='expand-toggle' href='#'><span >httpd</span></a><ul><li><a title='Simple HTTP daemon for auth
+		' href="
+			msgraph--msgraph.httpd.html"><span >package</span></a></li>
+			
+
+	<li><a title="Simple HTTP daemon" href="msgraph--msgraph.httpd.daemon.html"><span >daemon</span></a></li>
+
+
+
+	<li><a title="HTTP request parser" href="msgraph--msgraph.httpd.parse.html"><span >parse</span></a></li>
+
+
+
+	<li><a title="Socket helper functions" href="msgraph--msgraph.httpd.sockhelper.html"><span >sockhelper</span></a></li>
+
+
+
+	<li><a title="HTTP related types" href="msgraph--msgraph.httpd.types.html"><span >types</span></a></li>
+
+</ul></li>
+	
+	
+
+
+
+
+
+	<li><a title="User informations" href="msgraph--msgraph.user.html"><span >user</span></a></li>
+
+</ul></li>
+	
+	
+
+
+
+
+</ul>
+</div>
+            <div class="content">                <h1>msgraph.httpd.types</h1>
+                
+                <div class="quickindex" id="quickindex"></div>
+                
+                <div class="ddoc_summary">HTTP related <code class="ddoc_psymbol">types</code></div><dl class="ddoc_members"><div class="ddoc_module_members"><dt class="ddoc_decl"><div ><span class="def-anchor" id=".Request"></span><div class="quickindex" id="quickindex.Request"></div>struct <code class="ddoc_psymbol">Request</code>;
+<br></div></dt>
+<dd>
+<dl class="ddoc_members"><div class="ddoc_struct_members"><dt class="ddoc_decl"><div ><span class="def-anchor" id=".Request.method"></span><div class="quickindex" id="quickindex.Request.method"></div>string <code class="ddoc_psymbol">method</code>;
+<br></div></dt>
+<dd>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Request.path"></span><div class="quickindex" id="quickindex.Request.path"></div>string <code class="ddoc_psymbol">path</code>;
+<br></div></dt>
+<dd>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Request.protocolVersion"></span><div class="quickindex" id="quickindex.Request.protocolVersion"></div>string <code class="ddoc_psymbol">protocolVersion</code>;
+<br></div></dt>
+<dd>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Request.header"></span><div class="quickindex" id="quickindex.Request.header"></div>string[string] <code class="ddoc_psymbol">header</code>;
+<br></div></dt>
+<dd>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Request.content"></span><div class="quickindex" id="quickindex.Request.content"></div>string <code class="ddoc_psymbol">content</code>;
+<br></div></dt>
+<dd>
+</dd>
+</div></dl>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Response"></span><div class="quickindex" id="quickindex.Response"></div>struct <code class="ddoc_psymbol">Response</code>;
+<br></div></dt>
+<dd>
+<dl class="ddoc_members"><div class="ddoc_struct_members"><dt class="ddoc_decl"><div ><span class="def-anchor" id=".Response.status"></span><div class="quickindex" id="quickindex.Response.status"></div>string <code class="ddoc_psymbol">status</code>;
+<br></div></dt>
+<dd>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Response.header"></span><div class="quickindex" id="quickindex.Response.header"></div>string[string] <code class="ddoc_psymbol">header</code>;
+<br></div></dt>
+<dd>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Response.content"></span><div class="quickindex" id="quickindex.Response.content"></div>string <code class="ddoc_psymbol">content</code>;
+<br></div></dt>
+<dd>
+</dd>
+</div></dl>
+</dd>
+</div></dl>
+
+                
+            </div>
+        </div>
+        
+        <script type="text/javascript">jQuery(document).ready(listanchors);</script>
+        
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+     </body>
+</html>
