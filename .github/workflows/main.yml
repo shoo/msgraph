@@ -65,6 +65,7 @@ jobs:
   #    # DOC:ドキュメント生成をする場合は以下を実行
   #    - name: Generate document tests
   #      run: |
+  #        (which dot >/dev/null 2>&1) || (sudo apt-get update && sudo apt-get install -y graphvis)
   #        rdmd ./scripts/runner.d -a=${ARCH} --mode=generate-document
   #        dub build -b=ddeps
   #    # DOC:ドキュメントを記録する場合は以下を実行(Artifactに6か月保管されます)
@@ -156,6 +157,7 @@ jobs:
         run: dub build -a=x86_64 -b=release -c=default
       - name: Generate document tests
         run: |
+          (which dot >/dev/null 2>&1) || (sudo apt-get update && sudo apt-get install -y graphvis)
           rdmd ./scripts/runner.d -a=x86_64 --mode=generate-document
         #  dub build -b=ddeps
 
@@ -232,6 +234,7 @@ jobs:
         run: dub build -a=x86_64 -b=release -c=default
       - name: Generate document tests
         run: |
+          (which dot >/dev/null 2>&1) || (sudo apt-get update && sudo apt-get install -y graphvis)
           rdmd ./scripts/runner.d -a=x86_64 --mode=generate-document
         #  dub build -b=ddeps
       - name: Upload generated pages
@@ -338,6 +341,7 @@ jobs:
         run: dub build -a=x86_64 -b=release -c=default
       - name: Generate document tests
         run: |
+          (which dot >/dev/null 2>&1) || (sudo apt-get update && sudo apt-get install -y graphvis)
           rdmd ./scripts/runner.d -a=x86_64 --mode=generate-document
         #  dub build -b=ddeps
 
