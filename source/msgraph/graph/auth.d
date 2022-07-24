@@ -3,6 +3,7 @@
  */
 module msgraph.graph.auth;
 
+import core.time;
 
 /*******************************************************************************
  * Auth infomations
@@ -81,13 +82,13 @@ public:
 	/***************************************************************************
 	 * 
 	 */
-	bool acceptCode(string state)
+	bool acceptCode(string state, Duration dur = 30.seconds)
 	{
 		import std.algorithm: canFind;
 		import msgraph.graph.httphelper;
 		import std.string: chompPrefix, chomp, endsWith, startsWith;
 		Request req;
-		if (!_httpd.receive(req, 10_000))
+		if (!_httpd.receive(req, cast(uint)dur.total!"msecs"))
 			return false;
 		auto resParam = req.path.chompPrefix("/?").parseQueryParam();
 		_code = resParam.get("code", "");
