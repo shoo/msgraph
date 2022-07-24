@@ -26,6 +26,15 @@ bool parseRequestLine(ref Request req, in char[] buf) @trusted
 	return true;
 }
 
+@safe unittest
+{
+	Request req;
+	req.parseRequestLine("GET /test HTTP/1.1");
+	assert(req.method == "GET");
+	assert(req.path == "/test");
+	assert(req.protocolVersion == "HTTP/1.1");
+}
+
 /*******************************************************************************
  * $(INTERNAL)
  */
@@ -45,6 +54,15 @@ bool parseHeaders(ref Request req, in char[] buf) @trusted
 	return true;
 }
 
+@safe unittest
+{
+	Request req;
+	req.parseHeaders("Host: localhost\nContent-Type: text/plain\n");
+	assert(req.header.length == 2);
+	assert(req.header["host"] == "localhost");
+	assert(req.header["content-type"] == "text/plain");
+}
+
 /*******************************************************************************
  * $(INTERNAL)
  */
@@ -53,4 +71,12 @@ bool parseBody(ref Request req, in char[] buf) @trusted
 	import std.exception: assumeUnique;
 	req.content = buf.assumeUnique;
 	return true;
+}
+
+@safe unittest
+{
+	Request req;
+	req.parseBody("aaabbbccc");
+	assert(req.content.length == 9);
+	assert(req.content == "aaabbbccc");
 }

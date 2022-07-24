@@ -63,7 +63,7 @@ struct Response
 	}
 	
 	/// ditto
-	this(HttpStatusLine sts, in ubyte[] data, string contentType) @safe
+	this(HttpStatusLine sts, in ubyte[] data, string contentType = "application/octet-stream") @safe
 	{
 		status  = sts;
 		header  = ["Content-Type": contentType];
@@ -89,3 +89,19 @@ struct Response
 	}
 }
 
+@safe unittest
+{
+	import std.string, std.json;
+	auto res1 = Response(HttpStatusLine.ok, ["Content-Type": "text/plain"], "aaa".representation);
+	auto res2 = Response(HttpStatusLine.ok, ["Content-Type": "text/plain"], "aaa");
+	assert(res1 == res2);
+	auto res3 = Response(HttpStatusLine.ok, "aaa");
+	assert(res3.content == "aaa".representation);
+	assert(res3.header["Content-Type"] == "text/plain");
+	auto res4 = Response(HttpStatusLine.ok, "aaa".representation);
+	assert(res4.content == "aaa".representation);
+	assert(res4.header["Content-Type"] == "application/octet-stream");
+	auto res5 = Response(HttpStatusLine.ok, JSONValue(["a": "b"]));
+	assert(res5.content == `{"a":"b"}`.representation);
+	assert(res5.header["Content-Type"] == "application/json");
+}
