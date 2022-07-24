@@ -5297,11 +5297,23 @@
     "endchar" : 1
    },
    {
+    "name" : "__unittest_L29_C7",
+    "kind" : "function",
+    "protection" : "package",
+    "line" : 29,
+    "char" : 7,
+    "storageClass" : [
+     "@safe"
+    ],
+    "endline" : 41,
+    "endchar" : 1
+   },
+   {
     "name" : "parseHeaders",
     "kind" : "function",
     "protection" : "package",
     "comment" : " $(INTERNAL)\n",
-    "line" : 32,
+    "line" : 41,
     "char" : 6,
     "deco" : "FNeKS7msgraph5httpd5types7RequestIAaZb",
     "parameters" : [
@@ -5320,7 +5332,19 @@
       ]
      }
     ],
-    "endline" : 46,
+    "endline" : 55,
+    "endchar" : 1
+   },
+   {
+    "name" : "__unittest_L57_C7",
+    "kind" : "function",
+    "protection" : "package",
+    "line" : 57,
+    "char" : 7,
+    "storageClass" : [
+     "@safe"
+    ],
+    "endline" : 69,
     "endchar" : 1
    },
    {
@@ -5328,7 +5352,7 @@
     "kind" : "function",
     "protection" : "package",
     "comment" : " $(INTERNAL)\n",
-    "line" : 51,
+    "line" : 69,
     "char" : 6,
     "deco" : "FNeKS7msgraph5httpd5types7RequestIAaZb",
     "parameters" : [
@@ -5347,7 +5371,19 @@
       ]
      }
     ],
-    "endline" : 56,
+    "endline" : 74,
+    "endchar" : 1
+   },
+   {
+    "name" : "__unittest_L76_C7",
+    "kind" : "function",
+    "protection" : "package",
+    "line" : 76,
+    "char" : 7,
+    "storageClass" : [
+     "@safe"
+    ],
+    "endline" : 83,
     "endchar" : 1
    }
   ]
@@ -5747,7 +5783,7 @@
       "line" : 66,
       "char" : 2,
       "deco" : "FNcNfE7msgraph5httpd5types14HttpStatusLineIAhAyaZSQBsQBnQBk8Response",
-      "originalType" : "ref @safe (HttpStatusLine sts, in ubyte[] data, string contentType)",
+      "originalType" : "ref @safe (HttpStatusLine sts, in ubyte[] data, string contentType = \"application/octet-stream\")",
       "parameters" : [
        {
         "name" : "sts",
@@ -5762,7 +5798,8 @@
        },
        {
         "name" : "contentType",
-        "deco" : "Aya"
+        "deco" : "Aya",
+        "default" : "\"application/octet-stream\""
        }
       ],
       "endline" : 71,
@@ -5829,6 +5866,18 @@
       "endchar" : 2
      }
     ]
+   },
+   {
+    "name" : "__unittest_L92_C7",
+    "kind" : "function",
+    "protection" : "package",
+    "line" : 92,
+    "char" : 7,
+    "storageClass" : [
+     "@safe"
+    ],
+    "endline" : 108,
+    "endchar" : 1
    }
   ]
  },
