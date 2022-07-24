@@ -275,19 +275,19 @@
       "line" : 85,
       "char" : 7,
       "deco" : "FAyaS4core4time8DurationZb",
-      "originalType" : "bool(string state, Duration dur = 30.seconds)",
+      "originalType" : "bool(string state, Duration timeout = 30.seconds)",
       "parameters" : [
        {
         "name" : "state",
         "deco" : "Aya"
        },
        {
-        "name" : "dur",
+        "name" : "timeout",
         "deco" : "S4core4time8Duration",
         "default" : "dur(30L)"
        }
       ],
-      "endline" : 118,
+      "endline" : 109,
       "endchar" : 2
      },
      {
@@ -1934,19 +1934,31 @@
     "storageClass" : [
      "@system"
     ],
-    "endline" : 590,
+    "endline" : 584,
     "endchar" : 1
    },
    {
-    "name" : "__unittest_L590_C9",
+    "name" : "__unittest_L584_C9",
     "kind" : "function",
     "protection" : "public",
-    "line" : 590,
+    "line" : 584,
     "char" : 9,
     "storageClass" : [
      "@system"
     ],
-    "endline" : 621,
+    "endline" : 603,
+    "endchar" : 1
+   },
+   {
+    "name" : "__unittest_L603_C9",
+    "kind" : "function",
+    "protection" : "public",
+    "line" : 603,
+    "char" : 9,
+    "storageClass" : [
+     "@system"
+    ],
+    "endline" : 624,
     "endchar" : 1
    }
   ]
@@ -4946,16 +4958,23 @@
   "comment" : " Simple HTTP daemon\n\n $(INTERNAL_MODULE)\n",
   "members" : [
    {
-    "name" : "msgraph.httpd.sockhelper",
+    "name" : "core.time",
     "kind" : "import",
     "line" : 10,
     "char" : 8,
     "protection" : "package"
    },
    {
-    "name" : "msgraph.httpd.parse",
+    "name" : "msgraph.httpd.sockhelper",
     "kind" : "import",
     "line" : 11,
+    "char" : 8,
+    "protection" : "package"
+   },
+   {
+    "name" : "msgraph.httpd.parse",
+    "kind" : "import",
+    "line" : 12,
     "char" : 8,
     "protection" : "package"
    },
@@ -4964,20 +4983,20 @@
     "kind" : "struct",
     "protection" : "package",
     "comment" : " $(INTERNAL) HTTP daemon\n",
-    "line" : 16,
+    "line" : 17,
     "char" : 1,
     "members" : [
      {
       "name" : "std.socket",
       "kind" : "import",
-      "line" : 19,
+      "line" : 20,
       "char" : 9,
       "protection" : "private"
      },
      {
       "name" : "std.exception",
       "kind" : "import",
-      "line" : 20,
+      "line" : 21,
       "char" : 9,
       "protection" : "private"
      },
@@ -4985,7 +5004,7 @@
       "name" : "_listener",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 21,
+      "line" : 22,
       "char" : 9,
       "deco" : "C3std6socket6Socket",
       "originalType" : "Socket",
@@ -4995,7 +5014,7 @@
       "name" : "_connection",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 22,
+      "line" : 23,
       "char" : 9,
       "deco" : "C3std6socket6Socket",
       "originalType" : "Socket",
@@ -5006,7 +5025,7 @@
       "kind" : "constructor",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 28,
+      "line" : 29,
       "char" : 2,
       "deco" : "FNcNfAyatZS7msgraph5httpd6daemon5Httpd",
       "originalType" : "ref @safe (string bindaddr, ushort port = 0)",
@@ -5021,7 +5040,7 @@
         "default" : "cast(ushort)0u"
        }
       ],
-      "endline" : 31,
+      "endline" : 32,
       "endchar" : 2
      },
      {
@@ -5029,7 +5048,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 36,
+      "line" : 37,
       "char" : 7,
       "deco" : "FNeAyatZv",
       "originalType" : "@trusted void(string bindaddr = \"localhost\", ushort port = 0)",
@@ -5045,7 +5064,7 @@
         "default" : "cast(ushort)0u"
        }
       ],
-      "endline" : 42,
+      "endline" : 43,
       "endchar" : 2
      },
      {
@@ -5053,10 +5072,10 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 47,
+      "line" : 48,
       "char" : 9,
       "deco" : "xFNeZt",
-      "endline" : 52,
+      "endline" : 53,
       "endchar" : 2
      },
      {
@@ -5064,10 +5083,10 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 57,
+      "line" : 58,
       "char" : 7,
       "deco" : "FNeZv",
-      "endline" : 64,
+      "endline" : 65,
       "endchar" : 2
      },
      {
@@ -5075,10 +5094,10 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 69,
+      "line" : 70,
       "char" : 7,
       "deco" : "FNeZv",
-      "endline" : 76,
+      "endline" : 77,
       "endchar" : 2
      },
      {
@@ -5086,10 +5105,10 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 81,
+      "line" : 82,
       "char" : 7,
-      "deco" : "FNfJS7msgraph5httpd5types7RequestkZb",
-      "originalType" : "@safe bool(out Request req, uint msecs = (uint).max)",
+      "deco" : "FNfJS7msgraph5httpd5types7RequestS4core4time8DurationZb",
+      "originalType" : "@safe bool(out Request req, Duration timeout = Duration.max)",
       "parameters" : [
        {
         "name" : "req",
@@ -5099,12 +5118,12 @@
         ]
        },
        {
-        "name" : "msecs",
-        "deco" : "k",
-        "default" : "4294967295u"
+        "name" : "timeout",
+        "deco" : "S4core4time8Duration",
+        "default" : "max()"
        }
       ],
-      "endline" : 190,
+      "endline" : 191,
       "endchar" : 2
      },
      {
@@ -5112,22 +5131,22 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 195,
+      "line" : 196,
       "char" : 7,
-      "deco" : "FNfS7msgraph5httpd5types8ResponsekZb",
-      "originalType" : "@safe bool(Response res, uint msecs = 1000)",
+      "deco" : "FNfS7msgraph5httpd5types8ResponseS4core4time8DurationZb",
+      "originalType" : "@safe bool(Response res, Duration timeout = 1000.msecs)",
       "parameters" : [
        {
         "name" : "res",
         "deco" : "S7msgraph5httpd5types8Response"
        },
        {
-        "name" : "msecs",
-        "deco" : "k",
-        "default" : "1000u"
+        "name" : "timeout",
+        "deco" : "S4core4time8Duration",
+        "default" : "dur(1000L)"
        }
       ],
-      "endline" : 260,
+      "endline" : 261,
       "endchar" : 2
      },
      {
@@ -5135,20 +5154,20 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 265,
+      "line" : 266,
       "char" : 7,
       "deco" : "FNfZv",
-      "endline" : 269,
+      "endline" : 270,
       "endchar" : 2
      },
      {
       "name" : "~this",
       "kind" : "destructor",
       "protection" : "public",
-      "line" : 271,
+      "line" : 272,
       "char" : 2,
       "deco" : "FNfZv",
-      "endline" : 274,
+      "endline" : 275,
       "endchar" : 2
      },
      {
@@ -5160,7 +5179,7 @@
       "name" : "opAssign",
       "kind" : "generated function",
       "protection" : "public",
-      "line" : 16,
+      "line" : 17,
       "char" : 1,
       "deco" : "FNcNjNeS7msgraph5httpd6daemon5HttpdZQBd",
       "parameters" : [
@@ -5173,28 +5192,66 @@
     ]
    },
    {
-    "name" : "__unittest_L278_C7",
+    "name" : "__unittest_L279_C7",
     "kind" : "function",
     "protection" : "package",
     "comment" : "\n",
-    "line" : 278,
+    "line" : 279,
     "char" : 7,
     "storageClass" : [
      "@safe"
     ],
-    "endline" : 313,
+    "endline" : 310,
     "endchar" : 1
    },
    {
-    "name" : "__unittest_L313_C7",
+    "name" : "__unittest_L310_C7",
     "kind" : "function",
     "protection" : "package",
-    "line" : 313,
+    "line" : 310,
     "char" : 7,
     "storageClass" : [
      "@safe"
     ],
-    "endline" : 375,
+    "endline" : 371,
+    "endchar" : 1
+   },
+   {
+    "name" : "asyncComm",
+    "kind" : "function",
+    "protection" : "package",
+    "comment" : "\n",
+    "line" : 371,
+    "char" : 6,
+    "storageClass" : [
+     "auto"
+    ],
+    "deco" : "FNfKS7msgraph5httpd6daemon5HttpdDFKSQBfQBa5types7RequestZSQCbQBwQw8ResponseS4core4time8DurationQuZPS3std11parallelism__T4TaskSQBaQz3runTDFZvZQv",
+    "originalType" : "(ref Httpd httpd, Response delegate(ref Request req) onRecv, Duration recvTimeout = 30.seconds, Duration sendTimeout = 1000.msecs)",
+    "parameters" : [
+     {
+      "name" : "httpd",
+      "deco" : "S7msgraph5httpd6daemon5Httpd",
+      "storageClass" : [
+       "ref"
+      ]
+     },
+     {
+      "name" : "onRecv",
+      "deco" : "DFKS7msgraph5httpd5types7RequestZSQBeQzQv8Response"
+     },
+     {
+      "name" : "recvTimeout",
+      "deco" : "S4core4time8Duration",
+      "default" : "dur(30L)"
+     },
+     {
+      "name" : "sendTimeout",
+      "deco" : "S4core4time8Duration",
+      "default" : "dur(1000L)"
+     }
+    ],
+    "endline" : 384,
     "endchar" : 1
    }
   ]
@@ -5302,6 +5359,13 @@
   "comment" : " Socket helper functions\n\n $(INTERNAL_MODULE)\n",
   "members" : [
    {
+    "name" : "core.time",
+    "kind" : "import",
+    "line" : 10,
+    "char" : 8,
+    "protection" : "package"
+   },
+   {
     "name" : "std.socket",
     "kind" : "import",
     "line" : 11,
@@ -5315,7 +5379,7 @@
     "comment" : " $(INTERNAL)\n",
     "line" : 16,
     "char" : 6,
-    "deco" : "FNbNeC3std6socket6SocketMPbMQdMQgIkZb",
+    "deco" : "FNbNeC3std6socket6SocketMPbMQdMQgS4core4time8DurationZb",
     "parameters" : [
      {
       "name" : "sock",
@@ -5343,14 +5407,11 @@
       ]
      },
      {
-      "name" : "msecs",
-      "deco" : "xk",
-      "storageClass" : [
-       "in"
-      ]
+      "name" : "timeout",
+      "deco" : "S4core4time8Duration"
      }
     ],
-    "endline" : 70,
+    "endline" : 69,
     "endchar" : 1
    },
    {
@@ -5358,10 +5419,10 @@
     "kind" : "function",
     "protection" : "package",
     "comment" : "$(INTERNAL)\n",
-    "line" : 73,
+    "line" : 72,
     "char" : 6,
-    "deco" : "FNbNeC3std6socket6SocketMDFNbNiNfZvMQlMQoIkZv",
-    "originalType" : "nothrow @trusted void(Socket sock, scope void delegate() nothrow @nogc @safe onReadable, scope void delegate() nothrow @nogc @safe onWritable, scope void delegate() nothrow @nogc @safe onError, in uint msecs = 0)",
+    "deco" : "FNbNeC3std6socket6SocketMDFNbNiNfZvMQlMQoS4core4time8DurationZv",
+    "originalType" : "nothrow @trusted void(Socket sock, scope void delegate() nothrow @nogc @safe onReadable, scope void delegate() nothrow @nogc @safe onWritable, scope void delegate() nothrow @nogc @safe onError, Duration timeout = 0.msecs)",
     "parameters" : [
      {
       "name" : "sock",
@@ -5389,15 +5450,12 @@
       ]
      },
      {
-      "name" : "msecs",
-      "deco" : "xk",
-      "storageClass" : [
-       "in"
-      ],
-      "default" : "0u"
+      "name" : "timeout",
+      "deco" : "S4core4time8Duration",
+      "default" : "dur(0L)"
      }
     ],
-    "endline" : 97,
+    "endline" : 96,
     "endchar" : 1
    },
    {
@@ -5405,20 +5463,20 @@
     "kind" : "function",
     "protection" : "package",
     "comment" : "$(INTERNAL)\n",
-    "line" : 100,
+    "line" : 99,
     "char" : 6,
-    "deco" : "FNbNeC3std6socket6SocketkZb",
+    "deco" : "FNbNeC3std6socket6SocketS4core4time8DurationZb",
     "parameters" : [
      {
       "name" : "sock",
       "deco" : "C3std6socket6Socket"
      },
      {
-      "name" : "msecs",
-      "deco" : "k"
+      "name" : "timeout",
+      "deco" : "S4core4time8Duration"
      }
     ],
-    "endline" : 104,
+    "endline" : 103,
     "endchar" : 1
    },
    {
@@ -5426,20 +5484,20 @@
     "kind" : "function",
     "protection" : "package",
     "comment" : "$(INTERNAL)\n",
-    "line" : 107,
+    "line" : 106,
     "char" : 6,
-    "deco" : "FNbNeC3std6socket6SocketkZb",
+    "deco" : "FNbNeC3std6socket6SocketS4core4time8DurationZb",
     "parameters" : [
      {
       "name" : "sock",
       "deco" : "C3std6socket6Socket"
      },
      {
-      "name" : "msecs",
-      "deco" : "k"
+      "name" : "timeout",
+      "deco" : "S4core4time8Duration"
      }
     ],
-    "endline" : 111,
+    "endline" : 110,
     "endchar" : 1
    },
    {
@@ -5447,17 +5505,17 @@
     "kind" : "function",
     "protection" : "package",
     "comment" : "$(INTERNAL)\n",
-    "line" : 114,
+    "line" : 113,
     "char" : 6,
-    "deco" : "FNbNeC3std6socket6SocketkZv",
+    "deco" : "FNbNeC3std6socket6SocketS4core4time8DurationZv",
     "parameters" : [
      {
       "name" : "sock",
       "deco" : "C3std6socket6Socket"
      },
      {
-      "name" : "msecs",
-      "deco" : "k"
+      "name" : "timeout",
+      "deco" : "S4core4time8Duration"
      }
     ],
     "endline" : 124,
@@ -5470,18 +5528,18 @@
     "comment" : "$(INTERNAL)\n",
     "line" : 127,
     "char" : 6,
-    "deco" : "FNbNeC3std6socket6SocketkZv",
+    "deco" : "FNbNeC3std6socket6SocketS4core4time8DurationZv",
     "parameters" : [
      {
       "name" : "sock",
       "deco" : "C3std6socket6Socket"
      },
      {
-      "name" : "msecs",
-      "deco" : "k"
+      "name" : "timeout",
+      "deco" : "S4core4time8Duration"
      }
     ],
-    "endline" : 137,
+    "endline" : 138,
     "endchar" : 1
    }
   ]
@@ -5553,21 +5611,54 @@
     ]
    },
    {
+    "name" : "HttpStatusLine",
+    "kind" : "enum",
+    "protection" : "package",
+    "line" : 29,
+    "char" : 1,
+    "baseDeco" : "Aya",
+    "members" : [
+     {
+      "name" : "ok",
+      "kind" : "enum member",
+      "protection" : "public",
+      "value" : "\"HTTP/1.1 200 OK\"",
+      "line" : 31,
+      "char" : 2
+     },
+     {
+      "name" : "badRequest",
+      "kind" : "enum member",
+      "protection" : "public",
+      "value" : "\"HTTP/1.1 400 Bad Request\"",
+      "line" : 32,
+      "char" : 2
+     }
+    ]
+   },
+   {
     "name" : "Response",
     "kind" : "struct",
     "protection" : "package",
     "comment" : " $(INTERNAL)\n",
-    "line" : 31,
+    "line" : 38,
     "char" : 1,
     "members" : [
+     {
+      "name" : "std.json",
+      "kind" : "import",
+      "line" : 40,
+      "char" : 9,
+      "protection" : "private"
+     },
      {
       "name" : "status",
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 34,
-      "char" : 9,
-      "deco" : "Aya",
+      "line" : 42,
+      "char" : 17,
+      "deco" : "E7msgraph5httpd5types14HttpStatusLine",
       "offset" : 0
      },
      {
@@ -5575,7 +5666,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 36,
+      "line" : 44,
       "char" : 17,
       "deco" : "HAyaQd",
       "offset" : 16
@@ -5585,10 +5676,157 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 38,
-      "char" : 9,
-      "deco" : "Aya",
+      "line" : 46,
+      "char" : 17,
+      "deco" : "Axh",
       "offset" : 24
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 49,
+      "char" : 2,
+      "deco" : "FNcNfE7msgraph5httpd5types14HttpStatusLineHAyaQdIAhZSQBvQBqQBn8Response",
+      "originalType" : "ref @safe (HttpStatusLine sts, string[string] hdr, in ubyte[] data)",
+      "parameters" : [
+       {
+        "name" : "sts",
+        "deco" : "E7msgraph5httpd5types14HttpStatusLine"
+       },
+       {
+        "name" : "hdr",
+        "deco" : "HAyaQd"
+       },
+       {
+        "name" : "data",
+        "deco" : "xAh",
+        "storageClass" : [
+         "in"
+        ]
+       }
+      ],
+      "endline" : 54,
+      "endchar" : 2
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "protection" : "public",
+      "comment" : "\n",
+      "line" : 57,
+      "char" : 2,
+      "deco" : "FNcNfE7msgraph5httpd5types14HttpStatusLineHAyaQdIAaZSQBvQBqQBn8Response",
+      "originalType" : "ref @safe (HttpStatusLine sts, string[string] hdr, in char[] data)",
+      "parameters" : [
+       {
+        "name" : "sts",
+        "deco" : "E7msgraph5httpd5types14HttpStatusLine"
+       },
+       {
+        "name" : "hdr",
+        "deco" : "HAyaQd"
+       },
+       {
+        "name" : "data",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       }
+      ],
+      "endline" : 63,
+      "endchar" : 2
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "protection" : "public",
+      "comment" : "ditto\n",
+      "line" : 66,
+      "char" : 2,
+      "deco" : "FNcNfE7msgraph5httpd5types14HttpStatusLineIAhAyaZSQBsQBnQBk8Response",
+      "originalType" : "ref @safe (HttpStatusLine sts, in ubyte[] data, string contentType)",
+      "parameters" : [
+       {
+        "name" : "sts",
+        "deco" : "E7msgraph5httpd5types14HttpStatusLine"
+       },
+       {
+        "name" : "data",
+        "deco" : "xAh",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "contentType",
+        "deco" : "Aya"
+       }
+      ],
+      "endline" : 71,
+      "endchar" : 2
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "protection" : "public",
+      "comment" : "ditto\n",
+      "line" : 74,
+      "char" : 2,
+      "deco" : "FNcNfE7msgraph5httpd5types14HttpStatusLineIAaAyaZSQBsQBnQBk8Response",
+      "originalType" : "ref @safe (HttpStatusLine sts, in char[] data, string contentType = \"text/plain\")",
+      "parameters" : [
+       {
+        "name" : "sts",
+        "deco" : "E7msgraph5httpd5types14HttpStatusLine"
+       },
+       {
+        "name" : "data",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "contentType",
+        "deco" : "Aya",
+        "default" : "\"text/plain\""
+       }
+      ],
+      "endline" : 80,
+      "endchar" : 2
+     },
+     {
+      "name" : "this",
+      "kind" : "constructor",
+      "protection" : "public",
+      "comment" : "ditto\n",
+      "line" : 83,
+      "char" : 2,
+      "deco" : "FNcNfE7msgraph5httpd5types14HttpStatusLineIS3std4json9JSONValueAyaZSQCkQCfQCc8Response",
+      "originalType" : "ref @safe (HttpStatusLine sts, in JSONValue data, string contentType = \"application/json\")",
+      "parameters" : [
+       {
+        "name" : "sts",
+        "deco" : "E7msgraph5httpd5types14HttpStatusLine"
+       },
+       {
+        "name" : "data",
+        "deco" : "xS3std4json9JSONValue",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "contentType",
+        "deco" : "Aya",
+        "default" : "\"application/json\""
+       }
+      ],
+      "endline" : 89,
+      "endchar" : 2
      }
     ]
    }

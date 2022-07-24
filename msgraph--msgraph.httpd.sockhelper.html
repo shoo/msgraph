@@ -64,32 +64,32 @@
 </div><div class="ddoc_description"><script type="text/javascript">(function() {
 	$('H1:first').prepend('<span class="pill">internal</span> ');
 })()</script></div>
-<dl class="ddoc_members"><div class="ddoc_module_members"><dt class="ddoc_decl"><div ><span class="def-anchor" id=".select"></span><div class="quickindex" id="quickindex.select"></div>package(msgraph.httpd) nothrow @trusted bool <code class="ddoc_psymbol">select</code>(Socket <span class="ddoc_param">sock</span>, scope bool* <span class="ddoc_param">readable</span>, scope bool* <span class="ddoc_param">writable</span>, scope bool* <span class="ddoc_param">err</span>, in uint <span class="ddoc_param">msecs</span>);
+<dl class="ddoc_members"><div class="ddoc_module_members"><dt class="ddoc_decl"><div ><span class="def-anchor" id=".select"></span><div class="quickindex" id="quickindex.select"></div>package(msgraph.httpd) nothrow @trusted bool <code class="ddoc_psymbol">select</code>(Socket <span class="ddoc_param">sock</span>, scope bool* <span class="ddoc_param">readable</span>, scope bool* <span class="ddoc_param">writable</span>, scope bool* <span class="ddoc_param">err</span>, Duration <span class="ddoc_param">timeout</span>);
 <br></div></dt>
 <dd><div class="ddoc_summary"><script type="text/javascript">(function() {
 	$(document.currentScript).closest('dd').prev('dt').find('.quickindex').after('<span class="pill">internal</span> ')
 })()</script></div></dd>
-<dt class="ddoc_decl"><div ><span class="def-anchor" id=".select.2"></span><div class="quickindex" id="quickindex.select.2"></div>package(msgraph.httpd) nothrow @trusted void <code class="ddoc_psymbol">select</code>(Socket <span class="ddoc_param">sock</span>, scope void delegate() nothrow @nogc @safe <span class="ddoc_param">onReadable</span>, scope void delegate() nothrow @nogc @safe <span class="ddoc_param">onWritable</span>, scope void delegate() nothrow @nogc @safe <span class="ddoc_param">onError</span>, in uint <span class="ddoc_param">msecs</span> = 0);
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".select.2"></span><div class="quickindex" id="quickindex.select.2"></div>package(msgraph.httpd) nothrow @trusted void <code class="ddoc_psymbol">select</code>(Socket <span class="ddoc_param">sock</span>, scope void delegate() nothrow @nogc @safe <span class="ddoc_param">onReadable</span>, scope void delegate() nothrow @nogc @safe <span class="ddoc_param">onWritable</span>, scope void delegate() nothrow @nogc @safe <span class="ddoc_param">onError</span>, Duration <span class="ddoc_param">timeout</span> = 0.msecs);
 <br></div></dt>
 <dd><div class="ddoc_summary"><script type="text/javascript">(function() {
 	$(document.currentScript).closest('dd').prev('dt').find('.quickindex').after('<span class="pill">internal</span> ')
 })()</script></div></dd>
-<dt class="ddoc_decl"><div ><span class="def-anchor" id=".waitReadable"></span><div class="quickindex" id="quickindex.waitReadable"></div>package(msgraph.httpd) nothrow @trusted bool <code class="ddoc_psymbol">waitReadable</code>(Socket <span class="ddoc_param">sock</span>, uint <span class="ddoc_param">msecs</span>);
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".waitReadable"></span><div class="quickindex" id="quickindex.waitReadable"></div>package(msgraph.httpd) nothrow @trusted bool <code class="ddoc_psymbol">waitReadable</code>(Socket <span class="ddoc_param">sock</span>, Duration <span class="ddoc_param">timeout</span>);
 <br></div></dt>
 <dd><div class="ddoc_summary"><script type="text/javascript">(function() {
 	$(document.currentScript).closest('dd').prev('dt').find('.quickindex').after('<span class="pill">internal</span> ')
 })()</script></div></dd>
-<dt class="ddoc_decl"><div ><span class="def-anchor" id=".waitWritable"></span><div class="quickindex" id="quickindex.waitWritable"></div>package(msgraph.httpd) nothrow @trusted bool <code class="ddoc_psymbol">waitWritable</code>(Socket <span class="ddoc_param">sock</span>, uint <span class="ddoc_param">msecs</span>);
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".waitWritable"></span><div class="quickindex" id="quickindex.waitWritable"></div>package(msgraph.httpd) nothrow @trusted bool <code class="ddoc_psymbol">waitWritable</code>(Socket <span class="ddoc_param">sock</span>, Duration <span class="ddoc_param">timeout</span>);
 <br></div></dt>
 <dd><div class="ddoc_summary"><script type="text/javascript">(function() {
 	$(document.currentScript).closest('dd').prev('dt').find('.quickindex').after('<span class="pill">internal</span> ')
 })()</script></div></dd>
-<dt class="ddoc_decl"><div ><span class="def-anchor" id=".setRecvTimeout"></span><div class="quickindex" id="quickindex.setRecvTimeout"></div>package(msgraph.httpd) nothrow @trusted void <code class="ddoc_psymbol">setRecvTimeout</code>(Socket <span class="ddoc_param">sock</span>, uint <span class="ddoc_param">msecs</span>);
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".setRecvTimeout"></span><div class="quickindex" id="quickindex.setRecvTimeout"></div>package(msgraph.httpd) nothrow @trusted void <code class="ddoc_psymbol">setRecvTimeout</code>(Socket <span class="ddoc_param">sock</span>, Duration <span class="ddoc_param">timeout</span>);
 <br></div></dt>
 <dd><div class="ddoc_summary"><script type="text/javascript">(function() {
 	$(document.currentScript).closest('dd').prev('dt').find('.quickindex').after('<span class="pill">internal</span> ')
 })()</script></div></dd>
-<dt class="ddoc_decl"><div ><span class="def-anchor" id=".setSendTimeout"></span><div class="quickindex" id="quickindex.setSendTimeout"></div>package(msgraph.httpd) nothrow @trusted void <code class="ddoc_psymbol">setSendTimeout</code>(Socket <span class="ddoc_param">sock</span>, uint <span class="ddoc_param">msecs</span>);
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".setSendTimeout"></span><div class="quickindex" id="quickindex.setSendTimeout"></div>package(msgraph.httpd) nothrow @trusted void <code class="ddoc_psymbol">setSendTimeout</code>(Socket <span class="ddoc_param">sock</span>, Duration <span class="ddoc_param">timeout</span>);
 <br></div></dt>
 <dd><div class="ddoc_summary"><script type="text/javascript">(function() {
 	$(document.currentScript).closest('dd').prev('dt').find('.quickindex').after('<span class="pill">internal</span> ')

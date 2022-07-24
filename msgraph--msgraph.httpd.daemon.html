@@ -90,15 +90,11 @@ httpd.listen();
 });
 t.executeInNewThread();
 Request req;
-<span class="d_keyword">auto</span> reqresult = httpd.receive(req, 1000);
+<span class="d_keyword">auto</span> reqresult = httpd.receive(req, 1000.msecs);
 <span class="d_keyword">assert</span>(reqresult);
 <span class="d_keyword">assert</span>(req.header[<span class="d_string">"host"</span>] == format!<span class="d_string">"localhost:%d"</span>(port));
 <span class="d_keyword">assert</span>(req.header[<span class="d_string">"user-agent"</span>] == <span class="d_string">"hoge"</span>);
-Response res;
-res.status = <span class="d_string">"HTTP/1.1 200 OK"</span>;
-res.header[<span class="d_string">"Content-Type"</span>] = <span class="d_string">"text/plain"</span>;
-res.content = <span class="d_string">"SUCCESS"</span>;
-httpd.send(res);
+httpd.send(Response(HttpStatusLine.ok, <span class="d_string">"SUCCESS"</span>, <span class="d_string">"text/plain"</span>));
 t.yieldForce();
 </pre>
 </div>
@@ -122,11 +118,11 @@ t.yieldForce();
 <br></div></dt>
 <dd>
 </dd>
-<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Httpd.receive"></span><div class="quickindex" id="quickindex.Httpd.receive"></div>@safe bool <code class="ddoc_psymbol">receive</code>(out Request <span class="ddoc_param">req</span>, uint <span class="ddoc_param">msecs</span> = (uint).max);
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Httpd.receive"></span><div class="quickindex" id="quickindex.Httpd.receive"></div>@safe bool <code class="ddoc_psymbol">receive</code>(out Request <span class="ddoc_param">req</span>, Duration <span class="ddoc_param">timeout</span> = Duration.max);
 <br></div></dt>
 <dd>
 </dd>
-<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Httpd.send"></span><div class="quickindex" id="quickindex.Httpd.send"></div>@safe bool <code class="ddoc_psymbol">send</code>(Response <span class="ddoc_param">res</span>, uint <span class="ddoc_param">msecs</span> = 1000);
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Httpd.send"></span><div class="quickindex" id="quickindex.Httpd.send"></div>@safe bool <code class="ddoc_psymbol">send</code>(Response <span class="ddoc_param">res</span>, Duration <span class="ddoc_param">timeout</span> = 1000.msecs);
 <br></div></dt>
 <dd>
 </dd>
@@ -135,6 +131,10 @@ t.yieldForce();
 <dd>
 </dd>
 </div></dl>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".asyncComm"></span><div class="quickindex" id="quickindex.asyncComm"></div>package(msgraph) auto <code class="ddoc_psymbol">asyncComm</code>(ref Httpd <span class="ddoc_param">httpd</span>, Response delegate(ref Request req) <span class="ddoc_param">onRecv</span>, Duration <span class="ddoc_param">recvTimeout</span> = 30.seconds, Duration <span class="ddoc_param">sendTimeout</span> = 1000.msecs);
+<br></div></dt>
+<dd>
 </dd>
 </div></dl>
 

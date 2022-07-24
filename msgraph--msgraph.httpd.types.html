@@ -94,7 +94,7 @@
 <br></div></dt>
 <dd><div class="ddoc_summary"><script type="text/javascript">(function() {
 	$(document.currentScript).closest('dd').prev('dt').find('.quickindex').after('<span class="pill">internal</span> ')
-})()</script></div><dl class="ddoc_members"><div class="ddoc_struct_members"><dt class="ddoc_decl"><div ><span class="def-anchor" id=".Response.status"></span><div class="quickindex" id="quickindex.Response.status"></div>string <code class="ddoc_psymbol">status</code>;
+})()</script></div><dl class="ddoc_members"><div class="ddoc_struct_members"><dt class="ddoc_decl"><div ><span class="def-anchor" id=".Response.status"></span><div class="quickindex" id="quickindex.Response.status"></div>HttpStatusLine <code class="ddoc_psymbol">status</code>;
 <br></div></dt>
 <dd>
 </dd>
@@ -102,7 +102,21 @@
 <br></div></dt>
 <dd>
 </dd>
-<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Response.content"></span><div class="quickindex" id="quickindex.Response.content"></div>string <code class="ddoc_psymbol">content</code>;
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Response.content"></span><div class="quickindex" id="quickindex.Response.content"></div>const(ubyte)[] <code class="ddoc_psymbol">content</code>;
+<br></div></dt>
+<dd>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Response.this"></span><div class="quickindex" id="quickindex.Response.this"></div>@safe this(HttpStatusLine <span class="ddoc_param">sts</span>, string[string] <span class="ddoc_param">hdr</span>, in ubyte[] <span class="ddoc_param">data</span>);
+<br></div></dt>
+<dd>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Response.this.2"></span><div class="quickindex" id="quickindex.Response.this.2"></div>@safe this(HttpStatusLine <span class="ddoc_param">sts</span>, string[string] <span class="ddoc_param">hdr</span>, in char[] <span class="ddoc_param">data</span>);
+<br>
+@safe this(HttpStatusLine <span class="ddoc_param">sts</span>, in ubyte[] <span class="ddoc_param">data</span>, string <span class="ddoc_param">contentType</span>);
+<br>
+@safe this(HttpStatusLine <span class="ddoc_param">sts</span>, in char[] <span class="ddoc_param">data</span>, string <span class="ddoc_param">contentType</span> = "text/plain");
+<br>
+@safe this(HttpStatusLine <span class="ddoc_param">sts</span>, in JSONValue <span class="ddoc_param">data</span>, string <span class="ddoc_param">contentType</span> = "application/json");
 <br></div></dt>
 <dd>
 </dd>
