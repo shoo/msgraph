@@ -64,21 +64,46 @@
 </div><div class="ddoc_description"><script type="text/javascript">(function() {
 	$('H1:first').prepend('<span class="pill">internal</span> ');
 })()</script></div>
-<dl class="ddoc_members"><div class="ddoc_module_members"><dt class="ddoc_decl"><div ><span class="def-anchor" id=".createQueryParam"></span><div class="quickindex" id="quickindex.createQueryParam"></div>package(msgraph) string <code class="ddoc_psymbol">createQueryParam</code>(string[string] <span class="ddoc_param">params</span>);
+<dl class="ddoc_members"><div class="ddoc_module_members"><dt class="ddoc_decl"><div ><span class="def-anchor" id=".createQueryParam"></span><div class="quickindex" id="quickindex.createQueryParam"></div>package(msgraph) @safe string <code class="ddoc_psymbol">createQueryParam</code>(string[string] <span class="ddoc_param">params</span>);
 <br></div></dt>
 <dd><div class="ddoc_summary"><script type="text/javascript">(function() {
 	$(document.currentScript).closest('dd').prev('dt').find('.quickindex').after('<span class="pill">internal</span> ')
-})()</script></div></dd>
-<dt class="ddoc_decl"><div ><span class="def-anchor" id=".parseQueryParam"></span><div class="quickindex" id="quickindex.parseQueryParam"></div>package(msgraph) string[string] <code class="ddoc_psymbol">parseQueryParam</code>(string <span class="ddoc_param">params</span>);
+})()</script></div><div class="ddoc_examples"><span class="ddoc_examples_header">Examples:</span>
+ <pre class="d_code notranslate"><span class="d_keyword">auto</span> q = <span class="d_psymbol">createQueryParam</span>([<span class="d_string">"aaa"</span>: <span class="d_string">"xxx"</span>, <span class="d_string">"ccc"</span>: <span class="d_string">"zzz"</span>, <span class="d_string">"bbb"</span>: <span class="d_string">"yyy"</span>]);
+<span class="d_keyword">assert</span>(q == <span class="d_string">"aaa=xxx&amp;bbb=yyy&amp;ccc=zzz"</span>);
+</pre>
+</div>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".parseQueryParam"></span><div class="quickindex" id="quickindex.parseQueryParam"></div>package(msgraph) @safe string[string] <code class="ddoc_psymbol">parseQueryParam</code>(string <span class="ddoc_param">params</span>);
 <br></div></dt>
 <dd><div class="ddoc_summary"><script type="text/javascript">(function() {
 	$(document.currentScript).closest('dd').prev('dt').find('.quickindex').after('<span class="pill">internal</span> ')
-})()</script></div></dd>
-<dt class="ddoc_decl"><div ><span class="def-anchor" id=".getRandomString"></span><div class="quickindex" id="quickindex.getRandomString"></div>package(msgraph) string <code class="ddoc_psymbol">getRandomString</code>(uint <span class="ddoc_param">length</span> = 0);
+})()</script></div><div class="ddoc_examples"><span class="ddoc_examples_header">Examples:</span>
+ <pre class="d_code notranslate"><span class="d_keyword">auto</span> q = <span class="d_psymbol">parseQueryParam</span>(<span class="d_string">"aaa=xxx&amp;bbb=yyy&amp;ccc=zzz"</span>);
+<span class="d_keyword">assert</span>(q.length == 3);
+<span class="d_keyword">assert</span>(q[<span class="d_string">"aaa"</span>] == <span class="d_string">"xxx"</span>);
+<span class="d_keyword">assert</span>(q[<span class="d_string">"bbb"</span>] == <span class="d_string">"yyy"</span>);
+<span class="d_keyword">assert</span>(q[<span class="d_string">"ccc"</span>] == <span class="d_string">"zzz"</span>);
+</pre>
+</div>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".getRandomString"></span><div class="quickindex" id="quickindex.getRandomString"></div>package(msgraph) @safe string <code class="ddoc_psymbol">getRandomString</code>(uint <span class="ddoc_param">length</span> = 0);
 <br></div></dt>
 <dd><div class="ddoc_summary"><script type="text/javascript">(function() {
 	$(document.currentScript).closest('dd').prev('dt').find('.quickindex').after('<span class="pill">internal</span> ')
-})()</script></div></dd>
+})()</script></div><div class="ddoc_examples"><span class="ddoc_examples_header">Examples:</span>
+ <pre class="d_code notranslate"><span class="d_keyword">auto</span> q1 = <span class="d_psymbol">getRandomString</span>();
+<span class="d_keyword">auto</span> q2 = <span class="d_psymbol">getRandomString</span>();
+<span class="d_keyword">auto</span> q3 = <span class="d_psymbol">getRandomString</span>(32);
+<span class="d_keyword">assert</span>(q1.<span class="d_param">length</span> &gt;= 64 &amp;&amp; q1.<span class="d_param">length</span> &lt; 128);
+<span class="d_keyword">assert</span>(q2.<span class="d_param">length</span> &gt;= 64 &amp;&amp; q2.<span class="d_param">length</span> &lt; 128);
+<span class="d_keyword">assert</span>(q1 != q2);
+<span class="d_keyword">assert</span>(q3.<span class="d_param">length</span> == 32);
+<span class="d_keyword">assert</span>(q1 != q3);
+<span class="d_keyword">assert</span>(q2 != q3);
+</pre>
+</div>
+</dd>
 </div></dl>
 
                 

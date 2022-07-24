@@ -57,11 +57,18 @@
   "comment" : " Authenticate/Authorize helpers\n",
   "members" : [
    {
+    "name" : "core.time",
+    "kind" : "import",
+    "line" : 6,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
     "name" : "AuthInfo",
     "kind" : "struct",
     "protection" : "public",
     "comment" : " Auth infomations\n\n - for user application:\n     https://docs.microsoft.com/ja-jp/graph/auth-v2-user\n - for service application:\n     https://docs.microsoft.com/ja-jp/graph/auth-v2-service\n",
-    "line" : 15,
+    "line" : 16,
     "char" : 1,
     "members" : [
      {
@@ -69,7 +76,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "Tenant ID\n",
-      "line" : 18,
+      "line" : 19,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 0
@@ -79,7 +86,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "Client ID\n",
-      "line" : 20,
+      "line" : 21,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 16
@@ -89,7 +96,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "$(MARK service app only) Client secret\n",
-      "line" : 22,
+      "line" : 23,
       "char" : 9,
       "deco" : "Aya",
       "init" : "null",
@@ -100,7 +107,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "$(MARK native app only)\n",
-      "line" : 24,
+      "line" : 25,
       "char" : 11,
       "deco" : "AAya",
       "init" : "[\"offline_access\", \"user.read\"]",
@@ -111,7 +118,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "$(MARK native app only)\n",
-      "line" : 26,
+      "line" : 27,
       "char" : 9,
       "deco" : "Aya",
       "init" : "\"https://login.microsoftonline.com/common/oauth2/nativeclient\"",
@@ -122,7 +129,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "$(MARK native app only)\n",
-      "line" : 28,
+      "line" : 29,
       "char" : 9,
       "deco" : "Aya",
       "init" : "\"query\"",
@@ -133,7 +140,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "$(MARK native app only)\n",
-      "line" : 30,
+      "line" : 31,
       "char" : 9,
       "deco" : "Aya",
       "init" : "\"12345\"",
@@ -144,7 +151,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "$(MARK native app only)\n",
-      "line" : 32,
+      "line" : 33,
       "char" : 9,
       "deco" : "Aya",
       "init" : "null",
@@ -155,7 +162,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "$(MARK native app only)\n",
-      "line" : 34,
+      "line" : 35,
       "char" : 9,
       "deco" : "Aya",
       "init" : "null",
@@ -166,7 +173,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "$(MARK native app only)\n",
-      "line" : 36,
+      "line" : 37,
       "char" : 28,
       "deco" : "DFAyaZv",
       "init" : "null",
@@ -179,13 +186,13 @@
     "kind" : "struct",
     "protection" : "public",
     "comment" : " $(MARK native app only)\n",
-    "line" : 42,
+    "line" : 43,
     "char" : 1,
     "members" : [
      {
       "name" : "msgraph.httpd",
       "kind" : "import",
-      "line" : 45,
+      "line" : 46,
       "char" : 9,
       "protection" : "private"
      },
@@ -193,7 +200,7 @@
       "name" : "_httpd",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 46,
+      "line" : 47,
       "char" : 8,
       "deco" : "S7msgraph5httpd6daemon5Httpd",
       "offset" : 0
@@ -202,7 +209,7 @@
       "name" : "_code",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 47,
+      "line" : 48,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 16
@@ -211,7 +218,7 @@
       "name" : "_state",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 48,
+      "line" : 49,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 32
@@ -221,7 +228,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 54,
+      "line" : 55,
       "char" : 29,
       "deco" : "DFAyaZv",
       "init" : "null",
@@ -232,10 +239,10 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 59,
+      "line" : 60,
       "char" : 7,
       "deco" : "FZv",
-      "endline" : 62,
+      "endline" : 63,
       "endchar" : 2
      },
      {
@@ -243,10 +250,10 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 67,
+      "line" : 68,
       "char" : 9,
       "deco" : "xFZAya",
-      "endline" : 71,
+      "endline" : 72,
       "endchar" : 2
      },
      {
@@ -254,10 +261,10 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 76,
+      "line" : 77,
       "char" : 9,
       "deco" : "xFZAya",
-      "endline" : 79,
+      "endline" : 80,
       "endchar" : 2
      },
      {
@@ -265,23 +272,29 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 84,
+      "line" : 85,
       "char" : 7,
-      "deco" : "FAyaZb",
+      "deco" : "FAyaS4core4time8DurationZb",
+      "originalType" : "bool(string state, Duration dur = 30.seconds)",
       "parameters" : [
        {
         "name" : "state",
         "deco" : "Aya"
+       },
+       {
+        "name" : "dur",
+        "deco" : "S4core4time8Duration",
+        "default" : "dur(30L)"
        }
       ],
-      "endline" : 117,
+      "endline" : 118,
       "endchar" : 2
      },
      {
       "name" : "~this",
       "kind" : "destructor",
       "protection" : "public",
-      "line" : 42,
+      "line" : 43,
       "char" : 1,
       "deco" : "FNeZv"
      },
@@ -294,7 +307,7 @@
       "name" : "opAssign",
       "kind" : "generated function",
       "protection" : "public",
-      "line" : 42,
+      "line" : 43,
       "char" : 1,
       "deco" : "FNcNjNeS7msgraph5graph4auth18InstanceAuthServerZQBp",
       "parameters" : [
@@ -665,23 +678,30 @@
   "comment" : " Microsoft Graph object\n",
   "members" : [
    {
-    "name" : "msgraph.graph.auth",
+    "name" : "core.time",
     "kind" : "import",
     "line" : 6,
     "char" : 8,
     "protection" : "private"
    },
    {
-    "name" : "msgraph.graph.httphelper",
+    "name" : "msgraph.graph.auth",
     "kind" : "import",
     "line" : 7,
     "char" : 8,
     "protection" : "private"
    },
    {
-    "name" : "msgraph.graph.exception",
+    "name" : "msgraph.graph.httphelper",
     "kind" : "import",
     "line" : 8,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "msgraph.graph.exception",
+    "kind" : "import",
+    "line" : 9,
     "char" : 8,
     "protection" : "private"
    },
@@ -690,13 +710,13 @@
     "kind" : "struct",
     "protection" : "public",
     "comment" : "\n",
-    "line" : 13,
+    "line" : 14,
     "char" : 1,
     "members" : [
      {
       "name" : "etc.c.curl",
       "kind" : "import",
-      "line" : 16,
+      "line" : 17,
       "char" : 9,
       "protection" : "private",
       "selective" : [
@@ -708,42 +728,42 @@
      {
       "name" : "std.net.curl",
       "kind" : "import",
-      "line" : 17,
+      "line" : 18,
       "char" : 9,
       "protection" : "private"
      },
      {
       "name" : "std.array",
       "kind" : "import",
-      "line" : 18,
+      "line" : 19,
       "char" : 9,
       "protection" : "private"
      },
      {
       "name" : "std.datetime",
       "kind" : "import",
-      "line" : 19,
+      "line" : 20,
       "char" : 9,
       "protection" : "private"
      },
      {
       "name" : "std.json",
       "kind" : "import",
-      "line" : 20,
+      "line" : 21,
       "char" : 9,
       "protection" : "private"
      },
      {
       "name" : "std.string",
       "kind" : "import",
-      "line" : 21,
+      "line" : 22,
       "char" : 9,
       "protection" : "private"
      },
      {
       "name" : "std.exception",
       "kind" : "import",
-      "line" : 22,
+      "line" : 23,
       "char" : 9,
       "protection" : "private"
      },
@@ -751,7 +771,7 @@
       "name" : "_client",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 24,
+      "line" : 25,
       "char" : 9,
       "deco" : "S3std3net4curl4HTTP",
       "offset" : 0
@@ -760,7 +780,7 @@
       "name" : "_clientId",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 25,
+      "line" : 26,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 8
@@ -769,7 +789,7 @@
       "name" : "_tenantId",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 26,
+      "line" : 27,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 24
@@ -778,7 +798,7 @@
       "name" : "_accessToken",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 27,
+      "line" : 28,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 40
@@ -787,7 +807,7 @@
       "name" : "_accessTokenExpires",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 28,
+      "line" : 29,
       "char" : 10,
       "deco" : "S3std8datetime7systime7SysTime",
       "offset" : 56
@@ -796,7 +816,7 @@
       "name" : "_refreshToken",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 29,
+      "line" : 30,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 72
@@ -805,7 +825,7 @@
       "name" : "_clientSecret",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 30,
+      "line" : 31,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 88
@@ -814,7 +834,7 @@
       "name" : "_redirectUri",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 31,
+      "line" : 32,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 104
@@ -823,7 +843,7 @@
       "name" : "_requireScope",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 32,
+      "line" : 33,
       "char" : 11,
       "deco" : "AAya",
       "offset" : 120
@@ -832,7 +852,7 @@
       "name" : "_contentBuffer",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 33,
+      "line" : 34,
       "char" : 21,
       "deco" : "S3std5array__T8AppenderTAhZQn",
       "offset" : 136
@@ -841,7 +861,7 @@
       "name" : "_resetClient",
       "kind" : "function",
       "protection" : "private",
-      "line" : 35,
+      "line" : 40,
       "char" : 7,
       "deco" : "FIAaE3std3net4curl4HTTP6MethodZv",
       "originalType" : "void(in char[] url, HTTP.Method method)",
@@ -858,27 +878,27 @@
         "deco" : "E3std3net4curl4HTTP6Method"
        }
       ],
-      "endline" : 44,
+      "endline" : 62,
       "endchar" : 2
      },
      {
       "name" : "_updateTokensForService",
       "kind" : "function",
       "protection" : "private",
-      "line" : 46,
+      "line" : 64,
       "char" : 7,
       "deco" : "FZv",
-      "endline" : 62,
+      "endline" : 80,
       "endchar" : 2
      },
      {
       "name" : "_updateTokensForUserApp",
       "kind" : "function",
       "protection" : "private",
-      "line" : 64,
+      "line" : 82,
       "char" : 7,
       "deco" : "FZv",
-      "endline" : 85,
+      "endline" : 103,
       "endchar" : 2
      },
      {
@@ -886,7 +906,7 @@
       "kind" : "constructor",
       "protection" : "public",
       "comment" : " Setup Microsoft Graph\n\n Params:\n      clientId     = Client ID (from Asure Active Directory)\n      tenantId     = Tenant ID (from Asure Active Directory)\n      clientSecret = Client secret (from Asure Active Directory, provisioned client secret).\n                     This is set only for server application.\n      authInfo     = Detail information for authrization.\n",
-      "line" : 102,
+      "line" : 120,
       "char" : 2,
       "deco" : "FNcAyaQdAQgQiZS7msgraph5graphQg5Graph",
       "originalType" : "ref (string tenantId, string clientId, string[] requireScope, string clientSecret = null)",
@@ -909,7 +929,7 @@
         "default" : "null"
        }
       ],
-      "endline" : 105,
+      "endline" : 123,
       "endchar" : 2
      },
      {
@@ -917,7 +937,7 @@
       "kind" : "constructor",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 107,
+      "line" : 125,
       "char" : 2,
       "deco" : "FNcAyaQdQfQhAQkZS7msgraph5graphQg5Graph",
       "originalType" : "ref (string tenantId, string clientId, string accessToken, string refreshToken, string[] requireScope)",
@@ -943,7 +963,7 @@
         "deco" : "AAya"
        }
       ],
-      "endline" : 110,
+      "endline" : 128,
       "endchar" : 2
      },
      {
@@ -951,7 +971,7 @@
       "kind" : "constructor",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 112,
+      "line" : 130,
       "char" : 2,
       "deco" : "FNcS7msgraph5graph4auth8AuthInfoZSQBeQzQBb5Graph",
       "originalType" : "ref (AuthInfo authInfo)",
@@ -961,7 +981,7 @@
         "deco" : "S7msgraph5graph4auth8AuthInfo"
        }
       ],
-      "endline" : 115,
+      "endline" : 133,
       "endchar" : 2
      },
      {
@@ -969,7 +989,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 118,
+      "line" : 136,
       "char" : 7,
       "deco" : "FAyaQdAQgQiZv",
       "parameters" : [
@@ -991,7 +1011,7 @@
         "default" : "null"
        }
       ],
-      "endline" : 126,
+      "endline" : 144,
       "endchar" : 2
      },
      {
@@ -999,7 +1019,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 129,
+      "line" : 147,
       "char" : 7,
       "deco" : "FAyaQdQfQhAQkZv",
       "parameters" : [
@@ -1024,7 +1044,7 @@
         "deco" : "AAya"
        }
       ],
-      "endline" : 138,
+      "endline" : 156,
       "endchar" : 2
      },
      {
@@ -1032,7 +1052,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 142,
+      "line" : 160,
       "char" : 7,
       "deco" : "FS7msgraph5graph4auth8AuthInfoZv",
       "parameters" : [
@@ -1041,7 +1061,7 @@
         "deco" : "S7msgraph5graph4auth8AuthInfo"
        }
       ],
-      "endline" : 195,
+      "endline" : 213,
       "endchar" : 2
      },
      {
@@ -1049,7 +1069,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : " $(MARK native app only)\n",
-      "line" : 200,
+      "line" : 218,
       "char" : 7,
       "deco" : "FAyaZv",
       "parameters" : [
@@ -1058,7 +1078,7 @@
         "deco" : "Aya"
        }
       ],
-      "endline" : 220,
+      "endline" : 238,
       "endchar" : 2
      },
      {
@@ -1066,10 +1086,10 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 225,
+      "line" : 243,
       "char" : 7,
       "deco" : "FZv",
-      "endline" : 235,
+      "endline" : 253,
       "endchar" : 2
      },
      {
@@ -1077,10 +1097,10 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 240,
+      "line" : 258,
       "char" : 9,
       "deco" : "xFZAya",
-      "endline" : 243,
+      "endline" : 261,
       "endchar" : 2
      },
      {
@@ -1088,10 +1108,10 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 248,
+      "line" : 266,
       "char" : 10,
       "deco" : "xFZS3std8datetime7systime7SysTime",
-      "endline" : 251,
+      "endline" : 269,
       "endchar" : 2
      },
      {
@@ -1099,10 +1119,10 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 256,
+      "line" : 274,
       "char" : 7,
       "deco" : "xFZb",
-      "endline" : 259,
+      "endline" : 277,
       "endchar" : 2
      },
      {
@@ -1110,10 +1130,10 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : " $(MARK native app only)\n",
-      "line" : 264,
+      "line" : 282,
       "char" : 9,
       "deco" : "xFZAya",
-      "endline" : 267,
+      "endline" : 285,
       "endchar" : 2
      },
      {
@@ -1121,7 +1141,7 @@
       "kind" : "alias",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 272,
+      "line" : 290,
       "char" : 2,
       "deco" : "E3std3net4curl4HTTP6Method",
       "originalType" : "HTTP.Method"
@@ -1131,7 +1151,7 @@
       "kind" : "enum",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 277,
+      "line" : 295,
       "char" : 2,
       "baseDeco" : "Aya",
       "members" : [
@@ -1141,7 +1161,7 @@
         "protection" : "public",
         "value" : "\"https://graph.microsoft.com/v1.0\"",
         "comment" : "\n",
-        "line" : 280,
+        "line" : 298,
         "char" : 3
        },
        {
@@ -1150,7 +1170,7 @@
         "protection" : "public",
         "value" : "\"https://graph.microsoft.com/v1.0\"",
         "comment" : "ditto\n",
-        "line" : 282,
+        "line" : 300,
         "char" : 3
        },
        {
@@ -1159,7 +1179,7 @@
         "protection" : "public",
         "value" : "\"https://graph.microsoft.com/beta\"",
         "comment" : "\n",
-        "line" : 284,
+        "line" : 302,
         "char" : 3
        }
       ]
@@ -1169,7 +1189,7 @@
       "kind" : "struct",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 290,
+      "line" : 308,
       "char" : 2,
       "members" : [
        {
@@ -1177,7 +1197,7 @@
         "kind" : "variable",
         "protection" : "public",
         "comment" : "\n",
-        "line" : 293,
+        "line" : 311,
         "char" : 19,
         "deco" : "S3std3net4curl4HTTP10StatusLine",
         "originalType" : "HTTP.StatusLine",
@@ -1188,7 +1208,7 @@
         "kind" : "variable",
         "protection" : "public",
         "comment" : "\n",
-        "line" : 295,
+        "line" : 313,
         "char" : 18,
         "deco" : "HAyaQd",
         "offset" : 24
@@ -1198,7 +1218,7 @@
         "kind" : "variable",
         "protection" : "public",
         "comment" : "\n",
-        "line" : 297,
+        "line" : 315,
         "char" : 22,
         "deco" : "Ayh",
         "offset" : 32
@@ -1210,10 +1230,10 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 303,
+      "line" : 321,
       "char" : 18,
       "deco" : "NgFNcNjZNgS3std3net4curl4HTTP",
-      "endline" : 306,
+      "endline" : 324,
       "endchar" : 2
      },
      {
@@ -1221,7 +1241,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : " Set proxy settings\n\n Params:\n      proxy     = Hostname or URL\n      port      = Port number\n      proxyType = Type of proxy\n      authUser  = User name for proxy\n      authPass  = Password for proxy\n      authType  = Auth type of proxy\n",
-      "line" : 319,
+      "line" : 337,
       "char" : 7,
       "deco" : "FAyaZv",
       "parameters" : [
@@ -1230,7 +1250,7 @@
         "deco" : "Aya"
        }
       ],
-      "endline" : 322,
+      "endline" : 340,
       "endchar" : 2
      },
      {
@@ -1238,7 +1258,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 325,
+      "line" : 343,
       "char" : 7,
       "deco" : "FAyatE3etc1c4curl9CurlProxyZv",
       "parameters" : [
@@ -1256,7 +1276,7 @@
         "default" : "CurlProxy.http"
        }
       ],
-      "endline" : 330,
+      "endline" : 348,
       "endchar" : 2
      },
      {
@@ -1264,7 +1284,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 333,
+      "line" : 351,
       "char" : 7,
       "deco" : "FAyaQdQfE3etc1c4curl8CurlAuthZv",
       "parameters" : [
@@ -1286,7 +1306,7 @@
         "default" : "CurlAuth.basic"
        }
       ],
-      "endline" : 338,
+      "endline" : 356,
       "endchar" : 2
      },
      {
@@ -1294,7 +1314,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 341,
+      "line" : 359,
       "char" : 7,
       "deco" : "FAyatQeQgE3etc1c4curl9CurlProxyEQwQuQu8CurlAuthZv",
       "parameters" : [
@@ -1325,7 +1345,7 @@
         "default" : "CurlAuth.basic"
        }
       ],
-      "endline" : 350,
+      "endline" : 368,
       "endchar" : 2
      },
      {
@@ -1333,7 +1353,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : " Certification settings\n\n Params:\n      cafile             = PEM file of trusted CA.\n      clientCertFile     = PEM file of client cert file if required.\n      privateKeyFile     = PEM file of client private key file if required.\n      privateKeyPassword = Password of private key file if required.\n",
-      "line" : 361,
+      "line" : 379,
       "char" : 7,
       "deco" : "FIAaIQdIQgIQjZv",
       "parameters" : [
@@ -1369,7 +1389,7 @@
         "default" : "null"
        }
       ],
-      "endline" : 377,
+      "endline" : 395,
       "endchar" : 2
      },
      {
@@ -1377,7 +1397,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : " HTTP Request for Microsoft Graph API call\n",
-      "line" : 382,
+      "line" : 400,
       "char" : 13,
       "deco" : "FE3std3net4curl4HTTP6MethodE7msgraph5graphQg5Graph8EndpointIAaIQdIAhAyaZSQBtQBoQBrQBm10HttpResult",
       "parameters" : [
@@ -1417,7 +1437,7 @@
         "default" : "null"
        }
       ],
-      "endline" : 399,
+      "endline" : 417,
       "endchar" : 2
      },
      {
@@ -1425,7 +1445,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : " GET Request\n",
-      "line" : 404,
+      "line" : 422,
       "char" : 13,
       "deco" : "FIAaIQdZS7msgraph5graphQg5Graph10HttpResult",
       "parameters" : [
@@ -1444,7 +1464,7 @@
         ]
        }
       ],
-      "endline" : 407,
+      "endline" : 425,
       "endchar" : 2
      },
      {
@@ -1452,7 +1472,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 409,
+      "line" : 427,
       "char" : 13,
       "deco" : "FAyaHQeQgZS7msgraph5graphQg5Graph10HttpResult",
       "parameters" : [
@@ -1465,7 +1485,7 @@
         "deco" : "HAyaQd"
        }
       ],
-      "endline" : 412,
+      "endline" : 430,
       "endchar" : 2
      },
      {
@@ -1473,101 +1493,13 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 414,
+      "line" : 432,
       "char" : 13,
       "deco" : "FAyaZS7msgraph5graphQg5Graph10HttpResult",
       "parameters" : [
        {
         "name" : "resource",
         "deco" : "Aya"
-       }
-      ],
-      "endline" : 417,
-      "endchar" : 2
-     },
-     {
-      "name" : "post",
-      "kind" : "function",
-      "protection" : "public",
-      "comment" : " POST Request\n",
-      "line" : 422,
-      "char" : 13,
-      "deco" : "FIAaIAhAyaZS7msgraph5graphQg5Graph10HttpResult",
-      "parameters" : [
-       {
-        "name" : "resource",
-        "deco" : "xAa",
-        "storageClass" : [
-         "in"
-        ]
-       },
-       {
-        "name" : "contents",
-        "deco" : "xAh",
-        "storageClass" : [
-         "in"
-        ]
-       },
-       {
-        "name" : "contentType",
-        "deco" : "Aya",
-        "default" : "\"application/octet-stream\""
-       }
-      ],
-      "endline" : 425,
-      "endchar" : 2
-     },
-     {
-      "name" : "post",
-      "kind" : "function",
-      "protection" : "public",
-      "comment" : "ditto\n",
-      "line" : 427,
-      "char" : 13,
-      "deco" : "FIAaIQdAyaZS7msgraph5graphQg5Graph10HttpResult",
-      "parameters" : [
-       {
-        "name" : "resource",
-        "deco" : "xAa",
-        "storageClass" : [
-         "in"
-        ]
-       },
-       {
-        "name" : "contents",
-        "deco" : "xAa",
-        "storageClass" : [
-         "in"
-        ]
-       },
-       {
-        "name" : "contentType",
-        "deco" : "Aya",
-        "default" : "\"application/x-www-form-urlencoded\""
-       }
-      ],
-      "endline" : 430,
-      "endchar" : 2
-     },
-     {
-      "name" : "post",
-      "kind" : "function",
-      "protection" : "public",
-      "comment" : "ditto\n",
-      "line" : 432,
-      "char" : 13,
-      "deco" : "FIAaS3std4json9JSONValueZS7msgraph5graphQg5Graph10HttpResult",
-      "parameters" : [
-       {
-        "name" : "resource",
-        "deco" : "xAa",
-        "storageClass" : [
-         "in"
-        ]
-       },
-       {
-        "name" : "params",
-        "deco" : "S3std4json9JSONValue"
        }
       ],
       "endline" : 435,
@@ -1577,32 +1509,8 @@
       "name" : "post",
       "kind" : "function",
       "protection" : "public",
-      "comment" : "ditto\n",
-      "line" : 437,
-      "char" : 13,
-      "deco" : "FIAaHAyaQdZS7msgraph5graphQg5Graph10HttpResult",
-      "parameters" : [
-       {
-        "name" : "resource",
-        "deco" : "xAa",
-        "storageClass" : [
-         "in"
-        ]
-       },
-       {
-        "name" : "params",
-        "deco" : "HAyaQd"
-       }
-      ],
-      "endline" : 440,
-      "endchar" : 2
-     },
-     {
-      "name" : "put",
-      "kind" : "function",
-      "protection" : "public",
-      "comment" : " PUT Request\n",
-      "line" : 445,
+      "comment" : " POST Request\n",
+      "line" : 440,
       "char" : 13,
       "deco" : "FIAaIAhAyaZS7msgraph5graphQg5Graph10HttpResult",
       "parameters" : [
@@ -1626,15 +1534,15 @@
         "default" : "\"application/octet-stream\""
        }
       ],
-      "endline" : 448,
+      "endline" : 443,
       "endchar" : 2
      },
      {
-      "name" : "put",
+      "name" : "post",
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 450,
+      "line" : 445,
       "char" : 13,
       "deco" : "FIAaIQdAyaZS7msgraph5graphQg5Graph10HttpResult",
       "parameters" : [
@@ -1658,15 +1566,15 @@
         "default" : "\"application/x-www-form-urlencoded\""
        }
       ],
-      "endline" : 453,
+      "endline" : 448,
       "endchar" : 2
      },
      {
-      "name" : "put",
+      "name" : "post",
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 455,
+      "line" : 450,
       "char" : 13,
       "deco" : "FIAaS3std4json9JSONValueZS7msgraph5graphQg5Graph10HttpResult",
       "parameters" : [
@@ -1680,6 +1588,30 @@
        {
         "name" : "params",
         "deco" : "S3std4json9JSONValue"
+       }
+      ],
+      "endline" : 453,
+      "endchar" : 2
+     },
+     {
+      "name" : "post",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "ditto\n",
+      "line" : 455,
+      "char" : 13,
+      "deco" : "FIAaHAyaQdZS7msgraph5graphQg5Graph10HttpResult",
+      "parameters" : [
+       {
+        "name" : "resource",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "params",
+        "deco" : "HAyaQd"
        }
       ],
       "endline" : 458,
@@ -1689,32 +1621,8 @@
       "name" : "put",
       "kind" : "function",
       "protection" : "public",
-      "comment" : "ditto\n",
-      "line" : 460,
-      "char" : 13,
-      "deco" : "FIAaHAyaQdZS7msgraph5graphQg5Graph10HttpResult",
-      "parameters" : [
-       {
-        "name" : "resource",
-        "deco" : "xAa",
-        "storageClass" : [
-         "in"
-        ]
-       },
-       {
-        "name" : "params",
-        "deco" : "HAyaQd"
-       }
-      ],
-      "endline" : 463,
-      "endchar" : 2
-     },
-     {
-      "name" : "patch",
-      "kind" : "function",
-      "protection" : "public",
-      "comment" : " PATCH Request\n",
-      "line" : 468,
+      "comment" : " PUT Request\n",
+      "line" : 463,
       "char" : 13,
       "deco" : "FIAaIAhAyaZS7msgraph5graphQg5Graph10HttpResult",
       "parameters" : [
@@ -1738,15 +1646,15 @@
         "default" : "\"application/octet-stream\""
        }
       ],
-      "endline" : 471,
+      "endline" : 466,
       "endchar" : 2
      },
      {
-      "name" : "patch",
+      "name" : "put",
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 473,
+      "line" : 468,
       "char" : 13,
       "deco" : "FIAaIQdAyaZS7msgraph5graphQg5Graph10HttpResult",
       "parameters" : [
@@ -1770,15 +1678,15 @@
         "default" : "\"application/x-www-form-urlencoded\""
        }
       ],
-      "endline" : 476,
+      "endline" : 471,
       "endchar" : 2
      },
      {
-      "name" : "patch",
+      "name" : "put",
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 478,
+      "line" : 473,
       "char" : 13,
       "deco" : "FIAaS3std4json9JSONValueZS7msgraph5graphQg5Graph10HttpResult",
       "parameters" : [
@@ -1794,15 +1702,15 @@
         "deco" : "S3std4json9JSONValue"
        }
       ],
-      "endline" : 481,
+      "endline" : 476,
       "endchar" : 2
      },
      {
-      "name" : "patch",
+      "name" : "put",
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 483,
+      "line" : 478,
       "char" : 13,
       "deco" : "FIAaHAyaQdZS7msgraph5graphQg5Graph10HttpResult",
       "parameters" : [
@@ -1818,7 +1726,119 @@
         "deco" : "HAyaQd"
        }
       ],
-      "endline" : 486,
+      "endline" : 481,
+      "endchar" : 2
+     },
+     {
+      "name" : "patch",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : " PATCH Request\n",
+      "line" : 486,
+      "char" : 13,
+      "deco" : "FIAaIAhAyaZS7msgraph5graphQg5Graph10HttpResult",
+      "parameters" : [
+       {
+        "name" : "resource",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "contents",
+        "deco" : "xAh",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "contentType",
+        "deco" : "Aya",
+        "default" : "\"application/octet-stream\""
+       }
+      ],
+      "endline" : 489,
+      "endchar" : 2
+     },
+     {
+      "name" : "patch",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "ditto\n",
+      "line" : 491,
+      "char" : 13,
+      "deco" : "FIAaIQdAyaZS7msgraph5graphQg5Graph10HttpResult",
+      "parameters" : [
+       {
+        "name" : "resource",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "contents",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "contentType",
+        "deco" : "Aya",
+        "default" : "\"application/x-www-form-urlencoded\""
+       }
+      ],
+      "endline" : 494,
+      "endchar" : 2
+     },
+     {
+      "name" : "patch",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "ditto\n",
+      "line" : 496,
+      "char" : 13,
+      "deco" : "FIAaS3std4json9JSONValueZS7msgraph5graphQg5Graph10HttpResult",
+      "parameters" : [
+       {
+        "name" : "resource",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "params",
+        "deco" : "S3std4json9JSONValue"
+       }
+      ],
+      "endline" : 499,
+      "endchar" : 2
+     },
+     {
+      "name" : "patch",
+      "kind" : "function",
+      "protection" : "public",
+      "comment" : "ditto\n",
+      "line" : 501,
+      "char" : 13,
+      "deco" : "FIAaHAyaQdZS7msgraph5graphQg5Graph10HttpResult",
+      "parameters" : [
+       {
+        "name" : "resource",
+        "deco" : "xAa",
+        "storageClass" : [
+         "in"
+        ]
+       },
+       {
+        "name" : "params",
+        "deco" : "HAyaQd"
+       }
+      ],
+      "endline" : 504,
       "endchar" : 2
      },
      {
@@ -1826,7 +1846,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : " DELETE Request\n",
-      "line" : 491,
+      "line" : 509,
       "char" : 13,
       "deco" : "FIAaZS7msgraph5graphQg5Graph10HttpResult",
       "parameters" : [
@@ -1838,14 +1858,14 @@
         ]
        }
       ],
-      "endline" : 494,
+      "endline" : 512,
       "endchar" : 2
      },
      {
       "name" : "~this",
       "kind" : "destructor",
       "protection" : "public",
-      "line" : 13,
+      "line" : 14,
       "char" : 1,
       "deco" : "FZv"
      },
@@ -1863,7 +1883,7 @@
       "name" : "opAssign",
       "kind" : "generated function",
       "protection" : "public",
-      "line" : 13,
+      "line" : 14,
       "char" : 1,
       "deco" : "FNcNjS7msgraph5graphQg5GraphZQy",
       "parameters" : [
@@ -1880,9 +1900,10 @@
     "kind" : "function",
     "protection" : "public",
     "comment" : " $(MARK native app only)\n",
-    "line" : 500,
+    "line" : 518,
     "char" : 6,
-    "deco" : "FKS7msgraph5graphQg5GraphSQxQr4auth8AuthInfoZb",
+    "deco" : "FKS7msgraph5graphQg5GraphSQxQr4auth8AuthInfoS4core4time8DurationZb",
+    "originalType" : "bool(ref Graph g, AuthInfo authInfo, Duration dur = 30.seconds)",
     "parameters" : [
      {
       "name" : "g",
@@ -1894,9 +1915,38 @@
      {
       "name" : "authInfo",
       "deco" : "S7msgraph5graph4auth8AuthInfo"
+     },
+     {
+      "name" : "dur",
+      "deco" : "S4core4time8Duration",
+      "default" : "dur(30L)"
      }
     ],
-    "endline" : 518,
+    "endline" : 536,
+    "endchar" : 1
+   },
+   {
+    "name" : "__unittest_L538_C9",
+    "kind" : "function",
+    "protection" : "public",
+    "line" : 538,
+    "char" : 9,
+    "storageClass" : [
+     "@system"
+    ],
+    "endline" : 590,
+    "endchar" : 1
+   },
+   {
+    "name" : "__unittest_L590_C9",
+    "kind" : "function",
+    "protection" : "public",
+    "line" : 590,
+    "char" : 9,
+    "storageClass" : [
+     "@system"
+    ],
+    "endline" : 621,
     "endchar" : 1
    }
   ]
@@ -1914,7 +1964,7 @@
     "comment" : " $(INTERNAL)\n",
     "line" : 14,
     "char" : 8,
-    "deco" : "FHAyaQdZQg",
+    "deco" : "FNfHAyaQdZQg",
     "parameters" : [
      {
       "name" : "params",
@@ -1925,20 +1975,58 @@
     "endchar" : 1
    },
    {
+    "name" : "__unittest_L31_C7",
+    "kind" : "function",
+    "protection" : "package",
+    "comment" : "\n",
+    "line" : 31,
+    "char" : 7,
+    "storageClass" : [
+     "@safe"
+    ],
+    "endline" : 40,
+    "endchar" : 1
+   },
+   {
     "name" : "parseQueryParam",
     "kind" : "function",
     "protection" : "package",
     "comment" : " $(INTERNAL)\n",
-    "line" : 33,
+    "line" : 40,
     "char" : 16,
-    "deco" : "FAyaZHQfQh",
+    "deco" : "FNfAyaZHQfQh",
     "parameters" : [
      {
       "name" : "params",
       "deco" : "Aya"
      }
     ],
-    "endline" : 45,
+    "endline" : 54,
+    "endchar" : 1
+   },
+   {
+    "name" : "__unittest_L56_C7",
+    "kind" : "function",
+    "protection" : "package",
+    "comment" : "\n",
+    "line" : 56,
+    "char" : 7,
+    "storageClass" : [
+     "@safe"
+    ],
+    "endline" : 64,
+    "endchar" : 1
+   },
+   {
+    "name" : "__unittest_L64_C7",
+    "kind" : "function",
+    "protection" : "package",
+    "line" : 64,
+    "char" : 7,
+    "storageClass" : [
+     "@safe"
+    ],
+    "endline" : 76,
     "endchar" : 1
    },
    {
@@ -1946,10 +2034,10 @@
     "kind" : "function",
     "protection" : "package",
     "comment" : " $(INTERNAL)\n",
-    "line" : 50,
+    "line" : 76,
     "char" : 8,
-    "deco" : "FkZAya",
-    "originalType" : "string(uint length = 0)",
+    "deco" : "FNfkZAya",
+    "originalType" : "@safe string(uint length = 0)",
     "parameters" : [
      {
       "name" : "length",
@@ -1957,7 +2045,20 @@
       "default" : "0u"
      }
     ],
-    "endline" : 60,
+    "endline" : 86,
+    "endchar" : 1
+   },
+   {
+    "name" : "__unittest_L88_C7",
+    "kind" : "function",
+    "protection" : "package",
+    "comment" : "\n",
+    "line" : 88,
+    "char" : 7,
+    "storageClass" : [
+     "@safe"
+    ],
+    "endline" : 101,
     "endchar" : 1
    }
   ]
