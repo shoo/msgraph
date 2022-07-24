@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html>    <head>        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="css/proj_docs.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/sidebar.js"></script>
+        <script type="text/javascript" src="js/listanchors.js"></script>
+        <title>msgraph.httpd.daemon</title>
+        
+        
+    </head>
+    <body>        
+        <div class="container">            
+<div class="sidebar-underbar"></div>
+<div class="sidebar">    <div class="head">        <h2>msgraph</h2>
+        <p><span class="smallprint"><b>version:</b> 0.0.1 <span class="separator"><br></span>
+            </span>
+        </p>
+        <p><a href="index.html">overview</a></p>
+    </div>
+    
+    <ul>
+			<li class="expand-container open"><a title='Library of Microsoft Graph for D
+		' class='expand-toggle' href='#'><span >msgraph</span></a><ul><li><a title='Library of Microsoft Graph for D
+		' href="			msgraph--msgraph.html"><span >package</span></a></li>					<li class="expand-container open"><a title='Microsoft Graph public imported packages
+		' class='expand-toggle' href='#'><span >graph</span></a><ul><li><a title='Microsoft Graph public imported packages
+		' href="			msgraph--msgraph.graph.html"><span >package</span></a></li>			
+	<li><a title="Authenticate/Authorize helpers" href="msgraph--msgraph.graph.auth.html"><span >auth</span></a></li>
+
+	<li><a title="Exception type definitions" href="msgraph--msgraph.graph.exception.html"><span >exception</span></a></li>
+
+	<li><a title="Microsoft Graph object" href="msgraph--msgraph.graph.graph.html"><span >graph</span></a></li>
+
+	<li><a title="HTTP helpers" href="msgraph--msgraph.graph.httphelper.html"><span >httphelper</span></a></li>
+
+	<li><a title="JSON Helpers" href="msgraph--msgraph.graph.jsonhelper.html"><span >jsonhelper</span></a></li>
+</ul></li>
+	
+		<li class="expand-container open"><a title='Simple HTTP daemon for auth
+		' class='expand-toggle' href='#'><span >httpd</span></a><ul><li><a title='Simple HTTP daemon for auth
+		' href="			msgraph--msgraph.httpd.html"><span >package</span></a></li>			
+	<li><a title="Simple HTTP daemon" href="msgraph--msgraph.httpd.daemon.html"><span >daemon</span></a></li>
+
+	<li><a title="HTTP request parser" href="msgraph--msgraph.httpd.parse.html"><span >parse</span></a></li>
+
+	<li><a title="Socket helper functions" href="msgraph--msgraph.httpd.sockhelper.html"><span >sockhelper</span></a></li>
+
+	<li><a title="HTTP related types" href="msgraph--msgraph.httpd.types.html"><span >types</span></a></li>
+</ul></li>
+	
+
+	<li><a title="User informations" href="msgraph--msgraph.user.html"><span >user</span></a></li>
+</ul></li>
+	
+
+</ul>
+</div>
+            <div class="content">                <h1>msgraph.httpd.daemon</h1>
+                
+                <div class="quickindex" id="quickindex"></div>
+                
+                <div class="ddoc_summary">Simple HTTP <code class="ddoc_psymbol">daemon</code>
+</div><div class="ddoc_description"><script type="text/javascript">(function() {
+	$('H1:first').prepend('<span class="pill">internal</span> ');
+})()</script></div>
+<dl class="ddoc_members"><div class="ddoc_module_members"><dt class="ddoc_decl"><div ><span class="def-anchor" id=".Httpd"></span><div class="quickindex" id="quickindex.Httpd"></div>struct <code class="ddoc_psymbol">Httpd</code>;
+<br></div></dt>
+<dd><div class="ddoc_summary"><script type="text/javascript">(function() {
+	$(document.currentScript).closest('dd').prev('dt').find('.quickindex').after('<span class="pill">internal</span> ')
+})()</script> HTTP daemon</div><div class="ddoc_examples"><span class="ddoc_examples_header">Examples:</span>
+ <pre class="d_code notranslate"><span class="d_keyword">import</span> std.socket;
+<span class="d_keyword">import</span> std.parallelism;
+<span class="d_keyword">import</span> std.string;
+<span class="d_keyword">import</span> std.range;
+<span class="d_keyword">import</span> std.algorithm;
+<span class="d_psymbol">Httpd</span> httpd;
+httpd.listen();
+<span class="d_keyword">ushort</span> port = httpd.listeningPort;
+<span class="d_keyword">auto</span> t = task({
+	<span class="d_comment">// curlでGET確認
+</span>	<span class="d_keyword">import</span> std.net.curl: get, HTTP;
+	<span class="d_keyword">auto</span> client = HTTP();
+	client.setUserAgent(<span class="d_string">"hoge"</span>);
+	<span class="d_keyword">auto</span> res = get(format!<span class="d_string">"http://localhost:%d"</span>(port), client);
+	<span class="d_keyword">assert</span>(res == <span class="d_string">"SUCCESS"</span>);
+	<span class="d_keyword">assert</span>(client.responseHeaders[<span class="d_string">"content-type"</span>] == <span class="d_string">"text/plain"</span>);
+	<span class="d_keyword">assert</span>(client.statusLine.code == 200);
+	<span class="d_keyword">assert</span>(client.statusLine.reason == <span class="d_string">"OK"</span>);
+});
+t.executeInNewThread();
+Request req;
+<span class="d_keyword">auto</span> reqresult = httpd.receive(req, 1000.msecs);
+<span class="d_keyword">assert</span>(reqresult);
+<span class="d_keyword">assert</span>(req.header[<span class="d_string">"host"</span>] == format!<span class="d_string">"localhost:%d"</span>(port));
+<span class="d_keyword">assert</span>(req.header[<span class="d_string">"user-agent"</span>] == <span class="d_string">"hoge"</span>);
+httpd.send(Response(HttpStatusLine.ok, <span class="d_string">"SUCCESS"</span>, <span class="d_string">"text/plain"</span>));
+t.yieldForce();
+</pre>
+</div>
+<dl class="ddoc_members"><div class="ddoc_struct_members"><dt class="ddoc_decl"><div ><span class="def-anchor" id=".Httpd.this"></span><div class="quickindex" id="quickindex.Httpd.this"></div>@safe this(string <span class="ddoc_param">bindaddr</span>, ushort <span class="ddoc_param">port</span> = 0);
+<br></div></dt>
+<dd>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Httpd.listen"></span><div class="quickindex" id="quickindex.Httpd.listen"></div>@trusted void <code class="ddoc_psymbol">listen</code>(string <span class="ddoc_param">bindaddr</span> = "localhost", ushort <span class="ddoc_param">port</span> = 0);
+<br></div></dt>
+<dd>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Httpd.listeningPort"></span><div class="quickindex" id="quickindex.Httpd.listeningPort"></div>const @trusted ushort <code class="ddoc_psymbol">listeningPort</code>();
+<br></div></dt>
+<dd>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Httpd.closeListener"></span><div class="quickindex" id="quickindex.Httpd.closeListener"></div>@trusted void <code class="ddoc_psymbol">closeListener</code>();
+<br></div></dt>
+<dd>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Httpd.closeClient"></span><div class="quickindex" id="quickindex.Httpd.closeClient"></div>@trusted void <code class="ddoc_psymbol">closeClient</code>();
+<br></div></dt>
+<dd>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Httpd.receive"></span><div class="quickindex" id="quickindex.Httpd.receive"></div>@safe bool <code class="ddoc_psymbol">receive</code>(out Request <span class="ddoc_param">req</span>, Duration <span class="ddoc_param">timeout</span> = Duration.max);
+<br></div></dt>
+<dd>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Httpd.send"></span><div class="quickindex" id="quickindex.Httpd.send"></div>@safe bool <code class="ddoc_psymbol">send</code>(Response <span class="ddoc_param">res</span>, Duration <span class="ddoc_param">timeout</span> = 1000.msecs);
+<br></div></dt>
+<dd>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Httpd.close"></span><div class="quickindex" id="quickindex.Httpd.close"></div>@safe void <code class="ddoc_psymbol">close</code>();
+<br></div></dt>
+<dd>
+</dd>
+</div></dl>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".asyncComm"></span><div class="quickindex" id="quickindex.asyncComm"></div>package(msgraph) auto <code class="ddoc_psymbol">asyncComm</code>(ref Httpd <span class="ddoc_param">httpd</span>, Response delegate(ref Request req) <span class="ddoc_param">onRecv</span>, Duration <span class="ddoc_param">recvTimeout</span> = 30.seconds, Duration <span class="ddoc_param">sendTimeout</span> = 1000.msecs);
+<br></div></dt>
+<dd>
+</dd>
+</div></dl>
+
+                
+            </div>
+        </div>
+        
+        <script type="text/javascript">jQuery(document).ready(listanchors);</script>
+        
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+     </body>
+</html>

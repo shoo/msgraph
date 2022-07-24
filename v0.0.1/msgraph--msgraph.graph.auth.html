@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html>    <head>        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="css/proj_docs.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/sidebar.js"></script>
+        <script type="text/javascript" src="js/listanchors.js"></script>
+        <title>msgraph.graph.auth</title>
+        
+        
+    </head>
+    <body>        
+        <div class="container">            
+<div class="sidebar-underbar"></div>
+<div class="sidebar">    <div class="head">        <h2>msgraph</h2>
+        <p><span class="smallprint"><b>version:</b> 0.0.1 <span class="separator"><br></span>
+            </span>
+        </p>
+        <p><a href="index.html">overview</a></p>
+    </div>
+    
+    <ul>
+			<li class="expand-container open"><a title='Library of Microsoft Graph for D
+		' class='expand-toggle' href='#'><span >msgraph</span></a><ul><li><a title='Library of Microsoft Graph for D
+		' href="			msgraph--msgraph.html"><span >package</span></a></li>					<li class="expand-container open"><a title='Microsoft Graph public imported packages
+		' class='expand-toggle' href='#'><span >graph</span></a><ul><li><a title='Microsoft Graph public imported packages
+		' href="			msgraph--msgraph.graph.html"><span >package</span></a></li>			
+	<li><a title="Authenticate/Authorize helpers" href="msgraph--msgraph.graph.auth.html"><span >auth</span></a></li>
+
+	<li><a title="Exception type definitions" href="msgraph--msgraph.graph.exception.html"><span >exception</span></a></li>
+
+	<li><a title="Microsoft Graph object" href="msgraph--msgraph.graph.graph.html"><span >graph</span></a></li>
+
+	<li><a title="HTTP helpers" href="msgraph--msgraph.graph.httphelper.html"><span >httphelper</span></a></li>
+
+	<li><a title="JSON Helpers" href="msgraph--msgraph.graph.jsonhelper.html"><span >jsonhelper</span></a></li>
+</ul></li>
+	
+		<li class="expand-container open"><a title='Simple HTTP daemon for auth
+		' class='expand-toggle' href='#'><span >httpd</span></a><ul><li><a title='Simple HTTP daemon for auth
+		' href="			msgraph--msgraph.httpd.html"><span >package</span></a></li>			
+	<li><a title="Simple HTTP daemon" href="msgraph--msgraph.httpd.daemon.html"><span >daemon</span></a></li>
+
+	<li><a title="HTTP request parser" href="msgraph--msgraph.httpd.parse.html"><span >parse</span></a></li>
+
+	<li><a title="Socket helper functions" href="msgraph--msgraph.httpd.sockhelper.html"><span >sockhelper</span></a></li>
+
+	<li><a title="HTTP related types" href="msgraph--msgraph.httpd.types.html"><span >types</span></a></li>
+</ul></li>
+	
+
+	<li><a title="User informations" href="msgraph--msgraph.user.html"><span >user</span></a></li>
+</ul></li>
+	
+
+</ul>
+</div>
+            <div class="content">                <h1>msgraph.graph.auth</h1>
+                
+                <div class="quickindex" id="quickindex"></div>
+                
+                <div class="ddoc_summary">Authenticate/Authorize helpers</div><dl class="ddoc_members"><div class="ddoc_module_members"><dt class="ddoc_decl"><div ><span class="def-anchor" id=".AuthInfo"></span><div class="quickindex" id="quickindex.AuthInfo"></div>struct <code class="ddoc_psymbol">AuthInfo</code>;
+<br></div></dt>
+<dd><div class="ddoc_summary">Auth infomations
+</div><div class="ddoc_description"><ul><li>for user application:
+     <a href="https://docs.microsoft.com/ja-jp/graph/auth-v2-user">https://docs.microsoft.com/ja-jp/graph/auth-v2-user</a></li>
+<li>for service application:
+     <a href="https://docs.microsoft.com/ja-jp/graph/auth-v2-service">https://docs.microsoft.com/ja-jp/graph/auth-v2-service</a></li>
+</ul></div>
+<dl class="ddoc_members"><div class="ddoc_struct_members"><dt class="ddoc_decl"><div ><span class="def-anchor" id=".AuthInfo.tenantId"></span><div class="quickindex" id="quickindex.AuthInfo.tenantId"></div>string <code class="ddoc_psymbol">tenantId</code>;
+<br></div></dt>
+<dd><div class="ddoc_summary">Tenant ID</div></dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".AuthInfo.clientId"></span><div class="quickindex" id="quickindex.AuthInfo.clientId"></div>string <code class="ddoc_psymbol">clientId</code>;
+<br></div></dt>
+<dd><div class="ddoc_summary">Client ID</div></dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".AuthInfo.clientSecret"></span><div class="quickindex" id="quickindex.AuthInfo.clientSecret"></div>string <code class="ddoc_psymbol">clientSecret</code>;
+<br></div></dt>
+<dd><div class="ddoc_summary"><script type="text/javascript">(function() {
+	$(document.currentScript).closest('dd').prev('dt').find('.quickindex').after('<span class="pill">service app only</span> ')
+})()</script> Client secret</div></dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".AuthInfo.requireScope"></span><div class="quickindex" id="quickindex.AuthInfo.requireScope"></div>string[] <code class="ddoc_psymbol">requireScope</code>;
+<br></div></dt>
+<dd><div class="ddoc_summary"><script type="text/javascript">(function() {
+	$(document.currentScript).closest('dd').prev('dt').find('.quickindex').after('<span class="pill">native app only</span> ')
+})()</script></div></dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".AuthInfo.redirectUri"></span><div class="quickindex" id="quickindex.AuthInfo.redirectUri"></div>string <code class="ddoc_psymbol">redirectUri</code>;
+<br></div></dt>
+<dd><div class="ddoc_summary"><script type="text/javascript">(function() {
+	$(document.currentScript).closest('dd').prev('dt').find('.quickindex').after('<span class="pill">native app only</span> ')
+})()</script></div></dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".AuthInfo.responseMode"></span><div class="quickindex" id="quickindex.AuthInfo.responseMode"></div>string <code class="ddoc_psymbol">responseMode</code>;
+<br></div></dt>
+<dd><div class="ddoc_summary"><script type="text/javascript">(function() {
+	$(document.currentScript).closest('dd').prev('dt').find('.quickindex').after('<span class="pill">native app only</span> ')
+})()</script></div></dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".AuthInfo.state"></span><div class="quickindex" id="quickindex.AuthInfo.state"></div>string <code class="ddoc_psymbol">state</code>;
+<br></div></dt>
+<dd><div class="ddoc_summary"><script type="text/javascript">(function() {
+	$(document.currentScript).closest('dd').prev('dt').find('.quickindex').after('<span class="pill">native app only</span> ')
+})()</script></div></dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".AuthInfo.accessToken"></span><div class="quickindex" id="quickindex.AuthInfo.accessToken"></div>string <code class="ddoc_psymbol">accessToken</code>;
+<br></div></dt>
+<dd><div class="ddoc_summary"><script type="text/javascript">(function() {
+	$(document.currentScript).closest('dd').prev('dt').find('.quickindex').after('<span class="pill">native app only</span> ')
+})()</script></div></dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".AuthInfo.refreshToken"></span><div class="quickindex" id="quickindex.AuthInfo.refreshToken"></div>string <code class="ddoc_psymbol">refreshToken</code>;
+<br></div></dt>
+<dd><div class="ddoc_summary"><script type="text/javascript">(function() {
+	$(document.currentScript).closest('dd').prev('dt').find('.quickindex').after('<span class="pill">native app only</span> ')
+})()</script></div></dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".AuthInfo.onAuthCodeRequired"></span><div class="quickindex" id="quickindex.AuthInfo.onAuthCodeRequired"></div>void delegate(string url) <code class="ddoc_psymbol">onAuthCodeRequired</code>;
+<br></div></dt>
+<dd><div class="ddoc_summary"><script type="text/javascript">(function() {
+	$(document.currentScript).closest('dd').prev('dt').find('.quickindex').after('<span class="pill">native app only</span> ')
+})()</script></div></dd>
+</div></dl>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".InstanceAuthServer"></span><div class="quickindex" id="quickindex.InstanceAuthServer"></div>struct <code class="ddoc_psymbol">InstanceAuthServer</code>;
+<br></div></dt>
+<dd><div class="ddoc_summary"><script type="text/javascript">(function() {
+	$(document.currentScript).closest('dd').prev('dt').find('.quickindex').after('<span class="pill">native app only</span> ')
+})()</script></div><dl class="ddoc_members"><div class="ddoc_struct_members"><dt class="ddoc_decl"><div ><span class="def-anchor" id=".InstanceAuthServer.onAuthCodeAcquired"></span><div class="quickindex" id="quickindex.InstanceAuthServer.onAuthCodeAcquired"></div>void delegate(string code) <code class="ddoc_psymbol">onAuthCodeAcquired</code>;
+<br></div></dt>
+<dd>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".InstanceAuthServer.listen"></span><div class="quickindex" id="quickindex.InstanceAuthServer.listen"></div>void <code class="ddoc_psymbol">listen</code>();
+<br></div></dt>
+<dd>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".InstanceAuthServer.endpointUri"></span><div class="quickindex" id="quickindex.InstanceAuthServer.endpointUri"></div>const string <code class="ddoc_psymbol">endpointUri</code>();
+<br></div></dt>
+<dd>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".InstanceAuthServer.authCode"></span><div class="quickindex" id="quickindex.InstanceAuthServer.authCode"></div>const string <code class="ddoc_psymbol">authCode</code>();
+<br></div></dt>
+<dd>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".InstanceAuthServer.acceptCode"></span><div class="quickindex" id="quickindex.InstanceAuthServer.acceptCode"></div>bool <code class="ddoc_psymbol">acceptCode</code>(string <span class="ddoc_param">state</span>, Duration <span class="ddoc_param">timeout</span> = 30.seconds);
+<br></div></dt>
+<dd>
+</dd>
+</div></dl>
+</dd>
+</div></dl>
+
+                
+            </div>
+        </div>
+        
+        <script type="text/javascript">jQuery(document).ready(listanchors);</script>
+        
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+     </body>
+</html>

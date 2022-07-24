@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html>    <head>        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="css/proj_docs.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/sidebar.js"></script>
+        <script type="text/javascript" src="js/listanchors.js"></script>
+        <title>msgraph.graph.graph</title>
+        
+        
+    </head>
+    <body>        
+        <div class="container">            
+<div class="sidebar-underbar"></div>
+<div class="sidebar">    <div class="head">        <h2>msgraph</h2>
+        <p><span class="smallprint"><b>version:</b> 0.0.1 <span class="separator"><br></span>
+            </span>
+        </p>
+        <p><a href="index.html">overview</a></p>
+    </div>
+    
+    <ul>
+			<li class="expand-container open"><a title='Library of Microsoft Graph for D
+		' class='expand-toggle' href='#'><span >msgraph</span></a><ul><li><a title='Library of Microsoft Graph for D
+		' href="			msgraph--msgraph.html"><span >package</span></a></li>					<li class="expand-container open"><a title='Microsoft Graph public imported packages
+		' class='expand-toggle' href='#'><span >graph</span></a><ul><li><a title='Microsoft Graph public imported packages
+		' href="			msgraph--msgraph.graph.html"><span >package</span></a></li>			
+	<li><a title="Authenticate/Authorize helpers" href="msgraph--msgraph.graph.auth.html"><span >auth</span></a></li>
+
+	<li><a title="Exception type definitions" href="msgraph--msgraph.graph.exception.html"><span >exception</span></a></li>
+
+	<li><a title="Microsoft Graph object" href="msgraph--msgraph.graph.graph.html"><span >graph</span></a></li>
+
+	<li><a title="HTTP helpers" href="msgraph--msgraph.graph.httphelper.html"><span >httphelper</span></a></li>
+
+	<li><a title="JSON Helpers" href="msgraph--msgraph.graph.jsonhelper.html"><span >jsonhelper</span></a></li>
+</ul></li>
+	
+		<li class="expand-container open"><a title='Simple HTTP daemon for auth
+		' class='expand-toggle' href='#'><span >httpd</span></a><ul><li><a title='Simple HTTP daemon for auth
+		' href="			msgraph--msgraph.httpd.html"><span >package</span></a></li>			
+	<li><a title="Simple HTTP daemon" href="msgraph--msgraph.httpd.daemon.html"><span >daemon</span></a></li>
+
+	<li><a title="HTTP request parser" href="msgraph--msgraph.httpd.parse.html"><span >parse</span></a></li>
+
+	<li><a title="Socket helper functions" href="msgraph--msgraph.httpd.sockhelper.html"><span >sockhelper</span></a></li>
+
+	<li><a title="HTTP related types" href="msgraph--msgraph.httpd.types.html"><span >types</span></a></li>
+</ul></li>
+	
+
+	<li><a title="User informations" href="msgraph--msgraph.user.html"><span >user</span></a></li>
+</ul></li>
+	
+
+</ul>
+</div>
+            <div class="content">                <h1>msgraph.graph.graph</h1>
+                
+                <div class="quickindex" id="quickindex"></div>
+                
+                <div class="ddoc_summary">Microsoft Graph object</div><dl class="ddoc_members"><div class="ddoc_module_members"><dt class="ddoc_decl"><div ><span class="def-anchor" id=".Graph"></span><div class="quickindex" id="quickindex.Graph"></div>struct <code class="ddoc_psymbol">Graph</code>;
+<br></div></dt>
+<dd>
+<dl class="ddoc_members"><div class="ddoc_struct_members"><dt class="ddoc_decl"><div ><span class="def-anchor" id=".Graph.this"></span><div class="quickindex" id="quickindex.Graph.this"></div>this(string <span class="ddoc_param">tenantId</span>, string <span class="ddoc_param">clientId</span>, string[] <span class="ddoc_param">requireScope</span>, string <span class="ddoc_param">clientSecret</span> = null);
+<br>
+this(string <span class="ddoc_param">tenantId</span>, string <span class="ddoc_param">clientId</span>, string <span class="ddoc_param">accessToken</span>, string <span class="ddoc_param">refreshToken</span>, string[] <span class="ddoc_param">requireScope</span>);
+<br>
+this(AuthInfo <span class="ddoc_param">authInfo</span>);
+<br>
+<span class="def-anchor" id=".Graph.setup"></span><div class="quickindex" id="quickindex.Graph.setup"></div>void <code class="ddoc_psymbol">setup</code>(string <span class="ddoc_param">tenantId</span>, string <span class="ddoc_param">clientId</span>, string[] <span class="ddoc_param">requireScope</span>, string <span class="ddoc_param">clientSecret</span> = null);
+<br>
+void <code class="ddoc_psymbol">setup</code>(string <span class="ddoc_param">tenantId</span>, string <span class="ddoc_param">clientId</span>, string <span class="ddoc_param">accessToken</span>, string <span class="ddoc_param">refreshToken</span>, string[] <span class="ddoc_param">requireScope</span>);
+<br>
+void <code class="ddoc_psymbol">setup</code>(AuthInfo <span class="ddoc_param">info</span>);
+<br></div></dt>
+<dd><div class="ddoc_summary">Setup Microsoft Graph
+</div><div class="ddoc_params"><span class="ddoc_params_header">Parameters:</span>
+ <table class="ddoc_params_table"><tr class="ddoc_param_row"><td class="ddoc_param_id">string <span class="ddoc_param">clientId</span></td>
+<td class="ddoc_param_desc">Client ID (from Asure Active Directory)</td></tr>
+<tr class="ddoc_param_row"><td class="ddoc_param_id">string <span class="ddoc_param">tenantId</span></td>
+<td class="ddoc_param_desc">Tenant ID (from Asure Active Directory)</td></tr>
+<tr class="ddoc_param_row"><td class="ddoc_param_id">string <span class="ddoc_param">clientSecret</span></td>
+<td class="ddoc_param_desc">Client secret (from Asure Active Directory, provisioned client secret).
+                     This is set only for server application.</td></tr>
+<tr class="ddoc_param_row"><td class="ddoc_param_id">AuthInfo <span class="ddoc_param">authInfo</span></td>
+<td class="ddoc_param_desc">Detail information for authrization.</td></tr>
+</table></div>
+
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Graph.authorize"></span><div class="quickindex" id="quickindex.Graph.authorize"></div>void <code class="ddoc_psymbol">authorize</code>(string <span class="ddoc_param">code</span>);
+<br></div></dt>
+<dd><div class="ddoc_summary"><script type="text/javascript">(function() {
+	$(document.currentScript).closest('dd').prev('dt').find('.quickindex').after('<span class="pill">native app only</span> ')
+})()</script></div></dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Graph.updateTokens"></span><div class="quickindex" id="quickindex.Graph.updateTokens"></div>void <code class="ddoc_psymbol">updateTokens</code>();
+<br></div></dt>
+<dd>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Graph.accessToken"></span><div class="quickindex" id="quickindex.Graph.accessToken"></div>const string <code class="ddoc_psymbol">accessToken</code>();
+<br></div></dt>
+<dd>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Graph.accessTokenExpires"></span><div class="quickindex" id="quickindex.Graph.accessTokenExpires"></div>const SysTime <code class="ddoc_psymbol">accessTokenExpires</code>();
+<br></div></dt>
+<dd>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Graph.isAccessTokenExpired"></span><div class="quickindex" id="quickindex.Graph.isAccessTokenExpired"></div>const bool <code class="ddoc_psymbol">isAccessTokenExpired</code>();
+<br></div></dt>
+<dd>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Graph.refreshToken"></span><div class="quickindex" id="quickindex.Graph.refreshToken"></div>const string <code class="ddoc_psymbol">refreshToken</code>();
+<br></div></dt>
+<dd><div class="ddoc_summary"><script type="text/javascript">(function() {
+	$(document.currentScript).closest('dd').prev('dt').find('.quickindex').after('<span class="pill">native app only</span> ')
+})()</script></div></dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Graph.Method"></span><div class="quickindex" id="quickindex.Graph.Method"></div>alias <code class="ddoc_psymbol">Method</code> = std.net.curl.HTTP.<code class="ddoc_psymbol">Method</code>;
+<br></div></dt>
+<dd>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Graph.Endpoint"></span><div class="quickindex" id="quickindex.Graph.Endpoint"></div>enum <code class="ddoc_psymbol">Endpoint</code>: <span class="ddoc_enum_basetype">string</span>;
+<br></div></dt>
+<dd>
+<dl class="ddoc_members"><div class="ddoc_enum_members"><dt class="ddoc_decl"><div ><span class="def-anchor" id=".Graph.Endpoint.v1_0"></span><div class="quickindex" id="quickindex.Graph.Endpoint.v1_0"></div><code class="ddoc_psymbol">v1_0</code><br>
+<span class="def-anchor" id=".Graph.Endpoint.v1"></span><div class="quickindex" id="quickindex.Graph.Endpoint.v1"></div><code class="ddoc_psymbol">v1</code><br></div></dt>
+<dd>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Graph.Endpoint.beta"></span><div class="quickindex" id="quickindex.Graph.Endpoint.beta"></div><code class="ddoc_psymbol">beta</code><br></div></dt>
+<dd>
+</dd>
+</div></dl>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Graph.HttpResult"></span><div class="quickindex" id="quickindex.Graph.HttpResult"></div>struct <code class="ddoc_psymbol">HttpResult</code>;
+<br></div></dt>
+<dd>
+<dl class="ddoc_members"><div class="ddoc_struct_members"><dt class="ddoc_decl"><div ><span class="def-anchor" id=".Graph.HttpResult.statusLine"></span><div class="quickindex" id="quickindex.Graph.HttpResult.statusLine"></div>HTTP.StatusLine <code class="ddoc_psymbol">statusLine</code>;
+<br></div></dt>
+<dd>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Graph.HttpResult.responseHeaders"></span><div class="quickindex" id="quickindex.Graph.HttpResult.responseHeaders"></div>string[string] <code class="ddoc_psymbol">responseHeaders</code>;
+<br></div></dt>
+<dd>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Graph.HttpResult.responseBody"></span><div class="quickindex" id="quickindex.Graph.HttpResult.responseBody"></div>immutable(ubyte)[] <code class="ddoc_psymbol">responseBody</code>;
+<br></div></dt>
+<dd>
+</dd>
+</div></dl>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Graph.handle"></span><div class="quickindex" id="quickindex.Graph.handle"></div>inout ref inout(HTTP) <code class="ddoc_psymbol">handle</code>() return;
+<br></div></dt>
+<dd>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Graph.setProxy"></span><div class="quickindex" id="quickindex.Graph.setProxy"></div>void <code class="ddoc_psymbol">setProxy</code>(string <span class="ddoc_param">proxy</span>);
+<br>
+void <code class="ddoc_psymbol">setProxy</code>(string <span class="ddoc_param">proxy</span>, ushort <span class="ddoc_param">port</span>, CurlProxy <span class="ddoc_param">proxyType</span> = CurlProxy.http);
+<br>
+void <code class="ddoc_psymbol">setProxy</code>(string <span class="ddoc_param">proxy</span>, string <span class="ddoc_param">authUser</span>, string <span class="ddoc_param">authPass</span>, CurlAuth <span class="ddoc_param">authType</span> = CurlAuth.basic);
+<br>
+void <code class="ddoc_psymbol">setProxy</code>(string <span class="ddoc_param">proxy</span>, ushort <span class="ddoc_param">port</span>, string <span class="ddoc_param">authUser</span>, string <span class="ddoc_param">authPass</span>, CurlProxy <span class="ddoc_param">proxyType</span> = CurlProxy.http, CurlAuth <span class="ddoc_param">authType</span> = CurlAuth.basic);
+<br></div></dt>
+<dd><div class="ddoc_summary">Set <span class="ddoc_param">proxy</span> settings
+</div><div class="ddoc_params"><span class="ddoc_params_header">Parameters:</span>
+ <table class="ddoc_params_table"><tr class="ddoc_param_row"><td class="ddoc_param_id">string <span class="ddoc_param">proxy</span></td>
+<td class="ddoc_param_desc">Hostname or URL</td></tr>
+<tr class="ddoc_param_row"><td class="ddoc_param_id">ushort <span class="ddoc_param">port</span></td>
+<td class="ddoc_param_desc">Port number</td></tr>
+<tr class="ddoc_param_row"><td class="ddoc_param_id">CurlProxy <span class="ddoc_param">proxyType</span></td>
+<td class="ddoc_param_desc">Type of <span class="ddoc_param">proxy</span></td></tr>
+<tr class="ddoc_param_row"><td class="ddoc_param_id">string <span class="ddoc_param">authUser</span></td>
+<td class="ddoc_param_desc">User name for <span class="ddoc_param">proxy</span></td></tr>
+<tr class="ddoc_param_row"><td class="ddoc_param_id">string <span class="ddoc_param">authPass</span></td>
+<td class="ddoc_param_desc">Password for <span class="ddoc_param">proxy</span></td></tr>
+<tr class="ddoc_param_row"><td class="ddoc_param_id">CurlAuth <span class="ddoc_param">authType</span></td>
+<td class="ddoc_param_desc">Auth type of <span class="ddoc_param">proxy</span></td></tr>
+</table></div>
+
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Graph.setCert"></span><div class="quickindex" id="quickindex.Graph.setCert"></div>void <code class="ddoc_psymbol">setCert</code>(in char[] <span class="ddoc_param">cafile</span>, in char[] <span class="ddoc_param">clientCertFile</span> = null, in char[] <span class="ddoc_param">privateKeyFile</span> = null, in char[] <span class="ddoc_param">privateKeyPassword</span> = null);
+<br></div></dt>
+<dd><div class="ddoc_summary">Certification settings
+</div><div class="ddoc_params"><span class="ddoc_params_header">Parameters:</span>
+ <table class="ddoc_params_table"><tr class="ddoc_param_row"><td class="ddoc_param_id">char[] <span class="ddoc_param">cafile</span></td>
+<td class="ddoc_param_desc">PEM file of trusted CA.</td></tr>
+<tr class="ddoc_param_row"><td class="ddoc_param_id">char[] <span class="ddoc_param">clientCertFile</span></td>
+<td class="ddoc_param_desc">PEM file of client cert file if required.</td></tr>
+<tr class="ddoc_param_row"><td class="ddoc_param_id">char[] <span class="ddoc_param">privateKeyFile</span></td>
+<td class="ddoc_param_desc">PEM file of client private key file if required.</td></tr>
+<tr class="ddoc_param_row"><td class="ddoc_param_id">char[] <span class="ddoc_param">privateKeyPassword</span></td>
+<td class="ddoc_param_desc">Password of private key file if required.</td></tr>
+</table></div>
+
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Graph.request"></span><div class="quickindex" id="quickindex.Graph.request"></div>HttpResult <code class="ddoc_psymbol">request</code>(Method <span class="ddoc_param">method</span>, Endpoint <span class="ddoc_param">endpoint</span>, in char[] <span class="ddoc_param">resource</span>, in char[] <span class="ddoc_param">query</span>, in ubyte[] <span class="ddoc_param">contents</span> = null, string <span class="ddoc_param">contentType</span> = null);
+<br></div></dt>
+<dd><div class="ddoc_summary">HTTP Request for Microsoft Graph API call</div></dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Graph.get"></span><div class="quickindex" id="quickindex.Graph.get"></div>HttpResult <code class="ddoc_psymbol">get</code>(in char[] <span class="ddoc_param">resource</span>, in char[] <span class="ddoc_param">query</span>);
+<br>
+HttpResult <code class="ddoc_psymbol">get</code>(string <span class="ddoc_param">resource</span>, string[string] <span class="ddoc_param">query</span>);
+<br>
+HttpResult <code class="ddoc_psymbol">get</code>(string <span class="ddoc_param">resource</span>);
+<br></div></dt>
+<dd><div class="ddoc_summary">GET Request</div></dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Graph.post"></span><div class="quickindex" id="quickindex.Graph.post"></div>HttpResult <code class="ddoc_psymbol">post</code>(in char[] <span class="ddoc_param">resource</span>, in ubyte[] <span class="ddoc_param">contents</span>, string <span class="ddoc_param">contentType</span> = "application/octet-stream");
+<br>
+HttpResult <code class="ddoc_psymbol">post</code>(in char[] <span class="ddoc_param">resource</span>, in char[] <span class="ddoc_param">contents</span>, string <span class="ddoc_param">contentType</span> = "application/x-www-form-urlencoded");
+<br>
+HttpResult <code class="ddoc_psymbol">post</code>(in char[] <span class="ddoc_param">resource</span>, JSONValue <span class="ddoc_param">params</span>);
+<br>
+HttpResult <code class="ddoc_psymbol">post</code>(in char[] <span class="ddoc_param">resource</span>, string[string] <span class="ddoc_param">params</span>);
+<br></div></dt>
+<dd><div class="ddoc_summary">POST Request</div></dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Graph.put"></span><div class="quickindex" id="quickindex.Graph.put"></div>HttpResult <code class="ddoc_psymbol">put</code>(in char[] <span class="ddoc_param">resource</span>, in ubyte[] <span class="ddoc_param">contents</span>, string <span class="ddoc_param">contentType</span> = "application/octet-stream");
+<br>
+HttpResult <code class="ddoc_psymbol">put</code>(in char[] <span class="ddoc_param">resource</span>, in char[] <span class="ddoc_param">contents</span>, string <span class="ddoc_param">contentType</span> = "application/x-www-form-urlencoded");
+<br>
+HttpResult <code class="ddoc_psymbol">put</code>(in char[] <span class="ddoc_param">resource</span>, JSONValue <span class="ddoc_param">params</span>);
+<br>
+HttpResult <code class="ddoc_psymbol">put</code>(in char[] <span class="ddoc_param">resource</span>, string[string] <span class="ddoc_param">params</span>);
+<br></div></dt>
+<dd><div class="ddoc_summary">PUT Request</div></dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Graph.patch"></span><div class="quickindex" id="quickindex.Graph.patch"></div>HttpResult <code class="ddoc_psymbol">patch</code>(in char[] <span class="ddoc_param">resource</span>, in ubyte[] <span class="ddoc_param">contents</span>, string <span class="ddoc_param">contentType</span> = "application/octet-stream");
+<br>
+HttpResult <code class="ddoc_psymbol">patch</code>(in char[] <span class="ddoc_param">resource</span>, in char[] <span class="ddoc_param">contents</span>, string <span class="ddoc_param">contentType</span> = "application/x-www-form-urlencoded");
+<br>
+HttpResult <code class="ddoc_psymbol">patch</code>(in char[] <span class="ddoc_param">resource</span>, JSONValue <span class="ddoc_param">params</span>);
+<br>
+HttpResult <code class="ddoc_psymbol">patch</code>(in char[] <span class="ddoc_param">resource</span>, string[string] <span class="ddoc_param">params</span>);
+<br></div></dt>
+<dd><div class="ddoc_summary">PATCH Request</div></dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".Graph.del"></span><div class="quickindex" id="quickindex.Graph.del"></div>HttpResult <code class="ddoc_psymbol">del</code>(in char[] <span class="ddoc_param">resource</span>);
+<br></div></dt>
+<dd><div class="ddoc_summary">DELETE Request</div></dd>
+</div></dl>
+</dd>
+<dt class="ddoc_decl"><div ><span class="def-anchor" id=".setupWithInstanceServer"></span><div class="quickindex" id="quickindex.setupWithInstanceServer"></div>bool <code class="ddoc_psymbol">setupWithInstanceServer</code>(ref Graph <span class="ddoc_param">g</span>, AuthInfo <span class="ddoc_param">authInfo</span>, Duration <span class="ddoc_param">dur</span> = 30.seconds);
+<br></div></dt>
+<dd><div class="ddoc_summary"><script type="text/javascript">(function() {
+	$(document.currentScript).closest('dd').prev('dt').find('.quickindex').after('<span class="pill">native app only</span> ')
+})()</script></div></dd>
+</div></dl>
+
+                
+            </div>
+        </div>
+        
+        <script type="text/javascript">jQuery(document).ready(listanchors);</script>
+        
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+     </body>
+</html>
