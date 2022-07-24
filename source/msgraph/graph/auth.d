@@ -82,13 +82,13 @@ public:
 	/***************************************************************************
 	 * 
 	 */
-	bool acceptCode(string state, Duration dur = 30.seconds)
+	bool acceptCode(string state, Duration timeout = 30.seconds)
 	{
 		import std.algorithm: canFind;
 		import msgraph.graph.httphelper;
 		import std.string: chompPrefix, chomp, endsWith, startsWith;
 		Request req;
-		if (!_httpd.receive(req, cast(uint)dur.total!"msecs"))
+		if (!_httpd.receive(req, timeout))
 			return false;
 		auto resParam = req.path.chompPrefix("/?").parseQueryParam();
 		_code = resParam.get("code", "");
@@ -96,21 +96,12 @@ public:
 		 || resParam.get("state", "") != state)
 		{
 			_code = null;
-			Response res;
-			res.status = "HTTP/1.1 400 Bad Request";
-			res.header["Content-Type"] = "text/plain";
-			res.content = "FAILED";
-			_httpd.send(res);
+			_httpd.send(Response(HttpStatusLine.badRequest, "FAILED", "text/plain"));
 			return false;
 		}
 		else
 		{
-			Response res;
-			res.status = "HTTP/1.1 200 OK";
-			res.header["Content-Type"] = "text/plain";
-			res.content = "SUCCESS";
-			_httpd.send(res);
-			
+			_httpd.send(Response(HttpStatusLine.ok, "SUCCESS", "text/plain"));
 			if (onAuthCodeAcquired)
 				onAuthCodeAcquired(_code);
 		}

@@ -541,7 +541,7 @@ bool setupWithInstanceServer(ref Graph g, AuthInfo authInfo, Duration dur = 30.s
 	import std.parallelism: task;
 	import std.net.curl: get;
 	import std.conv: text;
-	import msgraph.httpd: Httpd, Request, Response;
+	import msgraph.httpd;
 	InstanceAuthServer authServer;
 	bool ret;
 	AuthInfo authInfo;
@@ -567,17 +567,12 @@ bool setupWithInstanceServer(ref Graph g, AuthInfo authInfo, Duration dur = 30.s
 	authInfo.redirectUri = authServer.endpointUri;
 	Httpd httpd;
 	httpd.listen();
-	g._debugUrlReplaceInfo = ["https://login.microsoftonline.com": "http://localhost:".text(httpd.listeningPort)];
-	auto t2 = task({
-		Request req;
-		httpd.receive(req, 1000);
-		Response res;
-		res.status = "HTTP/1.1 200 OK";
-		res.header["Content-Type"] = "application/json";
-		res.content = `{"access_token": "testacctoken", "refresh_token": "testreftoken", "expires_in": 12345}`;
-		httpd.send(res);
+	auto t2 = httpd.asyncComm((ref req){
+		return Response(HttpStatusLine.ok,
+			`{"access_token": "testacctoken", "refresh_token": "testreftoken", "expires_in": 12345}`,
+			"application/json");
 	});
-	t2.executeInNewThread();
+	g._debugUrlReplaceInfo = ["https://login.microsoftonline.com": "http://localhost:".text(httpd.listeningPort)];
 	g.setup(authInfo);
 	t.yieldForce();
 	t2.yieldForce();
@@ -586,35 +581,43 @@ bool setupWithInstanceServer(ref Graph g, AuthInfo authInfo, Duration dur = 30.s
 	assert(g.refreshToken == "testreftoken");
 }
 
+@system unittest
+{
+	import std.conv: text;
+	import msgraph.httpd;
+	immutable testAccTokJWT = "acctok.eyJleHAiOjEyMzQ1fQ.test";
+	auto g = Graph("testtenant", "testclient", testAccTokJWT, null, []);
+	auto httpd = Httpd();
+	httpd.listen();
+	auto t = httpd.asyncComm((ref req){
+		assert(req.path == "/v1.0/me/");
+		assert(req.header["authorization"] == "Bearer " ~ testAccTokJWT);
+		return Response(HttpStatusLine.ok, "{}", "application/json");
+	});
+	g._debugUrlReplaceInfo = ["https://graph.microsoft.com": "http://localhost:".text(httpd.listeningPort)];
+	auto res = g.get("/me/");
+	assert(cast(const char[])res.responseBody == "{}");
+	t.yieldForce();
+}
 
 @system unittest
 {
 	import std.conv: text;
-	import std.base64;
-	import std.parallelism: task;
-	import std.json;
-	import std.string;
 	import msgraph.httpd;
-	auto acctok = ("acctok."
-		~ Base64URLNoPadding.encode(JSONValue(["exp": 12345]).toString.representation)
-		~ ".test").idup;
-	auto g = Graph("testtenant", "testclient", acctok, null, []);
+	immutable testAccTokJWT = "acctok.eyJleHAiOjEyMzQ1fQ.test";
+	auto g = Graph("testtenant", "testclient", testAccTokJWT, null, []);
 	auto httpd = Httpd();
 	httpd.listen();
-	auto t2 = task({
-		Request req;
-		httpd.receive(req, 1000);
+	auto t = httpd.asyncComm((ref req){
 		assert(req.path == "/v1.0/me/");
-		assert(req.header["authorization"] == "Bearer " ~ acctok);
-		Response res;
-		res.status = "HTTP/1.1 200 OK";
-		res.header["Content-Type"] = "application/json";
-		res.content = `{}`;
-		httpd.send(res);
+		assert(req.header["authorization"] == "Bearer " ~ testAccTokJWT);
+		assert(req.header["content-type"] == "application/json");
+		assert(req.header["content-length"] == "2");
+		assert(req.content == "{}");
+		return Response(HttpStatusLine.ok, "{}", "application/json");
 	});
 	g._debugUrlReplaceInfo = ["https://graph.microsoft.com": "http://localhost:".text(httpd.listeningPort)];
-	t2.executeInNewThread();
-	auto res = g.get("/me/");
+	auto res = g.post("/me/", "{}", "application/json");
 	assert(cast(const char[])res.responseBody == "{}");
-	t2.yieldForce();
+	t.yieldForce();
 }

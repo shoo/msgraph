@@ -7,6 +7,7 @@ module msgraph.httpd.daemon;
 
 package(msgraph):
 
+import core.time;
 import msgraph.httpd.sockhelper;
 import msgraph.httpd.parse;
 
@@ -78,7 +79,7 @@ public:
 	/***************************************************************************
 	 * 
 	 */
-	bool receive(out Request req, uint msecs = uint.max) @safe
+	bool receive(out Request req, Duration timeout = Duration.max) @safe
 	{
 		import std.array;
 		import std.datetime.stopwatch;
@@ -86,15 +87,15 @@ public:
 		import std.algorithm;
 		import std.conv;
 		bool ret = true;
-		uint elapse = 0;
+		Duration elapse;
 		ubyte[1024] recvBuffer;
 		auto app = appender!(ubyte[]);
 		auto sw = StopWatch(AutoStart.yes);
 		
 		bool checkElapse()
 		{
-			elapse = cast(uint)sw.peek.total!"msecs";
-			return elapse < msecs;
+			elapse = sw.peek;
+			return elapse < timeout;
 		}
 		bool readData()
 		{
@@ -102,7 +103,7 @@ public:
 			{
 				if (!checkElapse())
 					return false;
-				setRecvTimeout(_connection, msecs - elapse);
+				setRecvTimeout(_connection, timeout - elapse);
 				auto recvlen = _connection.receive(recvBuffer);
 				if (recvlen == -1)
 					continue;
@@ -115,7 +116,7 @@ public:
 		}
 		
 		// 接続の待ち受け
-		if (!waitReadable(_listener, msecs - elapse))
+		if (!waitReadable(_listener, timeout - elapse))
 			return ret = false;
 		_connection = _listener.accept();
 		
@@ -192,7 +193,7 @@ public:
 	/***************************************************************************
 	 * 
 	 */
-	bool send(Response res, uint msecs = 1000) @safe
+	bool send(Response res, Duration timeout = 1000.msecs) @safe
 	{
 		import std.datetime;
 		import std.datetime.stopwatch;
@@ -200,20 +201,20 @@ public:
 		import std.conv;
 		import std.string;
 		bool ret = true;
-		uint elapse = 0;
+		Duration elapse;
 		auto sw = StopWatch(AutoStart.yes);
 		bool checkElapse()
 		{
-			elapse = cast(uint)sw.peek.total!"msecs";
-			return elapse > msecs;
+			elapse = sw.peek;
+			return elapse > timeout;
 		}
-		bool sendData(string dat)
+		bool sendData(in char[] dat)
 		{
 			auto sendbuf = dat.representation[];
 			size_t sent = 0;
 			while (1)
 			{
-				setSendTimeout(_connection, msecs - elapse);
+				setSendTimeout(_connection, timeout - elapse);
 				auto sendlen = _connection.send(sendbuf);
 				if (sendlen == -1 || sendbuf.length < sendlen)
 					return false;
@@ -253,7 +254,7 @@ public:
 			return false;
 		
 		// ボディ送信
-		if (!sendData(res.content))
+		if (!sendData(cast(const char[])res.content))
 			return false;
 		
 		return true;
@@ -298,15 +299,11 @@ public:
 	});
 	t.executeInNewThread();
 	Request req;
-	auto reqresult = httpd.receive(req, 1000);
+	auto reqresult = httpd.receive(req, 1000.msecs);
 	assert(reqresult);
 	assert(req.header["host"] == format!"localhost:%d"(port));
 	assert(req.header["user-agent"] == "hoge");
-	Response res;
-	res.status = "HTTP/1.1 200 OK";
-	res.header["Content-Type"] = "text/plain";
-	res.content = "SUCCESS";
-	httpd.send(res);
+	httpd.send(Response(HttpStatusLine.ok, "SUCCESS", "text/plain"));
 	t.yieldForce();
 }
 
@@ -357,18 +354,31 @@ public:
 	});
 	t.executeInNewThread();
 	Request req;
-	auto reqresult = httpd.receive(req, 1000);
+	auto reqresult = httpd.receive(req, 1000.msecs);
 	assert(reqresult);
 	assert(req.header["host"] == format!"localhost:%d"(port));
 	assert(req.header["connection"] == "keep-alive");
 	assert(req.header["user-agent"] == "hoge");
 	assert(req.header["accept"] == "text/plain");
 	assert(req.header["accept-encoding"] == "gzip, deflate");
-	Response res;
-	res.status = "HTTP/1.1 200 OK";
-	res.header["Content-Type"] = "text/plain";
-	res.content = "SUCCESS";
-	httpd.send(res);
+	httpd.send(Response(HttpStatusLine.ok, "SUCCESS", "text/plain"));
 	t.yieldForce();
 }
 
+/*******************************************************************************
+ * 
+ */
+auto asyncComm(ref Httpd httpd, Response delegate(ref Request req) onRecv,
+	Duration recvTimeout = 30.seconds, Duration sendTimeout = 1000.msecs)
+{
+	import std.parallelism, std.exception;
+	auto t = task({
+		scope (failure)
+			httpd.close();
+		Request req;
+		httpd.receive(req, recvTimeout).enforce("Receive failed.");
+		httpd.send(onRecv(req), sendTimeout).enforce("Send failed.");
+	});
+	t.executeInNewThread();
+	return t;
+}

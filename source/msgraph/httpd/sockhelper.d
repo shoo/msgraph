@@ -7,16 +7,15 @@ module msgraph.httpd.sockhelper;
 
 package(msgraph.httpd):
 
-
+import core.time;
 import std.socket;
 
 /*******************************************************************************
  * $(INTERNAL)
  */
-bool select(Socket sock, scope bool* readable, scope bool* writable, scope bool* err, in uint msecs) nothrow @trusted
+bool select(Socket sock, scope bool* readable, scope bool* writable, scope bool* err, Duration timeout) nothrow @trusted
 {
 	static import core.time;
-	auto tim = core.time.msecs(msecs);
 	SocketSet readfds;
 	SocketSet writefds;
 	SocketSet errfds;
@@ -52,7 +51,7 @@ bool select(Socket sock, scope bool* readable, scope bool* writable, scope bool*
 	}
 	try
 	{
-		if (sock.select(readfds, writefds, errfds, tim) == -1)
+		if (sock.select(readfds, writefds, errfds, timeout) == -1)
 			return false;
 	}
 	catch (Exception)
@@ -75,7 +74,7 @@ void select(
 	scope void delegate() nothrow @safe @nogc onReadable,
 	scope void delegate() nothrow @safe @nogc onWritable,
 	scope void delegate() nothrow @safe @nogc onError,
-	in uint msecs = 0) @trusted nothrow
+	Duration timeout = 0.msecs) @trusted nothrow
 {
 	bool readable;
 	bool writable;
@@ -85,7 +84,7 @@ void select(
 		onReadable ? &readable : null,
 		onWritable ? &writable : null,
 		onError    ? &err      : null,
-		msecs))
+		timeout))
 	{
 		if (readable)
 			onReadable();
@@ -97,21 +96,21 @@ void select(
 }
 
 /// $(INTERNAL)
-bool waitReadable(Socket sock, uint msecs) nothrow @trusted
+bool waitReadable(Socket sock, Duration timeout) nothrow @trusted
 {
 	bool rd, er;
-	return select(sock, &rd, null, &er, msecs) && rd && !er;
+	return select(sock, &rd, null, &er, timeout) && rd && !er;
 }
 
 /// $(INTERNAL)
-bool waitWritable(Socket sock, uint msecs) nothrow @trusted
+bool waitWritable(Socket sock, Duration timeout) nothrow @trusted
 {
 	bool wt, er;
-	return select(sock, null, &wt, &er, msecs) && wt && !er;
+	return select(sock, null, &wt, &er, timeout) && wt && !er;
 }
 
 /// $(INTERNAL)
-void setRecvTimeout(Socket sock, uint msecs) nothrow @trusted
+void setRecvTimeout(Socket sock, Duration timeout) nothrow @trusted
 {
 	import std.exception;
 	struct TimeVal
@@ -119,12 +118,13 @@ void setRecvTimeout(Socket sock, uint msecs) nothrow @trusted
 		int sec;
 		int usec;
 	}
-	TimeVal[1] dat = [TimeVal(msecs / 1000, (msecs % 1000) * 1000)];
+	TimeVal[1] dat;
+	timeout.split!("seconds", "usecs")(dat[0].sec, dat[0].usec);
 	sock.setOption(SocketOptionLevel.SOCKET, SocketOption.RCVTIMEO, dat[]).collectException();
 }
 
 /// $(INTERNAL)
-void setSendTimeout(Socket sock, uint msecs) nothrow @trusted
+void setSendTimeout(Socket sock, Duration timeout) nothrow @trusted
 {
 	import std.exception;
 	struct TimeVal
@@ -132,6 +132,7 @@ void setSendTimeout(Socket sock, uint msecs) nothrow @trusted
 		int sec;
 		int usec;
 	}
-	TimeVal[1] dat = [TimeVal(msecs / 1000, (msecs % 1000) * 1000)];
+	TimeVal[1] dat;
+	timeout.split!("seconds", "usecs")(dat[0].sec, dat[0].usec);
 	sock.setOption(SocketOptionLevel.SOCKET, SocketOption.SNDTIMEO, dat[]).collectException();
 }
