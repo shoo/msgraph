@@ -3,6 +3,7 @@
  */
 module msgraph.graph.graph;
 
+import core.time;
 import msgraph.graph.auth;
 import msgraph.graph.httphelper;
 import msgraph.graph.exception;
@@ -31,13 +32,30 @@ private:
 	string _redirectUri;
 	string[] _requireScope;
 	Appender!(ubyte[]) _contentBuffer;
+	debug (MsGraphTest)
+	{
+		package(msgraph) string[string] _debugUrlReplaceInfo;
+	}
 	
 	void _resetClient(in char[] url, HTTP.Method method)
 	{
 		_contentBuffer.shrinkTo(0);
 		_client.postData = null;
 		_client.clearRequestHeaders();
-		_client.url = url;
+		debug (MsGraphTest)
+		{
+			string tempUrl = url.idup;
+			foreach (k, v; _debugUrlReplaceInfo)
+			{
+				import std.regex: regex, replaceFirst;
+				tempUrl = replaceFirst(tempUrl, regex(k), v);
+			}
+			_client.url = tempUrl;
+		}
+		else
+		{
+			_client.url = url;
+		}
 		_client.method = method;
 		if (_accessToken.length > 0)
 			_client.addRequestHeader("Authorization", "Bearer " ~ _accessToken);
@@ -143,7 +161,7 @@ public:
 	{
 		import std.process: browse;
 		import std.uri: encodeComponent;
-		import std.base64: Base64;
+		import std.base64: Base64URLNoPadding;
 		_client = HTTP();
 		_client.onReceive = (ubyte[] buf)
 		{
@@ -160,7 +178,7 @@ public:
 			// アクセストークンが指定されている場合
 			_accessToken = info.accessToken;
 			_refreshToken = info.refreshToken;
-			auto accTokJson = parseJSON(cast(string)Base64.decode(accessToken.split(".")[1]));
+			auto accTokJson = parseJSON(cast(string)Base64URLNoPadding.decode(accessToken.split(".")[1]));
 			_accessTokenExpires = SysTime.fromUnixTime(accTokJson["exp"].get!ulong, UTC()).toLocalTime();
 		}
 		else if (info.clientSecret is null)
@@ -497,7 +515,7 @@ public:
 /*******************************************************************************
  * $(MARK native app only)
  */
-bool setupWithInstanceServer(ref Graph g, AuthInfo authInfo)
+bool setupWithInstanceServer(ref Graph g, AuthInfo authInfo, Duration dur = 30.seconds)
 {
 	import std.process: browse;
 	InstanceAuthServer authServer;
@@ -515,4 +533,88 @@ bool setupWithInstanceServer(ref Graph g, AuthInfo authInfo)
 	authInfo.redirectUri = authServer.endpointUri;
 	g.setup(authInfo);
 	return ret;
+}
+
+@system unittest
+{
+	import std.process: browse;
+	import std.parallelism: task;
+	import std.net.curl: get;
+	import std.conv: text;
+	import msgraph.httpd: Httpd, Request, Response;
+	InstanceAuthServer authServer;
+	bool ret;
+	AuthInfo authInfo;
+	Graph g;
+	
+	with (authInfo)
+	{
+		tenantId = "testtenant";
+		clientId = "testclient";
+	}
+	authInfo.state = getRandomString();
+	auto t = task({
+		get(authServer.endpointUri ~ "/?code=testcode&state=" ~ authInfo.state);
+	});
+	authInfo.onAuthCodeRequired = (string url)
+	{
+		t.executeInNewThread();
+		if (authServer.acceptCode(authInfo.state))
+			ret = true;
+	};
+	authServer.onAuthCodeAcquired = &g.authorize;
+	authServer.listen();
+	authInfo.redirectUri = authServer.endpointUri;
+	Httpd httpd;
+	httpd.listen();
+	g._debugUrlReplaceInfo = ["https://login.microsoftonline.com": "http://localhost:".text(httpd.listeningPort)];
+	auto t2 = task({
+		Request req;
+		httpd.receive(req, 1000);
+		Response res;
+		res.status = "HTTP/1.1 200 OK";
+		res.header["Content-Type"] = "application/json";
+		res.content = `{"access_token": "testacctoken", "refresh_token": "testreftoken", "expires_in": 12345}`;
+		httpd.send(res);
+	});
+	t2.executeInNewThread();
+	g.setup(authInfo);
+	t.yieldForce();
+	t2.yieldForce();
+	assert(ret);
+	assert(g.accessToken == "testacctoken");
+	assert(g.refreshToken == "testreftoken");
+}
+
+
+@system unittest
+{
+	import std.conv: text;
+	import std.base64;
+	import std.parallelism: task;
+	import std.json;
+	import std.string;
+	import msgraph.httpd;
+	auto acctok = ("acctok."
+		~ Base64URLNoPadding.encode(JSONValue(["exp": 12345]).toString.representation)
+		~ ".test").idup;
+	auto g = Graph("testtenant", "testclient", acctok, null, []);
+	auto httpd = Httpd();
+	httpd.listen();
+	auto t2 = task({
+		Request req;
+		httpd.receive(req, 1000);
+		assert(req.path == "/v1.0/me/");
+		assert(req.header["authorization"] == "Bearer " ~ acctok);
+		Response res;
+		res.status = "HTTP/1.1 200 OK";
+		res.header["Content-Type"] = "application/json";
+		res.content = `{}`;
+		httpd.send(res);
+	});
+	g._debugUrlReplaceInfo = ["https://graph.microsoft.com": "http://localhost:".text(httpd.listeningPort)];
+	t2.executeInNewThread();
+	auto res = g.get("/me/");
+	assert(cast(const char[])res.responseBody == "{}");
+	t2.yieldForce();
 }
