@@ -13,11 +13,18 @@ This project provides a library to retrieve and manipulate information associate
 [msgraph's API lists are here](https://shoo.github.io/msgraph/)  
 If you are using dub, you can add a dependency by describing it as follows:
 
+```sh
+dub add msgraph
+```
+
+Or you can add it directly to the project file.
+
 ```json
 "dependencies": {
-    "msgraph": "~>1.0.0",
+    "msgraph": "~>0.0.1",
 }
 ```
+
 ## Authorize
 There are two ways.
 - for native application (ex. windows desktop appliation)
