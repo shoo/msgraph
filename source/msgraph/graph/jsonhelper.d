@@ -1,5 +1,7 @@
 /*******************************************************************************
  * JSON Helpers
+ * 
+ * License: [BSL-1.0](http://boost.org/LICENSE_1_0.txt).
  */
 module msgraph.graph.jsonhelper;
 

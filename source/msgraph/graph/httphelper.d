@@ -2,6 +2,8 @@
  * HTTP helpers
  * 
  * $(INTERNAL_MODULE)
+ * 
+ * License: [BSL-1.0](http://boost.org/LICENSE_1_0.txt).
  */
 module msgraph.graph.httphelper;
 
