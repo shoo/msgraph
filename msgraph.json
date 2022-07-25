@@ -3,20 +3,20 @@
   "name" : "msgraph",
   "kind" : "module",
   "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/package.d",
-  "comment" : " Library of Microsoft Graph for D\n",
+  "comment" : " Library of Microsoft Graph for D\n\n License: [BSL-1.0](http://boost.org/LICENSE_1_0.txt).\n",
   "members" : [
    {
     "name" : "msgraph.graph",
     "kind" : "import",
     "comment" : "\n",
-    "line" : 8,
+    "line" : 10,
     "char" : 15
    },
    {
     "name" : "msgraph.user",
     "kind" : "import",
     "comment" : "\n",
-    "line" : 10,
+    "line" : 12,
     "char" : 15
    }
   ]
@@ -25,27 +25,27 @@
   "name" : "msgraph.graph",
   "kind" : "module",
   "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/graph/package.d",
-  "comment" : " Microsoft Graph public imported packages\n",
+  "comment" : " Microsoft Graph public imported packages\n\n License: [BSL-1.0](http://boost.org/LICENSE_1_0.txt).\n",
   "members" : [
    {
     "name" : "msgraph.graph.graph",
-    "kind" : "import",
-    "comment" : "\n",
-    "line" : 7,
-    "char" : 15
-   },
-   {
-    "name" : "msgraph.graph.auth",
     "kind" : "import",
     "comment" : "\n",
     "line" : 9,
     "char" : 15
    },
    {
-    "name" : "msgraph.graph.exception",
+    "name" : "msgraph.graph.auth",
     "kind" : "import",
     "comment" : "\n",
     "line" : 11,
+    "char" : 15
+   },
+   {
+    "name" : "msgraph.graph.exception",
+    "kind" : "import",
+    "comment" : "\n",
+    "line" : 13,
     "char" : 15
    }
   ]
@@ -54,12 +54,12 @@
   "name" : "msgraph.graph.auth",
   "kind" : "module",
   "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/graph/auth.d",
-  "comment" : " Authenticate/Authorize helpers\n",
+  "comment" : " Authenticate/Authorize helpers\n\n License: [BSL-1.0](http://boost.org/LICENSE_1_0.txt).\n",
   "members" : [
    {
     "name" : "core.time",
     "kind" : "import",
-    "line" : 6,
+    "line" : 8,
     "char" : 8,
     "protection" : "private"
    },
@@ -68,7 +68,7 @@
     "kind" : "struct",
     "protection" : "public",
     "comment" : " Auth infomations\n\n - for user application:\n     https://docs.microsoft.com/ja-jp/graph/auth-v2-user\n - for service application:\n     https://docs.microsoft.com/ja-jp/graph/auth-v2-service\n",
-    "line" : 16,
+    "line" : 18,
     "char" : 1,
     "members" : [
      {
@@ -76,7 +76,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "Tenant ID\n",
-      "line" : 19,
+      "line" : 21,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 0
@@ -86,7 +86,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "Client ID\n",
-      "line" : 21,
+      "line" : 23,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 16
@@ -96,7 +96,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "$(MARK service app only) Client secret\n",
-      "line" : 23,
+      "line" : 25,
       "char" : 9,
       "deco" : "Aya",
       "init" : "null",
@@ -107,7 +107,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "$(MARK native app only)\n",
-      "line" : 25,
+      "line" : 27,
       "char" : 11,
       "deco" : "AAya",
       "init" : "[\"offline_access\", \"user.read\"]",
@@ -118,7 +118,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "$(MARK native app only)\n",
-      "line" : 27,
+      "line" : 29,
       "char" : 9,
       "deco" : "Aya",
       "init" : "\"https://login.microsoftonline.com/common/oauth2/nativeclient\"",
@@ -129,7 +129,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "$(MARK native app only)\n",
-      "line" : 29,
+      "line" : 31,
       "char" : 9,
       "deco" : "Aya",
       "init" : "\"query\"",
@@ -140,7 +140,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "$(MARK native app only)\n",
-      "line" : 31,
+      "line" : 33,
       "char" : 9,
       "deco" : "Aya",
       "init" : "\"12345\"",
@@ -151,7 +151,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "$(MARK native app only)\n",
-      "line" : 33,
+      "line" : 35,
       "char" : 9,
       "deco" : "Aya",
       "init" : "null",
@@ -162,7 +162,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "$(MARK native app only)\n",
-      "line" : 35,
+      "line" : 37,
       "char" : 9,
       "deco" : "Aya",
       "init" : "null",
@@ -173,7 +173,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "$(MARK native app only)\n",
-      "line" : 37,
+      "line" : 39,
       "char" : 28,
       "deco" : "DFAyaZv",
       "init" : "null",
@@ -186,13 +186,13 @@
     "kind" : "struct",
     "protection" : "public",
     "comment" : " $(MARK native app only)\n",
-    "line" : 43,
+    "line" : 45,
     "char" : 1,
     "members" : [
      {
       "name" : "msgraph.httpd",
       "kind" : "import",
-      "line" : 46,
+      "line" : 48,
       "char" : 9,
       "protection" : "private"
      },
@@ -200,7 +200,7 @@
       "name" : "_httpd",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 47,
+      "line" : 49,
       "char" : 8,
       "deco" : "S7msgraph5httpd6daemon5Httpd",
       "offset" : 0
@@ -209,7 +209,7 @@
       "name" : "_code",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 48,
+      "line" : 50,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 16
@@ -218,7 +218,7 @@
       "name" : "_state",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 49,
+      "line" : 51,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 32
@@ -228,7 +228,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 55,
+      "line" : 57,
       "char" : 29,
       "deco" : "DFAyaZv",
       "init" : "null",
@@ -239,10 +239,10 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 60,
+      "line" : 62,
       "char" : 7,
       "deco" : "FZv",
-      "endline" : 63,
+      "endline" : 65,
       "endchar" : 2
      },
      {
@@ -250,10 +250,10 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 68,
+      "line" : 70,
       "char" : 9,
       "deco" : "xFZAya",
-      "endline" : 72,
+      "endline" : 74,
       "endchar" : 2
      },
      {
@@ -261,10 +261,10 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 77,
+      "line" : 79,
       "char" : 9,
       "deco" : "xFZAya",
-      "endline" : 80,
+      "endline" : 82,
       "endchar" : 2
      },
      {
@@ -272,7 +272,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 85,
+      "line" : 87,
       "char" : 7,
       "deco" : "FAyaS4core4time8DurationZb",
       "originalType" : "bool(string state, Duration timeout = 30.seconds)",
@@ -287,14 +287,14 @@
         "default" : "dur(30L)"
        }
       ],
-      "endline" : 109,
+      "endline" : 111,
       "endchar" : 2
      },
      {
       "name" : "~this",
       "kind" : "destructor",
       "protection" : "public",
-      "line" : 43,
+      "line" : 45,
       "char" : 1,
       "deco" : "FNeZv"
      },
@@ -307,7 +307,7 @@
       "name" : "opAssign",
       "kind" : "generated function",
       "protection" : "public",
-      "line" : 43,
+      "line" : 45,
       "char" : 1,
       "deco" : "FNcNjNeS7msgraph5graph4auth18InstanceAuthServerZQBp",
       "parameters" : [
@@ -325,19 +325,19 @@
   "name" : "msgraph.graph.exception",
   "kind" : "module",
   "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/graph/exception.d",
-  "comment" : " Exception type definitions\n",
+  "comment" : " Exception type definitions\n\n License: [BSL-1.0](http://boost.org/LICENSE_1_0.txt).\n",
   "members" : [
    {
     "name" : "std.exception",
     "kind" : "import",
-    "line" : 6,
+    "line" : 8,
     "char" : 8,
     "protection" : "private"
    },
    {
     "name" : "std.json",
     "kind" : "import",
-    "line" : 7,
+    "line" : 9,
     "char" : 8,
     "protection" : "private"
    },
@@ -345,7 +345,7 @@
     "kind" : "template",
     "protection" : "public",
     "comment" : "\n",
-    "line" : 12,
+    "line" : 14,
     "char" : 7,
     "name" : "basicGraphExceptionCtors",
     "parameters" : [],
@@ -354,7 +354,7 @@
       "name" : "this",
       "kind" : "constructor",
       "comment" : "\n",
-      "line" : 17,
+      "line" : 19,
       "char" : 2,
       "type" : "pure nothrow @nogc @safe (string msg, string file = __FILE__, size_t line = __LINE__, Throwable next = null)",
       "parameters" : [
@@ -378,14 +378,14 @@
         "default" : "null"
        }
       ],
-      "endline" : 21,
+      "endline" : 23,
       "endchar" : 2
      },
      {
       "name" : "this",
       "kind" : "constructor",
       "comment" : "ditto\n",
-      "line" : 24,
+      "line" : 26,
       "char" : 2,
       "type" : "pure nothrow @nogc @safe (string msg, Throwable next, string file = __FILE__, size_t line = __LINE__)",
       "parameters" : [
@@ -408,14 +408,14 @@
         "default" : "__LINE__"
        }
       ],
-      "endline" : 28,
+      "endline" : 30,
       "endchar" : 2
      },
      {
       "name" : "this",
       "kind" : "constructor",
       "comment" : "ditto\n",
-      "line" : 31,
+      "line" : 33,
       "char" : 2,
       "type" : "pure nothrow @nogc @safe (string msg, JSONValue detail, string file = __FILE__, size_t line = __LINE__, Throwable next = null)",
       "parameters" : [
@@ -443,14 +443,14 @@
         "default" : "null"
        }
       ],
-      "endline" : 36,
+      "endline" : 38,
       "endchar" : 2
      },
      {
       "name" : "this",
       "kind" : "constructor",
       "comment" : "ditto\n",
-      "line" : 39,
+      "line" : 41,
       "char" : 2,
       "type" : "pure nothrow @nogc @safe (string msg, JSONValue detail, Throwable next, string file = __FILE__, size_t line = __LINE__)",
       "parameters" : [
@@ -477,7 +477,7 @@
         "default" : "__LINE__"
        }
       ],
-      "endline" : 44,
+      "endline" : 46,
       "endchar" : 2
      }
     ]
@@ -487,7 +487,7 @@
     "kind" : "class",
     "protection" : "public",
     "comment" : "\n",
-    "line" : 50,
+    "line" : 52,
     "char" : 1,
     "base" : "object.Exception",
     "members" : [
@@ -495,7 +495,7 @@
       "name" : "_detail",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 53,
+      "line" : 55,
       "char" : 12,
       "deco" : "S3std4json9JSONValue",
       "offset" : 80
@@ -505,7 +505,7 @@
       "kind" : "constructor",
       "protection" : "public",
       "comment" : " Params:\n      msg    = The message for the exception.\n      next   = The previous exception in the chain of exceptions.\n      file   = The file where the exception occurred.\n      line   = The line number where the exception occurred.\n      detail = The detail information with JSON\n",
-      "line" : 63,
+      "line" : 65,
       "char" : 2,
       "deco" : "FNaNbNiNfAyaQdmC6object9ThrowableZC7msgraph5graph9exception14GraphException",
       "originalType" : "pure nothrow @nogc @safe (string msg, string file = __FILE__, size_t line = __LINE__, Throwable next = null)",
@@ -530,7 +530,7 @@
         "default" : "null"
        }
       ],
-      "endline" : 66,
+      "endline" : 68,
       "endchar" : 2
      },
      {
@@ -538,7 +538,7 @@
       "kind" : "constructor",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 69,
+      "line" : 71,
       "char" : 2,
       "deco" : "FNaNbNiNfAyaC6object9ThrowableQvmZC7msgraph5graph9exception14GraphException",
       "originalType" : "pure nothrow @nogc @safe (string msg, Throwable next, string file = __FILE__, size_t line = __LINE__)",
@@ -562,7 +562,7 @@
         "default" : "cast(ulong)__LINE__"
        }
       ],
-      "endline" : 72,
+      "endline" : 74,
       "endchar" : 2
      },
      {
@@ -570,7 +570,7 @@
       "kind" : "constructor",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 75,
+      "line" : 77,
       "char" : 2,
       "deco" : "FNaNbNiNfAyaS3std4json9JSONValueQxmC6object9ThrowableZC7msgraph5graph9exception14GraphException",
       "originalType" : "pure nothrow @nogc @safe (string msg, JSONValue detail, string file = __FILE__, size_t line = __LINE__, Throwable next = null)",
@@ -599,7 +599,7 @@
         "default" : "null"
        }
       ],
-      "endline" : 80,
+      "endline" : 82,
       "endchar" : 2
      },
      {
@@ -607,7 +607,7 @@
       "kind" : "constructor",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 83,
+      "line" : 85,
       "char" : 2,
       "deco" : "FNaNbNiNfAyaS3std4json9JSONValueC6object9ThrowableQBpmZC7msgraph5graph9exception14GraphException",
       "originalType" : "pure nothrow @nogc @safe (string msg, JSONValue detail, Throwable next, string file = __FILE__, size_t line = __LINE__)",
@@ -635,7 +635,7 @@
         "default" : "cast(ulong)__LINE__"
        }
       ],
-      "endline" : 88,
+      "endline" : 90,
       "endchar" : 2
      },
      {
@@ -643,10 +643,10 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 93,
+      "line" : 95,
       "char" : 19,
       "deco" : "xFNaNbNiZxS3std4json9JSONValue",
-      "endline" : 96,
+      "endline" : 98,
       "endchar" : 2
      }
     ]
@@ -656,7 +656,7 @@
     "kind" : "class",
     "protection" : "public",
     "comment" : "\n",
-    "line" : 104,
+    "line" : 106,
     "char" : 1,
     "base" : "msgraph.graph.exception.GraphException",
     "members" : [
@@ -664,7 +664,7 @@
       "name" : "basicGraphExceptionCtors!()",
       "kind" : "mixin",
       "protection" : "public",
-      "line" : 106,
+      "line" : 108,
       "char" : 2
      }
     ]
@@ -675,33 +675,33 @@
   "name" : "msgraph.graph.graph",
   "kind" : "module",
   "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/graph/graph.d",
-  "comment" : " Microsoft Graph object\n",
+  "comment" : " Microsoft Graph object\n\n License: [BSL-1.0](http://boost.org/LICENSE_1_0.txt).\n",
   "members" : [
    {
     "name" : "core.time",
-    "kind" : "import",
-    "line" : 6,
-    "char" : 8,
-    "protection" : "private"
-   },
-   {
-    "name" : "msgraph.graph.auth",
-    "kind" : "import",
-    "line" : 7,
-    "char" : 8,
-    "protection" : "private"
-   },
-   {
-    "name" : "msgraph.graph.httphelper",
     "kind" : "import",
     "line" : 8,
     "char" : 8,
     "protection" : "private"
    },
    {
-    "name" : "msgraph.graph.exception",
+    "name" : "msgraph.graph.auth",
     "kind" : "import",
     "line" : 9,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "msgraph.graph.httphelper",
+    "kind" : "import",
+    "line" : 10,
+    "char" : 8,
+    "protection" : "private"
+   },
+   {
+    "name" : "msgraph.graph.exception",
+    "kind" : "import",
+    "line" : 11,
     "char" : 8,
     "protection" : "private"
    },
@@ -710,13 +710,13 @@
     "kind" : "struct",
     "protection" : "public",
     "comment" : "\n",
-    "line" : 14,
+    "line" : 16,
     "char" : 1,
     "members" : [
      {
       "name" : "etc.c.curl",
       "kind" : "import",
-      "line" : 17,
+      "line" : 19,
       "char" : 9,
       "protection" : "private",
       "selective" : [
@@ -728,42 +728,42 @@
      {
       "name" : "std.net.curl",
       "kind" : "import",
-      "line" : 18,
+      "line" : 20,
       "char" : 9,
       "protection" : "private"
      },
      {
       "name" : "std.array",
       "kind" : "import",
-      "line" : 19,
+      "line" : 21,
       "char" : 9,
       "protection" : "private"
      },
      {
       "name" : "std.datetime",
       "kind" : "import",
-      "line" : 20,
+      "line" : 22,
       "char" : 9,
       "protection" : "private"
      },
      {
       "name" : "std.json",
       "kind" : "import",
-      "line" : 21,
+      "line" : 23,
       "char" : 9,
       "protection" : "private"
      },
      {
       "name" : "std.string",
       "kind" : "import",
-      "line" : 22,
+      "line" : 24,
       "char" : 9,
       "protection" : "private"
      },
      {
       "name" : "std.exception",
       "kind" : "import",
-      "line" : 23,
+      "line" : 25,
       "char" : 9,
       "protection" : "private"
      },
@@ -771,7 +771,7 @@
       "name" : "_client",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 25,
+      "line" : 27,
       "char" : 9,
       "deco" : "S3std3net4curl4HTTP",
       "offset" : 0
@@ -780,7 +780,7 @@
       "name" : "_clientId",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 26,
+      "line" : 28,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 8
@@ -789,7 +789,7 @@
       "name" : "_tenantId",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 27,
+      "line" : 29,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 24
@@ -798,7 +798,7 @@
       "name" : "_accessToken",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 28,
+      "line" : 30,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 40
@@ -807,7 +807,7 @@
       "name" : "_accessTokenExpires",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 29,
+      "line" : 31,
       "char" : 10,
       "deco" : "S3std8datetime7systime7SysTime",
       "offset" : 56
@@ -816,7 +816,7 @@
       "name" : "_refreshToken",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 30,
+      "line" : 32,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 72
@@ -825,7 +825,7 @@
       "name" : "_clientSecret",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 31,
+      "line" : 33,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 88
@@ -834,7 +834,7 @@
       "name" : "_redirectUri",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 32,
+      "line" : 34,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 104
@@ -843,7 +843,7 @@
       "name" : "_requireScope",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 33,
+      "line" : 35,
       "char" : 11,
       "deco" : "AAya",
       "offset" : 120
@@ -852,7 +852,7 @@
       "name" : "_contentBuffer",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 34,
+      "line" : 36,
       "char" : 21,
       "deco" : "S3std5array__T8AppenderTAhZQn",
       "offset" : 136
@@ -861,7 +861,7 @@
       "name" : "_resetClient",
       "kind" : "function",
       "protection" : "private",
-      "line" : 40,
+      "line" : 42,
       "char" : 7,
       "deco" : "FIAaE3std3net4curl4HTTP6MethodZv",
       "originalType" : "void(in char[] url, HTTP.Method method)",
@@ -878,27 +878,27 @@
         "deco" : "E3std3net4curl4HTTP6Method"
        }
       ],
-      "endline" : 62,
+      "endline" : 64,
       "endchar" : 2
      },
      {
       "name" : "_updateTokensForService",
       "kind" : "function",
       "protection" : "private",
-      "line" : 64,
+      "line" : 66,
       "char" : 7,
       "deco" : "FZv",
-      "endline" : 80,
+      "endline" : 82,
       "endchar" : 2
      },
      {
       "name" : "_updateTokensForUserApp",
       "kind" : "function",
       "protection" : "private",
-      "line" : 82,
+      "line" : 84,
       "char" : 7,
       "deco" : "FZv",
-      "endline" : 103,
+      "endline" : 105,
       "endchar" : 2
      },
      {
@@ -906,7 +906,7 @@
       "kind" : "constructor",
       "protection" : "public",
       "comment" : " Setup Microsoft Graph\n\n Params:\n      clientId     = Client ID (from Asure Active Directory)\n      tenantId     = Tenant ID (from Asure Active Directory)\n      clientSecret = Client secret (from Asure Active Directory, provisioned client secret).\n                     This is set only for server application.\n      authInfo     = Detail information for authrization.\n",
-      "line" : 120,
+      "line" : 122,
       "char" : 2,
       "deco" : "FNcAyaQdAQgQiZS7msgraph5graphQg5Graph",
       "originalType" : "ref (string tenantId, string clientId, string[] requireScope, string clientSecret = null)",
@@ -929,7 +929,7 @@
         "default" : "null"
        }
       ],
-      "endline" : 123,
+      "endline" : 125,
       "endchar" : 2
      },
      {
@@ -937,7 +937,7 @@
       "kind" : "constructor",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 125,
+      "line" : 127,
       "char" : 2,
       "deco" : "FNcAyaQdQfQhAQkZS7msgraph5graphQg5Graph",
       "originalType" : "ref (string tenantId, string clientId, string accessToken, string refreshToken, string[] requireScope)",
@@ -963,7 +963,7 @@
         "deco" : "AAya"
        }
       ],
-      "endline" : 128,
+      "endline" : 130,
       "endchar" : 2
      },
      {
@@ -971,7 +971,7 @@
       "kind" : "constructor",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 130,
+      "line" : 132,
       "char" : 2,
       "deco" : "FNcS7msgraph5graph4auth8AuthInfoZSQBeQzQBb5Graph",
       "originalType" : "ref (AuthInfo authInfo)",
@@ -981,7 +981,7 @@
         "deco" : "S7msgraph5graph4auth8AuthInfo"
        }
       ],
-      "endline" : 133,
+      "endline" : 135,
       "endchar" : 2
      },
      {
@@ -989,7 +989,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 136,
+      "line" : 138,
       "char" : 7,
       "deco" : "FAyaQdAQgQiZv",
       "parameters" : [
@@ -1011,7 +1011,7 @@
         "default" : "null"
        }
       ],
-      "endline" : 144,
+      "endline" : 146,
       "endchar" : 2
      },
      {
@@ -1019,7 +1019,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 147,
+      "line" : 149,
       "char" : 7,
       "deco" : "FAyaQdQfQhAQkZv",
       "parameters" : [
@@ -1044,7 +1044,7 @@
         "deco" : "AAya"
        }
       ],
-      "endline" : 156,
+      "endline" : 158,
       "endchar" : 2
      },
      {
@@ -1052,7 +1052,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 160,
+      "line" : 162,
       "char" : 7,
       "deco" : "FS7msgraph5graph4auth8AuthInfoZv",
       "parameters" : [
@@ -1061,7 +1061,7 @@
         "deco" : "S7msgraph5graph4auth8AuthInfo"
        }
       ],
-      "endline" : 213,
+      "endline" : 215,
       "endchar" : 2
      },
      {
@@ -1069,7 +1069,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : " $(MARK native app only)\n",
-      "line" : 218,
+      "line" : 220,
       "char" : 7,
       "deco" : "FAyaZv",
       "parameters" : [
@@ -1078,7 +1078,7 @@
         "deco" : "Aya"
        }
       ],
-      "endline" : 238,
+      "endline" : 240,
       "endchar" : 2
      },
      {
@@ -1086,10 +1086,10 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 243,
+      "line" : 245,
       "char" : 7,
       "deco" : "FZv",
-      "endline" : 253,
+      "endline" : 255,
       "endchar" : 2
      },
      {
@@ -1097,10 +1097,10 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 258,
+      "line" : 260,
       "char" : 9,
       "deco" : "xFZAya",
-      "endline" : 261,
+      "endline" : 263,
       "endchar" : 2
      },
      {
@@ -1108,10 +1108,10 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 266,
+      "line" : 268,
       "char" : 10,
       "deco" : "xFZS3std8datetime7systime7SysTime",
-      "endline" : 269,
+      "endline" : 271,
       "endchar" : 2
      },
      {
@@ -1119,10 +1119,10 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 274,
+      "line" : 276,
       "char" : 7,
       "deco" : "xFZb",
-      "endline" : 277,
+      "endline" : 279,
       "endchar" : 2
      },
      {
@@ -1130,10 +1130,10 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : " $(MARK native app only)\n",
-      "line" : 282,
+      "line" : 284,
       "char" : 9,
       "deco" : "xFZAya",
-      "endline" : 285,
+      "endline" : 287,
       "endchar" : 2
      },
      {
@@ -1141,7 +1141,7 @@
       "kind" : "alias",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 290,
+      "line" : 292,
       "char" : 2,
       "deco" : "E3std3net4curl4HTTP6Method",
       "originalType" : "HTTP.Method"
@@ -1151,7 +1151,7 @@
       "kind" : "enum",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 295,
+      "line" : 297,
       "char" : 2,
       "baseDeco" : "Aya",
       "members" : [
@@ -1161,7 +1161,7 @@
         "protection" : "public",
         "value" : "\"https://graph.microsoft.com/v1.0\"",
         "comment" : "\n",
-        "line" : 298,
+        "line" : 300,
         "char" : 3
        },
        {
@@ -1170,7 +1170,7 @@
         "protection" : "public",
         "value" : "\"https://graph.microsoft.com/v1.0\"",
         "comment" : "ditto\n",
-        "line" : 300,
+        "line" : 302,
         "char" : 3
        },
        {
@@ -1179,7 +1179,7 @@
         "protection" : "public",
         "value" : "\"https://graph.microsoft.com/beta\"",
         "comment" : "\n",
-        "line" : 302,
+        "line" : 304,
         "char" : 3
        }
       ]
@@ -1189,7 +1189,7 @@
       "kind" : "struct",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 308,
+      "line" : 310,
       "char" : 2,
       "members" : [
        {
@@ -1197,7 +1197,7 @@
         "kind" : "variable",
         "protection" : "public",
         "comment" : "\n",
-        "line" : 311,
+        "line" : 313,
         "char" : 19,
         "deco" : "S3std3net4curl4HTTP10StatusLine",
         "originalType" : "HTTP.StatusLine",
@@ -1208,7 +1208,7 @@
         "kind" : "variable",
         "protection" : "public",
         "comment" : "\n",
-        "line" : 313,
+        "line" : 315,
         "char" : 18,
         "deco" : "HAyaQd",
         "offset" : 24
@@ -1218,7 +1218,7 @@
         "kind" : "variable",
         "protection" : "public",
         "comment" : "\n",
-        "line" : 315,
+        "line" : 317,
         "char" : 22,
         "deco" : "Ayh",
         "offset" : 32
@@ -1230,10 +1230,10 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 321,
+      "line" : 323,
       "char" : 18,
       "deco" : "NgFNcNjZNgS3std3net4curl4HTTP",
-      "endline" : 324,
+      "endline" : 326,
       "endchar" : 2
      },
      {
@@ -1241,7 +1241,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : " Set proxy settings\n\n Params:\n      proxy     = Hostname or URL\n      port      = Port number\n      proxyType = Type of proxy\n      authUser  = User name for proxy\n      authPass  = Password for proxy\n      authType  = Auth type of proxy\n",
-      "line" : 337,
+      "line" : 339,
       "char" : 7,
       "deco" : "FAyaZv",
       "parameters" : [
@@ -1250,7 +1250,7 @@
         "deco" : "Aya"
        }
       ],
-      "endline" : 340,
+      "endline" : 342,
       "endchar" : 2
      },
      {
@@ -1258,7 +1258,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 343,
+      "line" : 345,
       "char" : 7,
       "deco" : "FAyatE3etc1c4curl9CurlProxyZv",
       "parameters" : [
@@ -1276,7 +1276,7 @@
         "default" : "CurlProxy.http"
        }
       ],
-      "endline" : 348,
+      "endline" : 350,
       "endchar" : 2
      },
      {
@@ -1284,7 +1284,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 351,
+      "line" : 353,
       "char" : 7,
       "deco" : "FAyaQdQfE3etc1c4curl8CurlAuthZv",
       "parameters" : [
@@ -1306,7 +1306,7 @@
         "default" : "CurlAuth.basic"
        }
       ],
-      "endline" : 356,
+      "endline" : 358,
       "endchar" : 2
      },
      {
@@ -1314,7 +1314,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 359,
+      "line" : 361,
       "char" : 7,
       "deco" : "FAyatQeQgE3etc1c4curl9CurlProxyEQwQuQu8CurlAuthZv",
       "parameters" : [
@@ -1345,7 +1345,7 @@
         "default" : "CurlAuth.basic"
        }
       ],
-      "endline" : 368,
+      "endline" : 370,
       "endchar" : 2
      },
      {
@@ -1353,7 +1353,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : " Certification settings\n\n Params:\n      cafile             = PEM file of trusted CA.\n      clientCertFile     = PEM file of client cert file if required.\n      privateKeyFile     = PEM file of client private key file if required.\n      privateKeyPassword = Password of private key file if required.\n",
-      "line" : 379,
+      "line" : 381,
       "char" : 7,
       "deco" : "FIAaIQdIQgIQjZv",
       "parameters" : [
@@ -1389,7 +1389,7 @@
         "default" : "null"
        }
       ],
-      "endline" : 395,
+      "endline" : 397,
       "endchar" : 2
      },
      {
@@ -1397,7 +1397,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : " HTTP Request for Microsoft Graph API call\n",
-      "line" : 400,
+      "line" : 402,
       "char" : 13,
       "deco" : "FE3std3net4curl4HTTP6MethodE7msgraph5graphQg5Graph8EndpointIAaIQdIAhAyaZSQBtQBoQBrQBm10HttpResult",
       "parameters" : [
@@ -1437,7 +1437,7 @@
         "default" : "null"
        }
       ],
-      "endline" : 417,
+      "endline" : 419,
       "endchar" : 2
      },
      {
@@ -1445,7 +1445,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : " GET Request\n",
-      "line" : 422,
+      "line" : 424,
       "char" : 13,
       "deco" : "FIAaIQdZS7msgraph5graphQg5Graph10HttpResult",
       "parameters" : [
@@ -1464,7 +1464,7 @@
         ]
        }
       ],
-      "endline" : 425,
+      "endline" : 427,
       "endchar" : 2
      },
      {
@@ -1472,7 +1472,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 427,
+      "line" : 429,
       "char" : 13,
       "deco" : "FAyaHQeQgZS7msgraph5graphQg5Graph10HttpResult",
       "parameters" : [
@@ -1485,7 +1485,7 @@
         "deco" : "HAyaQd"
        }
       ],
-      "endline" : 430,
+      "endline" : 432,
       "endchar" : 2
      },
      {
@@ -1493,7 +1493,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 432,
+      "line" : 434,
       "char" : 13,
       "deco" : "FAyaZS7msgraph5graphQg5Graph10HttpResult",
       "parameters" : [
@@ -1502,7 +1502,7 @@
         "deco" : "Aya"
        }
       ],
-      "endline" : 435,
+      "endline" : 437,
       "endchar" : 2
      },
      {
@@ -1510,7 +1510,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : " POST Request\n",
-      "line" : 440,
+      "line" : 442,
       "char" : 13,
       "deco" : "FIAaIAhAyaZS7msgraph5graphQg5Graph10HttpResult",
       "parameters" : [
@@ -1534,7 +1534,7 @@
         "default" : "\"application/octet-stream\""
        }
       ],
-      "endline" : 443,
+      "endline" : 445,
       "endchar" : 2
      },
      {
@@ -1542,7 +1542,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 445,
+      "line" : 447,
       "char" : 13,
       "deco" : "FIAaIQdAyaZS7msgraph5graphQg5Graph10HttpResult",
       "parameters" : [
@@ -1566,7 +1566,7 @@
         "default" : "\"application/x-www-form-urlencoded\""
        }
       ],
-      "endline" : 448,
+      "endline" : 450,
       "endchar" : 2
      },
      {
@@ -1574,7 +1574,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 450,
+      "line" : 452,
       "char" : 13,
       "deco" : "FIAaS3std4json9JSONValueZS7msgraph5graphQg5Graph10HttpResult",
       "parameters" : [
@@ -1590,7 +1590,7 @@
         "deco" : "S3std4json9JSONValue"
        }
       ],
-      "endline" : 453,
+      "endline" : 455,
       "endchar" : 2
      },
      {
@@ -1598,7 +1598,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 455,
+      "line" : 457,
       "char" : 13,
       "deco" : "FIAaHAyaQdZS7msgraph5graphQg5Graph10HttpResult",
       "parameters" : [
@@ -1614,7 +1614,7 @@
         "deco" : "HAyaQd"
        }
       ],
-      "endline" : 458,
+      "endline" : 460,
       "endchar" : 2
      },
      {
@@ -1622,7 +1622,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : " PUT Request\n",
-      "line" : 463,
+      "line" : 465,
       "char" : 13,
       "deco" : "FIAaIAhAyaZS7msgraph5graphQg5Graph10HttpResult",
       "parameters" : [
@@ -1646,7 +1646,7 @@
         "default" : "\"application/octet-stream\""
        }
       ],
-      "endline" : 466,
+      "endline" : 468,
       "endchar" : 2
      },
      {
@@ -1654,7 +1654,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 468,
+      "line" : 470,
       "char" : 13,
       "deco" : "FIAaIQdAyaZS7msgraph5graphQg5Graph10HttpResult",
       "parameters" : [
@@ -1678,7 +1678,7 @@
         "default" : "\"application/x-www-form-urlencoded\""
        }
       ],
-      "endline" : 471,
+      "endline" : 473,
       "endchar" : 2
      },
      {
@@ -1686,7 +1686,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 473,
+      "line" : 475,
       "char" : 13,
       "deco" : "FIAaS3std4json9JSONValueZS7msgraph5graphQg5Graph10HttpResult",
       "parameters" : [
@@ -1702,7 +1702,7 @@
         "deco" : "S3std4json9JSONValue"
        }
       ],
-      "endline" : 476,
+      "endline" : 478,
       "endchar" : 2
      },
      {
@@ -1710,7 +1710,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 478,
+      "line" : 480,
       "char" : 13,
       "deco" : "FIAaHAyaQdZS7msgraph5graphQg5Graph10HttpResult",
       "parameters" : [
@@ -1726,7 +1726,7 @@
         "deco" : "HAyaQd"
        }
       ],
-      "endline" : 481,
+      "endline" : 483,
       "endchar" : 2
      },
      {
@@ -1734,7 +1734,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : " PATCH Request\n",
-      "line" : 486,
+      "line" : 488,
       "char" : 13,
       "deco" : "FIAaIAhAyaZS7msgraph5graphQg5Graph10HttpResult",
       "parameters" : [
@@ -1758,7 +1758,7 @@
         "default" : "\"application/octet-stream\""
        }
       ],
-      "endline" : 489,
+      "endline" : 491,
       "endchar" : 2
      },
      {
@@ -1766,7 +1766,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 491,
+      "line" : 493,
       "char" : 13,
       "deco" : "FIAaIQdAyaZS7msgraph5graphQg5Graph10HttpResult",
       "parameters" : [
@@ -1790,7 +1790,7 @@
         "default" : "\"application/x-www-form-urlencoded\""
        }
       ],
-      "endline" : 494,
+      "endline" : 496,
       "endchar" : 2
      },
      {
@@ -1798,7 +1798,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 496,
+      "line" : 498,
       "char" : 13,
       "deco" : "FIAaS3std4json9JSONValueZS7msgraph5graphQg5Graph10HttpResult",
       "parameters" : [
@@ -1814,7 +1814,7 @@
         "deco" : "S3std4json9JSONValue"
        }
       ],
-      "endline" : 499,
+      "endline" : 501,
       "endchar" : 2
      },
      {
@@ -1822,7 +1822,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 501,
+      "line" : 503,
       "char" : 13,
       "deco" : "FIAaHAyaQdZS7msgraph5graphQg5Graph10HttpResult",
       "parameters" : [
@@ -1838,7 +1838,7 @@
         "deco" : "HAyaQd"
        }
       ],
-      "endline" : 504,
+      "endline" : 506,
       "endchar" : 2
      },
      {
@@ -1846,7 +1846,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : " DELETE Request\n",
-      "line" : 509,
+      "line" : 511,
       "char" : 13,
       "deco" : "FIAaZS7msgraph5graphQg5Graph10HttpResult",
       "parameters" : [
@@ -1858,14 +1858,14 @@
         ]
        }
       ],
-      "endline" : 512,
+      "endline" : 514,
       "endchar" : 2
      },
      {
       "name" : "~this",
       "kind" : "destructor",
       "protection" : "public",
-      "line" : 14,
+      "line" : 16,
       "char" : 1,
       "deco" : "FZv"
      },
@@ -1883,7 +1883,7 @@
       "name" : "opAssign",
       "kind" : "generated function",
       "protection" : "public",
-      "line" : 14,
+      "line" : 16,
       "char" : 1,
       "deco" : "FNcNjS7msgraph5graphQg5GraphZQy",
       "parameters" : [
@@ -1900,7 +1900,7 @@
     "kind" : "function",
     "protection" : "public",
     "comment" : " $(MARK native app only)\n",
-    "line" : 518,
+    "line" : 520,
     "char" : 6,
     "deco" : "FKS7msgraph5graphQg5GraphSQxQr4auth8AuthInfoS4core4time8DurationZb",
     "originalType" : "bool(ref Graph g, AuthInfo authInfo, Duration dur = 30.seconds)",
@@ -1922,43 +1922,43 @@
       "default" : "dur(30L)"
      }
     ],
-    "endline" : 536,
+    "endline" : 538,
     "endchar" : 1
    },
    {
-    "name" : "__unittest_L538_C9",
+    "name" : "__unittest_L540_C9",
     "kind" : "function",
     "protection" : "public",
-    "line" : 538,
+    "line" : 540,
     "char" : 9,
     "storageClass" : [
      "@system"
     ],
-    "endline" : 584,
+    "endline" : 586,
     "endchar" : 1
    },
    {
-    "name" : "__unittest_L584_C9",
+    "name" : "__unittest_L586_C9",
     "kind" : "function",
     "protection" : "public",
-    "line" : 584,
+    "line" : 586,
     "char" : 9,
     "storageClass" : [
      "@system"
     ],
-    "endline" : 603,
+    "endline" : 605,
     "endchar" : 1
    },
    {
-    "name" : "__unittest_L603_C9",
+    "name" : "__unittest_L605_C9",
     "kind" : "function",
     "protection" : "public",
-    "line" : 603,
+    "line" : 605,
     "char" : 9,
     "storageClass" : [
      "@system"
     ],
-    "endline" : 624,
+    "endline" : 626,
     "endchar" : 1
    }
   ]
@@ -1967,14 +1967,14 @@
   "name" : "msgraph.graph.httphelper",
   "kind" : "module",
   "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/graph/httphelper.d",
-  "comment" : " HTTP helpers\n\n $(INTERNAL_MODULE)\n",
+  "comment" : " HTTP helpers\n\n $(INTERNAL_MODULE)\n\n License: [BSL-1.0](http://boost.org/LICENSE_1_0.txt).\n",
   "members" : [
    {
     "name" : "createQueryParam",
     "kind" : "function",
     "protection" : "package",
     "comment" : " $(INTERNAL)\n",
-    "line" : 14,
+    "line" : 16,
     "char" : 8,
     "deco" : "FNfHAyaQdZQg",
     "parameters" : [
@@ -1983,20 +1983,20 @@
       "deco" : "HAyaQd"
      }
     ],
-    "endline" : 28,
+    "endline" : 30,
     "endchar" : 1
    },
    {
-    "name" : "__unittest_L31_C7",
+    "name" : "__unittest_L33_C7",
     "kind" : "function",
     "protection" : "package",
     "comment" : "\n",
-    "line" : 31,
+    "line" : 33,
     "char" : 7,
     "storageClass" : [
      "@safe"
     ],
-    "endline" : 40,
+    "endline" : 42,
     "endchar" : 1
    },
    {
@@ -2004,7 +2004,7 @@
     "kind" : "function",
     "protection" : "package",
     "comment" : " $(INTERNAL)\n",
-    "line" : 40,
+    "line" : 42,
     "char" : 16,
     "deco" : "FNfAyaZHQfQh",
     "parameters" : [
@@ -2013,32 +2013,32 @@
       "deco" : "Aya"
      }
     ],
-    "endline" : 54,
+    "endline" : 56,
     "endchar" : 1
    },
    {
-    "name" : "__unittest_L56_C7",
+    "name" : "__unittest_L58_C7",
     "kind" : "function",
     "protection" : "package",
     "comment" : "\n",
-    "line" : 56,
+    "line" : 58,
     "char" : 7,
     "storageClass" : [
      "@safe"
     ],
-    "endline" : 64,
+    "endline" : 66,
     "endchar" : 1
    },
    {
-    "name" : "__unittest_L64_C7",
+    "name" : "__unittest_L66_C7",
     "kind" : "function",
     "protection" : "package",
-    "line" : 64,
+    "line" : 66,
     "char" : 7,
     "storageClass" : [
      "@safe"
     ],
-    "endline" : 76,
+    "endline" : 78,
     "endchar" : 1
    },
    {
@@ -2046,7 +2046,7 @@
     "kind" : "function",
     "protection" : "package",
     "comment" : " $(INTERNAL)\n",
-    "line" : 76,
+    "line" : 78,
     "char" : 8,
     "deco" : "FNfkZAya",
     "originalType" : "@safe string(uint length = 0)",
@@ -2057,20 +2057,20 @@
       "default" : "0u"
      }
     ],
-    "endline" : 86,
+    "endline" : 88,
     "endchar" : 1
    },
    {
-    "name" : "__unittest_L88_C7",
+    "name" : "__unittest_L90_C7",
     "kind" : "function",
     "protection" : "package",
     "comment" : "\n",
-    "line" : 88,
+    "line" : 90,
     "char" : 7,
     "storageClass" : [
      "@safe"
     ],
-    "endline" : 101,
+    "endline" : 103,
     "endchar" : 1
    }
   ]
@@ -2079,19 +2079,19 @@
   "name" : "msgraph.graph.jsonhelper",
   "kind" : "module",
   "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/graph/jsonhelper.d",
-  "comment" : " JSON Helpers\n",
+  "comment" : " JSON Helpers\n\n License: [BSL-1.0](http://boost.org/LICENSE_1_0.txt).\n",
   "members" : [
    {
     "name" : "std.traits",
     "kind" : "import",
-    "line" : 25,
+    "line" : 27,
     "char" : 8,
     "protection" : "private"
    },
    {
     "name" : "std.meta",
     "kind" : "import",
-    "line" : 26,
+    "line" : 28,
     "char" : 8,
     "protection" : "private"
    },
@@ -2099,7 +2099,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : "\n",
-    "line" : 36,
+    "line" : 38,
     "char" : 10,
     "name" : "assumeAttr",
     "parameters" : [
@@ -2121,7 +2121,7 @@
      {
       "name" : "assumeAttr",
       "kind" : "function",
-      "line" : 36,
+      "line" : 38,
       "char" : 10,
       "storageClass" : [
        "auto"
@@ -2137,7 +2137,7 @@
         ]
        }
       ],
-      "endline" : 41,
+      "endline" : 43,
       "endchar" : 1
      }
     ]
@@ -2146,7 +2146,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : "ditto\n",
-    "line" : 44,
+    "line" : 46,
     "char" : 10,
     "name" : "assumeAttr",
     "parameters" : [
@@ -2168,7 +2168,7 @@
      {
       "name" : "assumeAttr",
       "kind" : "function",
-      "line" : 44,
+      "line" : 46,
       "char" : 10,
       "storageClass" : [
        "auto"
@@ -2184,7 +2184,7 @@
         ]
        }
       ],
-      "endline" : 48,
+      "endline" : 50,
       "endchar" : 1
      }
     ]
@@ -2193,7 +2193,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : "ditto\n",
-    "line" : 51,
+    "line" : 53,
     "char" : 6,
     "name" : "assumeAttr",
     "parameters" : [
@@ -2211,7 +2211,7 @@
      {
       "name" : "assumeAttr",
       "kind" : "function",
-      "line" : 51,
+      "line" : 53,
       "char" : 6,
       "storageClass" : [
        "auto"
@@ -2223,7 +2223,7 @@
         "type" : "Fn"
        }
       ],
-      "endline" : 55,
+      "endline" : 57,
       "endchar" : 1
      }
     ]
@@ -2232,7 +2232,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : "\n",
-    "line" : 60,
+    "line" : 62,
     "char" : 1,
     "name" : "getFunctionAttributes",
     "parameters" : [
@@ -2245,14 +2245,14 @@
      {
       "name" : "fn",
       "kind" : "alias",
-      "line" : 62,
+      "line" : 64,
       "char" : 2,
       "type" : "T[0]"
      },
      {
       "name" : "getFunctionAttributes",
       "kind" : "variable",
-      "line" : 65,
+      "line" : 67,
       "char" : 8,
       "storageClass" : [
        "enum"
@@ -2265,7 +2265,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : "\n",
-    "line" : 80,
+    "line" : 82,
     "char" : 10,
     "name" : "assumePure",
     "parameters" : [
@@ -2282,7 +2282,7 @@
      {
       "name" : "assumePure",
       "kind" : "function",
-      "line" : 80,
+      "line" : 82,
       "char" : 10,
       "storageClass" : [
        "auto"
@@ -2298,7 +2298,7 @@
         ]
        }
       ],
-      "endline" : 83,
+      "endline" : 85,
       "endchar" : 1
      }
     ]
@@ -2307,7 +2307,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : "ditto\n",
-    "line" : 86,
+    "line" : 88,
     "char" : 6,
     "name" : "assumePure",
     "parameters" : [
@@ -2321,7 +2321,7 @@
      {
       "name" : "assumePure",
       "kind" : "function",
-      "line" : 86,
+      "line" : 88,
       "char" : 6,
       "storageClass" : [
        "auto"
@@ -2333,7 +2333,7 @@
         "type" : "T"
        }
       ],
-      "endline" : 90,
+      "endline" : 92,
       "endchar" : 1
      }
     ]
@@ -2341,7 +2341,7 @@
    {
     "kind" : "template",
     "protection" : "private",
-    "line" : 97,
+    "line" : 99,
     "char" : 1,
     "name" : "isDesiredUDA",
     "parameters" : [
@@ -2353,7 +2353,7 @@
     "members" : [
      {
       "kind" : "template",
-      "line" : 99,
+      "line" : 101,
       "char" : 2,
       "name" : "isDesiredUDA",
       "parameters" : [
@@ -2366,7 +2366,7 @@
        {
         "name" : "isDesiredUDA",
         "kind" : "variable",
-        "line" : 104,
+        "line" : 106,
         "char" : 10,
         "storageClass" : [
          "enum"
@@ -2381,7 +2381,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : " 関数のパラメータに付与されたUDAを取り出す。\n\n Params:\n      Func = 関数\n      i    = 引数の番号(最初の引数は0番目)\n      attr = UDAの種類を指定できます(指定しないとすべて返します)\n Returns:\n      UDAのタプルが返ります\n",
-    "line" : 132,
+    "line" : 134,
     "char" : 1,
     "name" : "getParameterUDAs",
     "parameters" : [
@@ -2399,7 +2399,7 @@
      {
       "name" : "getParameterUDAs",
       "kind" : "alias",
-      "line" : 136,
+      "line" : 138,
       "char" : 3,
       "type" : "__traits(getAttributes, Parameters!Func[i])"
      }
@@ -2409,7 +2409,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : "ditto\n",
-    "line" : 148,
+    "line" : 150,
     "char" : 1,
     "name" : "getParameterUDAs",
     "parameters" : [
@@ -2431,7 +2431,7 @@
      {
       "name" : "getParameterUDAs",
       "kind" : "alias",
-      "line" : 148,
+      "line" : 150,
       "char" : 1,
       "type" : "Filter!(isDesiredUDA!attr, getParameterUDAs!(Func, i))"
      }
@@ -2441,7 +2441,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : " 関数のパラメータに付与されたUDAのうち、型についたUDAを取り出す。\n\n Params:\n      Func = 関数\n      i    = 引数の番号(最初の引数は0番目)\n      attr = UDAの種類を指定できます(指定しないとすべて返します)\n Returns:\n      UDAのタプルが返ります\n",
-    "line" : 160,
+    "line" : 162,
     "char" : 1,
     "name" : "getParameterTypeUDAs",
     "parameters" : [
@@ -2459,7 +2459,7 @@
      {
       "name" : "getParameterTypeUDAs",
       "kind" : "alias",
-      "line" : 164,
+      "line" : 166,
       "char" : 3,
       "type" : "__traits(getAttributes, Parameters!Func[i])"
      }
@@ -2469,7 +2469,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : "ditto\n",
-    "line" : 172,
+    "line" : 174,
     "char" : 1,
     "name" : "getParameterTypeUDAs",
     "parameters" : [
@@ -2491,7 +2491,7 @@
      {
       "name" : "getParameterTypeUDAs",
       "kind" : "alias",
-      "line" : 172,
+      "line" : 174,
       "char" : 1,
       "type" : "Filter!(isDesiredUDA!attr, getParameterTypeUDAs!(Func, i))"
      }
@@ -2501,7 +2501,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : " 関数のパラメータに付与されたUDAのうち、引数についたUDAを取り出す。\n\n Params:\n      Func = 関数\n      i    = 引数の番号(最初の引数は0番目)\n      attr = UDAの種類を指定できます(指定しないとすべて返します)\n Returns:\n      UDAのタプルが返ります\n",
-    "line" : 186,
+    "line" : 188,
     "char" : 1,
     "name" : "getParameterArgUDAs",
     "parameters" : [
@@ -2518,7 +2518,7 @@
     "members" : [
      {
       "kind" : "template",
-      "line" : 188,
+      "line" : 190,
       "char" : 12,
       "name" : "notFoundInType",
       "parameters" : [
@@ -2531,7 +2531,7 @@
        {
         "name" : "notFoundInType",
         "kind" : "variable",
-        "line" : 188,
+        "line" : 190,
         "char" : 12,
         "storageClass" : [
          "enum"
@@ -2544,7 +2544,7 @@
      {
       "name" : "getParameterArgUDAs",
       "kind" : "alias",
-      "line" : 189,
+      "line" : 191,
       "char" : 2,
       "type" : "Filter!(notFoundInType, getParameterUDAs!(Func, i))"
      }
@@ -2554,7 +2554,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : "ditto\n",
-    "line" : 192,
+    "line" : 194,
     "char" : 1,
     "name" : "getParameterArgUDAs",
     "parameters" : [
@@ -2576,7 +2576,7 @@
      {
       "name" : "getParameterArgUDAs",
       "kind" : "alias",
-      "line" : 192,
+      "line" : 194,
       "char" : 1,
       "type" : "Filter!(isDesiredUDA!attr, getParameterArgUDAs!(Func, i))"
      }
@@ -2586,7 +2586,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : " 関数のパラメータにUDAが付与されているか確認します\n\n Params:\n      Func = 関数\n      i    = 引数の番号(最初の引数は0番目)\n      attr = チェックするUDA\n Returns:\n      UDAがあったらtrue\n",
-    "line" : 206,
+    "line" : 208,
     "char" : 11,
     "name" : "hasParameterUDA",
     "parameters" : [
@@ -2608,7 +2608,7 @@
      {
       "name" : "hasParameterUDA",
       "kind" : "variable",
-      "line" : 206,
+      "line" : 208,
       "char" : 11,
       "storageClass" : [
        "enum"
@@ -2622,7 +2622,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : " 関数のパラメータに付与されたUDAのうち、型にUDAがついているか確認します\n\n Params:\n      Func = 関数\n      i    = 引数の番号(最初の引数は0番目)\n      attr = チェックするUDA\n Returns:\n      UDAがあったらtrue\n",
-    "line" : 219,
+    "line" : 221,
     "char" : 11,
     "name" : "hasParameterTypeUDA",
     "parameters" : [
@@ -2644,7 +2644,7 @@
      {
       "name" : "hasParameterTypeUDA",
       "kind" : "variable",
-      "line" : 219,
+      "line" : 221,
       "char" : 11,
       "storageClass" : [
        "enum"
@@ -2658,7 +2658,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : " 関数のパラメータに付与されたUDAのうち、引数にUDAがついているか確認します\n\n Params:\n      Func = 関数\n      i    = 引数の番号(最初の引数は0番目)\n      attr = チェックするUDA\n Returns:\n      UDAがあったらtrue\n",
-    "line" : 232,
+    "line" : 234,
     "char" : 11,
     "name" : "hasParameterArgUDA",
     "parameters" : [
@@ -2680,7 +2680,7 @@
      {
       "name" : "hasParameterArgUDA",
       "kind" : "variable",
-      "line" : 232,
+      "line" : 234,
       "char" : 11,
       "storageClass" : [
        "enum"
@@ -2694,7 +2694,7 @@
     "name" : "Ignore",
     "kind" : "enum",
     "protection" : "private",
-    "line" : 234,
+    "line" : 236,
     "char" : 1,
     "baseDeco" : "i",
     "members" : [
@@ -2703,7 +2703,7 @@
       "kind" : "enum member",
       "protection" : "public",
       "value" : "0",
-      "line" : 234,
+      "line" : 236,
       "char" : 14
      }
     ]
@@ -2713,7 +2713,7 @@
     "kind" : "variable",
     "protection" : "public",
     "comment" : " Attribute marking ignore data\n",
-    "line" : 239,
+    "line" : 241,
     "char" : 20,
     "storageClass" : [
      "enum"
@@ -2725,7 +2725,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : "\n",
-    "line" : 242,
+    "line" : 244,
     "char" : 11,
     "name" : "hasIgnore",
     "parameters" : [
@@ -2738,7 +2738,7 @@
      {
       "name" : "hasIgnore",
       "kind" : "variable",
-      "line" : 242,
+      "line" : 244,
       "char" : 11,
       "storageClass" : [
        "enum"
@@ -2752,7 +2752,7 @@
     "name" : "Essential",
     "kind" : "enum",
     "protection" : "private",
-    "line" : 244,
+    "line" : 246,
     "char" : 1,
     "baseDeco" : "i",
     "members" : [
@@ -2761,7 +2761,7 @@
       "kind" : "enum member",
       "protection" : "public",
       "value" : "0",
-      "line" : 244,
+      "line" : 246,
       "char" : 17
      }
     ]
@@ -2771,7 +2771,7 @@
     "kind" : "variable",
     "protection" : "public",
     "comment" : " Attribute marking essential field\n",
-    "line" : 249,
+    "line" : 251,
     "char" : 23,
     "storageClass" : [
      "enum"
@@ -2783,7 +2783,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : "\n",
-    "line" : 252,
+    "line" : 254,
     "char" : 11,
     "name" : "hasEssential",
     "parameters" : [
@@ -2796,7 +2796,7 @@
      {
       "name" : "hasEssential",
       "kind" : "variable",
-      "line" : 252,
+      "line" : 254,
       "char" : 11,
       "storageClass" : [
        "enum"
@@ -2810,14 +2810,14 @@
     "name" : "Name",
     "kind" : "struct",
     "protection" : "private",
-    "line" : 255,
+    "line" : 257,
     "char" : 1,
     "members" : [
      {
       "name" : "name",
       "kind" : "variable",
       "protection" : "public",
-      "line" : 257,
+      "line" : 259,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 0
@@ -2829,7 +2829,7 @@
     "kind" : "function",
     "protection" : "public",
     "comment" : " Attribute forcing field name\n",
-    "line" : 263,
+    "line" : 265,
     "char" : 13,
     "deco" : "FNaNbNiNfAyaZS7msgraph5graph10jsonhelper4Name",
     "parameters" : [
@@ -2838,14 +2838,14 @@
       "deco" : "Aya"
      }
     ],
-    "endline" : 266,
+    "endline" : 268,
     "endchar" : 1
    },
    {
     "kind" : "template",
     "protection" : "public",
     "comment" : "ditto\n",
-    "line" : 268,
+    "line" : 270,
     "char" : 18,
     "name" : "name",
     "parameters" : [
@@ -2859,7 +2859,7 @@
      {
       "name" : "name",
       "kind" : "variable",
-      "line" : 268,
+      "line" : 270,
       "char" : 18,
       "storageClass" : [
        "enum"
@@ -2873,7 +2873,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : "\n",
-    "line" : 271,
+    "line" : 273,
     "char" : 11,
     "name" : "hasName",
     "parameters" : [
@@ -2886,7 +2886,7 @@
      {
       "name" : "hasName",
       "kind" : "variable",
-      "line" : 271,
+      "line" : 273,
       "char" : 11,
       "storageClass" : [
        "enum"
@@ -2900,7 +2900,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : "\n",
-    "line" : 274,
+    "line" : 276,
     "char" : 1,
     "name" : "getName",
     "parameters" : [
@@ -2914,7 +2914,7 @@
      {
       "name" : "getName",
       "kind" : "variable",
-      "line" : 277,
+      "line" : 279,
       "char" : 14,
       "storageClass" : [
        "enum"
@@ -2928,7 +2928,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : "\n",
-    "line" : 281,
+    "line" : 283,
     "char" : 1,
     "name" : "ConvBy",
     "parameters" : [
@@ -2942,7 +2942,7 @@
       "name" : "ConvBy",
       "kind" : "struct",
       "protection" : "public",
-      "line" : 281,
+      "line" : 283,
       "char" : 1,
       "members" : []
      }
@@ -2953,7 +2953,7 @@
     "kind" : "alias",
     "protection" : "public",
     "comment" : "\n",
-    "line" : 284,
+    "line" : 286,
     "char" : 8,
     "originalType" : "ConvBy"
    },
@@ -2961,7 +2961,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : "\n",
-    "line" : 287,
+    "line" : 289,
     "char" : 1,
     "name" : "isConvByAttr",
     "parameters" : [
@@ -2974,7 +2974,7 @@
      {
       "name" : "isConvByAttr",
       "kind" : "variable",
-      "line" : 291,
+      "line" : 293,
       "char" : 13,
       "storageClass" : [
        "enum"
@@ -2988,7 +2988,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : "\n",
-    "line" : 304,
+    "line" : 306,
     "char" : 1,
     "name" : "getConvByAttr",
     "parameters" : [
@@ -3002,7 +3002,7 @@
      {
       "name" : "getConvByAttr",
       "kind" : "alias",
-      "line" : 309,
+      "line" : 311,
       "char" : 3,
       "type" : "TemplateArgsOf!Attr[0]"
      }
@@ -3012,7 +3012,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : "\n",
-    "line" : 320,
+    "line" : 322,
     "char" : 1,
     "name" : "ProxyList",
     "parameters" : [
@@ -3025,7 +3025,7 @@
      {
       "name" : "ProxyList",
       "kind" : "alias",
-      "line" : 320,
+      "line" : 322,
       "char" : 1,
       "type" : "staticMap!(getConvByAttr, Filter!(isConvByAttr, __traits(getAttributes, value)))"
      }
@@ -3035,7 +3035,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : "\n",
-    "line" : 323,
+    "line" : 325,
     "char" : 1,
     "name" : "getConvBy",
     "parameters" : [
@@ -3048,14 +3048,14 @@
      {
       "name" : "_list",
       "kind" : "alias",
-      "line" : 325,
+      "line" : 327,
       "char" : 10,
       "type" : "ProxyList!value"
      },
      {
       "name" : "getConvBy",
       "kind" : "alias",
-      "line" : 327,
+      "line" : 329,
       "char" : 2,
       "type" : "_list[0]"
      }
@@ -3065,7 +3065,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : "\n",
-    "line" : 331,
+    "line" : 333,
     "char" : 1,
     "name" : "hasConvBy",
     "parameters" : [
@@ -3078,7 +3078,7 @@
      {
       "name" : "_listLength",
       "kind" : "variable",
-      "line" : 333,
+      "line" : 335,
       "char" : 15,
       "storageClass" : [
        "enum"
@@ -3088,7 +3088,7 @@
      {
       "name" : "hasConvBy",
       "kind" : "variable",
-      "line" : 335,
+      "line" : 337,
       "char" : 12,
       "storageClass" : [
        "enum"
@@ -3102,7 +3102,7 @@
     "name" : "ConvStyle",
     "kind" : "enum",
     "protection" : "private",
-    "line" : 339,
+    "line" : 341,
     "char" : 1,
     "baseDeco" : "i",
     "members" : [
@@ -3111,7 +3111,7 @@
       "kind" : "enum member",
       "protection" : "public",
       "value" : "0",
-      "line" : 341,
+      "line" : 343,
       "char" : 2
      },
      {
@@ -3119,7 +3119,7 @@
       "kind" : "enum member",
       "protection" : "public",
       "value" : "1",
-      "line" : 342,
+      "line" : 344,
       "char" : 2
      },
      {
@@ -3127,7 +3127,7 @@
       "kind" : "enum member",
       "protection" : "public",
       "value" : "2",
-      "line" : 343,
+      "line" : 345,
       "char" : 2
      },
      {
@@ -3135,7 +3135,7 @@
       "kind" : "enum member",
       "protection" : "public",
       "value" : "3",
-      "line" : 344,
+      "line" : 346,
       "char" : 2
      },
      {
@@ -3143,7 +3143,7 @@
       "kind" : "enum member",
       "protection" : "public",
       "value" : "4",
-      "line" : 345,
+      "line" : 347,
       "char" : 2
      },
      {
@@ -3151,7 +3151,7 @@
       "kind" : "enum member",
       "protection" : "public",
       "value" : "5",
-      "line" : 346,
+      "line" : 348,
       "char" : 2
      },
      {
@@ -3159,7 +3159,7 @@
       "kind" : "enum member",
       "protection" : "public",
       "value" : "6",
-      "line" : 347,
+      "line" : 349,
       "char" : 2
      }
     ]
@@ -3167,7 +3167,7 @@
    {
     "kind" : "template",
     "protection" : "private",
-    "line" : 350,
+    "line" : 352,
     "char" : 1,
     "name" : "getConvToStyle",
     "parameters" : [
@@ -3185,21 +3185,21 @@
      {
       "name" : "proxy",
       "kind" : "alias",
-      "line" : 353,
+      "line" : 355,
       "char" : 2,
       "type" : "getConvBy!value"
      },
      {
       "name" : "Val",
       "kind" : "alias",
-      "line" : 354,
+      "line" : 356,
       "char" : 2,
       "type" : "typeof(value)"
      },
      {
       "name" : "getConvToStyle",
       "kind" : "variable",
-      "line" : 358,
+      "line" : 360,
       "char" : 8,
       "storageClass" : [
        "enum"
@@ -3212,7 +3212,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : "\n",
-    "line" : 395,
+    "line" : 397,
     "char" : 1,
     "name" : "canConvTo",
     "parameters" : [
@@ -3229,7 +3229,7 @@
      {
       "name" : "canConvTo",
       "kind" : "variable",
-      "line" : 399,
+      "line" : 401,
       "char" : 13,
       "storageClass" : [
        "enum"
@@ -3243,7 +3243,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : "\n",
-    "line" : 409,
+    "line" : 411,
     "char" : 1,
     "name" : "convTo",
     "parameters" : [
@@ -3261,21 +3261,21 @@
      {
       "name" : "proxy",
       "kind" : "alias",
-      "line" : 412,
+      "line" : 414,
       "char" : 2,
       "type" : "getConvBy!value"
      },
      {
       "name" : "Val",
       "kind" : "alias",
-      "line" : 413,
+      "line" : 415,
       "char" : 2,
       "type" : "typeof(value)"
      },
      {
       "name" : "convToStyle",
       "kind" : "variable",
-      "line" : 414,
+      "line" : 416,
       "char" : 7,
       "storageClass" : [
        "enum"
@@ -3284,7 +3284,7 @@
      },
      {
       "kind" : "template",
-      "line" : 417,
+      "line" : 419,
       "char" : 14,
       "name" : "convTo",
       "parameters" : [],
@@ -3292,7 +3292,7 @@
        {
         "name" : "convTo",
         "kind" : "function",
-        "line" : 417,
+        "line" : 419,
         "char" : 14,
         "type" : "Dst(auto ref Val v)",
         "parameters" : [
@@ -3305,14 +3305,14 @@
           ]
          }
         ],
-        "endline" : 420,
+        "endline" : 422,
         "endchar" : 3
        }
       ]
      },
      {
       "kind" : "template",
-      "line" : 421,
+      "line" : 423,
       "char" : 14,
       "name" : "convTo",
       "parameters" : [],
@@ -3320,7 +3320,7 @@
        {
         "name" : "convTo",
         "kind" : "function",
-        "line" : 421,
+        "line" : 423,
         "char" : 14,
         "type" : "Dst(auto in ref Val v)",
         "parameters" : [
@@ -3334,7 +3334,7 @@
           ]
          }
         ],
-        "endline" : 424,
+        "endline" : 426,
         "endchar" : 3
        }
       ]
@@ -3345,7 +3345,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : "\n",
-    "line" : 485,
+    "line" : 487,
     "char" : 1,
     "name" : "getConvFromStyle",
     "parameters" : [
@@ -3363,21 +3363,21 @@
      {
       "name" : "proxy",
       "kind" : "alias",
-      "line" : 488,
+      "line" : 490,
       "char" : 2,
       "type" : "getConvBy!value"
      },
      {
       "name" : "Val",
       "kind" : "alias",
-      "line" : 489,
+      "line" : 491,
       "char" : 2,
       "type" : "typeof(value)"
      },
      {
       "name" : "getConvFromStyle",
       "kind" : "variable",
-      "line" : 493,
+      "line" : 495,
       "char" : 8,
       "storageClass" : [
        "enum"
@@ -3390,7 +3390,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : "\n",
-    "line" : 530,
+    "line" : 532,
     "char" : 1,
     "name" : "canConvFrom",
     "parameters" : [
@@ -3407,7 +3407,7 @@
      {
       "name" : "canConvFrom",
       "kind" : "variable",
-      "line" : 533,
+      "line" : 535,
       "char" : 13,
       "storageClass" : [
        "enum"
@@ -3421,7 +3421,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : "\n",
-    "line" : 542,
+    "line" : 544,
     "char" : 1,
     "name" : "convFrom",
     "parameters" : [
@@ -3439,21 +3439,21 @@
      {
       "name" : "proxy",
       "kind" : "alias",
-      "line" : 545,
+      "line" : 547,
       "char" : 2,
       "type" : "getConvBy!value"
      },
      {
       "name" : "Val",
       "kind" : "alias",
-      "line" : 546,
+      "line" : 548,
       "char" : 2,
       "type" : "typeof(value)"
      },
      {
       "name" : "convFromStyle",
       "kind" : "variable",
-      "line" : 547,
+      "line" : 549,
       "char" : 7,
       "storageClass" : [
        "enum"
@@ -3462,7 +3462,7 @@
      },
      {
       "kind" : "template",
-      "line" : 550,
+      "line" : 552,
       "char" : 14,
       "name" : "convFrom",
       "parameters" : [],
@@ -3470,7 +3470,7 @@
        {
         "name" : "convFrom",
         "kind" : "function",
-        "line" : 550,
+        "line" : 552,
         "char" : 14,
         "type" : "Val(auto ref Src v)",
         "parameters" : [
@@ -3483,14 +3483,14 @@
           ]
          }
         ],
-        "endline" : 553,
+        "endline" : 555,
         "endchar" : 3
        }
       ]
      },
      {
       "kind" : "template",
-      "line" : 554,
+      "line" : 556,
       "char" : 14,
       "name" : "convFrom",
       "parameters" : [],
@@ -3498,7 +3498,7 @@
        {
         "name" : "convFrom",
         "kind" : "function",
-        "line" : 554,
+        "line" : 556,
         "char" : 14,
         "type" : "Val(auto in ref Src v)",
         "parameters" : [
@@ -3512,7 +3512,7 @@
           ]
          }
         ],
-        "endline" : 557,
+        "endline" : 559,
         "endchar" : 3
        }
       ]
@@ -3523,7 +3523,7 @@
     "kind" : "template",
     "protection" : "public",
     "comment" : "\n",
-    "line" : 622,
+    "line" : 624,
     "char" : 8,
     "name" : "convertTo",
     "parameters" : [
@@ -3536,20 +3536,20 @@
      {
       "name" : "proxy",
       "kind" : "alias",
-      "line" : 624,
+      "line" : 626,
       "char" : 2,
       "type" : "getConvBy!value"
      },
      {
       "name" : "Val",
       "kind" : "alias",
-      "line" : 625,
+      "line" : 627,
       "char" : 2,
       "type" : "typeof(value)"
      },
      {
       "kind" : "template",
-      "line" : 626,
+      "line" : 628,
       "char" : 14,
       "name" : "convertTo",
       "parameters" : [
@@ -3563,7 +3563,7 @@
        {
         "name" : "convertTo",
         "kind" : "function",
-        "line" : 626,
+        "line" : 628,
         "char" : 14,
         "type" : "void(auto ref Val src, ref Dst dst)",
         "parameters" : [
@@ -3583,14 +3583,14 @@
           ]
          }
         ],
-        "endline" : 655,
+        "endline" : 657,
         "endchar" : 2
        }
       ]
      },
      {
       "kind" : "template",
-      "line" : 656,
+      "line" : 658,
       "char" : 14,
       "name" : "convertTo",
       "parameters" : [
@@ -3604,7 +3604,7 @@
        {
         "name" : "convertTo",
         "kind" : "function",
-        "line" : 656,
+        "line" : 658,
         "char" : 14,
         "type" : "void(auto in ref Val src, ref Dst dst)",
         "parameters" : [
@@ -3625,7 +3625,7 @@
           ]
          }
         ],
-        "endline" : 685,
+        "endline" : 687,
         "endchar" : 2
        }
       ]
@@ -3636,7 +3636,7 @@
     "kind" : "template",
     "protection" : "public",
     "comment" : "\n",
-    "line" : 689,
+    "line" : 691,
     "char" : 8,
     "name" : "convertFrom",
     "parameters" : [
@@ -3649,20 +3649,20 @@
      {
       "name" : "proxy",
       "kind" : "alias",
-      "line" : 691,
+      "line" : 693,
       "char" : 2,
       "type" : "getConvBy!value"
      },
      {
       "name" : "Val",
       "kind" : "alias",
-      "line" : 692,
+      "line" : 694,
       "char" : 2,
       "type" : "typeof(value)"
      },
      {
       "kind" : "template",
-      "line" : 693,
+      "line" : 695,
       "char" : 14,
       "name" : "convertFrom",
       "parameters" : [
@@ -3676,7 +3676,7 @@
        {
         "name" : "convertFrom",
         "kind" : "function",
-        "line" : 693,
+        "line" : 695,
         "char" : 14,
         "type" : "void(auto ref Src src, ref Val dst)",
         "parameters" : [
@@ -3696,14 +3696,14 @@
           ]
          }
         ],
-        "endline" : 722,
+        "endline" : 724,
         "endchar" : 2
        }
       ]
      },
      {
       "kind" : "template",
-      "line" : 723,
+      "line" : 725,
       "char" : 14,
       "name" : "convertFrom",
       "parameters" : [
@@ -3717,7 +3717,7 @@
        {
         "name" : "convertFrom",
         "kind" : "function",
-        "line" : 723,
+        "line" : 725,
         "char" : 14,
         "type" : "void(auto in ref Src src, ref Val dst)",
         "parameters" : [
@@ -3738,7 +3738,7 @@
           ]
          }
         ],
-        "endline" : 752,
+        "endline" : 754,
         "endchar" : 2
        }
       ]
@@ -3749,7 +3749,7 @@
     "kind" : "template",
     "protection" : "private",
     "comment" : "\n",
-    "line" : 757,
+    "line" : 759,
     "char" : 6,
     "name" : "isConvertible",
     "parameters" : [
@@ -3766,7 +3766,7 @@
      {
       "name" : "isConvertible",
       "kind" : "variable",
-      "line" : 757,
+      "line" : 759,
       "char" : 6,
       "storageClass" : [
        "enum"
@@ -3778,38 +3778,38 @@
    {
     "name" : "std.json",
     "kind" : "import",
-    "line" : 765,
+    "line" : 767,
     "char" : 8
    },
    {
     "name" : "std.traits",
     "kind" : "import",
-    "line" : 765,
+    "line" : 767,
     "char" : 18
    },
    {
     "name" : "std.meta",
     "kind" : "import",
-    "line" : 765,
+    "line" : 767,
     "char" : 30
    },
    {
     "name" : "std.conv",
     "kind" : "import",
-    "line" : 765,
+    "line" : 767,
     "char" : 40
    },
    {
     "name" : "std.array",
     "kind" : "import",
-    "line" : 765,
+    "line" : 767,
     "char" : 50
    },
    {
     "kind" : "template",
     "protection" : "public",
     "comment" : " Get data from JSONValue\n",
-    "line" : 771,
+    "line" : 773,
     "char" : 11,
     "name" : "json",
     "parameters" : [
@@ -3823,7 +3823,7 @@
      {
       "name" : "json",
       "kind" : "function",
-      "line" : 771,
+      "line" : 773,
       "char" : 11,
       "type" : "@property JSONValue(auto const ref T[] x)",
       "parameters" : [
@@ -3837,7 +3837,7 @@
         ]
        }
       ],
-      "endline" : 775,
+      "endline" : 777,
       "endchar" : 1
      }
     ]
@@ -3846,7 +3846,7 @@
     "kind" : "template",
     "protection" : "public",
     "comment" : "ditto\n",
-    "line" : 778,
+    "line" : 780,
     "char" : 11,
     "name" : "json",
     "parameters" : [
@@ -3860,7 +3860,7 @@
      {
       "name" : "json",
       "kind" : "function",
-      "line" : 778,
+      "line" : 780,
       "char" : 11,
       "type" : "@property JSONValue(auto const ref T x)",
       "parameters" : [
@@ -3874,7 +3874,7 @@
         ]
        }
       ],
-      "endline" : 784,
+      "endline" : 786,
       "endchar" : 1
      }
     ]
@@ -3883,7 +3883,7 @@
     "kind" : "template",
     "protection" : "public",
     "comment" : "ditto\n",
-    "line" : 787,
+    "line" : 789,
     "char" : 11,
     "name" : "json",
     "parameters" : [
@@ -3897,7 +3897,7 @@
      {
       "name" : "json",
       "kind" : "function",
-      "line" : 787,
+      "line" : 789,
       "char" : 11,
       "type" : "@property JSONValue(auto const ref T x)",
       "parameters" : [
@@ -3911,7 +3911,7 @@
         ]
        }
       ],
-      "endline" : 791,
+      "endline" : 793,
       "endchar" : 1
      }
     ]
@@ -3920,7 +3920,7 @@
     "kind" : "template",
     "protection" : "public",
     "comment" : "ditto\n",
-    "line" : 794,
+    "line" : 796,
     "char" : 11,
     "name" : "json",
     "parameters" : [
@@ -3934,7 +3934,7 @@
      {
       "name" : "json",
       "kind" : "function",
-      "line" : 794,
+      "line" : 796,
       "char" : 11,
       "type" : "@property JSONValue(auto const ref T[] ary)",
       "parameters" : [
@@ -3948,7 +3948,7 @@
         ]
        }
       ],
-      "endline" : 805,
+      "endline" : 807,
       "endchar" : 1
      }
     ]
@@ -3957,7 +3957,7 @@
     "kind" : "template",
     "protection" : "public",
     "comment" : "ditto\n",
-    "line" : 808,
+    "line" : 810,
     "char" : 11,
     "name" : "json",
     "parameters" : [
@@ -3975,7 +3975,7 @@
      {
       "name" : "json",
       "kind" : "function",
-      "line" : 808,
+      "line" : 810,
       "char" : 11,
       "type" : "@property JSONValue(auto const ref Value[Key] aa)",
       "parameters" : [
@@ -3989,7 +3989,7 @@
         ]
        }
       ],
-      "endline" : 823,
+      "endline" : 825,
       "endchar" : 1
      }
     ]
@@ -3998,7 +3998,7 @@
     "kind" : "template",
     "protection" : "public",
     "comment" : "ditto\n",
-    "line" : 826,
+    "line" : 828,
     "char" : 11,
     "name" : "json",
     "parameters" : [
@@ -4012,7 +4012,7 @@
      {
       "name" : "json",
       "kind" : "function",
-      "line" : 826,
+      "line" : 828,
       "char" : 11,
       "type" : "@property JSONValue(auto const ref JV v)",
       "parameters" : [
@@ -4026,7 +4026,7 @@
         ]
        }
       ],
-      "endline" : 830,
+      "endline" : 832,
       "endchar" : 1
      }
     ]
@@ -4034,7 +4034,7 @@
    {
     "kind" : "template",
     "protection" : "private",
-    "line" : 833,
+    "line" : 835,
     "char" : 14,
     "name" : "_setValue",
     "parameters" : [
@@ -4048,7 +4048,7 @@
      {
       "name" : "_setValue",
       "kind" : "function",
-      "line" : 833,
+      "line" : 835,
       "char" : 14,
       "type" : "void(ref JSONValue v, ref string name, ref T val)",
       "parameters" : [
@@ -4074,7 +4074,7 @@
         ]
        }
       ],
-      "endline" : 846,
+      "endline" : 848,
       "endchar" : 1
      }
     ]
@@ -4083,7 +4083,7 @@
     "kind" : "template",
     "protection" : "public",
     "comment" : " Operation of JSONValue\n",
-    "line" : 852,
+    "line" : 854,
     "char" : 6,
     "name" : "setValue",
     "parameters" : [
@@ -4096,7 +4096,7 @@
      {
       "name" : "setValue",
       "kind" : "function",
-      "line" : 852,
+      "line" : 854,
       "char" : 6,
       "type" : "pure nothrow @trusted void(ref JSONValue v, string name, T val)",
       "parameters" : [
@@ -4116,7 +4116,7 @@
         "type" : "T"
        }
       ],
-      "endline" : 861,
+      "endline" : 863,
       "endchar" : 1
      }
     ]
@@ -4125,7 +4125,7 @@
     "kind" : "template",
     "protection" : "public",
     "comment" : "\n",
-    "line" : 865,
+    "line" : 867,
     "char" : 6,
     "name" : "fromJson",
     "parameters" : [
@@ -4139,7 +4139,7 @@
      {
       "name" : "fromJson",
       "kind" : "function",
-      "line" : 865,
+      "line" : 867,
       "char" : 6,
       "type" : "bool(in ref JSONValue src, ref T dst)",
       "parameters" : [
@@ -4159,7 +4159,7 @@
         ]
        }
       ],
-      "endline" : 881,
+      "endline" : 883,
       "endchar" : 1
      }
     ]
@@ -4168,7 +4168,7 @@
     "kind" : "template",
     "protection" : "public",
     "comment" : "ditto\n",
-    "line" : 885,
+    "line" : 887,
     "char" : 6,
     "name" : "fromJson",
     "parameters" : [
@@ -4182,7 +4182,7 @@
      {
       "name" : "fromJson",
       "kind" : "function",
-      "line" : 885,
+      "line" : 887,
       "char" : 6,
       "type" : "bool(in ref JSONValue src, ref T dst)",
       "parameters" : [
@@ -4202,7 +4202,7 @@
         ]
        }
       ],
-      "endline" : 899,
+      "endline" : 901,
       "endchar" : 1
      }
     ]
@@ -4211,7 +4211,7 @@
     "kind" : "template",
     "protection" : "public",
     "comment" : "ditto\n",
-    "line" : 902,
+    "line" : 904,
     "char" : 6,
     "name" : "fromJson",
     "parameters" : [
@@ -4225,7 +4225,7 @@
      {
       "name" : "fromJson",
       "kind" : "function",
-      "line" : 902,
+      "line" : 904,
       "char" : 6,
       "type" : "bool(in ref JSONValue src, ref T dst)",
       "parameters" : [
@@ -4245,7 +4245,7 @@
         ]
        }
       ],
-      "endline" : 919,
+      "endline" : 921,
       "endchar" : 1
      }
     ]
@@ -4254,7 +4254,7 @@
     "kind" : "template",
     "protection" : "public",
     "comment" : "ditto\n",
-    "line" : 922,
+    "line" : 924,
     "char" : 6,
     "name" : "fromJson",
     "parameters" : [
@@ -4268,7 +4268,7 @@
      {
       "name" : "fromJson",
       "kind" : "function",
-      "line" : 922,
+      "line" : 924,
       "char" : 6,
       "type" : "bool(in ref JSONValue src, ref T dst)",
       "parameters" : [
@@ -4288,7 +4288,7 @@
         ]
        }
       ],
-      "endline" : 982,
+      "endline" : 984,
       "endchar" : 1
      }
     ]
@@ -4297,7 +4297,7 @@
     "kind" : "template",
     "protection" : "public",
     "comment" : "ditto\n",
-    "line" : 985,
+    "line" : 987,
     "char" : 6,
     "name" : "fromJson",
     "parameters" : [
@@ -4311,7 +4311,7 @@
      {
       "name" : "fromJson",
       "kind" : "function",
-      "line" : 985,
+      "line" : 987,
       "char" : 6,
       "type" : "bool(in ref JSONValue src, ref T dst)",
       "parameters" : [
@@ -4331,7 +4331,7 @@
         ]
        }
       ],
-      "endline" : 996,
+      "endline" : 998,
       "endchar" : 1
      }
     ]
@@ -4340,7 +4340,7 @@
     "kind" : "template",
     "protection" : "public",
     "comment" : "ditto\n",
-    "line" : 999,
+    "line" : 1001,
     "char" : 6,
     "name" : "fromJson",
     "parameters" : [
@@ -4354,7 +4354,7 @@
      {
       "name" : "fromJson",
       "kind" : "function",
-      "line" : 999,
+      "line" : 1001,
       "char" : 6,
       "type" : "bool(in ref JSONValue src, ref T dst)",
       "parameters" : [
@@ -4374,7 +4374,7 @@
         ]
        }
       ],
-      "endline" : 1008,
+      "endline" : 1010,
       "endchar" : 1
      }
     ]
@@ -4383,7 +4383,7 @@
     "kind" : "template",
     "protection" : "public",
     "comment" : "ditto\n",
-    "line" : 1011,
+    "line" : 1013,
     "char" : 6,
     "name" : "fromJson",
     "parameters" : [
@@ -4397,7 +4397,7 @@
      {
       "name" : "fromJson",
       "kind" : "function",
-      "line" : 1011,
+      "line" : 1013,
       "char" : 6,
       "type" : "bool(in ref JSONValue src, ref T dst)",
       "parameters" : [
@@ -4417,7 +4417,7 @@
         ]
        }
       ],
-      "endline" : 1025,
+      "endline" : 1027,
       "endchar" : 1
      }
     ]
@@ -4426,7 +4426,7 @@
     "kind" : "template",
     "protection" : "public",
     "comment" : "ditto\n",
-    "line" : 1028,
+    "line" : 1030,
     "char" : 6,
     "name" : "fromJson",
     "parameters" : [
@@ -4440,7 +4440,7 @@
      {
       "name" : "fromJson",
       "kind" : "function",
-      "line" : 1028,
+      "line" : 1030,
       "char" : 6,
       "type" : "bool(in ref JSONValue src, ref T dst)",
       "parameters" : [
@@ -4460,7 +4460,7 @@
         ]
        }
       ],
-      "endline" : 1043,
+      "endline" : 1045,
       "endchar" : 1
      }
     ]
@@ -4469,7 +4469,7 @@
     "kind" : "template",
     "protection" : "public",
     "comment" : "ditto\n",
-    "line" : 1046,
+    "line" : 1048,
     "char" : 6,
     "name" : "fromJson",
     "parameters" : [
@@ -4487,7 +4487,7 @@
      {
       "name" : "fromJson",
       "kind" : "function",
-      "line" : 1046,
+      "line" : 1048,
       "char" : 6,
       "type" : "bool(in ref JSONValue src, ref Value[Key] dst)",
       "parameters" : [
@@ -4507,7 +4507,7 @@
         ]
        }
       ],
-      "endline" : 1071,
+      "endline" : 1073,
       "endchar" : 1
      }
     ]
@@ -4516,7 +4516,7 @@
     "kind" : "template",
     "protection" : "public",
     "comment" : "ditto\n",
-    "line" : 1074,
+    "line" : 1076,
     "char" : 6,
     "name" : "fromJson",
     "parameters" : [
@@ -4530,7 +4530,7 @@
      {
       "name" : "fromJson",
       "kind" : "function",
-      "line" : 1074,
+      "line" : 1076,
       "char" : 6,
       "type" : "bool(in ref JSONValue src, ref T dst)",
       "parameters" : [
@@ -4550,7 +4550,7 @@
         ]
        }
       ],
-      "endline" : 1079,
+      "endline" : 1081,
       "endchar" : 1
      }
     ]
@@ -4558,7 +4558,7 @@
    {
     "kind" : "template",
     "protection" : "private",
-    "line" : 1082,
+    "line" : 1084,
     "char" : 11,
     "name" : "_getValue",
     "parameters" : [
@@ -4571,7 +4571,7 @@
      {
       "name" : "_getValue",
       "kind" : "function",
-      "line" : 1082,
+      "line" : 1084,
       "char" : 11,
       "type" : "T(in ref JSONValue v, string name, lazy scope T defaultVal = T.init)",
       "parameters" : [
@@ -4597,7 +4597,7 @@
         "default" : "T.init"
        }
       ],
-      "endline" : 1112,
+      "endline" : 1114,
       "endchar" : 1
      }
     ]
@@ -4606,7 +4606,7 @@
     "kind" : "template",
     "protection" : "public",
     "comment" : "\n",
-    "line" : 1115,
+    "line" : 1117,
     "char" : 3,
     "name" : "getValue",
     "parameters" : [
@@ -4619,7 +4619,7 @@
      {
       "name" : "getValue",
       "kind" : "function",
-      "line" : 1115,
+      "line" : 1117,
       "char" : 3,
       "type" : "pure nothrow @trusted T(in ref JSONValue v, string name, lazy scope T defaultVal = T.init)",
       "parameters" : [
@@ -4645,7 +4645,7 @@
         "default" : "T.init"
        }
       ],
-      "endline" : 1132,
+      "endline" : 1134,
       "endchar" : 1
      }
     ]
@@ -4654,7 +4654,7 @@
     "kind" : "template",
     "protection" : "public",
     "comment" : "\n",
-    "line" : 1135,
+    "line" : 1137,
     "char" : 1,
     "name" : "AttrConverter",
     "parameters" : [
@@ -4668,14 +4668,14 @@
       "name" : "AttrConverter",
       "kind" : "struct",
       "protection" : "public",
-      "line" : 1135,
+      "line" : 1137,
       "char" : 1,
       "members" : [
        {
         "name" : "from",
         "kind" : "variable",
         "comment" : "\n",
-        "line" : 1138,
+        "line" : 1140,
         "char" : 29,
         "type" : "T function(in JSONValue v)"
        },
@@ -4683,7 +4683,7 @@
         "name" : "to",
         "kind" : "variable",
         "comment" : "\n",
-        "line" : 1140,
+        "line" : 1142,
         "char" : 29,
         "type" : "JSONValue function(in T v)"
        }
@@ -4695,7 +4695,7 @@
     "kind" : "template",
     "protection" : "public",
     "comment" : " Attribute converting method\n",
-    "line" : 1146,
+    "line" : 1148,
     "char" : 17,
     "name" : "converter",
     "parameters" : [
@@ -4708,7 +4708,7 @@
      {
       "name" : "converter",
       "kind" : "function",
-      "line" : 1146,
+      "line" : 1148,
       "char" : 17,
       "type" : "AttrConverter!T(T function(in JSONValue) from, JSONValue function(in T) to)",
       "parameters" : [
@@ -4721,7 +4721,7 @@
         "type" : "JSONValue function(in T)"
        }
       ],
-      "endline" : 1149,
+      "endline" : 1151,
       "endchar" : 1
      }
     ]
@@ -4729,7 +4729,7 @@
    {
     "kind" : "template",
     "protection" : "private",
-    "line" : 1152,
+    "line" : 1154,
     "char" : 14,
     "name" : "isJSONizableRaw",
     "parameters" : [
@@ -4742,7 +4742,7 @@
      {
       "name" : "isJSONizableRaw",
       "kind" : "variable",
-      "line" : 1152,
+      "line" : 1154,
       "char" : 14,
       "storageClass" : [
        "enum"
@@ -4755,7 +4755,7 @@
     "kind" : "template",
     "protection" : "public",
     "comment" : " serialize data to JSON\n",
-    "line" : 1162,
+    "line" : 1164,
     "char" : 11,
     "name" : "serializeToJson",
     "parameters" : [
@@ -4768,7 +4768,7 @@
      {
       "name" : "serializeToJson",
       "kind" : "function",
-      "line" : 1162,
+      "line" : 1164,
       "char" : 11,
       "type" : "JSONValue(in T data)",
       "parameters" : [
@@ -4780,7 +4780,7 @@
         ]
        }
       ],
-      "endline" : 1219,
+      "endline" : 1221,
       "endchar" : 1
      }
     ]
@@ -4789,7 +4789,7 @@
     "kind" : "template",
     "protection" : "public",
     "comment" : "ditto\n",
-    "line" : 1222,
+    "line" : 1224,
     "char" : 8,
     "name" : "serializeToJsonString",
     "parameters" : [
@@ -4802,7 +4802,7 @@
      {
       "name" : "serializeToJsonString",
       "kind" : "function",
-      "line" : 1222,
+      "line" : 1224,
       "char" : 8,
       "type" : "string(in T data, JSONOptions options = JSONOptions.none)",
       "parameters" : [
@@ -4819,7 +4819,7 @@
         "default" : "JSONOptions.none"
        }
       ],
-      "endline" : 1225,
+      "endline" : 1227,
       "endchar" : 1
      }
     ]
@@ -4828,7 +4828,7 @@
     "kind" : "template",
     "protection" : "public",
     "comment" : " deserialize data from JSON\n",
-    "line" : 1231,
+    "line" : 1233,
     "char" : 6,
     "name" : "deserializeFromJson",
     "parameters" : [
@@ -4841,7 +4841,7 @@
      {
       "name" : "deserializeFromJson",
       "kind" : "function",
-      "line" : 1231,
+      "line" : 1233,
       "char" : 6,
       "type" : "void(ref T data, in JSONValue json)",
       "parameters" : [
@@ -4860,7 +4860,7 @@
         ]
        }
       ],
-      "endline" : 1335,
+      "endline" : 1337,
       "endchar" : 1
      }
     ]
@@ -4869,7 +4869,7 @@
     "kind" : "template",
     "protection" : "public",
     "comment" : "ditto\n",
-    "line" : 1338,
+    "line" : 1340,
     "char" : 6,
     "name" : "deserializeFromJsonString",
     "parameters" : [
@@ -4882,7 +4882,7 @@
      {
       "name" : "deserializeFromJsonString",
       "kind" : "function",
-      "line" : 1338,
+      "line" : 1340,
       "char" : 6,
       "type" : "void(ref T data, string jsonContents)",
       "parameters" : [
@@ -4898,33 +4898,33 @@
         "type" : "string"
        }
       ],
-      "endline" : 1341,
+      "endline" : 1343,
       "endchar" : 1
      }
     ]
    },
    {
-    "name" : "__unittest_L1343_C9",
+    "name" : "__unittest_L1345_C9",
     "kind" : "function",
     "protection" : "public",
-    "line" : 1343,
+    "line" : 1345,
     "char" : 9,
     "storageClass" : [
      "@system"
     ],
-    "endline" : 1361,
+    "endline" : 1363,
     "endchar" : 1
    },
    {
-    "name" : "__unittest_L1361_C9",
+    "name" : "__unittest_L1363_C9",
     "kind" : "function",
     "protection" : "public",
-    "line" : 1361,
+    "line" : 1363,
     "char" : 9,
     "storageClass" : [
      "@system"
     ],
-    "endline" : 1377,
+    "endline" : 1379,
     "endchar" : 1
    }
   ]
@@ -4933,20 +4933,20 @@
   "name" : "msgraph.httpd",
   "kind" : "module",
   "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/httpd/package.d",
-  "comment" : " Simple HTTP daemon for auth\n\n $(INTERNAL_MODULE)\n",
+  "comment" : " Simple HTTP daemon for auth\n\n $(INTERNAL_MODULE)\n\n License: [BSL-1.0](http://boost.org/LICENSE_1_0.txt).\n",
   "members" : [
    {
     "name" : "msgraph.httpd.types",
     "kind" : "import",
     "comment" : "\n",
-    "line" : 10,
+    "line" : 12,
     "char" : 15
    },
    {
     "name" : "msgraph.httpd.daemon",
     "kind" : "import",
     "comment" : "\n",
-    "line" : 12,
+    "line" : 14,
     "char" : 15
    }
   ]
@@ -4955,26 +4955,26 @@
   "name" : "msgraph.httpd.daemon",
   "kind" : "module",
   "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/httpd/daemon.d",
-  "comment" : " Simple HTTP daemon\n\n $(INTERNAL_MODULE)\n",
+  "comment" : " Simple HTTP daemon\n\n $(INTERNAL_MODULE)\n\n License: [BSL-1.0](http://boost.org/LICENSE_1_0.txt).\n",
   "members" : [
    {
     "name" : "core.time",
     "kind" : "import",
-    "line" : 10,
+    "line" : 12,
     "char" : 8,
     "protection" : "package"
    },
    {
     "name" : "msgraph.httpd.sockhelper",
     "kind" : "import",
-    "line" : 11,
+    "line" : 13,
     "char" : 8,
     "protection" : "package"
    },
    {
     "name" : "msgraph.httpd.parse",
     "kind" : "import",
-    "line" : 12,
+    "line" : 14,
     "char" : 8,
     "protection" : "package"
    },
@@ -4983,20 +4983,20 @@
     "kind" : "struct",
     "protection" : "package",
     "comment" : " $(INTERNAL) HTTP daemon\n",
-    "line" : 17,
+    "line" : 19,
     "char" : 1,
     "members" : [
      {
       "name" : "std.socket",
       "kind" : "import",
-      "line" : 20,
+      "line" : 22,
       "char" : 9,
       "protection" : "private"
      },
      {
       "name" : "std.exception",
       "kind" : "import",
-      "line" : 21,
+      "line" : 23,
       "char" : 9,
       "protection" : "private"
      },
@@ -5004,7 +5004,7 @@
       "name" : "_listener",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 22,
+      "line" : 24,
       "char" : 9,
       "deco" : "C3std6socket6Socket",
       "originalType" : "Socket",
@@ -5014,7 +5014,7 @@
       "name" : "_connection",
       "kind" : "variable",
       "protection" : "private",
-      "line" : 23,
+      "line" : 25,
       "char" : 9,
       "deco" : "C3std6socket6Socket",
       "originalType" : "Socket",
@@ -5025,7 +5025,7 @@
       "kind" : "constructor",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 29,
+      "line" : 31,
       "char" : 2,
       "deco" : "FNcNfAyatZS7msgraph5httpd6daemon5Httpd",
       "originalType" : "ref @safe (string bindaddr, ushort port = 0)",
@@ -5040,7 +5040,7 @@
         "default" : "cast(ushort)0u"
        }
       ],
-      "endline" : 32,
+      "endline" : 34,
       "endchar" : 2
      },
      {
@@ -5048,7 +5048,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 37,
+      "line" : 39,
       "char" : 7,
       "deco" : "FNeAyatZv",
       "originalType" : "@trusted void(string bindaddr = \"localhost\", ushort port = 0)",
@@ -5064,7 +5064,7 @@
         "default" : "cast(ushort)0u"
        }
       ],
-      "endline" : 43,
+      "endline" : 45,
       "endchar" : 2
      },
      {
@@ -5072,10 +5072,10 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 48,
+      "line" : 50,
       "char" : 9,
       "deco" : "xFNeZt",
-      "endline" : 53,
+      "endline" : 55,
       "endchar" : 2
      },
      {
@@ -5083,10 +5083,10 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 58,
+      "line" : 60,
       "char" : 7,
       "deco" : "FNeZv",
-      "endline" : 65,
+      "endline" : 67,
       "endchar" : 2
      },
      {
@@ -5094,10 +5094,10 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 70,
+      "line" : 72,
       "char" : 7,
       "deco" : "FNeZv",
-      "endline" : 77,
+      "endline" : 79,
       "endchar" : 2
      },
      {
@@ -5105,7 +5105,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 82,
+      "line" : 84,
       "char" : 7,
       "deco" : "FNfJS7msgraph5httpd5types7RequestS4core4time8DurationZb",
       "originalType" : "@safe bool(out Request req, Duration timeout = Duration.max)",
@@ -5123,7 +5123,7 @@
         "default" : "max()"
        }
       ],
-      "endline" : 191,
+      "endline" : 193,
       "endchar" : 2
      },
      {
@@ -5131,7 +5131,7 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 196,
+      "line" : 198,
       "char" : 7,
       "deco" : "FNfS7msgraph5httpd5types8ResponseS4core4time8DurationZb",
       "originalType" : "@safe bool(Response res, Duration timeout = 1000.msecs)",
@@ -5146,7 +5146,7 @@
         "default" : "dur(1000L)"
        }
       ],
-      "endline" : 261,
+      "endline" : 263,
       "endchar" : 2
      },
      {
@@ -5154,20 +5154,20 @@
       "kind" : "function",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 266,
+      "line" : 268,
       "char" : 7,
       "deco" : "FNfZv",
-      "endline" : 270,
+      "endline" : 272,
       "endchar" : 2
      },
      {
       "name" : "~this",
       "kind" : "destructor",
       "protection" : "public",
-      "line" : 272,
+      "line" : 274,
       "char" : 2,
       "deco" : "FNfZv",
-      "endline" : 275,
+      "endline" : 277,
       "endchar" : 2
      },
      {
@@ -5179,7 +5179,7 @@
       "name" : "opAssign",
       "kind" : "generated function",
       "protection" : "public",
-      "line" : 17,
+      "line" : 19,
       "char" : 1,
       "deco" : "FNcNjNeS7msgraph5httpd6daemon5HttpdZQBd",
       "parameters" : [
@@ -5192,28 +5192,28 @@
     ]
    },
    {
-    "name" : "__unittest_L279_C7",
+    "name" : "__unittest_L281_C7",
     "kind" : "function",
     "protection" : "package",
     "comment" : "\n",
-    "line" : 279,
+    "line" : 281,
     "char" : 7,
     "storageClass" : [
      "@safe"
     ],
-    "endline" : 310,
+    "endline" : 312,
     "endchar" : 1
    },
    {
-    "name" : "__unittest_L310_C7",
+    "name" : "__unittest_L312_C7",
     "kind" : "function",
     "protection" : "package",
-    "line" : 310,
+    "line" : 312,
     "char" : 7,
     "storageClass" : [
      "@safe"
     ],
-    "endline" : 371,
+    "endline" : 373,
     "endchar" : 1
    },
    {
@@ -5221,7 +5221,7 @@
     "kind" : "function",
     "protection" : "package",
     "comment" : "\n",
-    "line" : 371,
+    "line" : 373,
     "char" : 6,
     "storageClass" : [
      "auto"
@@ -5251,7 +5251,7 @@
       "default" : "dur(1000L)"
      }
     ],
-    "endline" : 384,
+    "endline" : 386,
     "endchar" : 1
    }
   ]
@@ -5260,12 +5260,12 @@
   "name" : "msgraph.httpd.parse",
   "kind" : "module",
   "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/httpd/parse.d",
-  "comment" : " HTTP request parser\n\n $(INTERNAL_MODULE)\n",
+  "comment" : " HTTP request parser\n\n $(INTERNAL_MODULE)\n\n License: [BSL-1.0](http://boost.org/LICENSE_1_0.txt).\n",
   "members" : [
    {
     "name" : "msgraph.httpd.types",
     "kind" : "import",
-    "line" : 9,
+    "line" : 11,
     "char" : 8,
     "protection" : "package"
    },
@@ -5274,7 +5274,7 @@
     "kind" : "function",
     "protection" : "package",
     "comment" : " $(INTERNAL)\n",
-    "line" : 14,
+    "line" : 16,
     "char" : 6,
     "deco" : "FNeKS7msgraph5httpd5types7RequestIAaZb",
     "parameters" : [
@@ -5293,19 +5293,19 @@
       ]
      }
     ],
-    "endline" : 27,
+    "endline" : 29,
     "endchar" : 1
    },
    {
-    "name" : "__unittest_L29_C7",
+    "name" : "__unittest_L31_C7",
     "kind" : "function",
     "protection" : "package",
-    "line" : 29,
+    "line" : 31,
     "char" : 7,
     "storageClass" : [
      "@safe"
     ],
-    "endline" : 41,
+    "endline" : 43,
     "endchar" : 1
    },
    {
@@ -5313,7 +5313,7 @@
     "kind" : "function",
     "protection" : "package",
     "comment" : " $(INTERNAL)\n",
-    "line" : 41,
+    "line" : 43,
     "char" : 6,
     "deco" : "FNeKS7msgraph5httpd5types7RequestIAaZb",
     "parameters" : [
@@ -5332,19 +5332,19 @@
       ]
      }
     ],
-    "endline" : 55,
+    "endline" : 57,
     "endchar" : 1
    },
    {
-    "name" : "__unittest_L57_C7",
+    "name" : "__unittest_L59_C7",
     "kind" : "function",
     "protection" : "package",
-    "line" : 57,
+    "line" : 59,
     "char" : 7,
     "storageClass" : [
      "@safe"
     ],
-    "endline" : 69,
+    "endline" : 71,
     "endchar" : 1
    },
    {
@@ -5352,7 +5352,7 @@
     "kind" : "function",
     "protection" : "package",
     "comment" : " $(INTERNAL)\n",
-    "line" : 69,
+    "line" : 71,
     "char" : 6,
     "deco" : "FNeKS7msgraph5httpd5types7RequestIAaZb",
     "parameters" : [
@@ -5371,19 +5371,19 @@
       ]
      }
     ],
-    "endline" : 74,
+    "endline" : 76,
     "endchar" : 1
    },
    {
-    "name" : "__unittest_L76_C7",
+    "name" : "__unittest_L78_C7",
     "kind" : "function",
     "protection" : "package",
-    "line" : 76,
+    "line" : 78,
     "char" : 7,
     "storageClass" : [
      "@safe"
     ],
-    "endline" : 83,
+    "endline" : 85,
     "endchar" : 1
    }
   ]
@@ -5392,19 +5392,19 @@
   "name" : "msgraph.httpd.sockhelper",
   "kind" : "module",
   "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/httpd/sockhelper.d",
-  "comment" : " Socket helper functions\n\n $(INTERNAL_MODULE)\n",
+  "comment" : " Socket helper functions\n\n $(INTERNAL_MODULE)\n\n License: [BSL-1.0](http://boost.org/LICENSE_1_0.txt).\n",
   "members" : [
    {
     "name" : "core.time",
     "kind" : "import",
-    "line" : 10,
+    "line" : 12,
     "char" : 8,
     "protection" : "package"
    },
    {
     "name" : "std.socket",
     "kind" : "import",
-    "line" : 11,
+    "line" : 13,
     "char" : 8,
     "protection" : "package"
    },
@@ -5413,7 +5413,7 @@
     "kind" : "function",
     "protection" : "package",
     "comment" : " $(INTERNAL)\n",
-    "line" : 16,
+    "line" : 18,
     "char" : 6,
     "deco" : "FNbNeC3std6socket6SocketMPbMQdMQgS4core4time8DurationZb",
     "parameters" : [
@@ -5447,7 +5447,7 @@
       "deco" : "S4core4time8Duration"
      }
     ],
-    "endline" : 69,
+    "endline" : 71,
     "endchar" : 1
    },
    {
@@ -5455,7 +5455,7 @@
     "kind" : "function",
     "protection" : "package",
     "comment" : "$(INTERNAL)\n",
-    "line" : 72,
+    "line" : 74,
     "char" : 6,
     "deco" : "FNbNeC3std6socket6SocketMDFNbNiNfZvMQlMQoS4core4time8DurationZv",
     "originalType" : "nothrow @trusted void(Socket sock, scope void delegate() nothrow @nogc @safe onReadable, scope void delegate() nothrow @nogc @safe onWritable, scope void delegate() nothrow @nogc @safe onError, Duration timeout = 0.msecs)",
@@ -5491,7 +5491,7 @@
       "default" : "dur(0L)"
      }
     ],
-    "endline" : 96,
+    "endline" : 98,
     "endchar" : 1
    },
    {
@@ -5499,7 +5499,7 @@
     "kind" : "function",
     "protection" : "package",
     "comment" : "$(INTERNAL)\n",
-    "line" : 99,
+    "line" : 101,
     "char" : 6,
     "deco" : "FNbNeC3std6socket6SocketS4core4time8DurationZb",
     "parameters" : [
@@ -5512,7 +5512,7 @@
       "deco" : "S4core4time8Duration"
      }
     ],
-    "endline" : 103,
+    "endline" : 105,
     "endchar" : 1
    },
    {
@@ -5520,7 +5520,7 @@
     "kind" : "function",
     "protection" : "package",
     "comment" : "$(INTERNAL)\n",
-    "line" : 106,
+    "line" : 108,
     "char" : 6,
     "deco" : "FNbNeC3std6socket6SocketS4core4time8DurationZb",
     "parameters" : [
@@ -5533,7 +5533,7 @@
       "deco" : "S4core4time8Duration"
      }
     ],
-    "endline" : 110,
+    "endline" : 112,
     "endchar" : 1
    },
    {
@@ -5541,7 +5541,7 @@
     "kind" : "function",
     "protection" : "package",
     "comment" : "$(INTERNAL)\n",
-    "line" : 113,
+    "line" : 115,
     "char" : 6,
     "deco" : "FNbNeC3std6socket6SocketS4core4time8DurationZv",
     "parameters" : [
@@ -5554,7 +5554,7 @@
       "deco" : "S4core4time8Duration"
      }
     ],
-    "endline" : 124,
+    "endline" : 126,
     "endchar" : 1
    },
    {
@@ -5562,7 +5562,7 @@
     "kind" : "function",
     "protection" : "package",
     "comment" : "$(INTERNAL)\n",
-    "line" : 127,
+    "line" : 129,
     "char" : 6,
     "deco" : "FNbNeC3std6socket6SocketS4core4time8DurationZv",
     "parameters" : [
@@ -5575,7 +5575,7 @@
       "deco" : "S4core4time8Duration"
      }
     ],
-    "endline" : 138,
+    "endline" : 140,
     "endchar" : 1
    }
   ]
@@ -5584,14 +5584,14 @@
   "name" : "msgraph.httpd.types",
   "kind" : "module",
   "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/httpd/types.d",
-  "comment" : " HTTP related types\n\n $(INTERNAL_MODULE)\n",
+  "comment" : " HTTP related types\n\n $(INTERNAL_MODULE)\n\n License: [BSL-1.0](http://boost.org/LICENSE_1_0.txt).\n",
   "members" : [
    {
     "name" : "Request",
     "kind" : "struct",
     "protection" : "package",
     "comment" : " $(INTERNAL)\n",
-    "line" : 14,
+    "line" : 16,
     "char" : 1,
     "members" : [
      {
@@ -5599,7 +5599,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 17,
+      "line" : 19,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 0
@@ -5609,7 +5609,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 19,
+      "line" : 21,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 16
@@ -5619,7 +5619,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 21,
+      "line" : 23,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 32
@@ -5629,7 +5629,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 23,
+      "line" : 25,
       "char" : 17,
       "deco" : "HAyaQd",
       "offset" : 48
@@ -5639,7 +5639,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 25,
+      "line" : 27,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 56
@@ -5650,7 +5650,7 @@
     "name" : "HttpStatusLine",
     "kind" : "enum",
     "protection" : "package",
-    "line" : 29,
+    "line" : 31,
     "char" : 1,
     "baseDeco" : "Aya",
     "members" : [
@@ -5659,7 +5659,7 @@
       "kind" : "enum member",
       "protection" : "public",
       "value" : "\"HTTP/1.1 200 OK\"",
-      "line" : 31,
+      "line" : 33,
       "char" : 2
      },
      {
@@ -5667,7 +5667,7 @@
       "kind" : "enum member",
       "protection" : "public",
       "value" : "\"HTTP/1.1 400 Bad Request\"",
-      "line" : 32,
+      "line" : 34,
       "char" : 2
      }
     ]
@@ -5677,13 +5677,13 @@
     "kind" : "struct",
     "protection" : "package",
     "comment" : " $(INTERNAL)\n",
-    "line" : 38,
+    "line" : 40,
     "char" : 1,
     "members" : [
      {
       "name" : "std.json",
       "kind" : "import",
-      "line" : 40,
+      "line" : 42,
       "char" : 9,
       "protection" : "private"
      },
@@ -5692,7 +5692,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 42,
+      "line" : 44,
       "char" : 17,
       "deco" : "E7msgraph5httpd5types14HttpStatusLine",
       "offset" : 0
@@ -5702,7 +5702,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 44,
+      "line" : 46,
       "char" : 17,
       "deco" : "HAyaQd",
       "offset" : 16
@@ -5712,7 +5712,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 46,
+      "line" : 48,
       "char" : 17,
       "deco" : "Axh",
       "offset" : 24
@@ -5722,7 +5722,7 @@
       "kind" : "constructor",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 49,
+      "line" : 51,
       "char" : 2,
       "deco" : "FNcNfE7msgraph5httpd5types14HttpStatusLineHAyaQdIAhZSQBvQBqQBn8Response",
       "originalType" : "ref @safe (HttpStatusLine sts, string[string] hdr, in ubyte[] data)",
@@ -5743,7 +5743,7 @@
         ]
        }
       ],
-      "endline" : 54,
+      "endline" : 56,
       "endchar" : 2
      },
      {
@@ -5751,7 +5751,7 @@
       "kind" : "constructor",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 57,
+      "line" : 59,
       "char" : 2,
       "deco" : "FNcNfE7msgraph5httpd5types14HttpStatusLineHAyaQdIAaZSQBvQBqQBn8Response",
       "originalType" : "ref @safe (HttpStatusLine sts, string[string] hdr, in char[] data)",
@@ -5772,7 +5772,7 @@
         ]
        }
       ],
-      "endline" : 63,
+      "endline" : 65,
       "endchar" : 2
      },
      {
@@ -5780,7 +5780,7 @@
       "kind" : "constructor",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 66,
+      "line" : 68,
       "char" : 2,
       "deco" : "FNcNfE7msgraph5httpd5types14HttpStatusLineIAhAyaZSQBsQBnQBk8Response",
       "originalType" : "ref @safe (HttpStatusLine sts, in ubyte[] data, string contentType = \"application/octet-stream\")",
@@ -5802,7 +5802,7 @@
         "default" : "\"application/octet-stream\""
        }
       ],
-      "endline" : 71,
+      "endline" : 73,
       "endchar" : 2
      },
      {
@@ -5810,7 +5810,7 @@
       "kind" : "constructor",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 74,
+      "line" : 76,
       "char" : 2,
       "deco" : "FNcNfE7msgraph5httpd5types14HttpStatusLineIAaAyaZSQBsQBnQBk8Response",
       "originalType" : "ref @safe (HttpStatusLine sts, in char[] data, string contentType = \"text/plain\")",
@@ -5832,7 +5832,7 @@
         "default" : "\"text/plain\""
        }
       ],
-      "endline" : 80,
+      "endline" : 82,
       "endchar" : 2
      },
      {
@@ -5840,7 +5840,7 @@
       "kind" : "constructor",
       "protection" : "public",
       "comment" : "ditto\n",
-      "line" : 83,
+      "line" : 85,
       "char" : 2,
       "deco" : "FNcNfE7msgraph5httpd5types14HttpStatusLineIS3std4json9JSONValueAyaZSQCkQCfQCc8Response",
       "originalType" : "ref @safe (HttpStatusLine sts, in JSONValue data, string contentType = \"application/json\")",
@@ -5862,21 +5862,21 @@
         "default" : "\"application/json\""
        }
       ],
-      "endline" : 89,
+      "endline" : 91,
       "endchar" : 2
      }
     ]
    },
    {
-    "name" : "__unittest_L92_C7",
+    "name" : "__unittest_L94_C7",
     "kind" : "function",
     "protection" : "package",
-    "line" : 92,
+    "line" : 94,
     "char" : 7,
     "storageClass" : [
      "@safe"
     ],
-    "endline" : 108,
+    "endline" : 110,
     "endchar" : 1
    }
   ]
@@ -5885,26 +5885,26 @@
   "name" : "msgraph.user",
   "kind" : "module",
   "file" : "/home/runner/work/msgraph/msgraph/source/msgraph/user.d",
-  "comment" : " User informations\n",
+  "comment" : " User informations\n\n License: [BSL-1.0](http://boost.org/LICENSE_1_0.txt).\n",
   "members" : [
    {
     "name" : "msgraph.graph",
     "kind" : "import",
-    "line" : 6,
+    "line" : 8,
     "char" : 8,
     "protection" : "private"
    },
    {
     "name" : "msgraph.graph.jsonhelper",
     "kind" : "import",
-    "line" : 7,
+    "line" : 9,
     "char" : 8,
     "protection" : "private"
    },
    {
     "name" : "std.json",
     "kind" : "import",
-    "line" : 8,
+    "line" : 10,
     "char" : 8,
     "protection" : "private"
    },
@@ -5913,7 +5913,7 @@
     "kind" : "struct",
     "protection" : "public",
     "comment" : " User\n\n https://docs.microsoft.com/ja-jp/graph/api/user-get?view=graph-rest-1.0&tabs=http\n",
-    "line" : 15,
+    "line" : 17,
     "char" : 1,
     "members" : [
      {
@@ -5921,7 +5921,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 18,
+      "line" : 20,
       "char" : 11,
       "deco" : "AAya",
       "offset" : 0
@@ -5931,7 +5931,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 20,
+      "line" : 22,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 16
@@ -5941,7 +5941,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 22,
+      "line" : 24,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 32
@@ -5951,7 +5951,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 24,
+      "line" : 26,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 48
@@ -5961,7 +5961,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 26,
+      "line" : 28,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 64
@@ -5971,7 +5971,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 28,
+      "line" : 30,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 80
@@ -5981,7 +5981,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 30,
+      "line" : 32,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 96
@@ -5991,7 +5991,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 32,
+      "line" : 34,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 112
@@ -6001,7 +6001,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 34,
+      "line" : 36,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 128
@@ -6011,7 +6011,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 36,
+      "line" : 38,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 144
@@ -6021,7 +6021,7 @@
       "kind" : "variable",
       "protection" : "public",
       "comment" : "\n",
-      "line" : 38,
+      "line" : 40,
       "char" : 9,
       "deco" : "Aya",
       "offset" : 160
@@ -6033,7 +6033,7 @@
     "kind" : "function",
     "protection" : "public",
     "comment" : "\n",
-    "line" : 44,
+    "line" : 46,
     "char" : 6,
     "deco" : "FKS7msgraph5graphQg5GraphZSQy4user4User",
     "parameters" : [
@@ -6045,7 +6045,7 @@
       ]
      }
     ],
-    "endline" : 49,
+    "endline" : 51,
     "endchar" : 1
    },
    {
@@ -6053,7 +6053,7 @@
     "kind" : "function",
     "protection" : "public",
     "comment" : "\n",
-    "line" : 55,
+    "line" : 57,
     "char" : 6,
     "deco" : "FKS7msgraph5graphQg5GraphAyaZSQBb4user4User",
     "parameters" : [
@@ -6069,7 +6069,7 @@
       "deco" : "Aya"
      }
     ],
-    "endline" : 61,
+    "endline" : 63,
     "endchar" : 1
    }
   ]
