@@ -47,13 +47,13 @@ void main()
 		requireScope = ["offline_access", "User.Read"];
 	}
 	auto graph = Graph();
-	graph.setupWithInstanceServer(authInfo);
+	graph.setupWithAdHocServer(authInfo);
 }
 ```
 
 The clientId and tenantId are created and obtained by the application developer in [Asure Active Directory](https://azure.microsoft.com/services/active-directory/).
 
-Specifically, the setupWithInstanceServer function does the following:
+Specifically, the setupWithAdHocServer function does the following:
 
 1. Create a URL based on the client ID and other necessary information, and open a browser with std.process.browse.
 2. The user grants login and access rights on the browser.
