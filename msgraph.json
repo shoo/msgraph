@@ -182,7 +182,7 @@
     ]
    },
    {
-    "name" : "InstanceAuthServer",
+    "name" : "AdHocAuthServer",
     "kind" : "struct",
     "protection" : "public",
     "comment" : " $(MARK native app only)\n",
@@ -309,11 +309,11 @@
       "protection" : "public",
       "line" : 45,
       "char" : 1,
-      "deco" : "FNcNjNeS7msgraph5graph4auth18InstanceAuthServerZQBp",
+      "deco" : "FNcNjNeS7msgraph5graph4auth15AdHocAuthServerZQBm",
       "parameters" : [
        {
         "name" : "p",
-        "deco" : "S7msgraph5graph4auth18InstanceAuthServer"
+        "deco" : "S7msgraph5graph4auth15AdHocAuthServer"
        }
       ]
      }
@@ -1896,7 +1896,7 @@
     ]
    },
    {
-    "name" : "setupWithInstanceServer",
+    "name" : "setupWithAdHocServer",
     "kind" : "function",
     "protection" : "public",
     "comment" : " $(MARK native app only)\n",
