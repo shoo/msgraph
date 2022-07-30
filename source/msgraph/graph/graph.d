@@ -517,10 +517,10 @@ public:
 /*******************************************************************************
  * $(MARK native app only)
  */
-bool setupWithInstanceServer(ref Graph g, AuthInfo authInfo, Duration dur = 30.seconds)
+bool setupWithAdHocServer(ref Graph g, AuthInfo authInfo, Duration dur = 30.seconds)
 {
 	import std.process: browse;
-	InstanceAuthServer authServer;
+	AdHocAuthServer authServer;
 	bool ret;
 	
 	authInfo.state = getRandomString();
@@ -544,7 +544,7 @@ bool setupWithInstanceServer(ref Graph g, AuthInfo authInfo, Duration dur = 30.s
 	import std.net.curl: get;
 	import std.conv: text;
 	import msgraph.httpd;
-	InstanceAuthServer authServer;
+	AdHocAuthServer authServer;
 	bool ret;
 	AuthInfo authInfo;
 	Graph g;

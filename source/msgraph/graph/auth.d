@@ -42,7 +42,7 @@ struct AuthInfo
 /*******************************************************************************
  * $(MARK native app only)
  */
-struct InstanceAuthServer
+struct AdHocAuthServer
 {
 private:
 	import msgraph.httpd;

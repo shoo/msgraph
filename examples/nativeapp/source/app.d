@@ -16,7 +16,7 @@ void main()
 	}
 	auto graph = Graph();
 	if (authInfo.accessToken is null)
-		graph.setupWithInstanceServer(authInfo);
+		graph.setupWithAdHocServer(authInfo);
 	
 	writeln(graph.me.displayName);
 }
