@@ -16,5 +16,5 @@ void main()
 	auto graph = Graph();
 	graph.setup(authInfo);
 	
-	writeln(graph.users("ad23f694-f1ee-464a-93bf-4a5fdde7ca2a").displayName);
+	writeln(graph.users(environment.get("GRAPH_EX_USERID")).displayName);
 }
